@@ -47,11 +47,11 @@
 
 /* --- Reset --- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; background: #07131C; }
 body {
   font-family: var(--font-body);
   color: var(--text-dark);
-  background: var(--invis-black);
+  background: #07131C;
   line-height: 1.6;
   padding-top: calc(var(--nav-height) + var(--rainbow-h));
 }
@@ -82,7 +82,7 @@ a:hover { color: var(--invis-red); }
 /* --- Nav --- */
 .site-nav {
   position: fixed; top: var(--rainbow-h); left: 0; right: 0;
-  height: var(--nav-height); background: var(--invis-black); z-index: 999;
+  height: var(--nav-height); background: #07131C; z-index: 999;
   display: flex; align-items: center;
 }
 .nav-inner {
@@ -196,7 +196,7 @@ textarea { min-height: 120px; resize: vertical; }
 .rainbow-divider { height: 4px; background: var(--rainbow-gradient); border: none; margin: 0; }
 
 /* --- Page Hero (interior pages) --- */
-.page-hero { background: var(--invis-black); color: var(--white); padding: 52px 0; }
+.page-hero { background: #07131C; color: var(--white); padding: 52px 0; }
 .page-hero-label {
   font-family: var(--font-display); font-weight: 700;
   font-size: 0.68rem; letter-spacing: 0.25em; text-transform: uppercase;
@@ -211,7 +211,7 @@ textarea { min-height: 120px; resize: vertical; }
 
 /* --- Homepage Hero --- */
 .hero {
-  background: var(--invis-black); color: var(--white);
+  background: #07131C; color: var(--white);
   padding: 80px 0 72px; position: relative; overflow: hidden;
 }
 .hero::before {
