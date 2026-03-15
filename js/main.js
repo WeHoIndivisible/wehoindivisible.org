@@ -15,6 +15,17 @@
   Then update the src to: img/logo-indivisible.svg
 */
 
+/* ---- Cookiebot consent ---- */
+function injectCookiebot() {
+  const script = document.createElement('script');
+  script.id = 'Cookiebot';
+  script.src = 'https://consent.cookiebot.com/uc.js';
+  script.setAttribute('data-cbid', '2a545b6d-f995-40a4-95b7-5629ee6457a7');
+  script.setAttribute('data-blockingmode', 'auto');
+  script.type = 'text/javascript';
+  document.head.prepend(script);
+}
+
 const NAV_HTML = `
   <div class="rainbow-bar" aria-hidden="true"></div>
   <nav class="site-nav" aria-label="Main navigation">
@@ -86,7 +97,7 @@ const FOOTER_HTML = `
         </div>
       </div>
       <div class="footer-bottom">
-        <p class="footer-legal">&copy; 2026 West Hollywood Indivisible. All rights reserved.</p>
+        <p class="footer-legal">&copy; 2025 West Hollywood Indivisible. All rights reserved.</p>
         <p class="footer-affil">A local chapter of <a href="https://indivisible.org" target="_blank" rel="noopener">Indivisible</a>. Not affiliated with any political party or candidate.</p>
       </div>
     </div>
@@ -260,6 +271,7 @@ async function loadEvents() {
 
 /* ---- Init ---- */
 document.addEventListener('DOMContentLoaded', () => {
+  injectCookiebot();
   injectSharedElements();
   initForms();
   initRepLookup();
