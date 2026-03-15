@@ -28,7 +28,7 @@ const NAV_HTML = `
         </div>
       </a>
 
-      <ul id="navLinks" role="list" style="display:flex;align-items:center;gap:2px;list-style:none;margin:0;padding:0;">
+      <ul id="navLinks" role="list" style="align-items:center;gap:2px;list-style:none;margin:0;padding:0;">
         <li><a href="actions.html" class="nav-link">Actions</a></li>
         <li><a href="events.html" class="nav-link">Events</a></li>
         <li><a href="get-involved.html" class="nav-link">Get Involved</a></li>
@@ -139,8 +139,7 @@ function injectSharedElements() {
   function applyLayout() {
     const mobile = window.innerWidth <= 900;
     hamburger.style.display      = mobile ? 'flex' : 'none';
-    desktopLinks.style.display   = mobile ? 'none' : 'flex';
-    if (navDivider) navDivider.style.display = mobile ? 'none' : 'block';
+    desktopLinks.style.display   = mobile ? 'none' : 'flex';    if (navDivider) navDivider.style.display = mobile ? 'none' : 'block';
     if (navSub)     navSub.style.display     = mobile ? 'none' : 'block';
     if (navLogoImg) navLogoImg.style.height  = mobile ? '28px' : '38px';
     if (!mobile && menuOpen) {
