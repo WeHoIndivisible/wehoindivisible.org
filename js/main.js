@@ -97,7 +97,7 @@ const FOOTER_HTML = `
         </div>
       </div>
       <div class="footer-bottom">
-        <p class="footer-legal">&copy; 2025 West Hollywood Indivisible. All rights reserved.</p>
+        <p class="footer-legal">&copy; 2026 West Hollywood Indivisible. All rights reserved.</p>
         <p class="footer-affil">A local chapter of <a href="https://indivisible.org" target="_blank" rel="noopener">Indivisible</a>. Not affiliated with any political party or candidate.</p>
       </div>
     </div>
