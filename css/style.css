@@ -509,3 +509,137 @@ textarea { min-height: 120px; resize: vertical; }
   .action-card-header { flex-direction: column; }
   .nav-logo-divider { display: none; }
 }
+
+/* =====================================================
+   COOKIEBOT BANNER OVERRIDES
+   Targets the #CybotCookiebotDialog element and children
+   ===================================================== */
+
+/* Main dialog container */
+#CybotCookiebotDialog {
+  background: var(--invis-black) !important;
+  border-top: 4px solid var(--invis-red) !important;
+  font-family: 'Domine', serif !important;
+  color: rgba(255,255,255,0.85) !important;
+  box-shadow: 0 -4px 24px rgba(0,0,0,0.4) !important;
+}
+
+/* Header */
+#CybotCookiebotDialogHeader {
+  background: var(--invis-black) !important;
+  border-bottom: 1px solid rgba(255,255,255,0.08) !important;
+}
+#CybotCookiebotDialogBodyEdgeMoreDetails,
+#CybotCookiebotDialogHeader .CybotCookiebotFader {
+  background: var(--invis-black) !important;
+}
+
+/* Body text */
+#CybotCookiebotDialogBody,
+#CybotCookiebotDialogBodyContent,
+.CybotCookiebotDialogBodyContentText,
+.CybotCookiebotDialogBodyContentTitle {
+  font-family: 'Domine', serif !important;
+  color: rgba(255,255,255,0.8) !important;
+  background: var(--invis-black) !important;
+}
+.CybotCookiebotDialogBodyContentTitle {
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 700 !important;
+  color: var(--white) !important;
+}
+
+/* Links */
+#CybotCookiebotDialogBody a,
+#CybotCookiebotDialogBodyContent a {
+  color: var(--invis-light-blue) !important;
+}
+
+/* All buttons base */
+.CybotCookiebotDialogBodyButton {
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 0.78rem !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  border-radius: 3px !important;
+  padding: 10px 20px !important;
+  border: 2px solid !important;
+  transition: all 0.2s ease !important;
+}
+
+/* Accept all button — red primary */
+#CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll {
+  background: var(--invis-red) !important;
+  border-color: var(--invis-red) !important;
+  color: var(--white) !important;
+}
+#CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll:hover {
+  background: var(--invis-red-dark) !important;
+  border-color: var(--invis-red-dark) !important;
+}
+
+/* Deny / necessary only button — outline */
+#CybotCookiebotDialogBodyLevelButtonLevelOptinDeclineAll,
+#CybotCookiebotDialogBodyButtonDecline {
+  background: transparent !important;
+  border-color: rgba(255,255,255,0.35) !important;
+  color: rgba(255,255,255,0.75) !important;
+}
+#CybotCookiebotDialogBodyLevelButtonLevelOptinDeclineAll:hover,
+#CybotCookiebotDialogBodyButtonDecline:hover {
+  border-color: var(--white) !important;
+  color: var(--white) !important;
+}
+
+/* Customize / preferences button — outline */
+#CybotCookiebotDialogBodyLevelButtonCustomize,
+.CybotCookiebotDialogBodyLevelButtonCustomize {
+  background: transparent !important;
+  border-color: rgba(255,255,255,0.25) !important;
+  color: rgba(255,255,255,0.6) !important;
+}
+
+/* Tab area (detail view) */
+#CybotCookiebotDialogNav,
+.CybotCookiebotDialogNavItemLink,
+#CybotCookiebotDialogTabContent,
+.CybotCookiebotScrollContainer {
+  background: var(--invis-black) !important;
+  color: rgba(255,255,255,0.75) !important;
+}
+.CybotCookiebotDialogNavItemLink.CybotCookiebotDialogNavItemLinkActive {
+  border-bottom-color: var(--invis-red) !important;
+  color: var(--white) !important;
+}
+
+/* Toggles — on state */
+#CybotCookiebotDialog input:checked + .CybotCookiebotDialogBodyLevelButtonSlider {
+  background-color: var(--invis-red) !important;
+}
+/* Toggles — off state */
+#CybotCookiebotDialog .CybotCookiebotDialogBodyLevelButtonSlider {
+  background-color: rgba(255,255,255,0.2) !important;
+}
+
+/* Hide Cookiebot branding */
+#CybotCookiebotDialogPoweredbyCybot,
+#CybotCookiebotDialogPoweredByText {
+  display: none !important;
+}
+
+/* Rainbow bar at top of banner (matches site header) */
+#CybotCookiebotDialog::before {
+  content: '';
+  display: block;
+  height: 4px;
+  background: linear-gradient(to right,
+    #E40303 0%, #E40303 16.666%,
+    #FF8C00 16.666%, #FF8C00 33.333%,
+    #FFED00 33.333%, #FFED00 50%,
+    #008026 50%, #008026 66.666%,
+    #004DFF 66.666%, #004DFF 83.333%,
+    #750787 83.333%, #750787 100%);
+  position: absolute;
+  top: 0; left: 0; right: 0;
+}
