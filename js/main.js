@@ -26,6 +26,57 @@ function injectCookiebot() {
   document.head.prepend(script);
 }
 
+/* ---- Inject critical mobile nav styles (bypasses CSS cache) ---- */
+function injectMobileNavStyles() {
+  const style = document.createElement('style');
+  style.textContent = `
+    /* Hamburger always anchored top-right, never pushed by nav links */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 1001;
+    }
+    .site-nav { position: fixed; }
+    .nav-inner { position: relative; }
+
+    @media (max-width: 900px) {
+      .nav-links {
+        display: none !important;
+        position: fixed !important;
+        top: 96px !important;
+        left: 0 !important;
+        right: 0 !important;
+        background: #07131C !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        padding: 12px 16px !important;
+        gap: 4px !important;
+        border-top: 1px solid rgba(255,255,255,0.08) !important;
+        z-index: 998 !important;
+        overflow: visible !important;
+        width: 100% !important;
+      }
+      .nav-links.open { display: flex !important; }
+      .nav-links a { padding: 12px 16px !important; font-size: 1rem !important; }
+      .nav-hamburger { display: flex !important; }
+      .nav-logo-divider { display: none !important; }
+      .nav-logo-sub { display: none !important; }
+      .nav-logo-img { height: 30px !important; }
+      .nav-inner { overflow: visible !important; padding-right: 60px !important; }
+    }
+  `;
+  document.head.appendChild(style);
+}
+
 const NAV_HTML = `
   <div class="rainbow-bar" aria-hidden="true"></div>
   <nav class="site-nav" aria-label="Main navigation">
@@ -97,7 +148,7 @@ const FOOTER_HTML = `
         </div>
       </div>
       <div class="footer-bottom">
-        <p class="footer-legal">&copy; 2026 West Hollywood Indivisible. All rights reserved.</p>
+        <p class="footer-legal">&copy; 2025 West Hollywood Indivisible. All rights reserved.</p>
         <p class="footer-affil">A local chapter of <a href="https://indivisible.org" target="_blank" rel="noopener">Indivisible</a>. Not affiliated with any political party or candidate.</p>
       </div>
     </div>
@@ -272,6 +323,7 @@ async function loadEvents() {
 /* ---- Init ---- */
 document.addEventListener('DOMContentLoaded', () => {
   injectCookiebot();
+  injectMobileNavStyles();
   injectSharedElements();
   initForms();
   initRepLookup();
