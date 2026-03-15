@@ -637,3 +637,37 @@ textarea { min-height: 120px; resize: vertical; }
   position: absolute;
   top: 0; left: 0; right: 0;
 }
+/* =========================================
+   FORCE IPHONE RESPONSIVE OVERRIDES
+   ========================================= */
+@media (max-width: 900px) {
+  /* 1. Show the hamburger */
+  .nav-hamburger {
+    display: flex !important;
+    visibility: visible !important;
+  }
+
+  /* 2. Hide the desktop links */
+  #whi-desktop-links {
+    display: none !important;
+  }
+
+  /* 3. Adjust Nav Inner for mobile spacing */
+  .nav-inner {
+    padding: 0 16px !important;
+    gap: 10px !important;
+  }
+
+  /* 4. Shrink logo text so it doesn't crowd the hamburger */
+  .nav-logo-main {
+    font-size: 0.9rem !important;
+  }
+  .nav-logo-sub, .nav-logo-divider {
+    display: none !important;
+  }
+
+  /* 5. Ensure the body padding matches the header */
+  body {
+    padding-top: 96px !important;
+  }
+}
