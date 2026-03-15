@@ -30,24 +30,6 @@ function injectCookiebot() {
 function injectMobileNavStyles() {
   const style = document.createElement('style');
   style.textContent = `
-    /* Hamburger always anchored top-right, never pushed by nav links */
-    .nav-hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 8px;
-      position: absolute;
-      right: 20px;
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: 1001;
-    }
-    .site-nav { position: fixed; }
-    .nav-inner { position: relative; }
-
     @media (max-width: 900px) {
       .nav-links {
         display: none !important;
@@ -55,23 +37,45 @@ function injectMobileNavStyles() {
         top: 96px !important;
         left: 0 !important;
         right: 0 !important;
+        width: 100% !important;
         background: #07131C !important;
         flex-direction: column !important;
         align-items: stretch !important;
         padding: 12px 16px !important;
-        gap: 4px !important;
-        border-top: 1px solid rgba(255,255,255,0.08) !important;
-        z-index: 998 !important;
-        overflow: visible !important;
+        gap: 0 !important;
+        border-top: 1px solid rgba(255,255,255,0.1) !important;
+        z-index: 9997 !important;
+        margin: 0 !important;
+      }
+      .nav-links.open {
+        display: flex !important;
+      }
+      .nav-links li {
+        display: block !important;
         width: 100% !important;
       }
-      .nav-links.open { display: flex !important; }
-      .nav-links a { padding: 12px 16px !important; font-size: 1rem !important; }
-      .nav-hamburger { display: flex !important; }
-      .nav-logo-divider { display: none !important; }
-      .nav-logo-sub { display: none !important; }
-      .nav-logo-img { height: 30px !important; }
-      .nav-inner { overflow: visible !important; padding-right: 60px !important; }
+      .nav-links a {
+        display: block !important;
+        padding: 14px 20px !important;
+        font-size: 1rem !important;
+        border-bottom: 1px solid rgba(255,255,255,0.06) !important;
+        width: 100% !important;
+      }
+      .nav-hamburger {
+        display: flex !important;
+      }
+      .nav-logo-divider {
+        display: none !important;
+      }
+      .nav-logo-sub {
+        display: none !important;
+      }
+      .nav-logo-main {
+        font-size: 0.95rem !important;
+      }
+      .nav-logo-img {
+        height: 28px !important;
+      }
     }
   `;
   document.head.appendChild(style);
@@ -80,13 +84,14 @@ function injectMobileNavStyles() {
 const NAV_HTML = `
   <div class="rainbow-bar" aria-hidden="true"></div>
   <nav class="site-nav" aria-label="Main navigation">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-logo" aria-label="West Hollywood Indivisible — Home">
+    <div class="nav-inner" style="display:flex;align-items:center;justify-content:space-between;width:100%;max-width:1100px;margin:0 auto;padding:0 20px;">
+      <a href="index.html" class="nav-logo" aria-label="West Hollywood Indivisible — Home" style="display:flex;align-items:center;gap:12px;flex-shrink:0;">
         <img
           class="nav-logo-img"
           src="https://indivisible.org/wp-content/uploads/2025/11/logo-indivisible-lg.svg"
           alt="Indivisible"
           onerror="this.style.display='none'"
+          style="height:38px;width:auto;"
         >
         <div class="nav-logo-divider" aria-hidden="true"></div>
         <div class="nav-logo-text">
@@ -94,6 +99,11 @@ const NAV_HTML = `
           <span class="nav-logo-sub">West Hollywood, California</span>
         </div>
       </a>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Toggle navigation" aria-expanded="false" style="display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;flex-shrink:0;">
+        <span style="display:block;width:24px;height:2px;background:#fff;transition:all 0.2s;"></span>
+        <span style="display:block;width:24px;height:2px;background:#fff;transition:all 0.2s;"></span>
+        <span style="display:block;width:24px;height:2px;background:#fff;transition:all 0.2s;"></span>
+      </button>
       <ul class="nav-links" id="navLinks" role="list">
         <li><a href="actions.html">Actions</a></li>
         <li><a href="events.html">Events</a></li>
@@ -102,9 +112,6 @@ const NAV_HTML = `
         <li><a href="about.html">About</a></li>
         <li><a href="contact.html" class="nav-cta">Sign Up</a></li>
       </ul>
-      <button class="nav-hamburger" id="navHamburger" aria-label="Toggle navigation" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
     </div>
   </nav>
 `;
@@ -178,12 +185,26 @@ function injectSharedElements() {
       const isOpen = navLinks.classList.toggle('open');
       hamburger.classList.toggle('open', isOpen);
       hamburger.setAttribute('aria-expanded', String(isOpen));
+      // Animate spans
+      const spans = hamburger.querySelectorAll('span');
+      if (isOpen) {
+        spans[0].style.transform = 'translateY(7px) rotate(45deg)';
+        spans[1].style.opacity = '0';
+        spans[2].style.transform = 'translateY(-7px) rotate(-45deg)';
+      } else {
+        spans[0].style.transform = '';
+        spans[1].style.opacity = '';
+        spans[2].style.transform = '';
+      }
     });
     document.addEventListener('click', e => {
       if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
         navLinks.classList.remove('open');
         hamburger.classList.remove('open');
         hamburger.setAttribute('aria-expanded', 'false');
+        hamburger.querySelectorAll('span').forEach(s => {
+          s.style.transform = ''; s.style.opacity = '';
+        });
       }
     });
   }
