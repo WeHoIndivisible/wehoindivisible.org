@@ -8,6 +8,7 @@
   <link rel="canonical" href="https://wehoindivisible.org/get-involved.html">
   <meta name="theme-color" content="#1E0A3C">
   <!-- <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/YOUR_SITE_ID/script.js"></script> -->
+  <link rel="icon" href="favicon.ico">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -89,70 +90,33 @@
           We're not going to hand you a clipboard the second you walk in the door. Fill this out and someone will reach out to say hello and find out where you'd like to plug in.
         </p>
 
-        <!--
-          Formspree volunteer form
-          Replace YOUR_FORM_ID with your Formspree form ID
-          You can use the same form ID as the homepage signup, or create a separate one
-        -->
-        <form
-          action="https://formspree.io/f/YOUR_FORM_ID"
-          method="POST"
-          data-formspree
-        >
+        <form data-brevo autocomplete="on" novalidate>
           <div class="form-row">
             <div class="form-group">
-              <label for="firstName">First Name *</label>
-              <input type="text" id="firstName" name="first_name" required autocomplete="given-name">
+              <label for="firstname-gi">First Name *</label>
+              <input type="text" id="firstname-gi" name="firstname" required autocomplete="given-name">
             </div>
             <div class="form-group">
-              <label for="lastName">Last Name</label>
-              <input type="text" id="lastName" name="last_name" autocomplete="family-name">
+              <label for="lastname-gi">Last Name</label>
+              <input type="text" id="lastname-gi" name="lastname" autocomplete="family-name">
             </div>
           </div>
-
           <div class="form-group">
-            <label for="email">Email Address *</label>
-            <input type="email" id="email" name="_replyto" required autocomplete="email">
+            <label for="email-gi">Email Address *</label>
+            <input type="email" id="email-gi" name="email" required autocomplete="email">
           </div>
-
           <div class="form-group">
-            <label for="phone">Phone (optional)</label>
-            <input type="tel" id="phone" name="phone" autocomplete="tel">
+            <label for="zip-gi">ZIP Code</label>
+            <input type="text" id="zip-gi" name="zip" maxlength="10" inputmode="numeric" autocomplete="postal-code">
           </div>
-
-          <div class="form-group">
-            <label for="neighborhood">Neighborhood (optional)</label>
-            <input type="text" id="neighborhood" name="neighborhood" placeholder="e.g. West Hollywood, Silver Lake, Fairfax…">
+          <div class="form-group" style="display:flex;gap:10px;align-items:flex-start;margin-top:4px;">
+            <input type="checkbox" name="consent" id="consent-gi" required style="margin-top:4px;flex-shrink:0;accent-color:#CA4948;">
+            <label for="consent-gi" style="font-size:0.82rem;color:var(--text-light);line-height:1.6;text-transform:none;letter-spacing:0;font-weight:400;font-family:'Domine',serif;">
+              I agree to receive emails from West Hollywood Indivisible. I understand I can unsubscribe at any time.
+            </label>
           </div>
-
-          <div class="form-group">
-            <label for="interests">What are you most interested in? *</label>
-            <select id="interests" name="interests" required>
-              <option value="" disabled selected>Choose one…</option>
-              <option value="show-up">Just showing up to events for now</option>
-              <option value="take-action">Taking individual actions (calls, emails, phone banking)</option>
-              <option value="help-organize">Helping to organize events or logistics</option>
-              <option value="outreach">Outreach, social media, or communications</option>
-              <option value="research">Research and policy tracking</option>
-              <option value="leadership">Taking on a leadership role</option>
-              <option value="not-sure">Not sure yet — I'll figure it out</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="availability">Availability (optional)</label>
-            <input type="text" id="availability" name="availability" placeholder="e.g. weekends, weekday evenings, flexible…">
-          </div>
-
-          <div class="form-group">
-            <label for="message">Anything else you'd like us to know?</label>
-            <textarea id="message" name="message" placeholder="Skills, questions, constraints, interests — whatever feels relevant."></textarea>
-          </div>
-
-          <input type="hidden" name="_subject" value="New volunteer — WeHo Indivisible">
-          <input type="hidden" name="source" value="get-involved-form">
-
-          <button type="submit" class="btn btn-primary btn-lg">Send It</button>
+          <p class="brevo-msg" style="display:none;margin-top:12px;"></p>
+          <button type="submit" class="btn btn-primary btn-lg" style="margin-top:20px;">Send It</button>
           <p class="form-notice" style="margin-top:12px;">We'll respond within a few days. No commitments implied by filling this out.</p>
         </form>
 
@@ -176,5 +140,6 @@
 
   <div id="site-footer-container"></div>
   <script src="js/main.js"></script>
+  <script src="js/brevo-form.js"></script>
 </body>
 </html>
