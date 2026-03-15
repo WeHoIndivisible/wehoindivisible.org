@@ -15,9 +15,12 @@
   #whi-nav-bar { position:fixed; top:0; left:0; right:0; z-index:1000; }
   #whi-rainbow { height:6px; background:linear-gradient(to right,#E40303 0%,#E40303 16.666%,#FF8C00 16.666%,#FF8C00 33.333%,#FFED00 33.333%,#FFED00 50%,#008026 50%,#008026 66.666%,#004DFF 66.666%,#004DFF 83.333%,#750787 83.333%,#750787 100%); }
   #whi-nav { height:80px; background:#07131C; display:flex; align-items:center; }
-  #whi-nav-inner { width:100%; max-width:1100px; margin:0 auto; padding:0 20px; display:flex; align-items:center; justify-content:space-between; }
+  #whi-nav-inner { width:100%; max-width:1100px; margin:0 auto; padding:0 20px; display:flex; align-items:center; justify-content:space-between; overflow:hidden; }
+  #whi-nav { overflow:hidden; }
+  #whi-logo { min-width:0; flex-shrink:1; overflow:hidden; }
+  #whi-logo-title { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
   #whi-logo { display:flex; align-items:center; gap:12px; text-decoration:none; flex-shrink:0; }
-  #whi-logo-img { height:36px; width:auto; }
+  #whi-logo-img { height:36px; width:auto; max-width:200px; }
   #whi-logo-div { width:1px; height:28px; background:rgba(255,255,255,0.2); flex-shrink:0; }
   #whi-logo-title { font-family:"Montserrat",sans-serif; font-weight:800; font-size:1rem; color:#fff; text-transform:uppercase; letter-spacing:0.02em; display:block; }
   #whi-logo-sub { font-family:"Montserrat",sans-serif; font-weight:500; font-size:0.65rem; color:#8AABBF; text-transform:uppercase; letter-spacing:0.12em; display:block; }
