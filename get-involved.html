@@ -10,11 +10,96 @@
   <!-- <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/YOUR_SITE_ID/script.js"></script> -->
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="apple-touch-icon" href="favicon.ico">
-  <link rel="stylesheet" href="css/style.css?v=3">
+  <link rel="stylesheet" href="css/style.css?v=6">
+<style id="nav-mobile-css">
+  #whi-nav-bar { position:fixed; top:0; left:0; right:0; z-index:1000; }
+  #whi-rainbow { height:6px; background:linear-gradient(to right,#E40303 0%,#E40303 16.666%,#FF8C00 16.666%,#FF8C00 33.333%,#FFED00 33.333%,#FFED00 50%,#008026 50%,#008026 66.666%,#004DFF 66.666%,#004DFF 83.333%,#750787 83.333%,#750787 100%); }
+  #whi-nav { height:80px; background:#07131C; display:flex; align-items:center; }
+  #whi-nav-inner { width:100%; max-width:1100px; margin:0 auto; padding:0 20px; display:flex; align-items:center; justify-content:space-between; }
+  #whi-logo { display:flex; align-items:center; gap:12px; text-decoration:none; flex-shrink:0; }
+  #whi-logo-img { height:36px; width:auto; }
+  #whi-logo-div { width:1px; height:28px; background:rgba(255,255,255,0.2); flex-shrink:0; }
+  #whi-logo-title { font-family:"Montserrat",sans-serif; font-weight:800; font-size:1rem; color:#fff; text-transform:uppercase; letter-spacing:0.02em; display:block; }
+  #whi-logo-sub { font-family:"Montserrat",sans-serif; font-weight:500; font-size:0.65rem; color:#8AABBF; text-transform:uppercase; letter-spacing:0.12em; display:block; }
+  #whi-desktop-links { display:flex; align-items:center; gap:2px; list-style:none; margin:0; padding:0; }
+  #whi-desktop-links a { font-family:"Montserrat",sans-serif; font-weight:600; font-size:0.82rem; letter-spacing:0.06em; text-transform:uppercase; color:rgba(255,255,255,0.75); padding:8px 12px; border-radius:4px; text-decoration:none; white-space:nowrap; }
+  #whi-desktop-links a:hover { color:#fff; background:rgba(255,255,255,0.08); }
+  #whi-desktop-links .whi-cta { background:#CA4948; color:#fff !important; padding:8px 16px; }
+  #whi-desktop-links .whi-cta:hover { background:#A83736; }
+  #whi-hamburger { display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:8px; flex-shrink:0; }
+  #whi-hamburger span { display:block; width:24px; height:2px; background:#fff; transition:all 0.2s; }
+  #whi-mobile-menu { display:none; background:#07131C; border-top:1px solid rgba(255,255,255,0.1); }
+  #whi-mobile-menu a { display:block; padding:14px 24px; font-family:"Montserrat",sans-serif; font-weight:600; font-size:0.9rem; color:rgba(255,255,255,0.85); text-decoration:none; text-transform:uppercase; letter-spacing:0.06em; border-bottom:1px solid rgba(255,255,255,0.06); }
+  #whi-mobile-menu a:last-child { background:#CA4948; color:#fff; border-bottom:none; }
+  @media (max-width:900px) {
+    #whi-desktop-links { display:none; }
+    #whi-hamburger { display:flex; }
+    #whi-logo-div { display:none; }
+    #whi-logo-sub { display:none; }
+    #whi-logo-img { height:28px; }
+  }
+</style>
+<style>body{padding-top:86px!important;}</style>
 </head>
 <body>
+<div id="whi-nav-bar">
+  <div id="whi-rainbow"></div>
+  <nav id="whi-nav" aria-label="Main navigation">
+    <div id="whi-nav-inner">
+      <a href="index.html" id="whi-logo" aria-label="West Hollywood Indivisible home">
+        <img id="whi-logo-img" src="https://indivisible.org/wp-content/uploads/2025/11/logo-indivisible-lg.svg" alt="Indivisible" onerror="this.style.display='none'">
+        <div id="whi-logo-div"></div>
+        <div>
+          <span id="whi-logo-title">West Hollywood</span>
+          <span id="whi-logo-sub">West Hollywood, California</span>
+        </div>
+      </a>
+      <ul id="whi-desktop-links" role="list">
+        <li><a href="actions.html">Actions</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="get-involved.html">Get Involved</a></li>
+        <li><a href="representatives.html">Your Reps</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="whi-cta">Sign Up</a></li>
+      </ul>
+      <button id="whi-hamburger" onclick="whiMenuToggle()" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div id="whi-mobile-menu">
+    <a href="actions.html">Actions</a>
+    <a href="events.html">Events</a>
+    <a href="get-involved.html">Get Involved</a>
+    <a href="representatives.html">Your Reps</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Sign Up</a>
+  </div>
+</div>
+<script>
+function whiMenuToggle(){
+  var m=document.getElementById('whi-mobile-menu');
+  var b=document.getElementById('whi-hamburger');
+  var s=b.querySelectorAll('span');
+  var open=m.style.display==='block';
+  m.style.display=open?'none':'block';
+  b.setAttribute('aria-expanded',String(!open));
+  s[0].style.transform=open?'':'translateY(7px) rotate(45deg)';
+  s[1].style.opacity=open?'':'0';
+  s[2].style.transform=open?'':'translateY(-7px) rotate(-45deg)';
+}
+document.addEventListener('click',function(e){
+  var b=document.getElementById('whi-hamburger');
+  var m=document.getElementById('whi-mobile-menu');
+  if(b&&m&&!b.contains(e.target)&&!m.contains(e.target)){
+    m.style.display='none';
+    b.setAttribute('aria-expanded','false');
+    var s=b.querySelectorAll('span');
+    s[0].style.transform='';s[1].style.opacity='';s[2].style.transform='';
+  }
+});
+</script>
   <a href="#main-content" class="skip-link">Skip to main content</a>
-  <div id="site-nav-container"></div>
 
   <div class="page-hero">
     <div class="container">
@@ -132,15 +217,9 @@
         <div style="font-size:1.02rem;line-height:1.78;color:var(--text-mid);">
           <p>West Hollywood Indivisible is a small, volunteer-run group — four of us right now, working to build something bigger. We're not a full-time operation. We don't have a headquarters or a staff. What we have is commitment, a clear sense of what we're fighting for, and a genuine interest in finding people who want to work alongside us.</p>
           <p style="margin-top:20px;">We try to make participation accessible. That means being clear about what we need, not asking more of people than they can give, and making room for different levels of involvement. If you come to one meeting and that's all you can do right now, that's fine. If you want to help us run this thing, we'd love to talk.</p>
-          <p style="margin-top:20px;">Questions? Email us directly: <a href="mailto:hello@wehoindivisible.org">hello@wehoindivisible.org</a></p>
+          <p style="margin-top:20px;">Questions? Email us directly: <a href="/cdn-cgi/l/email-protection#aec6cbc2c2c1eed9cbc6c1c7c0cac7d8c7ddc7ccc2cb80c1dcc9"><span class="__cf_email__" data-cfemail="8ce4e9e0e0e3ccfbe9e4e3e5e2e8e5fae5ffe5eee0e9a2e3feeb">[email&#160;protected]</span></a></p>
         </div>
       </div>
     </section>
 
   </main>
-
-  <div id="site-footer-container"></div>
-  <script src="js/main.js?v=3"></script>
-  <script src="js/brevo-form.js?v=3"></script>
-</body>
-</html>
