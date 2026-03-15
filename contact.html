@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact West Hollywood Indivisible or sign up to receive action alerts and event notices.">
+  <title>Contact &amp; Sign Up — West Hollywood Indivisible</title>
+  <link rel="canonical" href="https://wehoindivisible.org/contact.html">
+  <meta name="theme-color" content="#1E0A3C">
+  <!-- <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/YOUR_SITE_ID/script.js"></script> -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <div id="site-nav-container"></div>
+
+  <div class="page-hero">
+    <div class="container">
+      <p class="page-hero-label">West Hollywood Indivisible</p>
+      <h1>Contact &amp; Sign Up</h1>
+      <p>Get in touch, join our list, or tell us how you'd like to be involved.</p>
+    </div>
+  </div>
+  <hr class="rainbow-divider">
+
+  <main id="main-content">
+    <section class="section">
+      <div class="container">
+        <div class="contact-grid">
+
+          <!-- Sign-up / Contact form -->
+          <div>
+            <p class="section-label" style="margin-bottom:8px;">Sign Up or Send a Message</p>
+            <h2 style="font-family:var(--font-display);font-size:2.2rem;margin-bottom:24px;letter-spacing:0.03em;">Stay Connected</h2>
+
+            <!--
+              Formspree contact form
+              Replace YOUR_FORM_ID with your Formspree form ID
+              Get your ID at formspree.io/register
+            -->
+            <form
+              action="https://formspree.io/f/YOUR_FORM_ID"
+              method="POST"
+              data-formspree
+            >
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="firstName">First Name *</label>
+                  <input type="text" id="firstName" name="first_name" required autocomplete="given-name">
+                </div>
+                <div class="form-group">
+                  <label for="lastName">Last Name</label>
+                  <input type="text" id="lastName" name="last_name" autocomplete="family-name">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="_replyto" required autocomplete="email">
+              </div>
+
+              <div class="form-group">
+                <label for="reason">I'd like to…</label>
+                <select id="reason" name="reason">
+                  <option value="" disabled selected>Choose one…</option>
+                  <option value="sign-up">Sign up for action alerts and events</option>
+                  <option value="get-involved">Find out how to get involved</option>
+                  <option value="question">Ask a question</option>
+                  <option value="idea">Share an idea or suggestion</option>
+                  <option value="media">Media or press inquiry</option>
+                  <option value="other">Something else</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Message (optional)</label>
+                <textarea id="message" name="message" placeholder="Anything you'd like to say…"></textarea>
+              </div>
+
+              <input type="hidden" name="_subject" value="Contact — WeHo Indivisible">
+              <input type="hidden" name="source" value="contact-page">
+
+              <button type="submit" class="btn btn-primary btn-lg">Send</button>
+              <p class="form-notice" style="margin-top:12px;">We'll respond within a few days. Your information stays with us and is never shared or sold.</p>
+            </form>
+          </div>
+
+          <!-- Sidebar -->
+          <div class="contact-sidebar">
+            <h3>Get in Touch Directly</h3>
+            <p>We're a small volunteer group — we read every message. If you'd rather just send an email, that works too.</p>
+
+            <div class="contact-detail">
+              <strong>Email</strong>
+              <a href="mailto:hello@wehoindivisible.org" style="color:var(--purple-mid);">hello@wehoindivisible.org</a>
+            </div>
+            <div class="contact-detail">
+              <strong>Based In</strong>
+              <span>West Hollywood, California</span>
+            </div>
+            <div class="contact-detail">
+              <strong>Meetings</strong>
+              <span>Monthly — West Hollywood Park, 647 N. San Vicente Blvd</span>
+            </div>
+
+            <div style="margin-top:36px;">
+              <p class="section-label" style="margin-bottom:12px;">What You'll Receive</p>
+              <p style="font-size:0.9rem;color:var(--text-mid);line-height:1.68;">If you sign up for our list, expect occasional emails about upcoming events, active calls to action, and group updates. We don't send daily blasts or promotional content. You can unsubscribe at any time.</p>
+            </div>
+
+            <div style="margin-top:36px;padding:20px 22px;background:var(--purple-pale);border-radius:8px;border:1px solid var(--gray-light);">
+              <p class="section-label" style="margin-bottom:10px;">Want to Volunteer?</p>
+              <p style="font-size:0.88rem;color:var(--text-mid);line-height:1.65;margin-bottom:16px;">For more detail on how to get involved — including what roles are available and what we need — visit the Get Involved page.</p>
+              <a href="get-involved.html" class="btn btn-outline" style="font-size:0.83rem;padding:10px 18px;">Get Involved</a>
+            </div>
+
+            <div style="margin-top:24px;padding:20px 22px;background:var(--off-white);border-radius:8px;border:1px solid var(--gray-light);">
+              <p class="section-label" style="margin-bottom:10px;">Affiliated With</p>
+              <p style="font-size:0.88rem;color:var(--text-mid);line-height:1.65;margin-bottom:14px;">West Hollywood Indivisible is a registered local chapter of the national Indivisible movement.</p>
+              <a href="https://indivisible.org" target="_blank" rel="noopener" style="font-size:0.85rem;color:var(--purple-mid);">indivisible.org ↗</a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer-container"></div>
+  <script src="js/main.js"></script>
+</body>
+</html>

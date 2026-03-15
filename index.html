@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="West Hollywood Indivisible — neighbors working to protect democracy. Join us, take action, and hold our elected officials accountable.">
+  <title>West Hollywood Indivisible</title>
+  <link rel="canonical" href="https://wehoindivisible.org/">
+  <meta property="og:title" content="West Hollywood Indivisible">
+  <meta property="og:description" content="Neighbors working to protect democracy in West Hollywood and beyond.">
+  <meta property="og:url" content="https://wehoindivisible.org">
+  <meta name="theme-color" content="#1E0A3C">
+  <!--
+    CookieYes — Free cookie consent
+    1. Sign up at https://www.cookieyes.com/get-started/
+    2. Get your site script and replace the line below
+  -->
+  <!-- <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/YOUR_SITE_ID/script.js"></script> -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <div id="site-nav-container"></div>
+
+  <main id="main-content">
+
+    <!-- ======================== HERO ======================== -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-inner">
+
+          <div>
+            <p class="hero-eyebrow">West Hollywood, California</p>
+            <h1 class="hero-heading">West Hollywood<br>Indivisible</h1>
+            <p class="hero-mission">
+              Indivisible is a nationwide movement of everyday people organizing on the ground in all 50 states to stop the rise of authoritarianism in the United States and to build a real democracy that works for all of us.
+            </p>
+            <div class="hero-actions">
+              <a href="get-involved.html" class="btn btn-primary btn-lg">Get Involved</a>
+              <a href="actions.html" class="btn btn-outline--light btn-lg">This Week's Actions</a>
+            </div>
+          </div>
+
+          <div class="hero-form-card">
+            <p class="hero-form-title">Stay in the Loop</p>
+            <p class="hero-form-sub">Action alerts and event notices. No spam.</p>
+            <form class="hero-form" data-brevo autocomplete="on" novalidate>
+              <div class="form-group">
+                <input type="text" name="firstname" placeholder="First name" required autocomplete="given-name">
+              </div>
+              <div class="form-group">
+                <input type="text" name="lastname" placeholder="Last name" autocomplete="family-name">
+              </div>
+              <div class="form-group">
+                <input type="email" name="email" placeholder="Email address" required autocomplete="email">
+              </div>
+              <div class="form-group">
+                <input type="text" name="zip" placeholder="ZIP code" maxlength="10" inputmode="numeric" autocomplete="postal-code">
+              </div>
+              <div class="form-group" style="display:flex;gap:10px;align-items:flex-start;">
+                <input type="checkbox" name="consent" id="consent-hero" required style="margin-top:4px;flex-shrink:0;accent-color:#CA4948;width:auto;">
+                <label for="consent-hero" style="font-size:0.78rem;color:rgba(255,255,255,0.5);line-height:1.55;text-transform:none;letter-spacing:0;font-weight:400;font-family:'Domine',serif;">
+                  I agree to receive emails from West Hollywood Indivisible. I can unsubscribe at any time.
+                </label>
+              </div>
+              <p class="brevo-msg" style="display:none;"></p>
+              <button type="submit" class="btn btn-primary" style="width:100%;margin-top:4px;">Sign Me Up</button>
+              <p class="form-notice" style="margin-top:10px;">No spam. Action alerts and event notices only.</p>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <hr class="rainbow-divider">
+
+    <!-- ======================== ACTIONS ======================== -->
+    <!-- Populated dynamically from actions.html by main.js (first 3 cards) -->
+    <section class="section section--alt" id="actions-section">
+      <div class="container">
+        <p class="section-label">What You Can Do Now</p>
+        <div class="flex justify-between items-center flex-wrap gap-16" style="margin-bottom:32px;">
+          <h2 class="section-title mb-0">Local Actions</h2>
+          <a href="actions.html" class="btn btn-outline">See All Actions</a>
+        </div>
+        <div class="actions-list" id="actions-list"></div>
+      </div>
+    </section>
+
+    <!-- ======================== UPCOMING EVENTS ======================== -->
+    <!-- Populated dynamically from events.html by main.js -->
+    <section class="section" id="events-section">
+      <div class="container">
+        <p class="section-label">On the Calendar</p>
+        <div class="flex justify-between items-center flex-wrap gap-16" style="margin-bottom:32px;">
+          <h2 class="section-title mb-0">Upcoming Events</h2>
+          <a href="events.html" class="btn btn-outline">See All Events</a>
+        </div>
+        <div class="events-grid" id="events-grid"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="site-footer-container"></div>
+  <script src="js/main.js"></script>
+  <script src="js/brevo-form.js"></script>
+</body>
+</html>
