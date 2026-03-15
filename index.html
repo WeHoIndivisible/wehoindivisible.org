@@ -31,14 +31,38 @@
   #whi-logo-img { height:36px; width:auto; max-width:200px; }
   #whi-logo-div { width:1px; height:28px; background:rgba(255,255,255,0.2); flex-shrink:0; }
   #whi-logo-title { font-family:"Montserrat",sans-serif; font-weight:800; font-size:1rem; color:#fff; text-transform:uppercase; letter-spacing:0.02em; display:block; }
+  #whi-logo-mobile { display:none; font-family:"Montserrat",sans-serif; font-weight:800; font-size:1rem; color:#fff; text-transform:uppercase; letter-spacing:0.02em; }
   #whi-logo-sub { font-family:"Montserrat",sans-serif; font-weight:500; font-size:0.65rem; color:#8AABBF; text-transform:uppercase; letter-spacing:0.12em; display:block; }
   #whi-hamburger { display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:8px; flex-shrink:0; }
   #whi-hamburger span { display:block; width:24px; height:2px; background:#fff; transition:all 0.2s; }
   #whi-mobile-menu { display:none; background:#07131C; border-top:1px solid rgba(255,255,255,0.1); }
   #whi-mobile-menu a { display:block; padding:14px 24px; font-family:"Montserrat",sans-serif; font-weight:600; font-size:0.9rem; color:rgba(255,255,255,0.85); text-decoration:none; text-transform:uppercase; letter-spacing:0.06em; border-bottom:1px solid rgba(255,255,255,0.06); }
   #whi-mobile-menu a:last-child { background:#CA4948; color:#fff; border-bottom:none; }
-  @media (max-width:900px) {
+    @media (max-width:900px) {
     #whi-desktop-links { display:none !important; }
+    #whi-logo-img { display:none !important; }
+    #whi-logo-div { display:none !important; }
+    #whi-logo-sub { display:none !important; }
+    #whi-logo-img { display:none !important; }
+    #whi-logo-title { display:none !important; }
+    #whi-logo-mobile { display:block !important; font-size:1rem !important; }
+    #whi-nav-inner { position:relative !important; overflow:visible !important; }
+    #whi-hamburger {
+      display:flex !important;
+      flex-direction:column !important;
+      justify-content:center !important;
+      gap:5px !important;
+      background:none !important;
+      border:none !important;
+      cursor:pointer !important;
+      padding:8px !important;
+      position:absolute !important;
+      right:16px !important;
+      top:50% !important;
+      transform:translateY(-50%) !important;
+      z-index:9999 !important;
+    }
+  }
     #whi-hamburger { display:flex !important; }
     #whi-logo-div { display:none !important; }
     #whi-logo-sub { display:none !important; }
@@ -61,6 +85,7 @@
         <img id="whi-logo-img" src="https://indivisible.org/wp-content/uploads/2025/11/logo-indivisible-lg.svg" alt="Indivisible" onerror="this.style.display='none'">
         <div id="whi-logo-div"></div>
         <div>
+          <span id="whi-logo-mobile">WeHo Indivisible</span>
           <span id="whi-logo-title">West Hollywood</span>
           <span id="whi-logo-sub">West Hollywood, California</span>
         </div>
@@ -224,8 +249,31 @@ document.addEventListener('click',function(e){
   <script src="js/main.js?v=6"></script>
   <script src="js/brevo-form.js?v=6"></script>
 <style>
-@media (max-width:900px) {
-  #whi-desktop-links { display:none !important; }
+  @media (max-width:900px) {
+    #whi-desktop-links { display:none !important; }
+    #whi-logo-img { display:none !important; }
+    #whi-logo-div { display:none !important; }
+    #whi-logo-sub { display:none !important; }
+    #whi-logo-img { display:none !important; }
+    #whi-logo-title { display:none !important; }
+    #whi-logo-mobile { display:block !important; font-size:1rem !important; }
+    #whi-nav-inner { position:relative !important; overflow:visible !important; }
+    #whi-hamburger {
+      display:flex !important;
+      flex-direction:column !important;
+      justify-content:center !important;
+      gap:5px !important;
+      background:none !important;
+      border:none !important;
+      cursor:pointer !important;
+      padding:8px !important;
+      position:absolute !important;
+      right:16px !important;
+      top:50% !important;
+      transform:translateY(-50%) !important;
+      z-index:9999 !important;
+    }
+  }
   #whi-hamburger { display:flex !important; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:8px; }
   #whi-logo-div { display:none !important; }
   #whi-logo-sub { display:none !important; }
