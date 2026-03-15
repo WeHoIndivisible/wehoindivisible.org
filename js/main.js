@@ -2,19 +2,6 @@
    WEST HOLLYWOOD INDIVISIBLE — main.js
    ========================================= */
 
-/*
-  LOGO NOTE:
-  The nav uses the national Indivisible SVG logo hosted on indivisible.org.
-  Once you have your own chapter logo, replace the <img> src below.
-  The national logo URL is:
-    https://indivisible.org/wp-content/uploads/2025/11/logo-indivisible-lg.svg
-
-  To download and self-host (recommended for reliability):
-    curl -o img/logo-indivisible.svg \
-      https://indivisible.org/wp-content/uploads/2025/11/logo-indivisible-lg.svg
-  Then update the src to: img/logo-indivisible.svg
-*/
-
 /* ---- Cookiebot consent ---- */
 function injectCookiebot() {
   const script = document.createElement('script');
@@ -26,94 +13,49 @@ function injectCookiebot() {
   document.head.prepend(script);
 }
 
-/* ---- Inject critical mobile nav styles (bypasses CSS cache) ---- */
-function injectMobileNavStyles() {
-  const style = document.createElement('style');
-  style.textContent = `
-    @media (max-width: 900px) {
-      .nav-links {
-        display: none !important;
-        position: fixed !important;
-        top: 96px !important;
-        left: 0 !important;
-        right: 0 !important;
-        width: 100% !important;
-        background: #07131C !important;
-        flex-direction: column !important;
-        align-items: stretch !important;
-        padding: 12px 16px !important;
-        gap: 0 !important;
-        border-top: 1px solid rgba(255,255,255,0.1) !important;
-        z-index: 9997 !important;
-        margin: 0 !important;
-      }
-      .nav-links.open {
-        display: flex !important;
-      }
-      .nav-links li {
-        display: block !important;
-        width: 100% !important;
-      }
-      .nav-links a {
-        display: block !important;
-        padding: 14px 20px !important;
-        font-size: 1rem !important;
-        border-bottom: 1px solid rgba(255,255,255,0.06) !important;
-        width: 100% !important;
-      }
-      .nav-hamburger {
-        display: flex !important;
-      }
-      .nav-logo-divider {
-        display: none !important;
-      }
-      .nav-logo-sub {
-        display: none !important;
-      }
-      .nav-logo-main {
-        font-size: 0.95rem !important;
-      }
-      .nav-logo-img {
-        height: 28px !important;
-      }
-    }
-  `;
-  document.head.appendChild(style);
-}
-
+/* ---- Nav & Footer HTML ---- */
 const NAV_HTML = `
-  <div class="rainbow-bar" aria-hidden="true"></div>
-  <nav class="site-nav" aria-label="Main navigation">
-    <div class="nav-inner" style="display:flex;align-items:center;justify-content:space-between;width:100%;max-width:1100px;margin:0 auto;padding:0 20px;">
-      <a href="index.html" class="nav-logo" aria-label="West Hollywood Indivisible — Home" style="display:flex;align-items:center;gap:12px;flex-shrink:0;">
-        <img
-          class="nav-logo-img"
-          src="https://indivisible.org/wp-content/uploads/2025/11/logo-indivisible-lg.svg"
-          alt="Indivisible"
-          onerror="this.style.display='none'"
-          style="height:38px;width:auto;"
-        >
-        <div class="nav-logo-divider" aria-hidden="true"></div>
-        <div class="nav-logo-text">
-          <span class="nav-logo-main">West Hollywood</span>
-          <span class="nav-logo-sub">West Hollywood, California</span>
+  <div id="rainbow-bar" style="position:fixed;top:0;left:0;right:0;height:6px;z-index:1001;background:linear-gradient(to right,#E40303 0%,#E40303 16.666%,#FF8C00 16.666%,#FF8C00 33.333%,#FFED00 33.333%,#FFED00 50%,#008026 50%,#008026 66.666%,#004DFF 66.666%,#004DFF 83.333%,#750787 83.333%,#750787 100%);"></div>
+  <nav id="site-nav" role="navigation" aria-label="Main navigation" style="position:fixed;top:6px;left:0;right:0;height:90px;background:#07131C;z-index:1000;display:flex;align-items:center;">
+    <div style="width:100%;max-width:1100px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;">
+
+      <a href="index.html" id="nav-logo" aria-label="West Hollywood Indivisible home" style="display:flex;align-items:center;gap:12px;text-decoration:none;flex-shrink:0;">
+        <img src="https://indivisible.org/wp-content/uploads/2025/11/logo-indivisible-lg.svg" alt="Indivisible" id="nav-logo-img" style="height:38px;width:auto;" onerror="this.style.display='none'">
+        <div style="width:1px;height:32px;background:rgba(255,255,255,0.2);" id="nav-divider"></div>
+        <div>
+          <div id="nav-title" style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:1.05rem;color:#fff;text-transform:uppercase;letter-spacing:0.02em;">West Hollywood</div>
+          <div id="nav-sub" style="font-family:'Montserrat',sans-serif;font-weight:500;font-size:0.7rem;color:#8AABBF;text-transform:uppercase;letter-spacing:0.12em;">West Hollywood, California</div>
         </div>
       </a>
-      <button class="nav-hamburger" id="navHamburger" aria-label="Toggle navigation" aria-expanded="false" style="display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;flex-shrink:0;">
-        <span style="display:block;width:24px;height:2px;background:#fff;transition:all 0.2s;"></span>
-        <span style="display:block;width:24px;height:2px;background:#fff;transition:all 0.2s;"></span>
-        <span style="display:block;width:24px;height:2px;background:#fff;transition:all 0.2s;"></span>
-      </button>
-      <ul class="nav-links" id="navLinks" role="list">
-        <li><a href="actions.html">Actions</a></li>
-        <li><a href="events.html">Events</a></li>
-        <li><a href="get-involved.html">Get Involved</a></li>
-        <li><a href="representatives.html">Your Reps</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html" class="nav-cta">Sign Up</a></li>
+
+      <ul id="navLinks" role="list" style="display:flex;align-items:center;gap:2px;list-style:none;margin:0;padding:0;">
+        <li><a href="actions.html" class="nav-link">Actions</a></li>
+        <li><a href="events.html" class="nav-link">Events</a></li>
+        <li><a href="get-involved.html" class="nav-link">Get Involved</a></li>
+        <li><a href="representatives.html" class="nav-link">Your Reps</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="contact.html" class="nav-link nav-cta">Sign Up</a></li>
       </ul>
+
+      <button id="navHamburger" aria-label="Open menu" aria-expanded="false" style="display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:8px;flex-shrink:0;">
+        <span class="bar" style="display:block;width:24px;height:2px;background:#fff;transition:all 0.2s ease;"></span>
+        <span class="bar" style="display:block;width:24px;height:2px;background:#fff;transition:all 0.2s ease;"></span>
+        <span class="bar" style="display:block;width:24px;height:2px;background:#fff;transition:all 0.2s ease;"></span>
+      </button>
+
     </div>
   </nav>
+
+  <div id="mobile-menu" style="display:none;position:fixed;top:96px;left:0;right:0;background:#07131C;z-index:999;border-top:1px solid rgba(255,255,255,0.1);">
+    <ul style="list-style:none;margin:0;padding:8px 0;">
+      <li><a href="actions.html" style="display:block;padding:14px 24px;font-family:'Montserrat',sans-serif;font-weight:600;font-size:0.9rem;color:rgba(255,255,255,0.8);text-decoration:none;text-transform:uppercase;letter-spacing:0.06em;border-bottom:1px solid rgba(255,255,255,0.06);">Actions</a></li>
+      <li><a href="events.html" style="display:block;padding:14px 24px;font-family:'Montserrat',sans-serif;font-weight:600;font-size:0.9rem;color:rgba(255,255,255,0.8);text-decoration:none;text-transform:uppercase;letter-spacing:0.06em;border-bottom:1px solid rgba(255,255,255,0.06);">Events</a></li>
+      <li><a href="get-involved.html" style="display:block;padding:14px 24px;font-family:'Montserrat',sans-serif;font-weight:600;font-size:0.9rem;color:rgba(255,255,255,0.8);text-decoration:none;text-transform:uppercase;letter-spacing:0.06em;border-bottom:1px solid rgba(255,255,255,0.06);">Get Involved</a></li>
+      <li><a href="representatives.html" style="display:block;padding:14px 24px;font-family:'Montserrat',sans-serif;font-weight:600;font-size:0.9rem;color:rgba(255,255,255,0.8);text-decoration:none;text-transform:uppercase;letter-spacing:0.06em;border-bottom:1px solid rgba(255,255,255,0.06);">Your Reps</a></li>
+      <li><a href="about.html" style="display:block;padding:14px 24px;font-family:'Montserrat',sans-serif;font-weight:600;font-size:0.9rem;color:rgba(255,255,255,0.8);text-decoration:none;text-transform:uppercase;letter-spacing:0.06em;border-bottom:1px solid rgba(255,255,255,0.06);">About</a></li>
+      <li><a href="contact.html" style="display:block;padding:14px 24px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.9rem;color:#fff;text-decoration:none;text-transform:uppercase;letter-spacing:0.06em;background:#CA4948;">Sign Up</a></li>
+    </ul>
+  </div>
 `;
 
 const FOOTER_HTML = `
@@ -121,12 +63,7 @@ const FOOTER_HTML = `
     <div class="container">
       <div class="footer-inner">
         <div class="footer-brand">
-          <img
-            class="footer-brand-logo"
-            src="https://indivisible.org/wp-content/uploads/2025/11/logo-indivisible-lg.svg"
-            alt="Indivisible"
-            onerror="this.style.display='none'"
-          >
+          <img class="footer-brand-logo" src="https://indivisible.org/wp-content/uploads/2025/11/logo-indivisible-lg.svg" alt="Indivisible" onerror="this.style.display='none'">
           <span class="footer-brand-name">West Hollywood</span>
           <span class="footer-brand-sub">West Hollywood, California</span>
           <p class="footer-tagline">A small group of neighbors working to protect democracy in our city and beyond. Whatever time you have, it counts.</p>
@@ -155,13 +92,14 @@ const FOOTER_HTML = `
         </div>
       </div>
       <div class="footer-bottom">
-        <p class="footer-legal">&copy; 2025 West Hollywood Indivisible. All rights reserved.</p>
+        <p class="footer-legal">&copy; 2026 West Hollywood Indivisible. All rights reserved.</p>
         <p class="footer-affil">A local chapter of <a href="https://indivisible.org" target="_blank" rel="noopener">Indivisible</a>. Not affiliated with any political party or candidate.</p>
       </div>
     </div>
   </footer>
 `;
 
+/* ---- Inject shared elements ---- */
 function injectSharedElements() {
   const navContainer = document.getElementById('site-nav-container');
   if (navContainer) navContainer.innerHTML = NAV_HTML;
@@ -169,182 +107,187 @@ function injectSharedElements() {
   const footerContainer = document.getElementById('site-footer-container');
   if (footerContainer) footerContainer.innerHTML = FOOTER_HTML;
 
-  // Mark active nav link — works for both local files and served paths
+  // Style desktop nav links
+  document.querySelectorAll('.nav-link').forEach(a => {
+    a.style.cssText = "font-family:'Montserrat',sans-serif;font-weight:600;font-size:0.82rem;letter-spacing:0.06em;text-transform:uppercase;color:rgba(255,255,255,0.75);padding:8px 13px;border-radius:4px;text-decoration:none;white-space:nowrap;transition:all 0.2s;";
+    a.addEventListener('mouseenter', () => { a.style.color='#fff'; a.style.background='rgba(255,255,255,0.08)'; });
+    a.addEventListener('mouseleave', () => { a.style.color='rgba(255,255,255,0.75)'; a.style.background=''; });
+  });
+  const cta = document.querySelector('.nav-cta');
+  if (cta) {
+    cta.style.cssText = "font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.82rem;letter-spacing:0.06em;text-transform:uppercase;color:#fff;padding:8px 18px;border-radius:4px;text-decoration:none;background:#CA4948;white-space:nowrap;";
+    cta.addEventListener('mouseenter', () => { cta.style.background='#A83736'; });
+    cta.addEventListener('mouseleave', () => { cta.style.background='#CA4948'; });
+  }
+
+  // Mark active link
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-  document.querySelectorAll('.nav-links a').forEach(link => {
-    const href = link.getAttribute('href');
-    const linkPage = href.split('/').pop().split('#')[0] || 'index.html';
-    if (linkPage === currentPage) link.classList.add('active');
+  document.querySelectorAll('.nav-link').forEach(link => {
+    const linkPage = link.getAttribute('href').split('/').pop().split('#')[0];
+    if (linkPage === currentPage) { link.style.color = '#fff'; link.style.background = 'rgba(255,255,255,0.08)'; }
   });
 
-  // Mobile hamburger
-  const hamburger = document.getElementById('navHamburger');
-  const navLinks  = document.getElementById('navLinks');
-  if (hamburger && navLinks) {
-    hamburger.addEventListener('click', () => {
-      const isOpen = navLinks.classList.toggle('open');
-      hamburger.classList.toggle('open', isOpen);
-      hamburger.setAttribute('aria-expanded', String(isOpen));
-      // Animate spans
-      const spans = hamburger.querySelectorAll('span');
-      if (isOpen) {
-        spans[0].style.transform = 'translateY(7px) rotate(45deg)';
-        spans[1].style.opacity = '0';
-        spans[2].style.transform = 'translateY(-7px) rotate(-45deg)';
-      } else {
-        spans[0].style.transform = '';
-        spans[1].style.opacity = '';
-        spans[2].style.transform = '';
-      }
-    });
-    document.addEventListener('click', e => {
-      if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
-        navLinks.classList.remove('open');
-        hamburger.classList.remove('open');
-        hamburger.setAttribute('aria-expanded', 'false');
-        hamburger.querySelectorAll('span').forEach(s => {
-          s.style.transform = ''; s.style.opacity = '';
-        });
-      }
-    });
+  // Mobile nav — pure JS
+  const hamburger   = document.getElementById('navHamburger');
+  const desktopLinks = document.getElementById('navLinks');
+  const mobileMenu  = document.getElementById('mobile-menu');
+  const navDivider  = document.getElementById('nav-divider');
+  const navSub      = document.getElementById('nav-sub');
+  const navLogoImg  = document.getElementById('nav-logo-img');
+  let menuOpen = false;
+
+  function applyLayout() {
+    const mobile = window.innerWidth <= 900;
+    hamburger.style.display      = mobile ? 'flex' : 'none';
+    desktopLinks.style.display   = mobile ? 'none' : 'flex';
+    if (navDivider) navDivider.style.display = mobile ? 'none' : 'block';
+    if (navSub)     navSub.style.display     = mobile ? 'none' : 'block';
+    if (navLogoImg) navLogoImg.style.height  = mobile ? '28px' : '38px';
+    if (!mobile && menuOpen) {
+      mobileMenu.style.display = 'none';
+      menuOpen = false;
+    }
   }
+
+  applyLayout();
+  window.addEventListener('resize', applyLayout);
+
+  hamburger.addEventListener('click', e => {
+    e.stopPropagation();
+    menuOpen = !menuOpen;
+    mobileMenu.style.display = menuOpen ? 'block' : 'none';
+    hamburger.setAttribute('aria-expanded', String(menuOpen));
+    const bars = hamburger.querySelectorAll('.bar');
+    if (menuOpen) {
+      bars[0].style.transform = 'translateY(7px) rotate(45deg)';
+      bars[1].style.opacity   = '0';
+      bars[2].style.transform = 'translateY(-7px) rotate(-45deg)';
+    } else {
+      bars[0].style.transform = '';
+      bars[1].style.opacity   = '';
+      bars[2].style.transform = '';
+    }
+  });
+
+  document.addEventListener('click', e => {
+    if (menuOpen && !mobileMenu.contains(e.target) && !hamburger.contains(e.target)) {
+      menuOpen = false;
+      mobileMenu.style.display = 'none';
+      hamburger.setAttribute('aria-expanded', 'false');
+      hamburger.querySelectorAll('.bar').forEach(b => { b.style.transform = ''; b.style.opacity = ''; });
+    }
+  });
 }
 
-/* ---- Formspree async submission ---- */
+/* ---- Brevo form submission ---- */
 function initForms() {
-  document.querySelectorAll('form[data-formspree]').forEach(form => {
+  document.querySelectorAll('form[data-brevo]').forEach(form => {
     form.addEventListener('submit', async e => {
       e.preventDefault();
       const btn = form.querySelector('[type="submit"]');
       const original = btn.textContent;
-      btn.textContent = 'Sending…';
+      btn.textContent = 'Submitting...';
       btn.disabled = true;
+      const msgEl = form.querySelector('.brevo-msg');
+
+      const payload = {
+        email:      form.querySelector('input[name="email"]').value.trim(),
+        attributes: {
+          FIRSTNAME: (form.querySelector('input[name="firstname"]') || {}).value?.trim() || '',
+          LASTNAME:  (form.querySelector('input[name="lastname"]')  || {}).value?.trim() || '',
+          ZIP:       (form.querySelector('input[name="zip"]')       || {}).value?.trim() || ''
+        },
+        listIds:      [3],
+        updateEnabled: true
+      };
 
       try {
-        const res = await fetch(form.action, {
+        const res = await fetch('https://api.brevo.com/v3/contacts', {
           method: 'POST',
-          body: new FormData(form),
-          headers: { Accept: 'application/json' }
+          headers: { 'Content-Type': 'application/json', 'api-key': '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' },
+          body: JSON.stringify(payload)
         });
-        if (res.ok) {
-          form.innerHTML = '<p class="form-success">✓ Got it — we\'ll be in touch soon.</p>';
+        if (res.status === 201 || res.status === 204) {
+          form.innerHTML = '<p class="form-success">You\'re on the list. We\'ll be in touch.</p>';
         } else {
-          throw new Error('Non-OK response');
+          throw new Error('status ' + res.status);
         }
-      } catch {
+      } catch (err) {
         btn.textContent = original;
         btn.disabled = false;
-        let err = form.querySelector('.form-error');
-        if (!err) {
-          err = document.createElement('p');
-          err.className = 'form-error';
-          form.appendChild(err);
-        }
-        err.textContent = 'Something went wrong. Email us directly at hello@wehoindivisible.org.';
+        if (msgEl) { msgEl.textContent = 'Something went wrong. Email us at hello@wehoindivisible.org.'; msgEl.style.display = 'block'; }
       }
     });
   });
 }
 
-/* ---- Rep ZIP lookup ---- */
+/* ---- Rep lookup ---- */
 function initRepLookup() {
   const form = document.getElementById('repLookupForm');
   if (!form) return;
   form.addEventListener('submit', e => {
     e.preventDefault();
     const zip = document.getElementById('repZip').value.trim();
-    if (zip) {
-      window.open(`https://www.commoncause.org/find-your-representative/?zip=${encodeURIComponent(zip)}`, '_blank', 'noopener noreferrer');
-    }
+    if (zip) window.open(`https://www.commoncause.org/find-your-representative/?zip=${encodeURIComponent(zip)}`, '_blank', 'noopener');
   });
 }
 
-/* ---- Actions: pull first 3 cards from actions.html ---- */
+/* ---- Pull first 3 actions from actions.html ---- */
 async function loadActions() {
   const list = document.getElementById('actions-list');
   if (!list) return;
-
   try {
-    const res  = await fetch('actions.html');
-    const text = await res.text();
-    const doc  = new DOMParser().parseFromString(text, 'text/html');
-
+    const doc = new DOMParser().parseFromString(await (await fetch('actions.html')).text(), 'text/html');
     const cards = Array.from(doc.querySelectorAll('.action-card')).slice(0, 3);
-    if (!cards.length) throw new Error('No action cards found');
-
+    if (!cards.length) throw new Error('none');
     list.innerHTML = cards.map(card => {
-      const id = card.id || '';
-      // Trim to just title, urgency, first body paragraph, and a single link to the full page
-      const title   = card.querySelector('.action-card-title')?.textContent?.trim() || '';
-      const urgency = card.querySelector('.urgency')?.outerHTML || '';
-      const body    = card.querySelector('.action-card-body')?.textContent?.trim() || '';
-      const borderColor = card.style.borderLeftColor || 'var(--invis-dark-blue)';
-
-      return `
-        <article class="action-card" style="border-left-color:${borderColor};">
-          <div class="action-card-header">
-            <h3 class="action-card-title">${title}</h3>
-            ${urgency}
-          </div>
-          <p class="action-card-body">${body}</p>
-          <div class="action-links">
-            <a href="actions.html${id ? '#' + id : ''}" class="btn btn-outline">Read More &amp; Take Action</a>
-          </div>
-        </article>`;
+      const id    = card.id || '';
+      const title = card.querySelector('.action-card-title')?.textContent?.trim() || '';
+      const urg   = card.querySelector('.urgency')?.outerHTML || '';
+      const body  = card.querySelector('.action-card-body')?.textContent?.trim() || '';
+      const color = card.style.borderLeftColor || 'var(--invis-dark-blue)';
+      return `<article class="action-card" style="border-left-color:${color};">
+        <div class="action-card-header"><h3 class="action-card-title">${title}</h3>${urg}</div>
+        <p class="action-card-body">${body}</p>
+        <div class="action-links"><a href="actions.html${id ? '#'+id : ''}" class="btn btn-outline">Read More &amp; Take Action</a></div>
+      </article>`;
     }).join('');
-
-  } catch (err) {
-    console.warn('Actions load failed:', err);
-    const section = document.getElementById('actions-section');
-    if (section) section.style.display = 'none';
+  } catch {
+    const s = document.getElementById('actions-section');
+    if (s) s.style.display = 'none';
   }
 }
 
-/* ---- Events: pull cards from events.html ---- */
+/* ---- Pull events from events.html ---- */
 async function loadEvents() {
   const grid = document.getElementById('events-grid');
   if (!grid) return;
-
   try {
-    const res  = await fetch('events.html');
-    const text = await res.text();
-    const doc  = new DOMParser().parseFromString(text, 'text/html');
-
+    const doc = new DOMParser().parseFromString(await (await fetch('events.html')).text(), 'text/html');
     const cards = Array.from(doc.querySelectorAll('.event-card'));
-    if (!cards.length) throw new Error('No event cards found');
-
+    if (!cards.length) throw new Error('none');
     grid.innerHTML = cards.map(card => {
-      // Fix any relative links to point to events.html#id
       const id = card.id || '';
       card.querySelectorAll('a[href]').forEach(a => {
         const href = a.getAttribute('href');
-        // If it's a mailto or external link, leave it alone
-        if (!href.startsWith('mailto:') && !href.startsWith('http')) {
-          a.setAttribute('href', `events.html${id ? '#' + id : ''}`);
-        }
+        if (!href.startsWith('mailto:') && !href.startsWith('http'))
+          a.setAttribute('href', `events.html${id ? '#'+id : ''}`);
       });
-      // Replace h2 with h3 for correct heading hierarchy on homepage
       card.querySelectorAll('h2.event-card-title').forEach(h => {
         const h3 = doc.createElement('h3');
-        h3.className = h.className;
-        h3.innerHTML = h.innerHTML;
-        h.replaceWith(h3);
+        h3.className = h.className; h3.innerHTML = h.innerHTML; h.replaceWith(h3);
       });
       return card.outerHTML;
     }).join('');
-
-  } catch (err) {
-    console.warn('Events load failed:', err);
-    // Hide section cleanly if fetch fails
-    const section = document.getElementById('events-section');
-    if (section) section.style.display = 'none';
+  } catch {
+    const s = document.getElementById('events-section');
+    if (s) s.style.display = 'none';
   }
 }
 
 /* ---- Init ---- */
 document.addEventListener('DOMContentLoaded', () => {
   injectCookiebot();
-  injectMobileNavStyles();
   injectSharedElements();
   initForms();
   initRepLookup();
