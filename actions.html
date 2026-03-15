@@ -10,11 +10,96 @@
   <!-- <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/YOUR_SITE_ID/script.js"></script> -->
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="apple-touch-icon" href="favicon.ico">
-  <link rel="stylesheet" href="css/style.css?v=3">
+  <link rel="stylesheet" href="css/style.css?v=6">
+<style id="nav-mobile-css">
+  #whi-nav-bar { position:fixed; top:0; left:0; right:0; z-index:1000; }
+  #whi-rainbow { height:6px; background:linear-gradient(to right,#E40303 0%,#E40303 16.666%,#FF8C00 16.666%,#FF8C00 33.333%,#FFED00 33.333%,#FFED00 50%,#008026 50%,#008026 66.666%,#004DFF 66.666%,#004DFF 83.333%,#750787 83.333%,#750787 100%); }
+  #whi-nav { height:80px; background:#07131C; display:flex; align-items:center; }
+  #whi-nav-inner { width:100%; max-width:1100px; margin:0 auto; padding:0 20px; display:flex; align-items:center; justify-content:space-between; }
+  #whi-logo { display:flex; align-items:center; gap:12px; text-decoration:none; flex-shrink:0; }
+  #whi-logo-img { height:36px; width:auto; }
+  #whi-logo-div { width:1px; height:28px; background:rgba(255,255,255,0.2); flex-shrink:0; }
+  #whi-logo-title { font-family:"Montserrat",sans-serif; font-weight:800; font-size:1rem; color:#fff; text-transform:uppercase; letter-spacing:0.02em; display:block; }
+  #whi-logo-sub { font-family:"Montserrat",sans-serif; font-weight:500; font-size:0.65rem; color:#8AABBF; text-transform:uppercase; letter-spacing:0.12em; display:block; }
+  #whi-desktop-links { display:flex; align-items:center; gap:2px; list-style:none; margin:0; padding:0; }
+  #whi-desktop-links a { font-family:"Montserrat",sans-serif; font-weight:600; font-size:0.82rem; letter-spacing:0.06em; text-transform:uppercase; color:rgba(255,255,255,0.75); padding:8px 12px; border-radius:4px; text-decoration:none; white-space:nowrap; }
+  #whi-desktop-links a:hover { color:#fff; background:rgba(255,255,255,0.08); }
+  #whi-desktop-links .whi-cta { background:#CA4948; color:#fff !important; padding:8px 16px; }
+  #whi-desktop-links .whi-cta:hover { background:#A83736; }
+  #whi-hamburger { display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:8px; flex-shrink:0; }
+  #whi-hamburger span { display:block; width:24px; height:2px; background:#fff; transition:all 0.2s; }
+  #whi-mobile-menu { display:none; background:#07131C; border-top:1px solid rgba(255,255,255,0.1); }
+  #whi-mobile-menu a { display:block; padding:14px 24px; font-family:"Montserrat",sans-serif; font-weight:600; font-size:0.9rem; color:rgba(255,255,255,0.85); text-decoration:none; text-transform:uppercase; letter-spacing:0.06em; border-bottom:1px solid rgba(255,255,255,0.06); }
+  #whi-mobile-menu a:last-child { background:#CA4948; color:#fff; border-bottom:none; }
+  @media (max-width:900px) {
+    #whi-desktop-links { display:none; }
+    #whi-hamburger { display:flex; }
+    #whi-logo-div { display:none; }
+    #whi-logo-sub { display:none; }
+    #whi-logo-img { height:28px; }
+  }
+</style>
+<style>body{padding-top:86px!important;}</style>
 </head>
 <body>
+<div id="whi-nav-bar">
+  <div id="whi-rainbow"></div>
+  <nav id="whi-nav" aria-label="Main navigation">
+    <div id="whi-nav-inner">
+      <a href="index.html" id="whi-logo" aria-label="West Hollywood Indivisible home">
+        <img id="whi-logo-img" src="https://indivisible.org/wp-content/uploads/2025/11/logo-indivisible-lg.svg" alt="Indivisible" onerror="this.style.display='none'">
+        <div id="whi-logo-div"></div>
+        <div>
+          <span id="whi-logo-title">West Hollywood</span>
+          <span id="whi-logo-sub">West Hollywood, California</span>
+        </div>
+      </a>
+      <ul id="whi-desktop-links" role="list">
+        <li><a href="actions.html">Actions</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="get-involved.html">Get Involved</a></li>
+        <li><a href="representatives.html">Your Reps</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="whi-cta">Sign Up</a></li>
+      </ul>
+      <button id="whi-hamburger" onclick="whiMenuToggle()" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div id="whi-mobile-menu">
+    <a href="actions.html">Actions</a>
+    <a href="events.html">Events</a>
+    <a href="get-involved.html">Get Involved</a>
+    <a href="representatives.html">Your Reps</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Sign Up</a>
+  </div>
+</div>
+<script>
+function whiMenuToggle(){
+  var m=document.getElementById('whi-mobile-menu');
+  var b=document.getElementById('whi-hamburger');
+  var s=b.querySelectorAll('span');
+  var open=m.style.display==='block';
+  m.style.display=open?'none':'block';
+  b.setAttribute('aria-expanded',String(!open));
+  s[0].style.transform=open?'':'translateY(7px) rotate(45deg)';
+  s[1].style.opacity=open?'':'0';
+  s[2].style.transform=open?'':'translateY(-7px) rotate(-45deg)';
+}
+document.addEventListener('click',function(e){
+  var b=document.getElementById('whi-hamburger');
+  var m=document.getElementById('whi-mobile-menu');
+  if(b&&m&&!b.contains(e.target)&&!m.contains(e.target)){
+    m.style.display='none';
+    b.setAttribute('aria-expanded','false');
+    var s=b.querySelectorAll('span');
+    s[0].style.transform='';s[1].style.opacity='';s[2].style.transform='';
+  }
+});
+</script>
   <a href="#main-content" class="skip-link">Skip to main content</a>
-  <div id="site-nav-container"></div>
 
   <div class="page-hero">
     <div class="container">
@@ -54,14 +139,14 @@
               West Hollywood City Council introduced an ICE-Free Zones measure at the March 2 meeting, following the City of Los Angeles and dozens of other cities across the country. The proposal would prohibit immigration enforcement operations on city-owned property without a judicial warrant. It has not passed yet.
             </p>
             <p class="action-card-body" style="margin-top:-10px;">
-              You can help move it forward in two ways: submit written public comment before the next council meeting, or show up to speak in person during public comment. The council meets at 625 N. San Vicente Blvd. Comments can be emailed in advance to publiccomment@weho.org.
+              You can help move it forward in two ways: submit written public comment before the next council meeting, or show up to speak in person during public comment. The council meets at 625 N. San Vicente Blvd. Comments can be emailed in advance to <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="aededbccc2c7cdcdc1c3c3cbc0daeed9cbc6c180c1dcc9">[email&#160;protected]</a>.
             </p>
             <div class="script-box">
               <p class="script-box-label">Sample Comment</p>
               <p>"My name is [YOUR NAME] and I am a West Hollywood resident. I am writing in support of the proposed ICE-Free Zones measure. West Hollywood has always been a sanctuary city in spirit. This measure makes that commitment concrete and protects all members of our community. I urge the Council to pass it."</p>
             </div>
             <div class="action-links">
-              <a href="mailto:publiccomment@weho.org?subject=Support%20for%20ICE-Free%20Zones%20Measure" class="btn btn-primary">Email the Council</a>
+              <a href="/cdn-cgi/l/email-protection#324247505e5b51515d5f5f575c467245575a5d1c5d40550d414750585751460f614742425d4046170002545d401700027b71771f74405757170002685d5c57411700027f575341474057" class="btn btn-primary">Email the Council</a>
               <a href="https://www.weho.org/city-government/city-council" target="_blank" rel="noopener" class="btn btn-outline">WeHo City Council &#8599;</a>
               <a href="https://www.weho.org/calendar" target="_blank" rel="noopener" class="btn btn-outline">Meeting Calendar &#8599;</a>
             </div>
@@ -82,7 +167,7 @@
             <div class="script-box">
               <p class="script-box-label">Sample Email to Metro</p>
               <p>
-                <strong>To:</strong> klinenorth@metro.net<br>
+                <strong>To:</strong> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a7cccbcec9c2c9c8d5d3cfe7cac2d3d5c889c9c2d3">[email&#160;protected]</a><br>
                 <strong>Subject:</strong> Support for San Vicente-Fairfax Alignment<br><br>
                 I am a West Hollywood resident writing in support of the San Vicente-Fairfax alignment for the K Line Northern Extension. This route would serve far more residents than the alternative, bring transit access to major employment and medical centers, and make good on the investment WeHo voters made when 86% of us approved Measure M. Please select the San Vicente-Fairfax route.<br><br>
                 [YOUR NAME]<br>
@@ -90,7 +175,7 @@
               </p>
             </div>
             <div class="action-links">
-              <a href="mailto:klinenorth@metro.net?subject=Support%20for%20San%20Vicente-Fairfax%20Alignment" class="btn btn-primary">Email Metro</a>
+              <a href="/cdn-cgi/l/email-protection#d3b8bfbabdb6bdbca1a7bb93beb6a7a1bcfdbdb6a7eca0a6b1b9b6b0a7ee80a6a3a3bca1a7f6e1e3b5bca1f6e1e380b2bdf6e1e385bab0b6bda7b6fe95b2baa1b5b2abf6e1e392bfbab4bdbeb6bda7" class="btn btn-primary">Email Metro</a>
               <a href="https://metro.weho.org" target="_blank" rel="noopener" class="btn btn-outline">WeHo Metro Info &#8599;</a>
             </div>
           </article>
@@ -105,14 +190,14 @@
               Every West Hollywood City Council meeting includes a public comment period open to all residents. It is one of the most direct levers available to people who live here. You do not need to be an expert, affiliated with any organization, or prepared with anything elaborate. Three minutes, your name, and what you want the council to do.
             </p>
             <p class="action-card-body" style="margin-top:-10px;">
-              Council meets at 625 N. San Vicente Blvd., typically on the first and third Monday of each month at 6 p.m. If you cannot attend in person, written comment can be submitted in advance to publiccomment@weho.org. The city calendar is at weho.org/calendar.
+              Council meets at 625 N. San Vicente Blvd., typically on the first and third Monday of each month at 6 p.m. If you cannot attend in person, written comment can be submitted in advance to <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b0c0c5d2dcd9d3d3dfddddd5dec4f0c7d5d8df9edfc2d7">[email&#160;protected]</a>. The city calendar is at weho.org/calendar.
             </p>
             <div class="script-box">
               <p class="script-box-label">How Public Comment Works</p>
               <p>Arrive before the meeting starts and sign up to speak at the clerk's table. When your name is called, approach the podium, state your name and that you are a resident, and make your comment. You have three minutes. Written comments submitted by email before the meeting are read into the record.</p>
             </div>
             <div class="action-links">
-              <a href="mailto:publiccomment@weho.org" class="btn btn-primary">Submit Written Comment</a>
+              <a href="/cdn-cgi/l/email-protection#88f8fdeae4e1ebebe7e5e5ede6fcc8ffede0e7a6e7faef" class="btn btn-primary">Submit Written Comment</a>
               <a href="https://www.weho.org/calendar" target="_blank" rel="noopener" class="btn btn-outline">Meeting Schedule &#8599;</a>
               <a href="https://www.weho.org/city-government/city-council" target="_blank" rel="noopener" class="btn btn-outline">City Council &#8599;</a>
             </div>
@@ -147,22 +232,7 @@
               West Hollywood has long positioned itself as a sanctuary for LGBTQ+ people and immigrants. That identity is under direct pressure right now. One of the most useful things you can do is connect people in your network to resources: the city's Transgender Resource Guide, the LA LGBT Center's legal and social services, and local immigrant defense organizations.
             </p>
             <p class="action-card-body" style="margin-top:-10px;">
-              If you know someone who needs help, or if you work with an organization that does this work, we want to connect with you. Email us at hello@wehoindivisible.org.
+              If you know someone who needs help, or if you work with an organization that does this work, we want to connect with you. Email us at <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="147c7178787b5463717c7b7d7a707d627d677d7678713a7b6673">[email&#160;protected]</a>.
             </p>
             <div class="action-links">
-              <a href="https://www.weho.org/services/human-services/transgender-resources" target="_blank" rel="noopener" class="btn btn-outline">WeHo Trans Resource Guide &#8599;</a>
-              <a href="https://lalgbtcenter.org" target="_blank" rel="noopener" class="btn btn-outline">LA LGBT Center &#8599;</a>
-              <a href="https://www.immdefense.org" target="_blank" rel="noopener" class="btn btn-outline">Immigrant Defense Project &#8599;</a>
-              <a href="mailto:hello@wehoindivisible.org?subject=Community%20Resources" class="btn btn-primary">Get in Touch</a>
-            </div>
-          </article>
-
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <div id="site-footer-container"></div>
-  <script src="js/main.js?v=3"></script>
-</body>
-</html>
+              <a href="https://www.we
