@@ -8,6 +8,7 @@
   <link rel="canonical" href="https://wehoindivisible.org/contact.html">
   <meta name="theme-color" content="#1E0A3C">
   <!-- <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/YOUR_SITE_ID/script.js"></script> -->
+  <link rel="icon" href="favicon.ico">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -33,55 +34,34 @@
             <p class="section-label" style="margin-bottom:8px;">Sign Up or Send a Message</p>
             <h2 style="font-family:var(--font-display);font-size:2.2rem;margin-bottom:24px;letter-spacing:0.03em;">Stay Connected</h2>
 
-            <!--
-              Formspree contact form
-              Replace YOUR_FORM_ID with your Formspree form ID
-              Get your ID at formspree.io/register
-            -->
-            <form
-              action="https://formspree.io/f/YOUR_FORM_ID"
-              method="POST"
-              data-formspree
-            >
+            <form data-brevo autocomplete="on" novalidate>
               <div class="form-row">
                 <div class="form-group">
-                  <label for="firstName">First Name *</label>
-                  <input type="text" id="firstName" name="first_name" required autocomplete="given-name">
+                  <label for="firstname-contact">First Name *</label>
+                  <input type="text" id="firstname-contact" name="firstname" required autocomplete="given-name">
                 </div>
                 <div class="form-group">
-                  <label for="lastName">Last Name</label>
-                  <input type="text" id="lastName" name="last_name" autocomplete="family-name">
+                  <label for="lastname-contact">Last Name</label>
+                  <input type="text" id="lastname-contact" name="lastname" autocomplete="family-name">
                 </div>
               </div>
-
               <div class="form-group">
-                <label for="email">Email Address *</label>
-                <input type="email" id="email" name="_replyto" required autocomplete="email">
+                <label for="email-contact">Email Address *</label>
+                <input type="email" id="email-contact" name="email" required autocomplete="email">
               </div>
-
               <div class="form-group">
-                <label for="reason">I'd like to…</label>
-                <select id="reason" name="reason">
-                  <option value="" disabled selected>Choose one…</option>
-                  <option value="sign-up">Sign up for action alerts and events</option>
-                  <option value="get-involved">Find out how to get involved</option>
-                  <option value="question">Ask a question</option>
-                  <option value="idea">Share an idea or suggestion</option>
-                  <option value="media">Media or press inquiry</option>
-                  <option value="other">Something else</option>
-                </select>
+                <label for="zip-contact">ZIP Code</label>
+                <input type="text" id="zip-contact" name="zip" maxlength="10" inputmode="numeric" autocomplete="postal-code">
               </div>
-
-              <div class="form-group">
-                <label for="message">Message (optional)</label>
-                <textarea id="message" name="message" placeholder="Anything you'd like to say…"></textarea>
+              <div class="form-group" style="display:flex;gap:10px;align-items:flex-start;margin-top:4px;">
+                <input type="checkbox" name="consent" id="consent-contact" required style="margin-top:4px;flex-shrink:0;accent-color:#CA4948;">
+                <label for="consent-contact" style="font-size:0.82rem;color:var(--text-light);line-height:1.6;text-transform:none;letter-spacing:0;font-weight:400;font-family:'Domine',serif;">
+                  I agree to receive emails from West Hollywood Indivisible. I understand I can unsubscribe at any time.
+                </label>
               </div>
-
-              <input type="hidden" name="_subject" value="Contact — WeHo Indivisible">
-              <input type="hidden" name="source" value="contact-page">
-
-              <button type="submit" class="btn btn-primary btn-lg">Send</button>
-              <p class="form-notice" style="margin-top:12px;">We'll respond within a few days. Your information stays with us and is never shared or sold.</p>
+              <p class="brevo-msg" style="display:none;margin-top:12px;"></p>
+              <button type="submit" class="btn btn-primary btn-lg" style="margin-top:20px;">Sign Up</button>
+              <p class="form-notice" style="margin-top:12px;">Your information stays with us and is never shared or sold.</p>
             </form>
           </div>
 
@@ -128,5 +108,6 @@
 
   <div id="site-footer-container"></div>
   <script src="js/main.js"></script>
+  <script src="js/brevo-form.js"></script>
 </body>
 </html>
