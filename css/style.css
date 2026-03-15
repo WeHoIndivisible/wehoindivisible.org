@@ -51,11 +51,12 @@ html { scroll-behavior: smooth; }
 body {
   font-family: var(--font-body);
   color: var(--text-dark);
-  background: var(--white);
+  background: var(--invis-black);
   line-height: 1.6;
   padding-top: calc(var(--nav-height) + var(--rainbow-h));
 }
 img { max-width: 100%; height: auto; display: block; }
+main { display: block; margin: 0; padding: 0; }
 a { color: var(--invis-dark-blue); text-decoration: none; transition: color var(--transition); }
 a:hover { color: var(--invis-red); }
 
@@ -487,7 +488,7 @@ textarea { min-height: 120px; resize: vertical; }
   .form-row { grid-template-columns: 1fr; }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .nav-links {
     display: none; position: fixed;
     top: calc(var(--nav-height) + var(--rainbow-h));
@@ -495,6 +496,7 @@ textarea { min-height: 120px; resize: vertical; }
     flex-direction: column; align-items: stretch;
     padding: 12px 16px; gap: 4px;
     border-top: 1px solid rgba(255,255,255,0.08);
+    z-index: 998;
   }
   .nav-links.open { display: flex; }
   .nav-links a { padding: 12px 16px; font-size: 0.95rem; }
