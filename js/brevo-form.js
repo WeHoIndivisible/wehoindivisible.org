@@ -18,7 +18,7 @@
 
    ===================================================== */
 
-const BREVO_API_KEY = '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';
+const BREVO_API_KEY = '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';
 const BREVO_LIST_ID = 3;
 
 async function handleBrevoSubmit(e) {
