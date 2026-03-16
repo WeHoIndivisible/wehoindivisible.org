@@ -70,7 +70,7 @@ a:hover { color: var(--invis-red); }
 
 /* --- Layout --- */
 .container { max-width: var(--container-max); margin: 0 auto; padding: 0 24px; }
-.section { padding: var(--section-pad) 0; }
+.section { padding: var(--section-pad) 0; background: var(--white); }
 .section--alt { background: var(--off-white); }
 
 /* --- Rainbow Bar (fixed, top) --- */
