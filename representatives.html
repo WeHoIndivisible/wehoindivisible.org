@@ -3,161 +3,155 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Find your elected representatives in West Hollywood — federal, state, and city contacts with phone numbers and links.">
+  <meta name="description" content="Find and contact your elected representatives — local, state, and federal — for West Hollywood residents.">
   <title>Your Representatives — West Hollywood Indivisible</title>
   <link rel="canonical" href="https://wehoindivisible.org/representatives.html">
-  <meta name="theme-color" content="#1E0A3C">
-  <!-- <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/YOUR_SITE_ID/script.js"></script> -->
+  <meta name="theme-color" content="#07131C">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="apple-touch-icon" href="favicon.ico">
-  <link rel="stylesheet" href="css/style.css?v=3">
+  <link rel="stylesheet" href="css/style.css?v=7">
+  <style id="nav-mobile-css">
+    #whi-nav-bar { position:fixed; top:0; left:0; right:0; z-index:1000; }
+    #whi-rainbow { height:6px; background:linear-gradient(to right,#E40303 0%,#E40303 16.666%,#FF8C00 16.666%,#FF8C00 33.333%,#FFED00 33.333%,#FFED00 50%,#008026 50%,#008026 66.666%,#004DFF 66.666%,#004DFF 83.333%,#750787 83.333%,#750787 100%); }
+    #whi-nav { height:80px; background:#07131C; display:flex; align-items:center; overflow:hidden; }
+    #whi-nav-inner { width:100%; max-width:1100px; margin:0 auto; padding:0 20px; display:flex; align-items:center; justify-content:space-between; position:relative; }
+    #whi-logo { display:flex; align-items:center; gap:12px; text-decoration:none; flex-shrink:0; min-width:0; }
+    #whi-logo-img { height:36px; width:auto; }
+    #whi-logo-div { width:1px; height:28px; background:rgba(255,255,255,0.2); flex-shrink:0; }
+    #whi-logo-title { font-family:"Montserrat",sans-serif; font-weight:800; font-size:1rem; color:#fff; text-transform:uppercase; letter-spacing:0.02em; display:block; }
+    #whi-logo-sub { font-family:"Montserrat",sans-serif; font-weight:500; font-size:0.65rem; color:#8AABBF; text-transform:uppercase; letter-spacing:0.12em; display:block; }
+    #whi-logo-mobile { display:none; font-family:"Montserrat",sans-serif; font-weight:800; font-size:1rem; color:#fff; text-transform:uppercase; letter-spacing:0.02em; }
+    #whi-desktop-links { display:flex; align-items:center; gap:2px; list-style:none; margin:0; padding:0; }
+    #whi-desktop-links a { font-family:"Montserrat",sans-serif; font-weight:600; font-size:0.82rem; letter-spacing:0.06em; text-transform:uppercase; color:rgba(255,255,255,0.75); padding:8px 12px; border-radius:4px; text-decoration:none; white-space:nowrap; }
+    #whi-desktop-links a:hover { color:#fff; background:rgba(255,255,255,0.08); }
+    #whi-desktop-links .whi-cta { background:#CA4948; color:#fff !important; padding:8px 16px; }
+    #whi-desktop-links .whi-cta:hover { background:#A83736; }
+    #whi-hamburger { display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:8px; flex-shrink:0; }
+    #whi-hamburger span { display:block; width:24px; height:2px; background:#fff; transition:all 0.2s; }
+    #whi-mobile-menu { display:none; background:#07131C; border-top:1px solid rgba(255,255,255,0.1); }
+    #whi-mobile-menu a { display:block; padding:14px 24px; font-family:"Montserrat",sans-serif; font-weight:600; font-size:0.9rem; color:rgba(255,255,255,0.85); text-decoration:none; text-transform:uppercase; letter-spacing:0.06em; border-bottom:1px solid rgba(255,255,255,0.06); }
+    #whi-mobile-menu a:last-child { background:#CA4948; color:#fff; border-bottom:none; }
+    @media (max-width:900px) {
+      #whi-desktop-links { display:none !important; }
+      #whi-logo-img { display:none !important; }
+      #whi-logo-div { display:none !important; }
+      #whi-logo-sub { display:none !important; }
+      #whi-logo-title { display:none !important; }
+      #whi-logo-mobile { display:block !important; }
+      #whi-hamburger { display:flex !important; position:absolute; right:16px; top:50%; transform:translateY(-50%); }
+    }
+  </style>
+  <style>body { padding-top:86px !important; }</style>
 </head>
 <body>
-  <a href="#main-content" class="skip-link">Skip to main content</a>
-  <div id="site-nav-container"></div>
-
-  <div class="page-hero">
-    <div class="container">
-      <p class="page-hero-label">West Hollywood Indivisible</p>
-      <h1>Your Representatives</h1>
-      <p>Phone numbers, emails, and links for your elected officials at every level. The most powerful thing you can do is call.</p>
+<div id="whi-nav-bar">
+  <div id="whi-rainbow"></div>
+  <nav id="whi-nav" aria-label="Main navigation">
+    <div id="whi-nav-inner">
+      <a href="index.html" id="whi-logo" aria-label="West Hollywood Indivisible home">
+        <img id="whi-logo-img" src="https://indivisible.org/wp-content/uploads/2025/11/logo-indivisible-lg.svg" alt="Indivisible" onerror="this.style.display='none'">
+        <div id="whi-logo-div"></div>
+        <div>
+          <span id="whi-logo-mobile">WeHo Indivisible</span>
+          <span id="whi-logo-title">West Hollywood</span>
+          <span id="whi-logo-sub">West Hollywood, California</span>
+        </div>
+      </a>
+      <ul id="whi-desktop-links" role="list">
+        <li><a href="actions.html">Actions</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="get-involved.html">Get Involved</a></li>
+        <li><a href="representatives.html">Your Reps</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="whi-cta">Sign Up</a></li>
+      </ul>
+      <button id="whi-hamburger" onclick="whiMenuToggle()" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
+  </nav>
+  <div id="whi-mobile-menu">
+    <a href="actions.html">Actions</a>
+    <a href="events.html">Events</a>
+    <a href="get-involved.html">Get Involved</a>
+    <a href="representatives.html">Your Reps</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Sign Up</a>
   </div>
-  <hr class="rainbow-divider">
+</div>
+<script>
+function whiMenuToggle(){
+  var m=document.getElementById('whi-mobile-menu');
+  var b=document.getElementById('whi-hamburger');
+  var s=b.querySelectorAll('span');
+  var open=m.style.display==='block';
+  m.style.display=open?'none':'block';
+  b.setAttribute('aria-expanded',String(!open));
+  s[0].style.transform=open?'':'translateY(7px) rotate(45deg)';
+  s[1].style.opacity=open?'':'0';
+  s[2].style.transform=open?'':'translateY(-7px) rotate(-45deg)';
+}
+document.addEventListener('click',function(e){
+  var b=document.getElementById('whi-hamburger');
+  var m=document.getElementById('whi-mobile-menu');
+  if(b&&m&&!b.contains(e.target)&&!m.contains(e.target)){
+    m.style.display='none';
+    b.setAttribute('aria-expanded','false');
+    var s=b.querySelectorAll('span');
+    s[0].style.transform='';s[1].style.opacity='';s[2].style.transform='';
+  }
+});
+</script>
+<a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <main id="main-content">
-    <section class="section">
-      <div class="container">
+<div class="page-hero">
+  <div class="container">
+    <p class="page-hero-label">West Hollywood Indivisible</p>
+    <h1>Your Representatives</h1>
+    <p>Find and contact the elected officials who represent West Hollywood at every level of government.</p>
+  </div>
+</div>
+<hr class="rainbow-divider">
 
-        <!-- ZIP Lookup -->
-        <div class="lookup-box">
-          <h2>Not sure who represents you?</h2>
-          <p>Use one of these tools to find your federal, state, and local representatives by address or ZIP code.</p>
-          <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
-            <a href="https://www.commoncause.org/find-your-representative/" target="_blank" rel="noopener" class="btn btn-primary">Find Your Rep — Common Cause ↗</a>
-            <a href="https://findyourrep.legislature.ca.gov/" target="_blank" rel="noopener" class="btn btn-outline">CA Legislature Lookup ↗</a>
-            <a href="https://www.weho.org/city-government/city-council" target="_blank" rel="noopener" class="btn btn-outline">WeHo City Council ↗</a>
-          </div>
+<main id="main-content">
+  <section class="section">
+    <div class="container" style="max-width:780px;">
+
+      <p class="section-label" style="margin-bottom:32px;">Find Your Representatives</p>
+
+      <div style="display:flex;flex-direction:column;gap:20px;margin-bottom:48px;">
+
+        <div style="padding:28px;background:var(--off-white);border-radius:8px;border:1px solid var(--gray-light);">
+          <h3 style="font-family:var(--font-display);font-size:1.3rem;margin-bottom:8px;color:var(--text-dark);">All Representatives (Federal, State, Local)</h3>
+          <p style="color:var(--text-mid);margin-bottom:16px;font-size:0.95rem;line-height:1.6;">Enter your address to find every official who represents you — Congress, state legislature, city council, and more.</p>
+          <a href="https://www.commoncause.org/find-your-representative/" target="_blank" rel="noopener" class="btn btn-primary">Find All My Reps &#8599;</a>
         </div>
 
-        <!-- Why call? -->
-        <div style="background:var(--purple-pale);border:1px solid var(--gray-light);border-radius:8px;padding:24px 28px;margin-bottom:48px;display:flex;gap:20px;align-items:flex-start;">
-          <div style="font-size:1.8rem;flex-shrink:0;" aria-hidden="true">📞</div>
-          <div>
-            <p style="font-family:var(--font-condensed);font-weight:700;font-size:0.8rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--purple-mid);margin-bottom:6px;">Why Call?</p>
-            <p style="font-size:0.92rem;color:var(--text-mid);line-height:1.68;">Phone calls are more effective than emails — and far more effective than social media posts. Congressional staffers track call volume on specific issues, and a spike of constituent calls on a bill gets noticed. You don't need a script. You can keep it to two sentences. It matters.</p>
-          </div>
+        <div style="padding:28px;background:var(--off-white);border-radius:8px;border:1px solid var(--gray-light);">
+          <h3 style="font-family:var(--font-display);font-size:1.3rem;margin-bottom:8px;color:var(--text-dark);">California State Legislature</h3>
+          <p style="color:var(--text-mid);margin-bottom:16px;font-size:0.95rem;line-height:1.6;">Find your California State Assembly member and State Senator. West Hollywood is in Assembly District 51 (Rick Chavez Zbur) and Senate District 26 (Ben Allen).</p>
+          <a href="https://findyourrep.legislature.ca.gov/" target="_blank" rel="noopener" class="btn btn-primary">CA Legislature Lookup &#8599;</a>
         </div>
 
-        <!-- FEDERAL -->
-        <div class="reps-section">
-          <h2 class="reps-section-title">Federal — United States Congress</h2>
-          <div class="rep-cards">
-
-            <div class="rep-card">
-              <p class="rep-name">Adam Schiff</p>
-              <p class="rep-role">U.S. Senator, California (D)</p>
-              <div class="rep-contacts">
-                <a class="rep-contact" href="tel:+12026243121">📞 (202) 224-3841 — DC Office</a>
-                <a class="rep-contact" href="https://www.schiff.senate.gov/contact" target="_blank" rel="noopener">✉ Contact Form ↗</a>
-                <a class="rep-contact" href="https://www.schiff.senate.gov" target="_blank" rel="noopener">🌐 schiff.senate.gov ↗</a>
-              </div>
-            </div>
-
-            <div class="rep-card">
-              <p class="rep-name">Alex Padilla</p>
-              <p class="rep-role">U.S. Senator, California (D)</p>
-              <div class="rep-contacts">
-                <a class="rep-contact" href="tel:+12022243553">📞 (202) 224-3553 — DC Office</a>
-                <a class="rep-contact" href="https://www.padilla.senate.gov/contact" target="_blank" rel="noopener">✉ Contact Form ↗</a>
-                <a class="rep-contact" href="https://www.padilla.senate.gov" target="_blank" rel="noopener">🌐 padilla.senate.gov ↗</a>
-              </div>
-            </div>
-
-            <div class="rep-card" style="border-style:dashed;">
-              <p class="rep-name">Your U.S. House Representative</p>
-              <p class="rep-role">U.S. House of Representatives</p>
-              <div class="rep-contacts">
-                <p class="rep-note">West Hollywood spans more than one congressional district. Use the ZIP lookup above or visit <a href="https://www.house.gov/representatives/find-your-representative" target="_blank" rel="noopener">house.gov ↗</a> to find yours.</p>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        <!-- STATE -->
-        <div class="reps-section">
-          <h2 class="reps-section-title">State — California Legislature</h2>
-          <div class="rep-cards">
-
-            <div class="rep-card" style="border-style:dashed;">
-              <p class="rep-name">Your State Senator</p>
-              <p class="rep-role">California State Senate</p>
-              <div class="rep-contacts">
-                <p class="rep-note">West Hollywood falls in SD-26 or SD-27 depending on exact address. Use the ZIP lookup or visit <a href="https://www.senate.ca.gov/senators" target="_blank" rel="noopener">senate.ca.gov ↗</a> to confirm.</p>
-              </div>
-            </div>
-
-            <div class="rep-card" style="border-style:dashed;">
-              <p class="rep-name">Your Assembly Member</p>
-              <p class="rep-role">California State Assembly</p>
-              <div class="rep-contacts">
-                <p class="rep-note">Use the ZIP lookup or visit <a href="https://www.assembly.ca.gov/assemblymembers" target="_blank" rel="noopener">assembly.ca.gov ↗</a> to find your district and member.</p>
-              </div>
-            </div>
-
-            <div class="rep-card">
-              <p class="rep-name">Governor Gavin Newsom</p>
-              <p class="rep-role">Governor of California (D)</p>
-              <div class="rep-contacts">
-                <a class="rep-contact" href="tel:+19163222100">📞 (916) 322-2100</a>
-                <a class="rep-contact" href="https://www.gov.ca.gov/contact/" target="_blank" rel="noopener">✉ Contact Form ↗</a>
-                <a class="rep-contact" href="https://www.gov.ca.gov" target="_blank" rel="noopener">🌐 gov.ca.gov ↗</a>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        <!-- CITY -->
-        <div class="reps-section">
-          <h2 class="reps-section-title">Local — City of West Hollywood</h2>
-          <div class="rep-cards">
-
-            <div class="rep-card">
-              <p class="rep-name">West Hollywood City Council</p>
-              <p class="rep-role">Five elected council members</p>
-              <div class="rep-contacts">
-                <a class="rep-contact" href="tel:+13238480600">📞 (323) 848-0600 — City Hall</a>
-                <a class="rep-contact" href="https://www.weho.org/city-government/city-council" target="_blank" rel="noopener">🌐 Current Council Members ↗</a>
-                <a class="rep-contact" href="https://www.weho.org/contact-us" target="_blank" rel="noopener">✉ City Contact Page ↗</a>
-              </div>
-              <p class="rep-note">Council members rotate as Mayor annually. See weho.org for current names, individual contacts, and meeting schedule.</p>
-            </div>
-
-            <div class="rep-card">
-              <p class="rep-name">Los Angeles County</p>
-              <p class="rep-role">Board of Supervisors — 3rd District</p>
-              <div class="rep-contacts">
-                <a class="rep-contact" href="https://bos.lacounty.gov/board-members/" target="_blank" rel="noopener">🌐 Board of Supervisors ↗</a>
-                <a class="rep-contact" href="https://lacounty.gov/contact-your-county/" target="_blank" rel="noopener">✉ Contact the County ↗</a>
-              </div>
-              <p class="rep-note">West Hollywood is in LA County's 3rd Supervisorial District. Visit lacounty.gov to confirm your supervisor.</p>
-            </div>
-
-          </div>
-        </div>
-
-        <!-- Tip -->
-        <div style="padding:24px 28px;border:1px solid var(--gray-light);border-radius:8px;font-size:0.88rem;color:var(--text-mid);line-height:1.68;">
-          <strong style="font-family:var(--font-condensed);letter-spacing:0.08em;text-transform:uppercase;font-size:0.78rem;color:var(--text-dark);">Tip:</strong> When you call, you'll usually speak with a staff member, not the representative. That's fine — they track every call and report volume to the office. Keep it short: your name, that you're a constituent, and what you're asking for. Two sentences is enough.
+        <div style="padding:28px;background:var(--off-white);border-radius:8px;border:1px solid var(--gray-light);">
+          <h3 style="font-family:var(--font-display);font-size:1.3rem;margin-bottom:8px;color:var(--text-dark);">WeHo City Council</h3>
+          <p style="color:var(--text-mid);margin-bottom:16px;font-size:0.95rem;line-height:1.6;">The West Hollywood City Council meets at 625 N. San Vicente Blvd. Contact them directly or attend a public meeting to make your voice heard.</p>
+          <a href="https://www.weho.org/city-government/city-council" target="_blank" rel="noopener" class="btn btn-primary">WeHo City Council &#8599;</a>
         </div>
 
       </div>
-    </section>
-  </main>
 
-  <div id="site-footer-container"></div>
-  <script src="js/main.js?v=3"></script>
+      <div style="padding:28px;background:#07131C;border-radius:8px;color:#fff;">
+        <h3 style="font-family:var(--font-display);font-size:1.3rem;margin-bottom:8px;color:#fff;">Make Contact Count</h3>
+        <p style="color:rgba(255,255,255,0.7);font-size:0.95rem;line-height:1.68;margin-bottom:0;">Phone calls are the most effective form of constituent contact. A call takes two minutes and carries more weight than any petition. Be brief, be specific, and say you're a constituent. Our actions page has sample scripts for current issues.</p>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<div id="site-footer-container"></div>
+<script src="js/main.js?v=7"></script>
+<script src="js/brevo-form.js?v=7"></script>
 </body>
 </html>

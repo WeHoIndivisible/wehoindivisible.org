@@ -3,78 +3,161 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Upcoming events from West Hollywood Indivisible — rallies, meetings, phone banks, and more.">
+  <meta name="description" content="Upcoming events from West Hollywood Indivisible — rallies, meetings, and more.">
   <title>Events — West Hollywood Indivisible</title>
   <link rel="canonical" href="https://wehoindivisible.org/events.html">
-  <meta name="theme-color" content="#1E0A3C">
-  <!-- <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/YOUR_SITE_ID/script.js"></script> -->
+  <meta name="theme-color" content="#07131C">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="apple-touch-icon" href="favicon.ico">
-  <link rel="stylesheet" href="css/style.css?v=3">
+  <link rel="stylesheet" href="css/style.css?v=7">
+  <style id="nav-mobile-css">
+    #whi-nav-bar { position:fixed; top:0; left:0; right:0; z-index:1000; }
+    #whi-rainbow { height:6px; background:linear-gradient(to right,#E40303 0%,#E40303 16.666%,#FF8C00 16.666%,#FF8C00 33.333%,#FFED00 33.333%,#FFED00 50%,#008026 50%,#008026 66.666%,#004DFF 66.666%,#004DFF 83.333%,#750787 83.333%,#750787 100%); }
+    #whi-nav { height:80px; background:#07131C; display:flex; align-items:center; overflow:hidden; }
+    #whi-nav-inner { width:100%; max-width:1100px; margin:0 auto; padding:0 20px; display:flex; align-items:center; justify-content:space-between; position:relative; }
+    #whi-logo { display:flex; align-items:center; gap:12px; text-decoration:none; flex-shrink:0; min-width:0; }
+    #whi-logo-img { height:36px; width:auto; }
+    #whi-logo-div { width:1px; height:28px; background:rgba(255,255,255,0.2); flex-shrink:0; }
+    #whi-logo-title { font-family:"Montserrat",sans-serif; font-weight:800; font-size:1rem; color:#fff; text-transform:uppercase; letter-spacing:0.02em; display:block; }
+    #whi-logo-sub { font-family:"Montserrat",sans-serif; font-weight:500; font-size:0.65rem; color:#8AABBF; text-transform:uppercase; letter-spacing:0.12em; display:block; }
+    #whi-logo-mobile { display:none; font-family:"Montserrat",sans-serif; font-weight:800; font-size:1rem; color:#fff; text-transform:uppercase; letter-spacing:0.02em; }
+    #whi-desktop-links { display:flex; align-items:center; gap:2px; list-style:none; margin:0; padding:0; }
+    #whi-desktop-links a { font-family:"Montserrat",sans-serif; font-weight:600; font-size:0.82rem; letter-spacing:0.06em; text-transform:uppercase; color:rgba(255,255,255,0.75); padding:8px 12px; border-radius:4px; text-decoration:none; white-space:nowrap; }
+    #whi-desktop-links a:hover { color:#fff; background:rgba(255,255,255,0.08); }
+    #whi-desktop-links .whi-cta { background:#CA4948; color:#fff !important; padding:8px 16px; }
+    #whi-desktop-links .whi-cta:hover { background:#A83736; }
+    #whi-hamburger { display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:8px; flex-shrink:0; }
+    #whi-hamburger span { display:block; width:24px; height:2px; background:#fff; transition:all 0.2s; }
+    #whi-mobile-menu { display:none; background:#07131C; border-top:1px solid rgba(255,255,255,0.1); }
+    #whi-mobile-menu a { display:block; padding:14px 24px; font-family:"Montserrat",sans-serif; font-weight:600; font-size:0.9rem; color:rgba(255,255,255,0.85); text-decoration:none; text-transform:uppercase; letter-spacing:0.06em; border-bottom:1px solid rgba(255,255,255,0.06); }
+    #whi-mobile-menu a:last-child { background:#CA4948; color:#fff; border-bottom:none; }
+    @media (max-width:900px) {
+      #whi-desktop-links { display:none !important; }
+      #whi-logo-img { display:none !important; }
+      #whi-logo-div { display:none !important; }
+      #whi-logo-sub { display:none !important; }
+      #whi-logo-title { display:none !important; }
+      #whi-logo-mobile { display:block !important; }
+      #whi-hamburger { display:flex !important; position:absolute; right:16px; top:50%; transform:translateY(-50%); }
+    }
+  </style>
+  <style>body { padding-top:86px !important; }</style>
 </head>
 <body>
-  <a href="#main-content" class="skip-link">Skip to main content</a>
-  <div id="site-nav-container"></div>
-
-  <div class="page-hero">
-    <div class="container">
-      <p class="page-hero-label">West Hollywood Indivisible</p>
-      <h1>Events</h1>
-      <p>Rallies, community meetings, and more. Come to one thing and see how it feels. New people are always welcome.</p>
+<div id="whi-nav-bar">
+  <div id="whi-rainbow"></div>
+  <nav id="whi-nav" aria-label="Main navigation">
+    <div id="whi-nav-inner">
+      <a href="index.html" id="whi-logo" aria-label="West Hollywood Indivisible home">
+        <img id="whi-logo-img" src="https://indivisible.org/wp-content/uploads/2025/11/logo-indivisible-lg.svg" alt="Indivisible" onerror="this.style.display='none'">
+        <div id="whi-logo-div"></div>
+        <div>
+          <span id="whi-logo-mobile">WeHo Indivisible</span>
+          <span id="whi-logo-title">West Hollywood</span>
+          <span id="whi-logo-sub">West Hollywood, California</span>
+        </div>
+      </a>
+      <ul id="whi-desktop-links" role="list">
+        <li><a href="actions.html">Actions</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="get-involved.html">Get Involved</a></li>
+        <li><a href="representatives.html">Your Reps</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="whi-cta">Sign Up</a></li>
+      </ul>
+      <button id="whi-hamburger" onclick="whiMenuToggle()" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
+  </nav>
+  <div id="whi-mobile-menu">
+    <a href="actions.html">Actions</a>
+    <a href="events.html">Events</a>
+    <a href="get-involved.html">Get Involved</a>
+    <a href="representatives.html">Your Reps</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Sign Up</a>
   </div>
-  <hr class="rainbow-divider">
+</div>
+<script>
+function whiMenuToggle(){
+  var m=document.getElementById('whi-mobile-menu');
+  var b=document.getElementById('whi-hamburger');
+  var s=b.querySelectorAll('span');
+  var open=m.style.display==='block';
+  m.style.display=open?'none':'block';
+  b.setAttribute('aria-expanded',String(!open));
+  s[0].style.transform=open?'':'translateY(7px) rotate(45deg)';
+  s[1].style.opacity=open?'':'0';
+  s[2].style.transform=open?'':'translateY(-7px) rotate(-45deg)';
+}
+document.addEventListener('click',function(e){
+  var b=document.getElementById('whi-hamburger');
+  var m=document.getElementById('whi-mobile-menu');
+  if(b&&m&&!b.contains(e.target)&&!m.contains(e.target)){
+    m.style.display='none';
+    b.setAttribute('aria-expanded','false');
+    var s=b.querySelectorAll('span');
+    s[0].style.transform='';s[1].style.opacity='';s[2].style.transform='';
+  }
+});
+</script>
+<a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <main id="main-content">
-    <section class="section">
-      <div class="container">
+<div class="page-hero">
+  <div class="container">
+    <p class="page-hero-label">West Hollywood Indivisible</p>
+    <h1>Events</h1>
+    <p>Rallies, community meetings, and more. Come to one thing and see how it feels. New people are always welcome.</p>
+  </div>
+</div>
+<hr class="rainbow-divider">
 
-        <p class="section-label" style="margin-bottom:32px;">March 2026</p>
+<main id="main-content">
+  <section class="section">
+    <div class="container">
 
-        <div class="events-grid" style="margin-bottom:64px;">
+      <p class="section-label" style="margin-bottom:32px;">March 2026</p>
 
-          <!-- No Kings March -->
-          <article class="event-card" id="no-kings">
-            <div class="event-card-date" style="background:var(--invis-dark-blue);">
-              <div>
-                <div class="event-date-month">Mar</div>
-                <div class="event-date-day">28</div>
-              </div>
-              <div class="event-date-time">12:00 PM</div>
+      <div class="events-grid" style="margin-bottom:64px;">
+        <article class="event-card" id="no-kings">
+          <div class="event-card-date" style="background:var(--invis-dark-blue);">
+            <div>
+              <div class="event-date-month">Mar</div>
+              <div class="event-date-day">28</div>
             </div>
-            <div class="event-card-body">
-              <h2 class="event-card-title">No Kings March — West Hollywood</h2>
-              <div class="event-card-meta">
-                <span>📍 West Hollywood Park</span>
-                <span>647 N. San Vicente Blvd</span>
-              </div>
-              <p class="event-card-desc">
-                Join the national No Kings day of action. West Hollywood Indivisible is organizing the local demonstration. Bring a sign, bring a friend, bring comfortable shoes. All ages and backgrounds welcome. This is a peaceful, nonviolent event.
-              </p>
-              <p style="font-size:0.85rem;color:var(--text-light);margin-bottom:16px;">Peaceful demonstration. All participants asked to follow nonviolence guidelines.</p>
-              <div style="display:flex;gap:10px;flex-wrap:wrap;">
-                <a href="mailto:hello@wehoindivisible.org?subject=No%20Kings%20March%20RSVP" class="btn btn-primary" style="font-size:0.85rem;padding:10px 20px;">RSVP by Email</a>
-                <a href="https://nokings.org" target="_blank" rel="noopener" class="btn btn-outline" style="font-size:0.85rem;padding:10px 20px;">National No Kings Site &#8599;</a>
-              </div>
+            <div class="event-date-time">12:00 PM</div>
+          </div>
+          <div class="event-card-body">
+            <h2 class="event-card-title">No Kings March — West Hollywood</h2>
+            <div class="event-card-meta">
+              <span>📍 West Hollywood Park</span>
+              <span>647 N. San Vicente Blvd</span>
             </div>
-          </article>
-
-        </div>
-
-        <!-- Suggest an event -->
-        <div style="padding:32px 36px;background:var(--off-white);border-radius:8px;border:1px solid var(--gray-light);">
-          <h3 style="font-family:var(--font-display);font-size:1.5rem;margin-bottom:10px;">Have an idea for an event?</h3>
-          <p style="color:var(--text-mid);line-height:1.7;margin-bottom:20px;max-width:560px;">We're small and open to suggestions. If you have an idea — a speaker, a local action, a community forum — get in touch. We'd like to hear it.</p>
-          <a href="mailto:hello@wehoindivisible.org?subject=Event%20Idea" class="btn btn-primary">Email Us</a>
-        </div>
-
-
-
+            <p class="event-card-desc">
+              Join the national No Kings day of action. West Hollywood Indivisible is organizing the local demonstration. Bring a sign, bring a friend, bring comfortable shoes. All ages and backgrounds welcome.
+            </p>
+            <p style="font-size:0.85rem;color:var(--text-light);margin-bottom:16px;">Peaceful demonstration. All participants asked to follow nonviolence guidelines.</p>
+            <div style="display:flex;gap:10px;flex-wrap:wrap;">
+              <a href="mailto:hello@wehoindivisible.org" class="btn btn-primary" style="font-size:0.85rem;padding:10px 20px;">RSVP by Email</a>
+              <a href="https://nokings.org" target="_blank" rel="noopener" class="btn btn-outline" style="font-size:0.85rem;padding:10px 20px;">National No Kings Site &#8599;</a>
+            </div>
+          </div>
+        </article>
       </div>
-    </section>
-  </main>
 
-  <div id="site-footer-container"></div>
-  <script src="js/main.js?v=3"></script>
+      <div style="padding:32px 36px;background:var(--off-white);border-radius:8px;border:1px solid var(--gray-light);">
+        <h3 style="font-family:var(--font-display);font-size:1.5rem;margin-bottom:10px;color:var(--text-dark);">Have an idea for an event?</h3>
+        <p style="color:var(--text-mid);line-height:1.7;margin-bottom:20px;max-width:560px;">We're small and open to suggestions. If you have an idea — a speaker, a local action, a community forum — get in touch.</p>
+        <a href="mailto:hello@wehoindivisible.org" class="btn btn-primary">Email Us</a>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<div id="site-footer-container"></div>
+<script src="js/main.js?v=7"></script>
+<script src="js/brevo-form.js?v=7"></script>
 </body>
 </html>

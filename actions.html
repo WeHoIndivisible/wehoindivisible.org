@@ -3,166 +3,188 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Local calls to action from West Hollywood Indivisible — what you can do right now in West Hollywood and California.">
+  <meta name="description" content="Current actions you can take right now to protect democracy and defend your community in West Hollywood.">
   <title>Actions — West Hollywood Indivisible</title>
   <link rel="canonical" href="https://wehoindivisible.org/actions.html">
   <meta name="theme-color" content="#07131C">
-  <!-- <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/YOUR_SITE_ID/script.js"></script> -->
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="apple-touch-icon" href="favicon.ico">
-  <link rel="stylesheet" href="css/style.css?v=3">
+  <link rel="stylesheet" href="css/style.css?v=7">
+  <style id="nav-mobile-css">
+    #whi-nav-bar { position:fixed; top:0; left:0; right:0; z-index:1000; }
+    #whi-rainbow { height:6px; background:linear-gradient(to right,#E40303 0%,#E40303 16.666%,#FF8C00 16.666%,#FF8C00 33.333%,#FFED00 33.333%,#FFED00 50%,#008026 50%,#008026 66.666%,#004DFF 66.666%,#004DFF 83.333%,#750787 83.333%,#750787 100%); }
+    #whi-nav { height:80px; background:#07131C; display:flex; align-items:center; overflow:hidden; }
+    #whi-nav-inner { width:100%; max-width:1100px; margin:0 auto; padding:0 20px; display:flex; align-items:center; justify-content:space-between; position:relative; }
+    #whi-logo { display:flex; align-items:center; gap:12px; text-decoration:none; flex-shrink:0; min-width:0; }
+    #whi-logo-img { height:36px; width:auto; }
+    #whi-logo-div { width:1px; height:28px; background:rgba(255,255,255,0.2); flex-shrink:0; }
+    #whi-logo-title { font-family:"Montserrat",sans-serif; font-weight:800; font-size:1rem; color:#fff; text-transform:uppercase; letter-spacing:0.02em; display:block; }
+    #whi-logo-sub { font-family:"Montserrat",sans-serif; font-weight:500; font-size:0.65rem; color:#8AABBF; text-transform:uppercase; letter-spacing:0.12em; display:block; }
+    #whi-logo-mobile { display:none; font-family:"Montserrat",sans-serif; font-weight:800; font-size:1rem; color:#fff; text-transform:uppercase; letter-spacing:0.02em; }
+    #whi-desktop-links { display:flex; align-items:center; gap:2px; list-style:none; margin:0; padding:0; }
+    #whi-desktop-links a { font-family:"Montserrat",sans-serif; font-weight:600; font-size:0.82rem; letter-spacing:0.06em; text-transform:uppercase; color:rgba(255,255,255,0.75); padding:8px 12px; border-radius:4px; text-decoration:none; white-space:nowrap; }
+    #whi-desktop-links a:hover { color:#fff; background:rgba(255,255,255,0.08); }
+    #whi-desktop-links .whi-cta { background:#CA4948; color:#fff !important; padding:8px 16px; }
+    #whi-desktop-links .whi-cta:hover { background:#A83736; }
+    #whi-hamburger { display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:8px; flex-shrink:0; }
+    #whi-hamburger span { display:block; width:24px; height:2px; background:#fff; transition:all 0.2s; }
+    #whi-mobile-menu { display:none; background:#07131C; border-top:1px solid rgba(255,255,255,0.1); }
+    #whi-mobile-menu a { display:block; padding:14px 24px; font-family:"Montserrat",sans-serif; font-weight:600; font-size:0.9rem; color:rgba(255,255,255,0.85); text-decoration:none; text-transform:uppercase; letter-spacing:0.06em; border-bottom:1px solid rgba(255,255,255,0.06); }
+    #whi-mobile-menu a:last-child { background:#CA4948; color:#fff; border-bottom:none; }
+    @media (max-width:900px) {
+      #whi-desktop-links { display:none !important; }
+      #whi-logo-img { display:none !important; }
+      #whi-logo-div { display:none !important; }
+      #whi-logo-sub { display:none !important; }
+      #whi-logo-title { display:none !important; }
+      #whi-logo-mobile { display:block !important; }
+      #whi-hamburger { display:flex !important; position:absolute; right:16px; top:50%; transform:translateY(-50%); }
+    }
+  </style>
+  <style>body { padding-top:86px !important; }</style>
 </head>
 <body>
-  <a href="#main-content" class="skip-link">Skip to main content</a>
-  <div id="site-nav-container"></div>
-
-  <div class="page-hero">
-    <div class="container">
-      <p class="page-hero-label">West Hollywood Indivisible</p>
-      <h1>Local Actions</h1>
-      <p>What you can do right now in West Hollywood and California. For federal actions, scripts, and national campaign tools, visit the Indivisible national action center.</p>
+<div id="whi-nav-bar">
+  <div id="whi-rainbow"></div>
+  <nav id="whi-nav" aria-label="Main navigation">
+    <div id="whi-nav-inner">
+      <a href="index.html" id="whi-logo" aria-label="West Hollywood Indivisible home">
+        <img id="whi-logo-img" src="https://indivisible.org/wp-content/uploads/2025/11/logo-indivisible-lg.svg" alt="Indivisible" onerror="this.style.display='none'">
+        <div id="whi-logo-div"></div>
+        <div>
+          <span id="whi-logo-mobile">WeHo Indivisible</span>
+          <span id="whi-logo-title">West Hollywood</span>
+          <span id="whi-logo-sub">West Hollywood, California</span>
+        </div>
+      </a>
+      <ul id="whi-desktop-links" role="list">
+        <li><a href="actions.html">Actions</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="get-involved.html">Get Involved</a></li>
+        <li><a href="representatives.html">Your Reps</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="whi-cta">Sign Up</a></li>
+      </ul>
+      <button id="whi-hamburger" onclick="whiMenuToggle()" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
+  </nav>
+  <div id="whi-mobile-menu">
+    <a href="actions.html">Actions</a>
+    <a href="events.html">Events</a>
+    <a href="get-involved.html">Get Involved</a>
+    <a href="representatives.html">Your Reps</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Sign Up</a>
   </div>
-  <hr class="rainbow-divider">
+</div>
+<script>
+function whiMenuToggle(){
+  var m=document.getElementById('whi-mobile-menu');
+  var b=document.getElementById('whi-hamburger');
+  var s=b.querySelectorAll('span');
+  var open=m.style.display==='block';
+  m.style.display=open?'none':'block';
+  b.setAttribute('aria-expanded',String(!open));
+  s[0].style.transform=open?'':'translateY(7px) rotate(45deg)';
+  s[1].style.opacity=open?'':'0';
+  s[2].style.transform=open?'':'translateY(-7px) rotate(-45deg)';
+}
+document.addEventListener('click',function(e){
+  var b=document.getElementById('whi-hamburger');
+  var m=document.getElementById('whi-mobile-menu');
+  if(b&&m&&!b.contains(e.target)&&!m.contains(e.target)){
+    m.style.display='none';
+    b.setAttribute('aria-expanded','false');
+    var s=b.querySelectorAll('span');
+    s[0].style.transform='';s[1].style.opacity='';s[2].style.transform='';
+  }
+});
+</script>
+<a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <main id="main-content">
-    <section class="section">
-      <div class="container">
+<div class="page-hero">
+  <div class="container">
+    <p class="page-hero-label">West Hollywood Indivisible</p>
+    <h1>Take Action</h1>
+    <p>These are concrete things you can do right now — calls, emails, and events that move the needle locally and beyond.</p>
+  </div>
+</div>
+<hr class="rainbow-divider">
 
-        <!-- National callout -->
-        <div style="background:var(--invis-dark-blue);border-radius:3px;padding:28px 32px;margin-bottom:48px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;">
-          <div>
-            <p style="font-family:var(--font-display);font-weight:700;font-size:0.68rem;letter-spacing:0.22em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:6px;">Federal Actions</p>
-            <p style="font-family:var(--font-display);font-weight:700;font-size:1.05rem;color:var(--white);margin-bottom:4px;">Call scripts, email tools, and national campaigns</p>
-            <p style="font-size:0.88rem;color:rgba(255,255,255,0.6);line-height:1.6;">For calls to Congress, federal legislation, and coordinated national actions, use the Indivisible national action center.</p>
+<main id="main-content">
+  <section class="section">
+    <div class="container">
+      <div class="actions-list">
+
+        <!-- Action 1: Immigrant Defense -->
+        <article class="action-card" id="immigrant-defense" style="border-left-color:var(--invis-red);">
+          <div class="action-card-header">
+            <h2 class="action-card-title">Protect Immigrant Neighbors</h2>
+            <span class="urgency urgency--high">Urgent</span>
           </div>
-          <a href="https://indivisible.org/get-involved/take-action/" target="_blank" rel="noopener" class="btn btn-outline--light" style="white-space:nowrap;">Indivisible Action Center &#8599;</a>
-        </div>
+          <p class="action-card-body">
+            West Hollywood has publicly condemned recent federal immigration actions and is actively sharing Know Your Rights resources for immigrant community members. Help defend our neighbors by sharing accurate information, supporting local legal and mutual-aid efforts, and urging city leaders to keep West Hollywood firmly opposed to cooperation with federal immigration enforcement.
+          </p>
+          <p class="action-card-body" style="margin-top:-10px;">
+            Contact your City Council representatives to reinforce West Hollywood's commitment to non-cooperation, share Know Your Rights resources in your networks, and support local organizations providing legal aid and direct assistance to immigrant residents.
+          </p>
+          <div class="script-box">
+            <p class="script-box-label">Sample Message to City Council</p>
+            <p>"My name is [YOUR NAME] and I am a West Hollywood resident. I urge the City Council to maintain West Hollywood's strong commitment to protecting all residents, regardless of immigration status, and to remain fully opposed to cooperation with federal immigration enforcement. Please ensure our city continues to be a place of refuge for our immigrant neighbors."</p>
+          </div>
+          <div class="action-links">
+            <a href="mailto:citycouncil@weho.org" class="btn btn-primary">Protect Immigrant Neighbors</a>
+            <a href="https://www.weho.org/city-government/city-council" target="_blank" rel="noopener" class="btn btn-outline">Contact City Council &#8599;</a>
+            <a href="https://www.aclusocal.org/know-your-rights" target="_blank" rel="noopener" class="btn btn-outline">Know Your Rights &#8599;</a>
+          </div>
+        </article>
 
-        <!-- Local actions -->
-        <p class="section-label" style="margin-bottom:32px;">West Hollywood + California</p>
+        <!-- Action 2: No Kings March 28 -->
+        <article class="action-card" id="no-kings" style="border-left-color:var(--invis-dark-blue);">
+          <div class="action-card-header">
+            <h2 class="action-card-title">Join No Kings on March 28</h2>
+            <span class="urgency urgency--high">March 28</span>
+          </div>
+          <p class="action-card-body">
+            Indivisible-linked No Kings actions are scheduled for Saturday, March 28, 2026, including nearby events in Los Angeles and Santa Monica. Help mobilize West Hollywood residents, spread the word, and show up to defend democracy and reject authoritarian politics.
+          </p>
+          <p class="action-card-body" style="margin-top:-10px;">
+            Find your nearest event at nokings.org, recruit neighbors and friends, and make a plan to attend. West Hollywood Indivisible is organizing a local presence — check our events page for details.
+          </p>
+          <div class="action-links">
+            <a href="https://www.nokings.org" target="_blank" rel="noopener" class="btn btn-primary">Join No Kings &#8599;</a>
+            <a href="events.html" class="btn btn-outline">WeHo Events</a>
+          </div>
+        </article>
 
-        <div class="actions-list">
+        <!-- Action 3: 2026 Elections -->
+        <article class="action-card" id="voter-power" style="border-left-color:var(--invis-light-blue);">
+          <div class="action-card-header">
+            <h2 class="action-card-title">Build Power for the 2026 Elections</h2>
+            <span class="urgency urgency--ongoing">Ongoing</span>
+          </div>
+          <p class="action-card-body">
+            The road to the 2026 midterms starts now, with California's June 2 primary as the next key step. Join West Hollywood voter outreach, help register and inform voters, and organize early so we can elect leaders who will defend democracy and vulnerable communities.
+          </p>
+          <p class="action-card-body" style="margin-top:-10px;">
+            California ballots begin mailing May 4, ballot drop-off opens May 5, and the voter registration deadline is May 18. Start conversations with your neighbors now — the earlier we build momentum, the stronger our turnout.
+          </p>
+          <div class="action-links">
+            <a href="https://registertovote.ca.gov/" target="_blank" rel="noopener" class="btn btn-primary">Build 2026 Voter Power &#8599;</a>
+            <a href="https://www.vote.org/am-i-registered-to-vote/" target="_blank" rel="noopener" class="btn btn-outline">Check Registration &#8599;</a>
+            <a href="get-involved.html" class="btn btn-outline">Get Involved</a>
+          </div>
+        </article>
 
-          <!-- Action 1: ICE-Free Zones -->
-          <article class="action-card" id="ice-free-zones" style="border-left-color:var(--invis-red);">
-            <div class="action-card-header">
-              <h2 class="action-card-title">Urge the City Council to Pass ICE-Free Zones</h2>
-              <span class="urgency urgency--high">Urgent</span>
-            </div>
-            <p class="action-card-body">
-              West Hollywood City Council introduced an ICE-Free Zones measure at the March 2 meeting, following the City of Los Angeles and dozens of other cities across the country. The proposal would prohibit immigration enforcement operations on city-owned property without a judicial warrant. It has not passed yet.
-            </p>
-            <p class="action-card-body" style="margin-top:-10px;">
-              You can help move it forward in two ways: submit written public comment before the next council meeting, or show up to speak in person during public comment. The council meets at 625 N. San Vicente Blvd. Comments can be emailed in advance to publiccomment@weho.org.
-            </p>
-            <div class="script-box">
-              <p class="script-box-label">Sample Comment</p>
-              <p>"My name is [YOUR NAME] and I am a West Hollywood resident. I am writing in support of the proposed ICE-Free Zones measure. West Hollywood has always been a sanctuary city in spirit. This measure makes that commitment concrete and protects all members of our community. I urge the Council to pass it."</p>
-            </div>
-            <div class="action-links">
-              <a href="mailto:publiccomment@weho.org?subject=Support%20for%20ICE-Free%20Zones%20Measure" class="btn btn-primary">Email the Council</a>
-              <a href="https://www.weho.org/city-government/city-council" target="_blank" rel="noopener" class="btn btn-outline">WeHo City Council &#8599;</a>
-              <a href="https://www.weho.org/calendar" target="_blank" rel="noopener" class="btn btn-outline">Meeting Calendar &#8599;</a>
-            </div>
-          </article>
-
-          <!-- Action 2: Metro K Line -->
-          <article class="action-card" id="metro-k-line" style="border-left-color:var(--invis-light-blue);">
-            <div class="action-card-header">
-              <h2 class="action-card-title">Support the Metro K Line San Vicente-Fairfax Route</h2>
-              <span class="urgency urgency--high">Urgent</span>
-            </div>
-            <p class="action-card-body">
-              Metro's Board of Directors is weeks away from a final decision on the route for the K Line Northern Extension. The alignment West Hollywood is advocating for, San Vicente-Fairfax, would bring three stations inside city limits, connecting residents to Cedars-Sinai, the Beverly Center, Santa Monica Boulevard, and the regional rail network. The alternative alignment would put a single station at the city's eastern edge.
-            </p>
-            <p class="action-card-body" style="margin-top:-10px;">
-              Metro staff have recommended the San Vicente-Fairfax route. The Board still has to vote. Email Metro directly to tell them you support it.
-            </p>
-            <div class="script-box">
-              <p class="script-box-label">Sample Email to Metro</p>
-              <p>
-                <strong>To:</strong> klinenorth@metro.net<br>
-                <strong>Subject:</strong> Support for San Vicente-Fairfax Alignment<br><br>
-                I am a West Hollywood resident writing in support of the San Vicente-Fairfax alignment for the K Line Northern Extension. This route would serve far more residents than the alternative, bring transit access to major employment and medical centers, and make good on the investment WeHo voters made when 86% of us approved Measure M. Please select the San Vicente-Fairfax route.<br><br>
-                [YOUR NAME]<br>
-                [YOUR ADDRESS]
-              </p>
-            </div>
-            <div class="action-links">
-              <a href="mailto:klinenorth@metro.net?subject=Support%20for%20San%20Vicente-Fairfax%20Alignment" class="btn btn-primary">Email Metro</a>
-              <a href="https://metro.weho.org" target="_blank" rel="noopener" class="btn btn-outline">WeHo Metro Info &#8599;</a>
-            </div>
-          </article>
-
-          <!-- Action 3: City Council -->
-          <article class="action-card" id="city-council" style="border-left-color:var(--invis-dark-blue);">
-            <div class="action-card-header">
-              <h2 class="action-card-title">Speak at a WeHo City Council Meeting</h2>
-              <span class="urgency urgency--ongoing">Ongoing</span>
-            </div>
-            <p class="action-card-body">
-              Every West Hollywood City Council meeting includes a public comment period open to all residents. It is one of the most direct levers available to people who live here. You do not need to be an expert, affiliated with any organization, or prepared with anything elaborate. Three minutes, your name, and what you want the council to do.
-            </p>
-            <p class="action-card-body" style="margin-top:-10px;">
-              Council meets at 625 N. San Vicente Blvd., typically on the first and third Monday of each month at 6 p.m. If you cannot attend in person, written comment can be submitted in advance to publiccomment@weho.org. The city calendar is at weho.org/calendar.
-            </p>
-            <div class="script-box">
-              <p class="script-box-label">How Public Comment Works</p>
-              <p>Arrive before the meeting starts and sign up to speak at the clerk's table. When your name is called, approach the podium, state your name and that you are a resident, and make your comment. You have three minutes. Written comments submitted by email before the meeting are read into the record.</p>
-            </div>
-            <div class="action-links">
-              <a href="mailto:publiccomment@weho.org" class="btn btn-primary">Submit Written Comment</a>
-              <a href="https://www.weho.org/calendar" target="_blank" rel="noopener" class="btn btn-outline">Meeting Schedule &#8599;</a>
-              <a href="https://www.weho.org/city-government/city-council" target="_blank" rel="noopener" class="btn btn-outline">City Council &#8599;</a>
-            </div>
-          </article>
-
-          <!-- Action 4: State legislators -->
-          <article class="action-card" id="state-legislators" style="border-left-color:var(--invis-red);">
-            <div class="action-card-header">
-              <h2 class="action-card-title">Contact Your California State Legislators</h2>
-              <span class="urgency urgency--ongoing">Ongoing</span>
-            </div>
-            <p class="action-card-body">
-              West Hollywood is represented in the state legislature by Assembly Member Rick Chavez Zbur (AD-51) and Senator Ben Allen (SD-26). State-level fights on Medicaid, housing, LGBTQ+ protections, reproductive rights, and immigrant defense are active in Sacramento right now, and state legislators are generally more reachable than federal ones.
-            </p>
-            <p class="action-card-body" style="margin-top:-10px;">
-              A phone call or email from a constituent carries weight. Use the lookup tool below to confirm your exact district and get direct contact information.
-            </p>
-            <div class="action-links">
-              <a href="https://findyourrep.legislature.ca.gov/" target="_blank" rel="noopener" class="btn btn-primary">Find Your State Rep &#8599;</a>
-              <a href="https://a51.asmdc.org/contact" target="_blank" rel="noopener" class="btn btn-outline">Asm. Zbur Contact &#8599;</a>
-              <a href="https://sd26.senate.ca.gov/contact" target="_blank" rel="noopener" class="btn btn-outline">Sen. Allen Contact &#8599;</a>
-            </div>
-          </article>
-
-          <!-- Action 5: LGBTQ+ and immigrant community support -->
-          <article class="action-card" id="community-support" style="border-left-color:var(--invis-light-blue);">
-            <div class="action-card-header">
-              <h2 class="action-card-title">Support WeHo's LGBTQ+ and Immigrant Communities</h2>
-              <span class="urgency urgency--ongoing">Ongoing</span>
-            </div>
-            <p class="action-card-body">
-              West Hollywood has long positioned itself as a sanctuary for LGBTQ+ people and immigrants. That identity is under direct pressure right now. One of the most useful things you can do is connect people in your network to resources: the city's Transgender Resource Guide, the LA LGBT Center's legal and social services, and local immigrant defense organizations.
-            </p>
-            <p class="action-card-body" style="margin-top:-10px;">
-              If you know someone who needs help, or if you work with an organization that does this work, we want to connect with you. Email us at hello@wehoindivisible.org.
-            </p>
-            <div class="action-links">
-              <a href="https://www.weho.org/services/human-services/transgender-resources" target="_blank" rel="noopener" class="btn btn-outline">WeHo Trans Resource Guide &#8599;</a>
-              <a href="https://lalgbtcenter.org" target="_blank" rel="noopener" class="btn btn-outline">LA LGBT Center &#8599;</a>
-              <a href="https://www.immdefense.org" target="_blank" rel="noopener" class="btn btn-outline">Immigrant Defense Project &#8599;</a>
-              <a href="mailto:hello@wehoindivisible.org?subject=Community%20Resources" class="btn btn-primary">Get in Touch</a>
-            </div>
-          </article>
-
-        </div>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
+</main>
 
-  <div id="site-footer-container"></div>
-  <script src="js/main.js?v=3"></script>
+<div id="site-footer-container"></div>
+<script src="js/main.js?v=7"></script>
+<script src="js/brevo-form.js?v=7"></script>
 </body>
 </html>

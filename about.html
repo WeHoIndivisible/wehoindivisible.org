@@ -6,106 +6,189 @@
   <meta name="description" content="About West Hollywood Indivisible — who we are, what we stand for, and our affiliation with the national Indivisible movement.">
   <title>About — West Hollywood Indivisible</title>
   <link rel="canonical" href="https://wehoindivisible.org/about.html">
-  <meta name="theme-color" content="#1E0A3C">
-  <!-- <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/YOUR_SITE_ID/script.js"></script> -->
+  <meta name="theme-color" content="#07131C">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="apple-touch-icon" href="favicon.ico">
-  <link rel="stylesheet" href="css/style.css?v=3">
+  <link rel="stylesheet" href="css/style.css?v=7">
+  <style id="nav-mobile-css">
+    #whi-nav-bar { position:fixed; top:0; left:0; right:0; z-index:1000; }
+    #whi-rainbow { height:6px; background:linear-gradient(to right,#E40303 0%,#E40303 16.666%,#FF8C00 16.666%,#FF8C00 33.333%,#FFED00 33.333%,#FFED00 50%,#008026 50%,#008026 66.666%,#004DFF 66.666%,#004DFF 83.333%,#750787 83.333%,#750787 100%); }
+    #whi-nav { height:80px; background:#07131C; display:flex; align-items:center; overflow:hidden; }
+    #whi-nav-inner { width:100%; max-width:1100px; margin:0 auto; padding:0 20px; display:flex; align-items:center; justify-content:space-between; position:relative; }
+    #whi-logo { display:flex; align-items:center; gap:12px; text-decoration:none; flex-shrink:0; min-width:0; }
+    #whi-logo-img { height:36px; width:auto; }
+    #whi-logo-div { width:1px; height:28px; background:rgba(255,255,255,0.2); flex-shrink:0; }
+    #whi-logo-title { font-family:"Montserrat",sans-serif; font-weight:800; font-size:1rem; color:#fff; text-transform:uppercase; letter-spacing:0.02em; display:block; }
+    #whi-logo-sub { font-family:"Montserrat",sans-serif; font-weight:500; font-size:0.65rem; color:#8AABBF; text-transform:uppercase; letter-spacing:0.12em; display:block; }
+    #whi-logo-mobile { display:none; font-family:"Montserrat",sans-serif; font-weight:800; font-size:1rem; color:#fff; text-transform:uppercase; letter-spacing:0.02em; }
+    #whi-desktop-links { display:flex; align-items:center; gap:2px; list-style:none; margin:0; padding:0; }
+    #whi-desktop-links a { font-family:"Montserrat",sans-serif; font-weight:600; font-size:0.82rem; letter-spacing:0.06em; text-transform:uppercase; color:rgba(255,255,255,0.75); padding:8px 12px; border-radius:4px; text-decoration:none; white-space:nowrap; }
+    #whi-desktop-links a:hover { color:#fff; background:rgba(255,255,255,0.08); }
+    #whi-desktop-links .whi-cta { background:#CA4948; color:#fff !important; padding:8px 16px; }
+    #whi-desktop-links .whi-cta:hover { background:#A83736; }
+    #whi-hamburger { display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:8px; flex-shrink:0; }
+    #whi-hamburger span { display:block; width:24px; height:2px; background:#fff; transition:all 0.2s; }
+    #whi-mobile-menu { display:none; background:#07131C; border-top:1px solid rgba(255,255,255,0.1); }
+    #whi-mobile-menu a { display:block; padding:14px 24px; font-family:"Montserrat",sans-serif; font-weight:600; font-size:0.9rem; color:rgba(255,255,255,0.85); text-decoration:none; text-transform:uppercase; letter-spacing:0.06em; border-bottom:1px solid rgba(255,255,255,0.06); }
+    #whi-mobile-menu a:last-child { background:#CA4948; color:#fff; border-bottom:none; }
+    @media (max-width:900px) {
+      #whi-desktop-links { display:none !important; }
+      #whi-logo-img { display:none !important; }
+      #whi-logo-div { display:none !important; }
+      #whi-logo-sub { display:none !important; }
+      #whi-logo-title { display:none !important; }
+      #whi-logo-mobile { display:block !important; }
+      #whi-hamburger { display:flex !important; position:absolute; right:16px; top:50%; transform:translateY(-50%); }
+    }
+  </style>
+  <style>body { padding-top:86px !important; }</style>
 </head>
 <body>
-  <a href="#main-content" class="skip-link">Skip to main content</a>
-  <div id="site-nav-container"></div>
-
-  <div class="page-hero">
-    <div class="container">
-      <p class="page-hero-label">West Hollywood Indivisible</p>
-      <h1>About Us</h1>
-      <p>We're a small group of West Hollywood neighbors who decided to do something. Here's who we are and what we're working toward.</p>
+<div id="whi-nav-bar">
+  <div id="whi-rainbow"></div>
+  <nav id="whi-nav" aria-label="Main navigation">
+    <div id="whi-nav-inner">
+      <a href="index.html" id="whi-logo" aria-label="West Hollywood Indivisible home">
+        <img id="whi-logo-img" src="https://indivisible.org/wp-content/uploads/2025/11/logo-indivisible-lg.svg" alt="Indivisible" onerror="this.style.display='none'">
+        <div id="whi-logo-div"></div>
+        <div>
+          <span id="whi-logo-mobile">WeHo Indivisible</span>
+          <span id="whi-logo-title">West Hollywood</span>
+          <span id="whi-logo-sub">West Hollywood, California</span>
+        </div>
+      </a>
+      <ul id="whi-desktop-links" role="list">
+        <li><a href="actions.html">Actions</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="get-involved.html">Get Involved</a></li>
+        <li><a href="representatives.html">Your Reps</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="whi-cta">Sign Up</a></li>
+      </ul>
+      <button id="whi-hamburger" onclick="whiMenuToggle()" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
+  </nav>
+  <div id="whi-mobile-menu">
+    <a href="actions.html">Actions</a>
+    <a href="events.html">Events</a>
+    <a href="get-involved.html">Get Involved</a>
+    <a href="representatives.html">Your Reps</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Sign Up</a>
   </div>
-  <hr class="rainbow-divider">
+</div>
+<script>
+function whiMenuToggle(){
+  var m=document.getElementById('whi-mobile-menu');
+  var b=document.getElementById('whi-hamburger');
+  var s=b.querySelectorAll('span');
+  var open=m.style.display==='block';
+  m.style.display=open?'none':'block';
+  b.setAttribute('aria-expanded',String(!open));
+  s[0].style.transform=open?'':'translateY(7px) rotate(45deg)';
+  s[1].style.opacity=open?'':'0';
+  s[2].style.transform=open?'':'translateY(-7px) rotate(-45deg)';
+}
+document.addEventListener('click',function(e){
+  var b=document.getElementById('whi-hamburger');
+  var m=document.getElementById('whi-mobile-menu');
+  if(b&&m&&!b.contains(e.target)&&!m.contains(e.target)){
+    m.style.display='none';
+    b.setAttribute('aria-expanded','false');
+    var s=b.querySelectorAll('span');
+    s[0].style.transform='';s[1].style.opacity='';s[2].style.transform='';
+  }
+});
+</script>
+<a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <main id="main-content">
+<div class="page-hero">
+  <div class="container">
+    <p class="page-hero-label">West Hollywood Indivisible</p>
+    <h1>About Us</h1>
+    <p>We're a small group of West Hollywood neighbors who decided to do something. Here's who we are and what we're working toward.</p>
+  </div>
+</div>
+<hr class="rainbow-divider">
 
-    <!-- Who we are -->
-    <section class="section">
-      <div class="container">
-        <div class="about-grid">
+<main id="main-content">
+  <section class="section">
+    <div class="container">
+      <div class="about-grid">
 
-          <div>
-            <p class="section-label">Who We Are</p>
-            <h2 class="section-title">Neighbors, Working to Build Something Bigger</h2>
-            <div class="about-body">
-              <p>West Hollywood Indivisible started the way most local organizing does: a handful of people who knew each other, shared a sense of alarm about what was happening, and decided that showing up for a march every few months wasn't going to be enough.</p>
-              <p>We're West Hollywood residents working to build a real local presence, one that gives people in this community a way to take meaningful action, whatever their capacity. That means marches and rallies, but also phone calls, letters to the editor, voter registration, and everything in between.</p>
-              <p>West Hollywood is a small city with a distinct identity. It has a long history of activism on LGBTQ+ rights, on HIV/AIDS, on housing and tenant protections. That history matters to us. We want to be part of a lineage of people in this community who organized when it was necessary and who took that responsibility seriously.</p>
-              <p>We're affiliated with national Indivisible, which means we use their resources, align with their strategy where it fits, and are listed in their directory of local groups. We're autonomous: we set our own agenda, run our own events, and answer to our community.</p>
-            </div>
+        <div>
+          <p class="section-label">Who We Are</p>
+          <h2 class="section-title">Neighbors, Working to Build Something Bigger</h2>
+          <div class="about-body">
+            <p>West Hollywood Indivisible started the way most local organizing does: a handful of people who knew each other, shared a sense of alarm about what was happening, and decided that showing up for a march every few months wasn't going to be enough.</p>
+            <p>We're West Hollywood residents working to build a real local presence, one that gives people in this community a way to take meaningful action, whatever their capacity. That means marches and rallies, but also phone calls, letters to the editor, voter registration, and everything in between.</p>
+            <p>West Hollywood is a small city with a distinct identity. It has a long history of activism on LGBTQ+ rights, on HIV/AIDS, on housing and tenant protections. That history matters to us. We want to be part of a lineage of people in this community who organized when it was necessary and who took that responsibility seriously.</p>
+            <p>We're affiliated with national Indivisible, which means we use their resources, align with their strategy where it fits, and are listed in their directory of local groups. We're autonomous: we set our own agenda, run our own events, and answer to our community.</p>
           </div>
-
-          <div>
-            <p class="section-label" style="margin-bottom:20px;">What We Stand For</p>
-            <ul class="values-list">
-              <li>
-                <span class="value-label">Democracy</span>
-                <span class="value-text">Free and fair elections, an independent judiciary, and a government that is accountable to the people it serves — not the other way around.</span>
-              </li>
-              <li>
-                <span class="value-label">Civil Rights</span>
-                <span class="value-text">The rights of all people — regardless of race, gender, sexuality, immigration status, or disability — to live with dignity and equal protection under the law.</span>
-              </li>
-              <li>
-                <span class="value-label">Local Power</span>
-                <span class="value-text">Change happens at every level. We focus on what we can do in West Hollywood and California while keeping our eye on federal fights that affect us all.</span>
-              </li>
-              <li>
-                <span class="value-label">Inclusion</span>
-                <span class="value-text">West Hollywood is a diverse community. We want our group to reflect that. Everyone has something to contribute; there is no single kind of activist.</span>
-              </li>
-              <li>
-                <span class="value-label">Persistence</span>
-                <span class="value-text">This work is a long game. We're not interested in single-event activism. We want to build something that lasts and can do real work over time.</span>
-              </li>
-            </ul>
-          </div>
-
         </div>
+
+        <div>
+          <p class="section-label" style="margin-bottom:20px;">What We Stand For</p>
+          <ul class="values-list">
+            <li>
+              <span class="value-label">Democracy</span>
+              <span class="value-text">Free and fair elections, an independent judiciary, and a government that is accountable to the people it serves — not the other way around.</span>
+            </li>
+            <li>
+              <span class="value-label">Civil Rights</span>
+              <span class="value-text">The rights of all people — regardless of race, gender, sexuality, immigration status, or disability — to live with dignity and equal protection under the law.</span>
+            </li>
+            <li>
+              <span class="value-label">Local Power</span>
+              <span class="value-text">Change happens at every level. We focus on what we can do in West Hollywood and California while keeping our eye on federal fights that affect us all.</span>
+            </li>
+            <li>
+              <span class="value-label">Inclusion</span>
+              <span class="value-text">West Hollywood is a diverse community. We want our group to reflect that. Everyone has something to contribute; there is no single kind of activist.</span>
+            </li>
+            <li>
+              <span class="value-label">Persistence</span>
+              <span class="value-text">This work is a long game. We're not interested in single-event activism. We want to build something that lasts and can do real work over time.</span>
+            </li>
+          </ul>
+        </div>
+
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- National affiliation -->
-    <section class="section section--alt">
-      <div class="container" style="max-width:780px;">
-        <p class="section-label">Our Affiliation</p>
-        <h2 class="section-title">Part of a National Movement</h2>
-        <div style="font-size:1.02rem;line-height:1.78;color:var(--text-mid);">
-          <p>West Hollywood Indivisible is a registered local chapter of <a href="https://indivisible.org" target="_blank" rel="noopener">Indivisible</a>, a nationwide movement founded in 2016 by former Congressional staffers to provide a practical framework for resisting the Trump agenda through local organizing and constituent pressure.</p>
-          <p style="margin-top:20px;">Indivisible groups are independent — each chapter sets its own agenda and runs its own operations. What the national organization provides is strategic guidance, organizing resources, and coordination across the network. We use what's useful and adapt it to our community.</p>
-          <p style="margin-top:20px;">The national Indivisible Guide — the handbook that started the movement — is updated regularly and available for free at <a href="https://indivisible.org/resource/guide/" target="_blank" rel="noopener">indivisible.org</a>. It's a practical starting point for anyone who wants to understand how this kind of organizing works.</p>
-        </div>
-        <div style="margin-top:32px;display:flex;gap:12px;flex-wrap:wrap;">
-          <a href="https://indivisible.org" target="_blank" rel="noopener" class="btn btn-primary">Indivisible National ↗</a>
-          <a href="https://indivisible.org/resource/guide/" target="_blank" rel="noopener" class="btn btn-outline">Read the Guide ↗</a>
-        </div>
+  <section class="section section--alt">
+    <div class="container" style="max-width:780px;">
+      <p class="section-label">Our Affiliation</p>
+      <h2 class="section-title">Part of a National Movement</h2>
+      <div style="font-size:1.02rem;line-height:1.78;color:var(--text-mid);">
+        <p>West Hollywood Indivisible is a registered local chapter of <a href="https://indivisible.org" target="_blank" rel="noopener">Indivisible</a>, a nationwide movement founded in 2016 by former Congressional staffers to provide a practical framework for resisting authoritarianism through local organizing and constituent pressure.</p>
+        <p style="margin-top:20px;">Indivisible groups are independent — each chapter sets its own agenda and runs its own operations. What the national organization provides is strategic guidance, organizing resources, and coordination across the network. We use what's useful and adapt it to our community.</p>
       </div>
-    </section>
-
-    <!-- Contact CTA -->
-    <section class="section">
-      <div class="container" style="max-width:600px;text-align:center;">
-        <p class="section-label">Get in Touch</p>
-        <h2 class="section-title">Questions? Reach Out.</h2>
-        <p style="color:var(--text-mid);line-height:1.7;margin-bottom:28px;font-size:1.02rem;">We're reachable by email. If you want to learn more, get involved, or have something to tell us, write to us.</p>
-        <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
-          <a href="mailto:hello@wehoindivisible.org" class="btn btn-primary">hello@wehoindivisible.org</a>
-          <a href="contact.html" class="btn btn-outline">Contact Page</a>
-        </div>
+      <div style="margin-top:32px;display:flex;gap:12px;flex-wrap:wrap;">
+        <a href="https://indivisible.org" target="_blank" rel="noopener" class="btn btn-primary">Indivisible National &#8599;</a>
+        <a href="https://indivisible.org/resource/guide/" target="_blank" rel="noopener" class="btn btn-outline">Read the Guide &#8599;</a>
       </div>
-    </section>
+    </div>
+  </section>
 
-  </main>
+  <section class="section">
+    <div class="container" style="max-width:600px;text-align:center;">
+      <p class="section-label">Get in Touch</p>
+      <h2 class="section-title">Questions? Reach Out.</h2>
+      <p style="color:var(--text-mid);line-height:1.7;margin-bottom:28px;font-size:1.02rem;">We're reachable by email. If you want to learn more, get involved, or have something to tell us, write to us.</p>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+        <a href="mailto:hello@wehoindivisible.org" class="btn btn-primary">hello@wehoindivisible.org</a>
+        <a href="contact.html" class="btn btn-outline">Contact Page</a>
+      </div>
+    </div>
+  </section>
+</main>
 
-  <div id="site-footer-container"></div>
-  <script src="js/main.js?v=3"></script>
+<div id="site-footer-container"></div>
+<script src="js/main.js?v=7"></script>
+<script src="js/brevo-form.js?v=7"></script>
 </body>
 </html>

@@ -9,104 +9,215 @@
   <meta property="og:title" content="West Hollywood Indivisible">
   <meta property="og:description" content="Neighbors working to protect democracy in West Hollywood and beyond.">
   <meta property="og:url" content="https://wehoindivisible.org">
-  <meta name="theme-color" content="#1E0A3C">
-  <!--
-    CookieYes — Free cookie consent
-    1. Sign up at https://www.cookieyes.com/get-started/
-    2. Get your site script and replace the line below
-  -->
-  <!-- <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/YOUR_SITE_ID/script.js"></script> -->
+  <meta name="theme-color" content="#07131C">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="apple-touch-icon" href="favicon.ico">
-  <link rel="stylesheet" href="css/style.css?v=3">
+  <link rel="stylesheet" href="css/style.css?v=7">
+  <style id="nav-mobile-css">
+    #whi-nav-bar { position:fixed; top:0; left:0; right:0; z-index:1000; }
+    #whi-rainbow { height:6px; background:linear-gradient(to right,#E40303 0%,#E40303 16.666%,#FF8C00 16.666%,#FF8C00 33.333%,#FFED00 33.333%,#FFED00 50%,#008026 50%,#008026 66.666%,#004DFF 66.666%,#004DFF 83.333%,#750787 83.333%,#750787 100%); }
+    #whi-nav { height:80px; background:#07131C; display:flex; align-items:center; overflow:hidden; }
+    #whi-nav-inner { width:100%; max-width:1100px; margin:0 auto; padding:0 20px; display:flex; align-items:center; justify-content:space-between; position:relative; }
+    #whi-logo { display:flex; align-items:center; gap:12px; text-decoration:none; flex-shrink:0; min-width:0; }
+    #whi-logo-img { height:36px; width:auto; }
+    #whi-logo-div { width:1px; height:28px; background:rgba(255,255,255,0.2); flex-shrink:0; }
+    #whi-logo-title { font-family:"Montserrat",sans-serif; font-weight:800; font-size:1rem; color:#fff; text-transform:uppercase; letter-spacing:0.02em; display:block; }
+    #whi-logo-sub { font-family:"Montserrat",sans-serif; font-weight:500; font-size:0.65rem; color:#8AABBF; text-transform:uppercase; letter-spacing:0.12em; display:block; }
+    #whi-logo-mobile { display:none; font-family:"Montserrat",sans-serif; font-weight:800; font-size:1rem; color:#fff; text-transform:uppercase; letter-spacing:0.02em; }
+    #whi-desktop-links { display:flex; align-items:center; gap:2px; list-style:none; margin:0; padding:0; }
+    #whi-desktop-links a { font-family:"Montserrat",sans-serif; font-weight:600; font-size:0.82rem; letter-spacing:0.06em; text-transform:uppercase; color:rgba(255,255,255,0.75); padding:8px 12px; border-radius:4px; text-decoration:none; white-space:nowrap; }
+    #whi-desktop-links a:hover { color:#fff; background:rgba(255,255,255,0.08); }
+    #whi-desktop-links .whi-cta { background:#CA4948; color:#fff !important; padding:8px 16px; }
+    #whi-desktop-links .whi-cta:hover { background:#A83736; }
+    #whi-hamburger { display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:8px; flex-shrink:0; }
+    #whi-hamburger span { display:block; width:24px; height:2px; background:#fff; transition:all 0.2s; }
+    #whi-mobile-menu { display:none; background:#07131C; border-top:1px solid rgba(255,255,255,0.1); }
+    #whi-mobile-menu a { display:block; padding:14px 24px; font-family:"Montserrat",sans-serif; font-weight:600; font-size:0.9rem; color:rgba(255,255,255,0.85); text-decoration:none; text-transform:uppercase; letter-spacing:0.06em; border-bottom:1px solid rgba(255,255,255,0.06); }
+    #whi-mobile-menu a:last-child { background:#CA4948; color:#fff; border-bottom:none; }
+    @media (max-width:900px) {
+      #whi-desktop-links { display:none !important; }
+      #whi-logo-img { display:none !important; }
+      #whi-logo-div { display:none !important; }
+      #whi-logo-sub { display:none !important; }
+      #whi-logo-title { display:none !important; }
+      #whi-logo-mobile { display:block !important; }
+      #whi-hamburger { display:flex !important; position:absolute; right:16px; top:50%; transform:translateY(-50%); }
+    }
+  </style>
+  <style>body { padding-top:86px !important; }</style>
 </head>
 <body>
-  <a href="#main-content" class="skip-link">Skip to main content</a>
-  <div id="site-nav-container"></div>
 
-  <main id="main-content">
+<div id="whi-nav-bar">
+  <div id="whi-rainbow"></div>
+  <nav id="whi-nav" aria-label="Main navigation">
+    <div id="whi-nav-inner">
+      <a href="index.html" id="whi-logo" aria-label="West Hollywood Indivisible home">
+        <img id="whi-logo-img" src="https://indivisible.org/wp-content/uploads/2025/11/logo-indivisible-lg.svg" alt="Indivisible" onerror="this.style.display='none'">
+        <div id="whi-logo-div"></div>
+        <div>
+          <span id="whi-logo-mobile">WeHo Indivisible</span>
+          <span id="whi-logo-title">West Hollywood</span>
+          <span id="whi-logo-sub">West Hollywood, California</span>
+        </div>
+      </a>
+      <ul id="whi-desktop-links" role="list">
+        <li><a href="actions.html">Actions</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="get-involved.html">Get Involved</a></li>
+        <li><a href="representatives.html">Your Reps</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="whi-cta">Sign Up</a></li>
+      </ul>
+      <button id="whi-hamburger" onclick="whiMenuToggle()" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div id="whi-mobile-menu">
+    <a href="actions.html">Actions</a>
+    <a href="events.html">Events</a>
+    <a href="get-involved.html">Get Involved</a>
+    <a href="representatives.html">Your Reps</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Sign Up</a>
+  </div>
+</div>
 
-    <!-- ======================== HERO ======================== -->
-    <section class="hero">
-      <div class="container">
-        <div class="hero-inner">
+<script>
+function whiMenuToggle(){
+  var m=document.getElementById('whi-mobile-menu');
+  var b=document.getElementById('whi-hamburger');
+  var s=b.querySelectorAll('span');
+  var open=m.style.display==='block';
+  m.style.display=open?'none':'block';
+  b.setAttribute('aria-expanded',String(!open));
+  s[0].style.transform=open?'':'translateY(7px) rotate(45deg)';
+  s[1].style.opacity=open?'':'0';
+  s[2].style.transform=open?'':'translateY(-7px) rotate(-45deg)';
+}
+document.addEventListener('click',function(e){
+  var b=document.getElementById('whi-hamburger');
+  var m=document.getElementById('whi-mobile-menu');
+  if(b&&m&&!b.contains(e.target)&&!m.contains(e.target)){
+    m.style.display='none';
+    b.setAttribute('aria-expanded','false');
+    var s=b.querySelectorAll('span');
+    s[0].style.transform='';s[1].style.opacity='';s[2].style.transform='';
+  }
+});
+</script>
 
-          <div>
-            <p class="hero-eyebrow">West Hollywood, California</p>
-            <h1 class="hero-heading">West Hollywood<br>Indivisible</h1>
-            <p class="hero-mission">
-              Indivisible is a nationwide movement of everyday people organizing on the ground in all 50 states to stop the rise of authoritarianism in the United States and to build a real democracy that works for all of us.
-            </p>
-            <div class="hero-actions">
-              <a href="get-involved.html" class="btn btn-primary btn-lg">Get Involved</a>
-              <a href="actions.html" class="btn btn-outline--light btn-lg">This Week's Actions</a>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<main id="main-content">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-inner">
+
+        <div>
+          <p class="hero-eyebrow">West Hollywood, California</p>
+          <h1 class="hero-heading">West Hollywood<br>Indivisible</h1>
+          <p class="hero-mission">
+            Indivisible is a nationwide movement of everyday people organizing on the ground in all 50 states to stop the rise of authoritarianism in the United States and to build a real democracy that works for all of us.
+          </p>
+          <div class="hero-actions">
+            <a href="get-involved.html" class="btn btn-primary btn-lg">Get Involved</a>
+            <a href="actions.html" class="btn btn-outline--light btn-lg">This Week's Actions</a>
+          </div>
+        </div>
+
+        <div class="hero-form-card">
+          <p class="hero-form-title">Stay in the Loop</p>
+          <p class="hero-form-sub">Action alerts and event notices. No spam.</p>
+
+          <style>
+            .sib-form, #sib-form-container, #sib-container { background:transparent !important; padding:0 !important; margin:0 !important; border:none !important; max-width:100% !important; text-align:left !important; }
+            .sib-form-block { padding:4px 0 !important; margin:0 !important; }
+            .form__entry, .entry_block { margin:0 !important; padding:0 !important; }
+            .entry__label { font-size:0.72rem !important; font-weight:700 !important; letter-spacing:0.1em !important; text-transform:uppercase !important; color:rgba(255,255,255,0.8) !important; font-family:"Montserrat",sans-serif !important; margin-bottom:3px !important; display:block !important; }
+            .entry__field .input { background:rgba(255,255,255,0.07) !important; border:1.5px solid rgba(255,255,255,0.15) !important; color:#fff !important; border-radius:3px !important; font-size:0.9rem !important; padding:9px 12px !important; width:100% !important; box-sizing:border-box !important; font-family:"Domine",serif !important; }
+            .entry__field .input::placeholder { color:rgba(255,255,255,0.3) !important; }
+            .entry__field .input:focus { outline:none !important; border-color:#6C9FC2 !important; }
+            .sib-form-block__button { background:#CA4948 !important; color:#fff !important; font-family:"Montserrat",sans-serif !important; font-weight:700 !important; letter-spacing:0.08em !important; font-size:0.85rem !important; border-radius:3px !important; width:100% !important; padding:12px !important; border:none !important; cursor:pointer !important; text-transform:uppercase !important; }
+            .sib-form-block__button:hover { background:#A83736 !important; }
+            .sib-form-message-panel { max-width:100% !important; margin:0 0 8px 0 !important; }
+            .entry__choice label { display:flex !important; gap:8px !important; align-items:flex-start !important; cursor:pointer !important; }
+            .entry__choice span:not(.checkbox) { font-size:0.78rem !important; color:rgba(255,255,255,0.55) !important; font-family:"Domine",serif !important; line-height:1.5 !important; }
+            .entry__choice p { margin:0 !important; color:rgba(255,255,255,0.55) !important; font-size:0.78rem !important; }
+            .checkbox_tick_positive { border:1.5px solid rgba(255,255,255,0.3) !important; background:transparent !important; flex-shrink:0 !important; margin-top:2px !important; }
+            .entry__error--primary { font-size:11px !important; color:#ff6b6b !important; background:transparent !important; border:none !important; padding:2px 0 !important; }
+            .progress-indicator__icon { display:none !important; }
+          </style>
+
+          <div id="sib-form-container" class="sib-form-container">
+            <div id="error-message" class="sib-form-message-panel" style="display:none;font-size:14px;text-align:left;font-family:Helvetica,sans-serif;color:#661d1d;background-color:#ffeded;border-radius:3px;border-color:#ff4949;max-width:100%;padding:10px 14px;">
+              <span>Your subscription could not be saved. Please try again.</span>
+            </div>
+            <div id="success-message" class="sib-form-message-panel" style="display:none;font-size:14px;text-align:left;font-family:Helvetica,sans-serif;color:#085229;background-color:#e7faf0;border-radius:3px;border-color:#13ce66;max-width:100%;padding:10px 14px;">
+              <span>You're on the list. We'll be in touch.</span>
+            </div>
+            <div id="sib-container" class="sib-container--medium sib-container--horizontal" style="text-align:left;background-color:transparent;max-width:100%;border-width:0px;direction:ltr;">
+              <form id="sib-form" method="POST" action="https://9a9b0ac6.sibforms.com/serve/MUIFAJU5o9rtt3UyQQRnvJMWHnRn4yjmkJqPTN-F9UEOdu9bKYwAXWqKMu6lJD4RGH3F9cPYlfalYAkDPwSQNeM2Ja1awHHL0DXnzB7ZXNO4pqZ4n0BJxBjE9XQ-RLogMcIVdRvNZ47ltiRyBE6ZH1jya3frE3Dd2v175BgwCIX_y8U1RyKsASuXgn0mbdIADPTJ0TkE5MzErVLg1A==" data-type="subscription">
+                <div style="padding:4px 0;"><div class="sib-input sib-form-block"><div class="form__entry entry_block"><div class="form__label-row"><label class="entry__label" for="FIRSTNAME">First name</label><div class="entry__field"><input class="input" maxlength="200" type="text" id="FIRSTNAME" name="FIRSTNAME" autocomplete="given-name" data-required="true" required /></div></div><label class="entry__error entry__error--primary"></label></div></div></div>
+                <div style="padding:4px 0;"><div class="sib-input sib-form-block"><div class="form__entry entry_block"><div class="form__label-row"><label class="entry__label" for="LASTNAME">Last name</label><div class="entry__field"><input class="input" maxlength="200" type="text" id="LASTNAME" name="LASTNAME" autocomplete="family-name" /></div></div></div></div>
+                <div style="padding:4px 0;"><div class="sib-input sib-form-block"><div class="form__entry entry_block"><div class="form__label-row"><label class="entry__label" for="ZIP">ZIP code</label><div class="entry__field"><input class="input" maxlength="10" type="text" id="ZIP" name="ZIP" autocomplete="postal-code" /></div></div></div></div>
+                <div style="padding:4px 0;"><div class="sib-input sib-form-block"><div class="form__entry entry_block"><div class="form__label-row"><label class="entry__label" for="EMAIL">Email address</label><div class="entry__field"><input class="input" type="email" id="EMAIL" name="EMAIL" autocomplete="email" placeholder="you@example.com" data-required="true" required /></div></div><label class="entry__error entry__error--primary"></label></div></div></div>
+                <div style="padding:6px 0 4px;"><div class="sib-optin sib-form-block" data-required="true"><div class="form__entry entry_mcq"><div class="form__label-row"><div class="entry__choice"><label><input type="checkbox" class="input_replaced" value="1" id="OPT_IN" name="OPT_IN" required /><span class="checkbox checkbox_tick_positive" style="width:16px;height:16px;display:inline-flex;align-items:center;justify-content:center;border-radius:2px;"></span><span style="margin-left:8px;"><p>I agree to receive emails from West Hollywood Indivisible. I can unsubscribe at any time.</p></span></label></div></div><label class="entry__error entry__error--primary"></label></div></div></div>
+                <div style="padding:4px 0;"><div class="sib-form-block"><button class="sib-form-block__button sib-form-block__button-with-loader" form="sib-form" type="submit">Sign Me Up</button></div></div>
+                <input type="text" name="email_address_check" value="" style="display:none;">
+                <input type="hidden" name="locale" value="en">
+              </form>
             </div>
           </div>
-
-          <div class="hero-form-card">
-            <p class="hero-form-title">Stay in the Loop</p>
-            <p class="hero-form-sub">Action alerts and event notices. No spam.</p>
-            <form class="hero-form" data-brevo autocomplete="on" novalidate>
-              <div class="form-group">
-                <input type="text" name="firstname" placeholder="First name" required autocomplete="given-name">
-              </div>
-              <div class="form-group">
-                <input type="text" name="lastname" placeholder="Last name" autocomplete="family-name">
-              </div>
-              <div class="form-group">
-                <input type="email" name="email" placeholder="Email address" required autocomplete="email">
-              </div>
-              <div class="form-group">
-                <input type="text" name="zip" placeholder="ZIP code" maxlength="10" inputmode="numeric" autocomplete="postal-code">
-              </div>
-              <div class="form-group" style="display:flex;gap:10px;align-items:flex-start;">
-                <input type="checkbox" name="consent" id="consent-hero" required style="margin-top:4px;flex-shrink:0;accent-color:#CA4948;width:auto;">
-                <label for="consent-hero" style="font-size:0.78rem;color:rgba(255,255,255,0.5);line-height:1.55;text-transform:none;letter-spacing:0;font-weight:400;font-family:'Domine',serif;">
-                  I agree to receive emails from West Hollywood Indivisible. I can unsubscribe at any time.
-                </label>
-              </div>
-              <p class="brevo-msg" style="display:none;"></p>
-              <button type="submit" class="btn btn-primary" style="width:100%;margin-top:4px;">Sign Me Up</button>
-              <p class="form-notice" style="margin-top:10px;">No spam. Action alerts and event notices only.</p>
-            </form>
-          </div>
-
+          <script>
+            window.REQUIRED_CODE_ERROR_MESSAGE='Please choose a country code';
+            window.LOCALE='en';
+            window.EMAIL_INVALID_MESSAGE="Please enter a valid email address.";
+            window.REQUIRED_ERROR_MESSAGE="This field cannot be left blank.";
+            window.GENERIC_INVALID_MESSAGE="The information provided is invalid.";
+            var AUTOHIDE=Boolean(0);
+          </script>
+          <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
         </div>
+
       </div>
-    </section>
+    </div>
+  </section>
 
-    <hr class="rainbow-divider">
+  <hr class="rainbow-divider">
 
-    <!-- ======================== ACTIONS ======================== -->
-    <!-- Populated dynamically from actions.html by main.js (first 3 cards) -->
-    <section class="section section--alt" id="actions-section">
-      <div class="container">
-        <p class="section-label">What You Can Do Now</p>
-        <div class="flex justify-between items-center flex-wrap gap-16" style="margin-bottom:32px;">
-          <h2 class="section-title mb-0">Local Actions</h2>
-          <a href="actions.html" class="btn btn-outline">See All Actions</a>
-        </div>
-        <div class="actions-list" id="actions-list"></div>
+  <!-- ACTIONS (dynamic) -->
+  <section class="section section--alt" id="actions-section">
+    <div class="container">
+      <p class="section-label">What You Can Do Now</p>
+      <div class="flex justify-between items-center flex-wrap gap-16" style="margin-bottom:32px;">
+        <h2 class="section-title mb-0">Local Actions</h2>
+        <a href="actions.html" class="btn btn-outline">See All Actions</a>
       </div>
-    </section>
+      <div class="actions-list" id="actions-list"></div>
+    </div>
+  </section>
 
-    <!-- ======================== UPCOMING EVENTS ======================== -->
-    <!-- Populated dynamically from events.html by main.js -->
-    <section class="section" id="events-section">
-      <div class="container">
-        <p class="section-label">On the Calendar</p>
-        <div class="flex justify-between items-center flex-wrap gap-16" style="margin-bottom:32px;">
-          <h2 class="section-title mb-0">Upcoming Events</h2>
-          <a href="events.html" class="btn btn-outline">See All Events</a>
-        </div>
-        <div class="events-grid" id="events-grid"></div>
+  <!-- EVENTS (dynamic) -->
+  <section class="section" id="events-section">
+    <div class="container">
+      <p class="section-label">On the Calendar</p>
+      <div class="flex justify-between items-center flex-wrap gap-16" style="margin-bottom:32px;">
+        <h2 class="section-title mb-0">Upcoming Events</h2>
+        <a href="events.html" class="btn btn-outline">See All Events</a>
       </div>
-    </section>
+      <div class="events-grid" id="events-grid"></div>
+    </div>
+  </section>
 
-  </main>
+</main>
 
-  <div id="site-footer-container"></div>
-  <script src="js/main.js?v=3"></script>
-  <script src="js/brevo-form.js?v=3"></script>
+<div id="site-footer-container"></div>
+<script src="js/main.js?v=7"></script>
+<script src="js/brevo-form.js?v=7"></script>
+
 </body>
 </html>
