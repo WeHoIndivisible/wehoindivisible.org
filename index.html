@@ -12,7 +12,9 @@
   <meta name="theme-color" content="#07131C">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="apple-touch-icon" href="favicon.ico">
-  <link rel="stylesheet" href="css/style.css?v=7">
+  <!-- Load Brevo styles first, then our styles override them -->
+  <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
+  <link rel="stylesheet" href="css/style.css?v=8">
   <style id="nav-mobile-css">
     #whi-nav-bar { position:fixed; top:0; left:0; right:0; z-index:1000; }
     #whi-rainbow { height:6px; background:linear-gradient(to right,#E40303 0%,#E40303 16.666%,#FF8C00 16.666%,#FF8C00 33.333%,#FFED00 33.333%,#FFED00 50%,#008026 50%,#008026 66.666%,#004DFF 66.666%,#004DFF 83.333%,#750787 83.333%,#750787 100%); }
@@ -44,7 +46,30 @@
       #whi-hamburger { display:flex !important; position:absolute; right:16px; top:50%; transform:translateY(-50%); }
     }
   </style>
-  <style>body { padding-top:86px !important; }</style>
+  <style>
+    body { padding-top:86px !important; }
+    /* Brevo form overrides — scoped to hero card */
+    .hero-form-card .sib-form { background:transparent !important; padding:0 !important; margin:0 !important; }
+    .hero-form-card #sib-form-container,
+    .hero-form-card #sib-container { background:transparent !important; padding:0 !important; margin:0 !important; border:none !important; max-width:100% !important; text-align:left !important; }
+    .hero-form-card .sib-form-block { padding:4px 0 !important; margin:0 !important; }
+    .hero-form-card .form__entry,
+    .hero-form-card .entry_block { margin:0 !important; padding:0 !important; }
+    .hero-form-card .entry__label { font-size:0.72rem !important; font-weight:700 !important; letter-spacing:0.1em !important; text-transform:uppercase !important; color:rgba(255,255,255,0.8) !important; font-family:"Montserrat",sans-serif !important; margin-bottom:3px !important; display:block !important; }
+    .hero-form-card .input { background:rgba(255,255,255,0.07) !important; border:1.5px solid rgba(255,255,255,0.15) !important; color:#fff !important; border-radius:3px !important; font-size:0.9rem !important; padding:9px 12px !important; width:100% !important; box-sizing:border-box !important; }
+    .hero-form-card .input::placeholder { color:rgba(255,255,255,0.3) !important; }
+    .hero-form-card .input:focus { outline:none !important; border-color:#6C9FC2 !important; }
+    .hero-form-card .sib-form-block__button { background:#CA4948 !important; color:#fff !important; font-family:"Montserrat",sans-serif !important; font-weight:700 !important; letter-spacing:0.08em !important; font-size:0.85rem !important; border-radius:3px !important; width:100% !important; padding:12px !important; border:none !important; cursor:pointer !important; text-transform:uppercase !important; }
+    .hero-form-card .sib-form-block__button:hover { background:#A83736 !important; }
+    .hero-form-card .sib-form-message-panel { max-width:100% !important; }
+    .hero-form-card .entry__choice span { color:rgba(255,255,255,0.55) !important; font-size:0.78rem !important; line-height:1.5 !important; }
+    .hero-form-card .entry__choice p { margin:0 !important; color:rgba(255,255,255,0.55) !important; font-size:0.78rem !important; }
+    .hero-form-card .checkbox_tick_positive { border-color:rgba(255,255,255,0.3) !important; background:transparent !important; }
+    .hero-form-card .entry__error--primary { font-size:11px !important; color:#ff6b6b !important; background:transparent !important; border:none !important; }
+    .hero-form-card .progress-indicator__icon { display:none !important; }
+    .hero-form-card #error-message,
+    .hero-form-card #success-message { display:none; }
+  </style>
 </head>
 <body>
 
@@ -112,7 +137,6 @@ document.addEventListener('click',function(e){
 
 <main id="main-content">
 
-  <!-- HERO -->
   <section class="hero">
     <div class="container">
       <div class="hero-inner">
@@ -132,7 +156,40 @@ document.addEventListener('click',function(e){
         <div class="hero-form-card">
           <p class="hero-form-title">Stay in the Loop</p>
           <p class="hero-form-sub">Action alerts and event notices. No spam.</p>
-          <iframe src="https://9a9b0ac6.sibforms.com/serve/MUIFAJU5o9rtt3UyQQRnvJMWHnRn4yjmkJqPTN-F9UEOdu9bKYwAXWqKMu6lJD4RGH3F9cPYlfalYAkDPwSQNeM2Ja1awHHL0DXnzB7ZXNO4pqZ4n0BJxBjE9XQ-RLogMcIVdRvNZ47ltiRyBE6ZH1jya3frE3Dd2v175BgwCIX_y8U1RyKsASuXgn0mbdIADPTJ0TkE5MzErVLg1A==" frameborder="0" scrolling="auto" allowfullscreen style="display:block;width:100%;height:520px;border:none;margin-top:-60px;"></iframe>
+
+          <div id="sib-form-container" class="sib-form-container">
+            <div id="error-message" class="sib-form-message-panel" style="font-size:14px;text-align:left;font-family:Helvetica,sans-serif;color:#661d1d;background-color:#ffeded;border-radius:3px;border-color:#ff4949;max-width:100%;padding:10px 14px;">
+              <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
+                <span class="sib-form-message-panel__inner-text">Your subscription could not be saved. Please try again.</span>
+              </div>
+            </div>
+            <div id="success-message" class="sib-form-message-panel" style="font-size:14px;text-align:left;font-family:Helvetica,sans-serif;color:#085229;background-color:#e7faf0;border-radius:3px;border-color:#13ce66;max-width:100%;padding:10px 14px;">
+              <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
+                <span class="sib-form-message-panel__inner-text">You're on the list. We'll be in touch.</span>
+              </div>
+            </div>
+            <div id="sib-container" class="sib-container--medium sib-container--horizontal" style="text-align:left;background-color:transparent;max-width:100%;border-width:0px;direction:ltr;">
+              <form id="sib-form" method="POST" action="https://9a9b0ac6.sibforms.com/serve/MUIFAJU5o9rtt3UyQQRnvJMWHnRn4yjmkJqPTN-F9UEOdu9bKYwAXWqKMu6lJD4RGH3F9cPYlfalYAkDPwSQNeM2Ja1awHHL0DXnzB7ZXNO4pqZ4n0BJxBjE9XQ-RLogMcIVdRvNZ47ltiRyBE6ZH1jya3frE3Dd2v175BgwCIX_y8U1RyKsASuXgn0mbdIADPTJ0TkE5MzErVLg1A==" data-type="subscription">
+                <div style="padding:4px 0;"><div class="sib-input sib-form-block"><div class="form__entry entry_block"><div class="form__label-row"><label class="entry__label" style="font-weight:700;text-align:left;font-size:16px;font-family:Helvetica,sans-serif;color:#07131c;" for="FIRSTNAME">First name</label><div class="entry__field"><input class="input" maxlength="200" type="text" id="FIRSTNAME" name="FIRSTNAME" autocomplete="given-name" data-required="true" required /></div></div><label class="entry__error entry__error--primary" style="font-size:12px;font-family:Helvetica,sans-serif;color:#661d1d;"></label></div></div></div>
+                <div style="padding:4px 0;"><div class="sib-input sib-form-block"><div class="form__entry entry_block"><div class="form__label-row"><label class="entry__label" style="font-weight:700;text-align:left;font-size:16px;font-family:Helvetica,sans-serif;color:#07131c;" for="LASTNAME">Last name</label><div class="entry__field"><input class="input" maxlength="200" type="text" id="LASTNAME" name="LASTNAME" autocomplete="family-name" /></div></div></div></div>
+                <div style="padding:4px 0;"><div class="sib-input sib-form-block"><div class="form__entry entry_block"><div class="form__label-row"><label class="entry__label" style="font-weight:700;text-align:left;font-size:16px;font-family:Helvetica,sans-serif;color:#07131c;" for="ZIP">ZIP code</label><div class="entry__field"><input class="input" maxlength="10" type="text" id="ZIP" name="ZIP" autocomplete="postal-code" /></div></div></div></div>
+                <div style="padding:4px 0;"><div class="sib-input sib-form-block"><div class="form__entry entry_block"><div class="form__label-row"><label class="entry__label" style="font-weight:700;text-align:left;font-size:16px;font-family:Helvetica,sans-serif;color:#07131c;" for="EMAIL">Email address</label><div class="entry__field"><input class="input" type="email" id="EMAIL" name="EMAIL" autocomplete="email" placeholder="you@example.com" data-required="true" required /></div></div><label class="entry__error entry__error--primary" style="font-size:12px;font-family:Helvetica,sans-serif;color:#661d1d;"></label></div></div></div>
+                <div style="padding:6px 0 4px;"><div class="sib-optin sib-form-block" data-required="true"><div class="form__entry entry_mcq"><div class="form__label-row"><div class="entry__choice"><label><input type="checkbox" class="input_replaced" value="1" id="OPT_IN" name="OPT_IN" required /><span class="checkbox checkbox_tick_positive" style="margin-left:0;"></span><span style="font-size:12px;text-align:left;font-family:Helvetica,sans-serif;color:#07131c;background-color:transparent;margin-left:8px;"><p>I agree to receive emails from West Hollywood Indivisible. I can unsubscribe at any time.</p></span></label></div></div><label class="entry__error entry__error--primary" style="font-size:12px;font-family:Helvetica,sans-serif;color:#661d1d;"></label></div></div></div>
+                <div style="padding:4px 0;"><div class="sib-form-block" style="text-align:left;"><button class="sib-form-block__button sib-form-block__button-with-loader" style="font-size:16px;text-align:left;font-weight:700;font-family:Helvetica,sans-serif;color:#ffffff;background-color:#ca4948;border-width:0px;" form="sib-form" type="submit"><svg class="icon clickable__icon progress-indicator__icon sib-hide-loader-icon" viewBox="0 0 512 512" style="display:none;"><path d="M460.116 373.846l-20.823-12.022c-5.541-3.199-7.54-10.159-4.663-15.874 30.137-59.886 28.343-131.652-5.386-189.946-33.641-58.394-94.896-95.833-161.827-99.676C261.028 55.961 256 50.751 256 44.352V20.309c0-6.904 5.808-12.337 12.703-11.982 83.556 4.306 160.163 50.864 202.11 123.677 42.063 72.696 44.079 162.316 6.031 236.832-3.14 6.148-10.75 8.461-16.728 5.01z"/></svg>SIGN ME UP</button></div></div>
+                <input type="text" name="email_address_check" value="" class="input--hidden" style="display:none;">
+                <input type="hidden" name="locale" value="en">
+              </form>
+            </div>
+          </div>
+          <script>
+            window.REQUIRED_CODE_ERROR_MESSAGE='Please choose a country code';
+            window.LOCALE='en';
+            window.EMAIL_INVALID_MESSAGE="Please enter a valid email address.";
+            window.REQUIRED_ERROR_MESSAGE="This field cannot be left blank.";
+            window.GENERIC_INVALID_MESSAGE="The information provided is invalid.";
+            var AUTOHIDE=Boolean(0);
+          </script>
+          <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
         </div>
 
       </div>
@@ -141,7 +198,6 @@ document.addEventListener('click',function(e){
 
   <hr class="rainbow-divider">
 
-  <!-- ACTIONS (dynamic) -->
   <section class="section section--alt" id="actions-section">
     <div class="container">
       <p class="section-label">What You Can Do Now</p>
@@ -153,7 +209,6 @@ document.addEventListener('click',function(e){
     </div>
   </section>
 
-  <!-- EVENTS (dynamic) -->
   <section class="section" id="events-section">
     <div class="container">
       <p class="section-label">On the Calendar</p>
@@ -168,8 +223,8 @@ document.addEventListener('click',function(e){
 </main>
 
 <div id="site-footer-container"></div>
-<script src="js/main.js?v=7"></script>
-<script src="js/brevo-form.js?v=7"></script>
+<script src="js/main.js?v=8"></script>
+<script src="js/brevo-form.js?v=8"></script>
 
 </body>
 </html>
