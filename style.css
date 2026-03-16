@@ -193,7 +193,7 @@ textarea { min-height: 120px; resize: vertical; }
 .form-error { color: var(--invis-red-dark); font-size: 0.9rem; margin-top: 8px; }
 
 /* --- Rainbow divider --- */
-.rainbow-divider { height: 10px; background: var(--rainbow-gradient); border: none; margin: 0; }
+.rainbow-divider { height: 16px; background: var(--rainbow-gradient); border: none; margin: 0; }
 
 /* --- Page Hero (interior pages) --- */
 .page-hero { background: #07131C; color: var(--white); padding: 52px 0; }
