@@ -36,7 +36,7 @@
   --font-body:    'Domine', serif;
 
   --nav-height:     90px;
-  --rainbow-h:       6px;
+  --rainbow-h:       8px;
   --section-pad:    80px;
   --container-max: 1100px;
 
@@ -193,7 +193,7 @@ textarea { min-height: 120px; resize: vertical; }
 .form-error { color: var(--invis-red-dark); font-size: 0.9rem; margin-top: 8px; }
 
 /* --- Rainbow divider --- */
-.rainbow-divider { height: 4px; background: var(--rainbow-gradient); border: none; margin: 0; }
+.rainbow-divider { height: 8px; background: var(--rainbow-gradient); border: none; margin: 0; }
 
 /* --- Page Hero (interior pages) --- */
 .page-hero { background: #07131C; color: var(--white); padding: 52px 0; }
@@ -671,3 +671,10 @@ textarea { min-height: 120px; resize: vertical; }
     padding-top: 96px !important;
   }
 }
+
+/* ---- Neutralize sib-styles.css global overrides ---- */
+html { scroll-behavior:smooth !important; background:#07131C !important; }
+body { background:#07131C !important; color:var(--text-dark) !important; font-family:var(--font-body) !important; line-height:1.6 !important; }
+.section { background:var(--white) !important; }
+.section--alt { background:var(--off-white) !important; }
+.hero, .page-hero { background:#07131C !important; color:#fff !important; }
