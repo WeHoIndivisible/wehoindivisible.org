@@ -20,8 +20,8 @@ const FOOTER_HTML = `
       <div class="footer-inner">
         <div class="footer-brand">
           <img class="footer-brand-logo" src="logo-indivisible.svg" alt="Indivisible" onerror="this.style.display='none'">
-          <span class="footer-brand-name">West Hollywood</span>
-          <span class="footer-brand-sub">West Hollywood, California</span>
+          <span class="footer-brand-name">West Hollywood Indivisible</span>
+          <span class="footer-brand-sub">California</span>
           <p class="footer-tagline">A small group of neighbors working to protect democracy in our city and beyond. Whatever time you have, it counts.</p>
           <a href="mailto:hello@wehoindivisible.org" class="footer-email">hello@wehoindivisible.org</a>
         </div>
