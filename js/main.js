@@ -19,9 +19,14 @@ const FOOTER_HTML = `
     <div class="container">
       <div class="footer-inner">
         <div class="footer-brand">
-          <img class="footer-brand-logo" src="logo-indivisible.svg" alt="Indivisible" onerror="this.style.display='none'">
-          <span class="footer-brand-name">West Hollywood Indivisible</span>
-          <span class="footer-brand-sub">California</span>
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;">
+            <div>
+              <span class="footer-brand-name">West Hollywood</span>
+              <span class="footer-brand-sub">California</span>
+            </div>
+            <div style="width:1px;height:32px;background:rgba(255,255,255,0.2);flex-shrink:0;"></div>
+            <img class="footer-brand-logo" src="logo-indivisible.svg" alt="Indivisible" onerror="this.style.display='none'" style="height:28px;width:auto;display:block;">
+          </div>
           <p class="footer-tagline">A small group of neighbors working to protect democracy in our city and beyond. Whatever time you have, it counts.</p>
           <a href="mailto:hello@wehoindivisible.org" class="footer-email">hello@wehoindivisible.org</a>
         </div>
