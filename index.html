@@ -12,8 +12,6 @@
   <meta name="theme-color" content="#07131C">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="apple-touch-icon" href="favicon.ico">
-  <!-- Load Brevo styles first, then our styles override them -->
-  <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
   <link rel="stylesheet" href="css/style.css?v=9">
   <style id="nav-mobile-css">
     #whi-nav-bar { position:fixed; top:0; left:0; right:0; z-index:1000; }
@@ -48,27 +46,23 @@
   </style>
   <style>
     body { padding-top:86px !important; }
-    /* Brevo form overrides — scoped to hero card */
-    .hero-form-card .sib-form { background:transparent !important; padding:0 !important; margin:0 !important; }
-    .hero-form-card #sib-form-container,
-    .hero-form-card #sib-container { background:transparent !important; padding:0 !important; margin:0 !important; border:none !important; max-width:100% !important; text-align:left !important; }
-    .hero-form-card .sib-form-block { padding:4px 0 !important; margin:0 !important; }
-    .hero-form-card .form__entry,
-    .hero-form-card .entry_block { margin:0 !important; padding:0 !important; }
-    .hero-form-card .entry__label { font-size:0.72rem !important; font-weight:700 !important; letter-spacing:0.1em !important; text-transform:uppercase !important; color:rgba(255,255,255,0.8) !important; font-family:"Montserrat",sans-serif !important; margin-bottom:3px !important; display:block !important; }
-    .hero-form-card .input { background:rgba(255,255,255,0.07) !important; border:1.5px solid rgba(255,255,255,0.15) !important; color:#fff !important; border-radius:3px !important; font-size:0.9rem !important; padding:9px 12px !important; width:100% !important; box-sizing:border-box !important; }
-    .hero-form-card .input::placeholder { color:rgba(255,255,255,0.3) !important; }
-    .hero-form-card .input:focus { outline:none !important; border-color:#6C9FC2 !important; }
-    .hero-form-card .sib-form-block__button { background:#CA4948 !important; color:#fff !important; font-family:"Montserrat",sans-serif !important; font-weight:700 !important; letter-spacing:0.08em !important; font-size:0.85rem !important; border-radius:3px !important; width:100% !important; padding:12px !important; border:none !important; cursor:pointer !important; text-transform:uppercase !important; }
-    .hero-form-card .sib-form-block__button:hover { background:#A83736 !important; }
-    .hero-form-card .sib-form-message-panel { max-width:100% !important; }
-    .hero-form-card .entry__choice span { color:rgba(255,255,255,0.55) !important; font-size:0.78rem !important; line-height:1.5 !important; }
-    .hero-form-card .entry__choice p { margin:0 !important; color:rgba(255,255,255,0.55) !important; font-size:0.78rem !important; }
-    .hero-form-card .checkbox_tick_positive { border-color:rgba(255,255,255,0.3) !important; background:transparent !important; }
-    .hero-form-card .entry__error--primary { font-size:11px !important; color:#ff6b6b !important; background:transparent !important; border:none !important; }
-    .hero-form-card .progress-indicator__icon { display:none !important; }
-    .hero-form-card #error-message,
-    .hero-form-card #success-message { display:none; }
+    /* Homepage signup form — scoped to hero card */
+    .hero-form-card .form-field { margin-bottom:10px; }
+    .hero-form-card .form-field label { font-size:0.72rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:rgba(255,255,255,0.8); font-family:"Montserrat",sans-serif; margin-bottom:4px; display:block; }
+    .hero-form-card .form-field input[type=text],
+    .hero-form-card .form-field input[type=email] { background:rgba(255,255,255,0.07); border:1.5px solid rgba(255,255,255,0.15); color:#fff; border-radius:3px; font-size:0.9rem; padding:9px 12px; width:100%; box-sizing:border-box; font-family:"Montserrat",sans-serif; }
+    .hero-form-card .form-field input:focus { outline:none; border-color:#6C9FC2; }
+    .hero-form-card .form-field input::placeholder { color:rgba(255,255,255,0.3); }
+    .hero-form-card .form-consent { margin:10px 0 12px 0; display:flex; gap:8px; align-items:flex-start; }
+    .hero-form-card .form-consent input[type=checkbox] { margin-top:3px; accent-color:#CA4948; flex-shrink:0; }
+    .hero-form-card .form-consent label { color:rgba(255,255,255,0.65); font-size:0.78rem; line-height:1.5; font-family:"Montserrat",sans-serif; cursor:pointer; }
+    .hero-form-card .form-submit { background:#CA4948; color:#fff; font-family:"Montserrat",sans-serif; font-weight:700; letter-spacing:0.08em; font-size:0.85rem; border-radius:3px; width:100%; padding:12px; border:none; cursor:pointer; text-transform:uppercase; }
+    .hero-form-card .form-submit:hover { background:#A83736; }
+    .hero-form-card .form-submit:disabled { opacity:0.6; cursor:wait; }
+    .hero-form-card .signup-msg { margin-top:8px; padding:8px 10px; border-radius:3px; font-size:0.8rem; display:none; }
+    .hero-form-card .signup-msg.form-error { background:rgba(255,107,107,0.15); color:#ff9b9b; border:1px solid rgba(255,107,107,0.3); }
+    .hero-form-card .form-success { color:#a3e4a3; font-size:0.9rem; font-family:"Montserrat",sans-serif; margin:0; padding:12px 0; }
+    .hero-form-card .honeypot { position:absolute; left:-9999px; opacity:0; pointer-events:none; height:0; width:0; overflow:hidden; }
   </style>
 </head>
 <body>
@@ -156,39 +150,31 @@ document.addEventListener('click',function(e){
           <p class="hero-form-title">Stay in the Loop</p>
           <p class="hero-form-sub">Action alerts and event notices. No spam.</p>
 
-          <div id="sib-form-container" class="sib-form-container">
-            <div id="error-message" class="sib-form-message-panel" style="font-size:14px;text-align:left;font-family:Helvetica,sans-serif;color:#661d1d;background-color:#ffeded;border-radius:3px;border-color:#ff4949;max-width:100%;padding:10px 14px;">
-              <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
-                <span class="sib-form-message-panel__inner-text">Your subscription could not be saved. Please try again.</span>
-              </div>
+          <form data-signup data-source="homepage">
+            <div class="form-field">
+              <label for="hp-firstname">First name</label>
+              <input type="text" id="hp-firstname" name="firstname" autocomplete="given-name" required>
             </div>
-            <div id="success-message" class="sib-form-message-panel" style="font-size:14px;text-align:left;font-family:Helvetica,sans-serif;color:#085229;background-color:#e7faf0;border-radius:3px;border-color:#13ce66;max-width:100%;padding:10px 14px;">
-              <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
-                <span class="sib-form-message-panel__inner-text">You're on the list. We'll be in touch.</span>
-              </div>
+            <div class="form-field">
+              <label for="hp-lastname">Last name</label>
+              <input type="text" id="hp-lastname" name="lastname" autocomplete="family-name">
             </div>
-            <div id="sib-container" class="sib-container--medium sib-container--horizontal" style="text-align:left;background-color:transparent;max-width:100%;border-width:0px;direction:ltr;">
-              <form id="sib-form" method="POST" action="https://9a9b0ac6.sibforms.com/serve/MUIFAJU5o9rtt3UyQQRnvJMWHnRn4yjmkJqPTN-F9UEOdu9bKYwAXWqKMu6lJD4RGH3F9cPYlfalYAkDPwSQNeM2Ja1awHHL0DXnzB7ZXNO4pqZ4n0BJxBjE9XQ-RLogMcIVdRvNZ47ltiRyBE6ZH1jya3frE3Dd2v175BgwCIX_y8U1RyKsASuXgn0mbdIADPTJ0TkE5MzErVLg1A==" data-type="subscription">
-                <div style="padding:4px 0;"><div class="sib-input sib-form-block"><div class="form__entry entry_block"><div class="form__label-row"><label class="entry__label" style="font-weight:700;text-align:left;font-size:16px;font-family:Helvetica,sans-serif;color:#07131c;" for="FIRSTNAME">First name</label><div class="entry__field"><input class="input" maxlength="200" type="text" id="FIRSTNAME" name="FIRSTNAME" autocomplete="given-name" data-required="true" required /></div></div><label class="entry__error entry__error--primary" style="font-size:12px;font-family:Helvetica,sans-serif;color:#661d1d;"></label></div></div></div>
-                <div style="padding:4px 0;"><div class="sib-input sib-form-block"><div class="form__entry entry_block"><div class="form__label-row"><label class="entry__label" style="font-weight:700;text-align:left;font-size:16px;font-family:Helvetica,sans-serif;color:#07131c;" for="LASTNAME">Last name</label><div class="entry__field"><input class="input" maxlength="200" type="text" id="LASTNAME" name="LASTNAME" autocomplete="family-name" /></div></div></div></div>
-                <div style="padding:4px 0;"><div class="sib-input sib-form-block"><div class="form__entry entry_block"><div class="form__label-row"><label class="entry__label" style="font-weight:700;text-align:left;font-size:16px;font-family:Helvetica,sans-serif;color:#07131c;" for="ZIP">ZIP code</label><div class="entry__field"><input class="input" maxlength="10" type="text" id="ZIP" name="ZIP" autocomplete="postal-code" /></div></div></div></div>
-                <div style="padding:4px 0;"><div class="sib-input sib-form-block"><div class="form__entry entry_block"><div class="form__label-row"><label class="entry__label" style="font-weight:700;text-align:left;font-size:16px;font-family:Helvetica,sans-serif;color:#07131c;" for="EMAIL">Email address</label><div class="entry__field"><input class="input" type="email" id="EMAIL" name="EMAIL" autocomplete="email" placeholder="you@example.com" data-required="true" required /></div></div><label class="entry__error entry__error--primary" style="font-size:12px;font-family:Helvetica,sans-serif;color:#661d1d;"></label></div></div></div>
-                <div style="padding:6px 0 4px;"><div class="sib-optin sib-form-block" data-required="true"><div class="form__entry entry_mcq"><div class="form__label-row"><div class="entry__choice"><label><input type="checkbox" class="input_replaced" value="1" id="OPT_IN" name="OPT_IN" required /><span class="checkbox checkbox_tick_positive" style="margin-left:0;"></span><span style="font-size:12px;text-align:left;font-family:Helvetica,sans-serif;color:#07131c;background-color:transparent;margin-left:8px;"><p>I agree to receive emails from West Hollywood Indivisible. I can unsubscribe at any time.</p></span></label></div></div><label class="entry__error entry__error--primary" style="font-size:12px;font-family:Helvetica,sans-serif;color:#661d1d;"></label></div></div></div>
-                <div style="padding:4px 0;"><div class="sib-form-block" style="text-align:left;"><button class="sib-form-block__button sib-form-block__button-with-loader" style="font-size:16px;text-align:left;font-weight:700;font-family:Helvetica,sans-serif;color:#ffffff;background-color:#ca4948;border-width:0px;" form="sib-form" type="submit"><svg class="icon clickable__icon progress-indicator__icon sib-hide-loader-icon" viewBox="0 0 512 512" style="display:none;"><path d="M460.116 373.846l-20.823-12.022c-5.541-3.199-7.54-10.159-4.663-15.874 30.137-59.886 28.343-131.652-5.386-189.946-33.641-58.394-94.896-95.833-161.827-99.676C261.028 55.961 256 50.751 256 44.352V20.309c0-6.904 5.808-12.337 12.703-11.982 83.556 4.306 160.163 50.864 202.11 123.677 42.063 72.696 44.079 162.316 6.031 236.832-3.14 6.148-10.75 8.461-16.728 5.01z"/></svg>SIGN ME UP</button></div></div>
-                <input type="text" name="email_address_check" value="" class="input--hidden" style="display:none;">
-                <input type="hidden" name="locale" value="en">
-              </form>
+            <div class="form-field">
+              <label for="hp-zip">ZIP code</label>
+              <input type="text" id="hp-zip" name="zip" autocomplete="postal-code" maxlength="10">
             </div>
-          </div>
-          <script>
-            window.REQUIRED_CODE_ERROR_MESSAGE='Please choose a country code';
-            window.LOCALE='en';
-            window.EMAIL_INVALID_MESSAGE="Please enter a valid email address.";
-            window.REQUIRED_ERROR_MESSAGE="This field cannot be left blank.";
-            window.GENERIC_INVALID_MESSAGE="The information provided is invalid.";
-            var AUTOHIDE=Boolean(0);
-          </script>
-          <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
+            <div class="form-field">
+              <label for="hp-email">Email address</label>
+              <input type="email" id="hp-email" name="email" autocomplete="email" placeholder="you@example.com" required>
+            </div>
+            <div class="form-consent">
+              <input type="checkbox" id="hp-consent" name="consent" required>
+              <label for="hp-consent">I agree to receive emails from West Hollywood Indivisible. I can unsubscribe at any time.</label>
+            </div>
+            <div class="honeypot"><label>Website<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+            <button type="submit" class="form-submit">Sign Me Up</button>
+            <div class="signup-msg"></div>
+          </form>
         </div>
 
       </div>
@@ -223,7 +209,7 @@ document.addEventListener('click',function(e){
 
 <div id="site-footer-container"></div>
 <script src="js/main.js?v=9"></script>
-<script src="js/brevo-form.js?v=9"></script>
+<script src="js/signup-form.js?v=1"></script>
 
 </body>
 </html>

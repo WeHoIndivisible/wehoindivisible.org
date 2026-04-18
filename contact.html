@@ -122,7 +122,31 @@ document.addEventListener('click',function(e){
           <p class="section-label" style="margin-bottom:8px;">Sign Up for Action Alerts</p>
           <h2 style="font-family:var(--font-display);font-size:2.2rem;margin-bottom:16px;letter-spacing:0.03em;color:var(--text-dark);">Stay Connected</h2>
           <p style="color:var(--text-mid);margin-bottom:4px;font-size:0.9rem;">Action alerts and event notices. No spam.</p>
-          <iframe src="https://9a9b0ac6.sibforms.com/serve/MUIFAJU5o9rtt3UyQQRnvJMWHnRn4yjmkJqPTN-F9UEOdu9bKYwAXWqKMu6lJD4RGH3F9cPYlfalYAkDPwSQNeM2Ja1awHHL0DXnzB7ZXNO4pqZ4n0BJxBjE9XQ-RLogMcIVdRvNZ47ltiRyBE6ZH1jya3frE3Dd2v175BgwCIX_y8U1RyKsASuXgn0mbdIADPTJ0TkE5MzErVLg1A==" frameborder="0" scrolling="auto" allowfullscreen style="display:block;width:100%;height:560px;border:none;margin-left:-16px;margin-top:-60px;"></iframe>
+          <form data-signup data-source="contact_page" class="signup-form">
+            <div class="form-field">
+              <label for="cp-firstname">First name</label>
+              <input type="text" id="cp-firstname" name="firstname" autocomplete="given-name" required>
+            </div>
+            <div class="form-field">
+              <label for="cp-lastname">Last name</label>
+              <input type="text" id="cp-lastname" name="lastname" autocomplete="family-name">
+            </div>
+            <div class="form-field">
+              <label for="cp-zip">ZIP code</label>
+              <input type="text" id="cp-zip" name="zip" autocomplete="postal-code" maxlength="10">
+            </div>
+            <div class="form-field">
+              <label for="cp-email">Email address</label>
+              <input type="email" id="cp-email" name="email" autocomplete="email" placeholder="you@example.com" required>
+            </div>
+            <div class="form-consent">
+              <input type="checkbox" id="cp-consent" name="consent" required>
+              <label for="cp-consent">I agree to receive emails from West Hollywood Indivisible. I can unsubscribe at any time.</label>
+            </div>
+            <div class="honeypot"><label>Website<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+            <button type="submit" class="form-submit">Sign Me Up</button>
+            <div class="signup-msg"></div>
+          </form>
         </div>
 
         <div class="contact-sidebar">
@@ -154,6 +178,6 @@ document.addEventListener('click',function(e){
 
 <div id="site-footer-container"></div>
 <script src="js/main.js?v=7"></script>
-<script src="js/brevo-form.js?v=7"></script>
+<script src="js/signup-form.js?v=1"></script>
 </body>
 </html>
