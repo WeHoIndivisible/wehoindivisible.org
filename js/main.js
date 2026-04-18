@@ -27,7 +27,7 @@ const FOOTER_HTML = `
             <div style="width:1px;height:32px;background:rgba(255,255,255,0.2);flex-shrink:0;"></div>
             <img class="footer-brand-logo" src="logo-indivisible.svg" alt="Indivisible" onerror="this.style.display='none'" style="height:28px;width:auto;display:block;">
           </div>
-          <p class="footer-tagline">A small group of neighbors working to protect democracy in our city and beyond. Whatever time you have, it counts.</p>
+          <p class="footer-tagline">West Hollywood Indivisible is a member-led group. We have a small coordinating team to help with meetings, communications, and logistics, but that team does not have greater decision-making authority than any other member. Its role is to support the work of the group, not to set political direction on its own, and major decisions will be made through an open process that gives all members a meaningful voice.</p>
           <a href="mailto:hello@wehoindivisible.org" class="footer-email">hello@wehoindivisible.org</a>
         </div>
         <div>
