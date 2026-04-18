@@ -678,3 +678,21 @@ body { background:#07131C !important; color:var(--text-dark) !important; font-fa
 .section { background:var(--white) !important; }
 .section--alt { background:var(--off-white) !important; }
 .hero, .page-hero { background:#07131C !important; color:#fff !important; }
+
+/* -------- Signup Form (light content pages: contact, get-involved) -------- */
+.signup-form { max-width: 480px; }
+.signup-form .form-field { margin-bottom: 16px; }
+.signup-form .form-field label { display: block; font-size: 0.85rem; font-weight: 600; color: var(--text-dark); margin-bottom: 6px; font-family: var(--font-display, "Montserrat", sans-serif); letter-spacing: 0.02em; }
+.signup-form .form-field input[type=text],
+.signup-form .form-field input[type=email] { width: 100%; padding: 10px 12px; font-size: 1rem; border: 1px solid var(--gray-light); border-radius: 4px; box-sizing: border-box; font-family: inherit; color: var(--text-dark); background: #fff; }
+.signup-form .form-field input:focus { outline: none; border-color: var(--invis-dark-blue, #07131C); }
+.signup-form .form-consent { margin: 16px 0; display: flex; gap: 10px; align-items: flex-start; }
+.signup-form .form-consent input[type=checkbox] { margin-top: 4px; accent-color: var(--invis-red, #CA4948); flex-shrink: 0; }
+.signup-form .form-consent label { font-size: 0.9rem; line-height: 1.5; color: var(--text-mid); cursor: pointer; }
+.signup-form .form-submit { background: var(--invis-red, #CA4948); color: #fff; font-family: var(--font-display, "Montserrat", sans-serif); font-weight: 700; letter-spacing: 0.06em; font-size: 0.9rem; border-radius: 4px; padding: 12px 28px; border: none; cursor: pointer; text-transform: uppercase; }
+.signup-form .form-submit:hover { background: #A83736; }
+.signup-form .form-submit:disabled { opacity: 0.6; cursor: wait; }
+.signup-form .signup-msg { margin-top: 12px; padding: 10px 12px; border-radius: 4px; font-size: 0.9rem; display: none; }
+.signup-form .signup-msg.form-error { background: #fff2f2; color: #a81a1a; border: 1px solid #ffd4d4; }
+.signup-form .form-success { color: #1a5a1a; background: #e6f4e6; padding: 16px 18px; border-radius: 4px; font-size: 1rem; margin: 0; }
+.signup-form .honeypot { position: absolute; left: -9999px; opacity: 0; pointer-events: none; height: 0; width: 0; overflow: hidden; }
