@@ -2042,6 +2042,10 @@ function buildAnalysisHTML(issue) {
   // Build the expanded analysis section; skip any part that has no content.
   let out = '';
 
+  // Interpretive sections (agree / progressive / pragmatic / unresolved) hidden
+  // per Carolyn's editorial pass. Data is preserved in the ISSUES array; to
+  // restore, uncomment the four blocks below.
+  /*
   if (issue.agree && issue.agree.trim()) {
     out += '<h4>Where they agree</h4>';
     out += '<p>' + escapeHtml(issue.agree) + '</p>';
@@ -2058,6 +2062,7 @@ function buildAnalysisHTML(issue) {
     out += "<h4>What's unresolved</h4>";
     out += '<p>' + escapeHtml(issue.unresolved) + '</p>';
   }
+  */
 
   // Track record section: only render if at least one candidate has items.
   const hasBecerra = issue.becerraItems && issue.becerraItems.length > 0;
@@ -2262,7 +2267,7 @@ function renderResult() {
 
     const analysisHTML = buildAnalysisHTML(issue);
     if (analysisHTML) {
-      html += '<button class="expand-btn" onclick="toggleExpand(this)">Read the full analysis</button>';
+      html += '<button class="expand-btn" onclick="toggleExpand(this)">See the track record and sources</button>';
       html += '<div class="expanded">' + analysisHTML + '</div>';
     }
 
@@ -2295,11 +2300,11 @@ function toggleExpand(btn) {
   if (isOpen) {
     expanded.classList.remove('open');
     btn.classList.remove('open');
-    btn.textContent = 'Read the full analysis';
+    btn.textContent = 'See the track record and sources';
   } else {
     expanded.classList.add('open');
     btn.classList.add('open');
-    btn.textContent = 'Hide the full analysis';
+    btn.textContent = 'Hide the track record';
   }
 }
 
