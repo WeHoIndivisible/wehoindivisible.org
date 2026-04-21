@@ -150,6 +150,14 @@
   }
   .brand-name { color: var(--ink); }
   .brand-sub { color: var(--ca-navy); font-weight: 400; }
+  .brand-sep { color: var(--ink-muted); font-weight: 400; }
+  .brand-name-link, .brand-sub-link {
+    border: none;
+    text-decoration: none;
+    display: inline-block;
+  }
+  .brand-name-link:hover .brand-name { color: var(--ca-navy); }
+  .brand-sub-link:hover .brand-sub { color: var(--ca-red); }
 
   .nav-back {
     font-family: 'Oswald', sans-serif;
@@ -1129,11 +1137,12 @@
 
 <header class="site-header">
   <div class="site-header-inner">
-    <a href="#" class="brand" onclick="goto('stakes'); return false;">
+    <div class="brand">
       <span class="brand-star" aria-hidden="true">★</span>
-      <span class="brand-name">WeHo Indivisible</span>
-      <span class="brand-sub">&middot; Voter Tool</span>
-    </a>
+      <a href="https://wehoindivisible.org" class="brand-name-link"><span class="brand-name">WeHo Indivisible</span></a>
+      <span class="brand-sep">&middot;</span>
+      <a href="#" class="brand-sub-link" onclick="goto('stakes'); return false;"><span class="brand-sub">Voter Tool</span></a>
+    </div>
     <button class="nav-back" id="nav-back" style="display:none;" onclick="goBack()">Back</button>
   </div>
 </header>
@@ -1316,7 +1325,7 @@
 <footer>
   
   <div class="footer-brand">West Hollywood Indivisible &middot; California</div>
-  <a href="https://wehoindivisible.org">wehoindivisible.org</a> &middot; Updated April 20, 2026 &middot; <a href="#">Send feedback</a>
+  <a href="https://wehoindivisible.org">wehoindivisible.org</a> &middot; Updated April 20, 2026 &middot; <a href="mailto:wehoindivisible.ops@gmail.com?subject=Voter%20tool%20feedback">Send feedback</a>
 </footer>
 
 <script>
