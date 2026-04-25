@@ -14,6 +14,10 @@
   <link rel="apple-touch-icon" href="favicon.ico">
   <link rel="stylesheet" href="css/style.css?v=9">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   <style id="nav-mobile-css">
     #whi-nav-bar { position:fixed; top:0; left:0; right:0; z-index:1000; }
     #whi-rainbow { height:6px; background:linear-gradient(to right,#E40303 0%,#E40303 16.666%,#FF8C00 16.666%,#FF8C00 33.333%,#FFED00 33.333%,#FFED00 50%,#008026 50%,#008026 66.666%,#004DFF 66.666%,#004DFF 83.333%,#750787 83.333%,#750787 100%); }
@@ -50,241 +54,177 @@
     body { padding-top:86px !important; }
 
     /* ============================================================
-       FACT SHEET — page-specific styles
+       FACT SHEET v2 — Inter type, all-open, jump rail, friendlier
        ============================================================ */
+    .fs-page { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+    .fs-page h2, .fs-page h3 { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
 
+    .fs-layout {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 56px;
+      max-width: 1080px;
+      margin: 0 auto;
+      align-items: start;
+    }
+    @media (max-width: 960px) {
+      .fs-layout { grid-template-columns: 1fr; gap: 0; }
+    }
+
+    /* === Side rail (desktop only) === */
+    .fs-rail { position: sticky; top: 110px; align-self: start; padding: 4px 0; }
+    .fs-rail-label {
+      font-weight: 600; font-size: 0.7rem; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--text-light);
+      margin-bottom: 14px; padding-left: 4px;
+    }
+    .fs-rail ul { list-style: none; padding: 0; margin: 0; }
+    .fs-rail li { margin-bottom: 2px; }
+    .fs-rail a {
+      display: flex; align-items: center; gap: 10px;
+      padding: 8px 10px; border-radius: 4px;
+      font-size: 0.88rem; font-weight: 500;
+      color: var(--text-mid); text-decoration: none;
+      line-height: 1.3; transition: background 0.15s, color 0.15s;
+    }
+    .fs-rail a:hover { background: var(--off-white); color: var(--invis-dark-blue); }
+    .fs-rail a.active { background: var(--off-white); color: var(--invis-dark-blue); font-weight: 600; }
+    .fs-rail-icon { flex-shrink: 0; width: 16px; height: 16px; color: var(--invis-light-blue); }
+    .fs-rail a.active .fs-rail-icon { color: var(--invis-red); }
+    @media (max-width: 960px) { .fs-rail { display: none; } }
+
+    /* === Mobile jump pills === */
+    .fs-pills {
+      display: none;
+      gap: 8px; flex-wrap: wrap;
+      padding: 14px 0 24px 0;
+      border-bottom: 1px solid var(--gray-light);
+      margin-bottom: 28px;
+    }
+    .fs-pills a {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 7px 12px; background: var(--off-white);
+      border-radius: 20px; font-size: 0.8rem; font-weight: 500;
+      color: var(--text-mid); text-decoration: none; line-height: 1;
+    }
+    .fs-pills a svg { width: 13px; height: 13px; color: var(--invis-light-blue); }
+    @media (max-width: 960px) { .fs-pills { display: flex; } }
+
+    /* === Attribution === */
     .fs-attrib {
       background: var(--off-white);
-      border-left: 4px solid var(--invis-light-blue);
-      padding: 18px 22px;
-      margin: 0 0 40px 0;
-      font-size: 0.88rem;
-      line-height: 1.65;
-      color: var(--text-mid);
+      border-left: 3px solid var(--invis-light-blue);
+      padding: 16px 20px; margin: 0 0 36px 0;
+      font-size: 0.92rem; line-height: 1.6; color: var(--text-mid);
       border-radius: 0 4px 4px 0;
     }
-    .fs-attrib strong { color: var(--text-dark); font-family: var(--font-display); font-weight: 700; }
+    .fs-attrib strong { color: var(--text-dark); font-weight: 700; }
     .fs-attrib a { color: var(--invis-dark-blue); border-bottom: 1px solid var(--invis-light-blue); }
     .fs-attrib a:hover { color: var(--invis-red); border-bottom-color: var(--invis-red); }
+    .fs-attrib-date {
+      margin-top: 12px; padding-top: 12px;
+      border-top: 1px solid var(--gray-light);
+      font-size: 0.72rem; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--text-light); font-weight: 500;
+    }
 
-    /* Candidate header row: two columns at top showing names + one-line summary */
-    .fs-candidates-header {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-      margin-bottom: 48px;
+    /* === Candidate cards === */
+    .fs-cands { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 48px; }
+    .fs-cand {
+      background: var(--white); border: 1px solid var(--gray-light);
+      border-radius: 6px; padding: 20px 22px;
+      border-top: 3px solid var(--invis-dark-blue);
     }
-    .fs-cand-card {
-      background: var(--white);
-      border: 1px solid var(--gray-light);
-      border-radius: 6px;
-      padding: 24px;
-      border-top: 4px solid var(--invis-dark-blue);
-    }
-    .fs-cand-card.steyer { border-top-color: var(--invis-light-blue); }
-    .fs-cand-card.becerra { border-top-color: var(--invis-red); }
+    .fs-cand.steyer { border-top-color: var(--invis-light-blue); }
+    .fs-cand.becerra { border-top-color: var(--invis-red); }
     .fs-cand-name {
-      font-family: var(--font-display);
-      font-weight: 800;
-      font-size: 1.4rem;
-      color: var(--text-dark);
-      margin-bottom: 4px;
-      line-height: 1.2;
+      font-weight: 700; font-size: 1.25rem; color: var(--text-dark);
+      margin-bottom: 3px; line-height: 1.2; letter-spacing: -0.01em;
     }
     .fs-cand-role {
-      font-family: var(--font-display);
-      font-weight: 500;
-      font-size: 0.8rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--text-light);
-      margin-bottom: 14px;
+      font-weight: 500; font-size: 0.78rem; color: var(--text-light);
+      margin-bottom: 12px; letter-spacing: 0.02em;
     }
-    .fs-cand-tagline {
-      font-size: 0.95rem;
-      color: var(--text-mid);
-      line-height: 1.6;
-      margin: 0;
-    }
-
-    /* Category accordion section */
-    .fs-category {
-      border-top: 1px solid var(--gray-light);
-      margin-bottom: 0;
-    }
-    .fs-category:last-of-type {
-      border-bottom: 1px solid var(--gray-light);
-    }
-    .fs-category-toggle {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 100%;
-      padding: 22px 0;
-      background: none;
-      border: none;
-      cursor: pointer;
-      text-align: left;
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: 1.05rem;
-      color: var(--text-dark);
-      letter-spacing: 0.02em;
-      transition: color var(--transition);
-    }
-    .fs-category-toggle:hover { color: var(--invis-red); }
-    .fs-category-toggle:focus { outline: 2px solid var(--invis-light-blue); outline-offset: 2px; }
-    .fs-category-marker {
-      font-family: var(--font-display);
-      font-weight: 500;
-      font-size: 0.78rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--invis-light-blue);
-      margin-right: 14px;
-    }
-    .fs-category-title-text { flex: 1; }
-    .fs-category-icon {
-      flex-shrink: 0;
-      margin-left: 16px;
-      font-size: 1.3rem;
-      font-weight: 300;
-      color: var(--text-light);
-      transition: transform var(--transition);
-      width: 20px;
-      text-align: center;
-      line-height: 1;
-    }
-    .fs-category-toggle[aria-expanded="true"] .fs-category-icon {
-      transform: rotate(45deg);
-    }
-    .fs-category-body {
-      display: none;
-      padding-bottom: 32px;
-    }
-    .fs-category-body.open { display: block; }
-
-    .fs-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 28px;
-    }
-    .fs-cell {
-      font-size: 0.94rem;
-      color: var(--text-mid);
-      line-height: 1.7;
-    }
-    .fs-cell .fs-cell-label {
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: 0.72rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--invis-dark-blue);
-      margin-bottom: 8px;
-      display: block;
-    }
-    .fs-cand-card.steyer + * .fs-cell-label,
-    .fs-cell.steyer .fs-cell-label { color: var(--invis-light-blue); }
-    .fs-cell.becerra .fs-cell-label { color: var(--invis-red); }
-
-    .fs-cell ul { list-style: none; padding: 0; margin: 0; }
-    .fs-cell li {
-      padding: 6px 0 6px 18px;
-      position: relative;
-      line-height: 1.65;
-    }
-    .fs-cell li::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 14px;
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--gray-mid);
-    }
-    .fs-cell li strong {
-      color: var(--text-dark);
-      font-weight: 600;
-    }
-    .fs-cell p { margin: 0 0 12px 0; }
-    .fs-cell p:last-child { margin-bottom: 0; }
-    .fs-cell .fs-subhead {
-      font-family: var(--font-display);
-      font-weight: 600;
-      font-size: 0.78rem;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--text-dark);
-      margin: 14px 0 6px 0;
-    }
-    .fs-cell .fs-subhead:first-child { margin-top: 0; }
-
-    /* Controls: expand all / collapse all */
-    .fs-controls {
-      display: flex;
-      gap: 12px;
-      margin-bottom: 8px;
-      justify-content: flex-end;
-    }
-    .fs-control-btn {
-      background: none;
-      border: none;
-      font-family: var(--font-display);
-      font-weight: 600;
-      font-size: 0.78rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--text-light);
-      cursor: pointer;
-      padding: 6px 10px;
-    }
-    .fs-control-btn:hover { color: var(--invis-red); }
-
-    /* CTA below the fact sheet */
-    .fs-bottom-cta {
-      background: var(--invis-black);
-      color: var(--white);
-      padding: 44px 36px;
-      border-radius: 6px;
-      margin-top: 56px;
-      text-align: center;
-    }
-    .fs-bottom-cta h3 {
-      font-family: var(--font-display);
-      font-weight: 800;
-      font-size: 1.4rem;
-      margin-bottom: 12px;
-      color: var(--white);
-    }
-    .fs-bottom-cta p {
-      color: rgba(255,255,255,0.78);
-      font-size: 0.98rem;
-      line-height: 1.65;
-      margin: 0 auto 24px;
-      max-width: 540px;
-    }
-    .fs-bottom-cta .btn-primary { font-size: 0.88rem; padding: 13px 28px; }
-
-    /* Mobile: stack the side-by-side comparison */
+    .fs-cand-tag { font-size: 0.92rem; color: var(--text-mid); line-height: 1.55; margin: 0; }
     @media (max-width: 720px) {
-      .fs-candidates-header { grid-template-columns: 1fr; gap: 16px; margin-bottom: 36px; }
-      .fs-row { grid-template-columns: 1fr; gap: 24px; }
-      .fs-row .fs-cell + .fs-cell {
-        padding-top: 24px;
+      .fs-cands { grid-template-columns: 1fr; gap: 12px; margin-bottom: 36px; }
+    }
+
+    /* === Categories (always open) === */
+    .fs-cat { padding: 28px 0 20px 0; border-top: 1px solid var(--gray-light); scroll-margin-top: 100px; }
+    .fs-cat:first-of-type { border-top: 2px solid var(--text-dark); padding-top: 32px; }
+
+    .fs-cat-head { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+    .fs-cat-icon { width: 22px; height: 22px; color: var(--invis-red); flex-shrink: 0; }
+    .fs-cat-title {
+      font-weight: 700; font-size: 1.18rem; color: var(--text-dark);
+      margin: 0; letter-spacing: -0.01em;
+    }
+
+    .fs-row { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+    @media (max-width: 720px) {
+      .fs-row { grid-template-columns: 1fr; gap: 0; }
+      .fs-row > .fs-cell + .fs-cell {
+        margin-top: 24px; padding-top: 24px;
         border-top: 1px solid var(--gray-light);
       }
-      .fs-category-marker { display: none; }
-      .fs-category-toggle { font-size: 0.98rem; padding: 18px 0; }
-      .fs-bottom-cta { padding: 32px 24px; }
-      .fs-bottom-cta h3 { font-size: 1.2rem; }
+    }
+
+    .fs-cell { font-size: 0.92rem; line-height: 1.6; color: var(--text-mid); }
+    .fs-cell-name {
+      font-weight: 700; font-size: 0.72rem; letter-spacing: 0.1em;
+      text-transform: uppercase; margin-bottom: 10px;
+      color: var(--invis-dark-blue);
+    }
+    .fs-cell.steyer .fs-cell-name { color: var(--invis-light-blue); }
+    .fs-cell.becerra .fs-cell-name { color: var(--invis-red); }
+
+    .fs-cell ul { list-style: none; padding: 0; margin: 0; }
+    .fs-cell li { padding: 4px 0 4px 16px; position: relative; line-height: 1.55; }
+    .fs-cell li::before {
+      content: ""; position: absolute; left: 0; top: 11px;
+      width: 5px; height: 5px; border-radius: 50%; background: var(--gray-mid);
+    }
+    .fs-cell li strong { color: var(--text-dark); font-weight: 600; }
+    .fs-cell p { margin: 0 0 10px 0; }
+    .fs-cell p:last-child { margin-bottom: 0; }
+
+    .fs-sub {
+      font-weight: 600; font-size: 0.72rem; letter-spacing: 0.06em;
+      text-transform: uppercase; color: var(--text-dark);
+      margin: 12px 0 4px 0;
+    }
+    .fs-sub:first-child { margin-top: 0; }
+
+    /* === Bottom CTA === */
+    .fs-cta {
+      background: var(--invis-black); color: var(--white);
+      padding: 38px 32px; border-radius: 6px;
+      margin-top: 48px; text-align: center;
+    }
+    .fs-cta h3 {
+      font-weight: 700; font-size: 1.28rem; margin-bottom: 10px;
+      color: var(--white); letter-spacing: -0.01em;
+    }
+    .fs-cta p {
+      color: rgba(255,255,255,0.78); font-size: 0.95rem;
+      line-height: 1.6; margin: 0 auto 20px; max-width: 500px;
+    }
+    .fs-cta-btn {
+      display: inline-block; background: var(--invis-red); color: var(--white);
+      font-family: 'Inter', sans-serif; font-weight: 600; font-size: 0.92rem;
+      padding: 12px 24px; border-radius: 4px;
+      text-decoration: none; transition: background 0.15s;
+    }
+    .fs-cta-btn:hover { background: var(--invis-red-dark); color: var(--white); }
+    @media (max-width: 720px) {
+      .fs-cta { padding: 28px 22px; margin-top: 36px; }
+      .fs-cta h3 { font-size: 1.1rem; }
     }
   </style>
 </head>
 <body>
 
-<!-- ============== NAV (matches site pattern) ============== -->
 <div id="whi-nav-bar">
   <div id="whi-rainbow"></div>
   <nav id="whi-nav" aria-label="Main navigation">
@@ -347,7 +287,6 @@ document.addEventListener('click',function(e){
 
 <a href="#main-content" class="skip-link">Skip to main content</a>
 
-<!-- ============== PAGE HERO ============== -->
 <div class="page-hero">
   <div class="container">
     <p class="page-hero-label">California Primary &middot; June 2</p>
@@ -357,266 +296,287 @@ document.addEventListener('click',function(e){
 </div>
 <hr class="rainbow-divider">
 
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none;">
+  <symbol id="icon-bg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="8" r="4"/>
+    <path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/>
+  </symbol>
+  <symbol id="icon-priorities" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="9"/>
+    <path d="m8 12 3 3 5-6"/>
+  </symbol>
+  <symbol id="icon-endorsements" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 3l2.6 6 6.4.6-4.9 4.4 1.5 6.4L12 17.7 6.4 20.4l1.5-6.4L3 9.6l6.4-.6z"/>
+  </symbol>
+  <symbol id="icon-advantages" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M5 12l7-7 7 7"/>
+    <path d="M12 5v15"/>
+  </symbol>
+  <symbol id="icon-vulnerabilities" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 3l10 17H2z"/>
+    <path d="M12 10v5"/>
+    <circle cx="12" cy="17.5" r="0.4" fill="currentColor"/>
+  </symbol>
+  <symbol id="icon-finance" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 3v18"/>
+    <path d="M16 7H10a3 3 0 0 0 0 6h4a3 3 0 0 1 0 6H8"/>
+  </symbol>
+  <symbol id="icon-foreign" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="9"/>
+    <path d="M3 12h18"/>
+    <path d="M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/>
+  </symbol>
+</svg>
+
 <main id="main-content">
-  <section class="section">
+  <section class="section fs-page">
     <div class="container">
+      <div class="fs-layout">
 
-      <!-- ============== ATTRIBUTION ============== -->
-      <div class="fs-attrib">
-        <strong>About this page.</strong> This fact sheet is condensed and reformatted from the candidate research document prepared by the <strong>2026 Indivisible California Governor Primary Candidate Workgroup</strong> on April 22, 2026. The original document covers all three leading Democratic candidates; we've kept Steyer and Becerra here, since recent polling and prediction-market trends suggest they are the two with a realistic path to the top two slots on the November ballot. For our chapter's own issue-by-issue comparison tool, see <a href="calgovchoice.html">our voter tool</a>.
-        <div style="margin-top:14px; padding-top:14px; border-top:1px solid var(--gray-light); font-family:var(--font-display); font-weight:500; font-size:0.74rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-light);">
-          Updated April 24, 2026
-        </div>
-      </div>
+        <aside class="fs-rail" aria-label="Section navigation">
+          <p class="fs-rail-label">On this page</p>
+          <ul>
+            <li><a href="#cat-bg"><svg class="fs-rail-icon"><use href="#icon-bg"/></svg> Background</a></li>
+            <li><a href="#cat-priorities"><svg class="fs-rail-icon"><use href="#icon-priorities"/></svg> Priorities</a></li>
+            <li><a href="#cat-endorsements"><svg class="fs-rail-icon"><use href="#icon-endorsements"/></svg> Endorsements</a></li>
+            <li><a href="#cat-advantages"><svg class="fs-rail-icon"><use href="#icon-advantages"/></svg> Advantages</a></li>
+            <li><a href="#cat-vulnerabilities"><svg class="fs-rail-icon"><use href="#icon-vulnerabilities"/></svg> Vulnerabilities</a></li>
+            <li><a href="#cat-finance"><svg class="fs-rail-icon"><use href="#icon-finance"/></svg> Finance</a></li>
+            <li><a href="#cat-foreign"><svg class="fs-rail-icon"><use href="#icon-foreign"/></svg> Foreign policy</a></li>
+          </ul>
+        </aside>
 
-      <!-- ============== CANDIDATE HEADER ============== -->
-      <div class="fs-candidates-header">
-        <div class="fs-cand-card steyer">
-          <div class="fs-cand-name">Tom Steyer</div>
-          <div class="fs-cand-role">Investor &middot; Philanthropist &middot; Activist</div>
-          <p class="fs-cand-tagline">Founder of Farallon Capital and NextGen America; 2020 Democratic presidential candidate; left finance in 2012 to focus on climate.</p>
-        </div>
-        <div class="fs-cand-card becerra">
-          <div class="fs-cand-name">Xavier Becerra</div>
-          <div class="fs-cand-role">Former HHS Secretary &middot; Attorney General</div>
-          <p class="fs-cand-tagline">12-term U.S. Representative, former CA Attorney General who filed 122 lawsuits against the first Trump administration, and U.S. HHS Secretary under Biden.</p>
-        </div>
-      </div>
+        <div class="fs-content">
 
-      <!-- ============== CONTROLS ============== -->
-      <div class="fs-controls">
-        <button class="fs-control-btn" id="fs-expand-all" type="button">Expand all</button>
-        <button class="fs-control-btn" id="fs-collapse-all" type="button">Collapse all</button>
-      </div>
+          <div class="fs-attrib">
+            <strong>About this page.</strong> Condensed and reformatted from the candidate research document prepared by the <strong>2026 Indivisible California Governor Primary Candidate Workgroup</strong> on April 22, 2026. The original document covers all three leading Democratic candidates; we've kept Steyer and Becerra here, since recent polling and prediction-market trends suggest they are the two with a realistic path to the top two slots on the November ballot. For our chapter's own issue-by-issue comparison, see <a href="calgovchoice.html">our voter tool</a>.
+            <div class="fs-attrib-date">Updated April 24, 2026</div>
+          </div>
 
-      <!-- ============== BACKGROUND (open by default) ============== -->
-      <div class="fs-category">
-        <button class="fs-category-toggle" type="button" aria-expanded="true" aria-controls="cat-bg">
-          <span class="fs-category-marker">01</span>
-          <span class="fs-category-title-text">Background</span>
-          <span class="fs-category-icon" aria-hidden="true">+</span>
-        </button>
-        <div class="fs-category-body open" id="cat-bg">
-          <div class="fs-row">
-            <div class="fs-cell steyer">
-              <span class="fs-cell-label">Tom Steyer</span>
-              <ul>
-                <li>Yale B.A. summa cum laude (1979); Stanford MBA (1983)</li>
-                <li>Founded Farallon Capital, growing it from $8M to roughly $20B in assets under management; left in 2012</li>
-                <li>Founded NextGen America and Galvanize Climate Solutions</li>
-                <li>2020 Democratic presidential candidate</li>
-              </ul>
+          <div class="fs-cands">
+            <div class="fs-cand steyer">
+              <div class="fs-cand-name">Tom Steyer</div>
+              <div class="fs-cand-role">Investor &middot; Philanthropist &middot; Activist</div>
+              <p class="fs-cand-tag">Founder of Farallon Capital and NextGen America; 2020 Democratic presidential candidate; left finance in 2012 to focus on climate.</p>
             </div>
-            <div class="fs-cell becerra">
-              <span class="fs-cell-label">Xavier Becerra</span>
-              <ul>
-                <li>Stanford B.A. (1980, first in family to graduate); Stanford Law J.D. (1984)</li>
-                <li>CA Assembly (1990&ndash;92); U.S. House, 12 terms (1993&ndash;2017); chaired the House Democratic Caucus</li>
-                <li>CA Attorney General (2017&ndash;21): filed 122 lawsuits against the first Trump administration</li>
-                <li>U.S. HHS Secretary (2021&ndash;25): oversaw the COVID-19 response and ACA implementation</li>
-              </ul>
+            <div class="fs-cand becerra">
+              <div class="fs-cand-name">Xavier Becerra</div>
+              <div class="fs-cand-role">Former HHS Secretary &middot; Attorney General</div>
+              <p class="fs-cand-tag">12-term U.S. Representative, former CA Attorney General who filed 122 lawsuits against the first Trump administration, U.S. HHS Secretary under Biden.</p>
             </div>
           </div>
-        </div>
-      </div>
 
-      <!-- ============== KEY PRIORITIES ============== -->
-      <div class="fs-category">
-        <button class="fs-category-toggle" type="button" aria-expanded="false" aria-controls="cat-priorities">
-          <span class="fs-category-marker">02</span>
-          <span class="fs-category-title-text">Key priorities</span>
-          <span class="fs-category-icon" aria-hidden="true">+</span>
-        </button>
-        <div class="fs-category-body" id="cat-priorities">
-          <div class="fs-row">
-            <div class="fs-cell steyer">
-              <span class="fs-cell-label">Tom Steyer</span>
-              <p class="fs-subhead">Climate</p>
-              <p>100% clean energy; break up PG&amp;E's monopoly; windfall profits tax on oil; green jobs.</p>
-              <p class="fs-subhead">Housing</p>
-              <p>Build one million affordable homes; close corporate property tax loopholes.</p>
-              <p class="fs-subhead">Healthcare</p>
-              <p>Single-payer transition.</p>
-              <p class="fs-subhead">Economy</p>
-              <p>Reform corporate taxes; make the wealthy pay a fair share.</p>
-              <p class="fs-subhead">Education</p>
-              <p>Free preschool and community college; subsidized childcare.</p>
+          <nav class="fs-pills" aria-label="Section jump links">
+            <a href="#cat-bg"><svg><use href="#icon-bg"/></svg>Background</a>
+            <a href="#cat-priorities"><svg><use href="#icon-priorities"/></svg>Priorities</a>
+            <a href="#cat-endorsements"><svg><use href="#icon-endorsements"/></svg>Endorsements</a>
+            <a href="#cat-advantages"><svg><use href="#icon-advantages"/></svg>Advantages</a>
+            <a href="#cat-vulnerabilities"><svg><use href="#icon-vulnerabilities"/></svg>Vulnerabilities</a>
+            <a href="#cat-finance"><svg><use href="#icon-finance"/></svg>Finance</a>
+            <a href="#cat-foreign"><svg><use href="#icon-foreign"/></svg>Foreign policy</a>
+          </nav>
+
+          <section class="fs-cat" id="cat-bg">
+            <div class="fs-cat-head">
+              <svg class="fs-cat-icon"><use href="#icon-bg"/></svg>
+              <h2 class="fs-cat-title">Background</h2>
             </div>
-            <div class="fs-cell becerra">
-              <span class="fs-cell-label">Xavier Becerra</span>
-              <p class="fs-subhead">Climate</p>
-              <p>Bureau of Environmental Justice (created as A.G.); defended California clean car standards; less central to his 2026 platform.</p>
-              <p class="fs-subhead">Housing</p>
-              <p>State power where the market has failed; crack down on price gouging; expand rent protections.</p>
-              <p class="fs-subhead">Healthcare</p>
-              <p>Strengthen Medi-Cal; lower prescription costs; long-term path to Medicare for All.</p>
-              <p class="fs-subhead">Economy</p>
-              <p>Take on corporations; protect workers; preserve the California Dream.</p>
-              <p class="fs-subhead">Rights</p>
-              <p>Defense of immigrant communities and civil liberties.</p>
+            <div class="fs-row">
+              <div class="fs-cell steyer">
+                <div class="fs-cell-name">Tom Steyer</div>
+                <ul>
+                  <li>Yale B.A. summa cum laude (1979); Stanford MBA (1983)</li>
+                  <li>Founded Farallon Capital, growing it from $8M to roughly $20B in assets under management; left in 2012</li>
+                  <li>Founded NextGen America and Galvanize Climate Solutions</li>
+                  <li>2020 Democratic presidential candidate</li>
+                </ul>
+              </div>
+              <div class="fs-cell becerra">
+                <div class="fs-cell-name">Xavier Becerra</div>
+                <ul>
+                  <li>Stanford B.A. (1980, first in family to graduate); Stanford Law J.D. (1984)</li>
+                  <li>CA Assembly (1990&ndash;92); U.S. House, 12 terms (1993&ndash;2017); chaired the House Democratic Caucus</li>
+                  <li>CA Attorney General (2017&ndash;21): filed 122 lawsuits against the first Trump administration</li>
+                  <li>U.S. HHS Secretary (2021&ndash;25): oversaw the COVID-19 response and ACA implementation</li>
+                </ul>
+              </div>
             </div>
+          </section>
+
+          <section class="fs-cat" id="cat-priorities">
+            <div class="fs-cat-head">
+              <svg class="fs-cat-icon"><use href="#icon-priorities"/></svg>
+              <h2 class="fs-cat-title">Key priorities</h2>
+            </div>
+            <div class="fs-row">
+              <div class="fs-cell steyer">
+                <div class="fs-cell-name">Tom Steyer</div>
+                <p class="fs-sub">Climate</p>
+                <p>100% clean energy; break up PG&amp;E's monopoly; windfall profits tax on oil; green jobs.</p>
+                <p class="fs-sub">Housing</p>
+                <p>Build one million affordable homes; close corporate property tax loopholes.</p>
+                <p class="fs-sub">Healthcare</p>
+                <p>Single-payer transition.</p>
+                <p class="fs-sub">Economy</p>
+                <p>Reform corporate taxes; make the wealthy pay a fair share.</p>
+                <p class="fs-sub">Education</p>
+                <p>Free preschool and community college; subsidized childcare.</p>
+              </div>
+              <div class="fs-cell becerra">
+                <div class="fs-cell-name">Xavier Becerra</div>
+                <p class="fs-sub">Climate</p>
+                <p>Bureau of Environmental Justice (created as A.G.); defended California clean car standards; less central to his 2026 platform.</p>
+                <p class="fs-sub">Housing</p>
+                <p>State power where the market has failed; crack down on price gouging; expand rent protections.</p>
+                <p class="fs-sub">Healthcare</p>
+                <p>Strengthen Medi-Cal; lower prescription costs; long-term path to Medicare for All.</p>
+                <p class="fs-sub">Economy</p>
+                <p>Take on corporations; protect workers; preserve the California Dream.</p>
+                <p class="fs-sub">Rights</p>
+                <p>Defense of immigrant communities and civil liberties.</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="fs-cat" id="cat-endorsements">
+            <div class="fs-cat-head">
+              <svg class="fs-cat-icon"><use href="#icon-endorsements"/></svg>
+              <h2 class="fs-cat-title">Key endorsements</h2>
+            </div>
+            <div class="fs-row">
+              <div class="fs-cell steyer">
+                <div class="fs-cell-name">Tom Steyer</div>
+                <p class="fs-sub">Elected officials</p>
+                <p>Betty Yee (endorsed upon suspending her own campaign), Toni Atkins (former CA Senate President pro Tem), Rep. Jared Huffman, Rep. Ro Khanna, Assemblymember Sharon Quirk-Silva (AD-67), John Podesta, Ali Zaidi, Bill McKibben, Jane Fonda.</p>
+                <p class="fs-sub">Labor</p>
+                <p>California Teachers Association (April 15), California Nurses Association, CFT, United Domestic Workers (250,000 members), California School Employees Association, California Federation of Labor (co-endorsement).</p>
+                <p class="fs-sub">Progressive &amp; environmental</p>
+                <p>Our Revolution (April 20), Courage California, California Environmental Voters (co-endorsement), Center for Biological Diversity Action Fund.</p>
+              </div>
+              <div class="fs-cell becerra">
+                <div class="fs-cell-name">Xavier Becerra</div>
+                <p class="fs-sub">Elected officials</p>
+                <p>Assembly Speaker Robert Rivas (notably, Rivas was instrumental in stopping single-payer healthcare legislation, which is a direct conflict with Becerra's stated long-term support for Medicare for All).</p>
+                <p class="fs-sub">Labor</p>
+                <p>LIUNA, CCPOA (California Correctional Peace Officers Association), CSLEA (California State Law Enforcement Association).</p>
+                <p class="fs-sub">Healthcare &amp; education</p>
+                <p>CPCA Advocates, California Primary Care Association, California Partnership for Health, California Faculty Association.</p>
+                <p class="fs-sub">Party &amp; youth</p>
+                <p>California College Democrats, Fresno and San Diego Young Democrats.</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="fs-cat" id="cat-advantages">
+            <div class="fs-cat-head">
+              <svg class="fs-cat-icon"><use href="#icon-advantages"/></svg>
+              <h2 class="fs-cat-title">Advantages</h2>
+            </div>
+            <div class="fs-row">
+              <div class="fs-cell steyer">
+                <div class="fs-cell-name">Tom Steyer</div>
+                <ul>
+                  <li>Virtually unlimited self-funding; no donor entanglements</li>
+                  <li>Decades of climate credibility and proven youth voter mobilization through NextGen</li>
+                  <li>Outsider appeal; national Democratic network</li>
+                </ul>
+              </div>
+              <div class="fs-cell becerra">
+                <div class="fs-cell-name">Xavier Becerra</div>
+                <ul>
+                  <li>Combined legislative, state executive, and federal executive experience</li>
+                  <li>122 lawsuits against the first Trump administration as CA AG, a proven legal fighter</li>
+                  <li>Strong appeal to Latino voters, organized labor, and institutional Democrats</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section class="fs-cat" id="cat-vulnerabilities">
+            <div class="fs-cat-head">
+              <svg class="fs-cat-icon"><use href="#icon-vulnerabilities"/></svg>
+              <h2 class="fs-cat-title">Vulnerabilities raised by critics</h2>
+            </div>
+            <div class="fs-row">
+              <div class="fs-cell steyer">
+                <div class="fs-cell-name">Tom Steyer</div>
+                <ul>
+                  <li>"Buying the race" framing, with self-funding that dwarfs every other candidate</li>
+                  <li>No elected office experience</li>
+                  <li>Farallon-era investments in private prisons, fossil fuels, and predatory lending, though divested roughly twenty years ago</li>
+                  <li>Active opposition: multiple anti-Steyer PACs funded by PG&amp;E ($2M), the California Chamber of Commerce ($5M), and others, with reported total spending of approximately $13.9M</li>
+                </ul>
+              </div>
+              <div class="fs-cell becerra">
+                <div class="fs-cell-name">Xavier Becerra</div>
+                <ul>
+                  <li>Questions about temperament and leadership style raised across party lines</li>
+                  <li>Missed 5.5% of House votes overall; about 65% in the final months of his term</li>
+                  <li>Lost the 2024 U.S. Senate primary to Adam Schiff</li>
+                  <li>Seen as an establishment figure, tied to a low-approval Democratic brand</li>
+                  <li>ExxonMobil climate case opened by AG Harris, dropped by AG Becerra, then re-opened by AG Bonta</li>
+                  <li>Declined to file charges in the 2018 Stephon Clark shooting, which sparked protests</li>
+                  <li>Threatened journalists with legal action over their possession of public records on officers with criminal convictions</li>
+                  <li>His former chief of staff was indicted on 23 counts of bank and wire fraud, with approximately $225K diverted from a dormant campaign account; Becerra is not personally accused, but the case raises oversight questions</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section class="fs-cat" id="cat-finance">
+            <div class="fs-cat-head">
+              <svg class="fs-cat-icon"><use href="#icon-finance"/></svg>
+              <h2 class="fs-cat-title">Campaign finance &amp; major donors</h2>
+            </div>
+            <div class="fs-row">
+              <div class="fs-cell steyer">
+                <div class="fs-cell-name">Tom Steyer</div>
+                <ul>
+                  <li><strong>Total raised:</strong> $122.7M, of which $122.5M is his own money; about $161K from outside donors</li>
+                  <li>Outspending the entire field combined in advertising</li>
+                  <li>Outside donors include Nat Simons, Alfred Clark, and Richard &amp; Dee Lawrence (Cool Effect)</li>
+                  <li>Advocates banning corporate PAC money in state elections</li>
+                </ul>
+              </div>
+              <div class="fs-cell becerra">
+                <div class="fs-cell-name">Xavier Becerra</div>
+                <ul>
+                  <li><strong>Total raised:</strong> $2.89M, the smallest war chest among the leading Democratic contenders</li>
+                  <li>Seeded with more than $2.6M transferred from prior campaign accounts</li>
+                  <li>Notable donors include Chevron (per state filings), as well as labor and healthcare PACs</li>
+                  <li>The Chevron contribution has drawn scrutiny given his environmental record as Attorney General</li>
+                  <li>Indirect benefit: PG&amp;E donated $2M and the California Chamber of Commerce $5M to anti-Steyer PACs, weakening a rival</li>
+                  <li>Border Health PAC, a Texas-based, healthcare-tied committee that typically leans Republican, has maxed out contributions to Becerra</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section class="fs-cat" id="cat-foreign">
+            <div class="fs-cat-head">
+              <svg class="fs-cat-icon"><use href="#icon-foreign"/></svg>
+              <h2 class="fs-cat-title">Foreign policy: Israel and Gaza</h2>
+            </div>
+            <div class="fs-row">
+              <div class="fs-cell steyer">
+                <div class="fs-cell-name">Tom Steyer</div>
+                <p>U.S. aid to Israel should be conditional on halting settlements; called Iran escalation "unnecessary war"; favors multilateral diplomacy over military action.</p>
+              </div>
+              <div class="fs-cell becerra">
+                <div class="fs-cell-name">Xavier Becerra</div>
+                <p>Supports a two-state solution; called for an immediate ceasefire and humanitarian surge to Gaza; referred to "Israel and Palestine" at the WHO Assembly, which his office later clarified as a misstatement.</p>
+              </div>
+            </div>
+          </section>
+
+          <div class="fs-cta">
+            <h3>Compare the candidates issue by issue</h3>
+            <p>Our voter tool lets you order fourteen issues by what matters most to you, then shows where Becerra and Steyer have stood on each.</p>
+            <a href="calgovchoice.html" class="fs-cta-btn">Open the Voter Tool &rarr;</a>
           </div>
+
         </div>
       </div>
-
-      <!-- ============== ENDORSEMENTS ============== -->
-      <div class="fs-category">
-        <button class="fs-category-toggle" type="button" aria-expanded="false" aria-controls="cat-endorsements">
-          <span class="fs-category-marker">03</span>
-          <span class="fs-category-title-text">Key endorsements</span>
-          <span class="fs-category-icon" aria-hidden="true">+</span>
-        </button>
-        <div class="fs-category-body" id="cat-endorsements">
-          <div class="fs-row">
-            <div class="fs-cell steyer">
-              <span class="fs-cell-label">Tom Steyer</span>
-              <p class="fs-subhead">Elected officials</p>
-              <p>Betty Yee (endorsed upon suspending her own campaign), Toni Atkins (former CA Senate President pro Tem), Rep. Jared Huffman, Rep. Ro Khanna, Assemblymember Sharon Quirk-Silva (AD-67), John Podesta, Ali Zaidi, Bill McKibben, Jane Fonda.</p>
-              <p class="fs-subhead">Labor</p>
-              <p>California Teachers Association (April 15), California Nurses Association, CFT, United Domestic Workers (250,000 members), California School Employees Association, California Federation of Labor (co-endorsement).</p>
-              <p class="fs-subhead">Progressive &amp; environmental</p>
-              <p>Our Revolution (April 20), Courage California, California Environmental Voters (co-endorsement), Center for Biological Diversity Action Fund.</p>
-            </div>
-            <div class="fs-cell becerra">
-              <span class="fs-cell-label">Xavier Becerra</span>
-              <p class="fs-subhead">Elected officials</p>
-              <p>Assembly Speaker Robert Rivas (notably, Rivas was instrumental in stopping single-payer healthcare legislation, which is a direct conflict with Becerra's stated long-term support for Medicare for All).</p>
-              <p class="fs-subhead">Labor</p>
-              <p>LIUNA, CCPOA (California Correctional Peace Officers Association), CSLEA (California State Law Enforcement Association).</p>
-              <p class="fs-subhead">Healthcare &amp; education</p>
-              <p>CPCA Advocates, California Primary Care Association, California Partnership for Health, California Faculty Association.</p>
-              <p class="fs-subhead">Party &amp; youth</p>
-              <p>California College Democrats, Fresno and San Diego Young Democrats.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- ============== ADVANTAGES ============== -->
-      <div class="fs-category">
-        <button class="fs-category-toggle" type="button" aria-expanded="false" aria-controls="cat-advantages">
-          <span class="fs-category-marker">04</span>
-          <span class="fs-category-title-text">Advantages</span>
-          <span class="fs-category-icon" aria-hidden="true">+</span>
-        </button>
-        <div class="fs-category-body" id="cat-advantages">
-          <div class="fs-row">
-            <div class="fs-cell steyer">
-              <span class="fs-cell-label">Tom Steyer</span>
-              <ul>
-                <li>Virtually unlimited self-funding; no donor entanglements</li>
-                <li>Decades of climate credibility and proven youth voter mobilization through NextGen</li>
-                <li>Outsider appeal; national Democratic network</li>
-              </ul>
-            </div>
-            <div class="fs-cell becerra">
-              <span class="fs-cell-label">Xavier Becerra</span>
-              <ul>
-                <li>Combined legislative, state executive, and federal executive experience</li>
-                <li>122 lawsuits against the first Trump administration as CA AG &mdash; a proven legal fighter</li>
-                <li>Strong appeal to Latino voters, organized labor, and institutional Democrats</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- ============== VULNERABILITIES ============== -->
-      <div class="fs-category">
-        <button class="fs-category-toggle" type="button" aria-expanded="false" aria-controls="cat-vulnerabilities">
-          <span class="fs-category-marker">05</span>
-          <span class="fs-category-title-text">Vulnerabilities raised by critics</span>
-          <span class="fs-category-icon" aria-hidden="true">+</span>
-        </button>
-        <div class="fs-category-body" id="cat-vulnerabilities">
-          <div class="fs-row">
-            <div class="fs-cell steyer">
-              <span class="fs-cell-label">Tom Steyer</span>
-              <ul>
-                <li>"Buying the race" framing &mdash; self-funding dwarfs every other candidate</li>
-                <li>No elected office experience</li>
-                <li>Farallon-era investments in private prisons, fossil fuels, and predatory lending, though divested roughly twenty years ago</li>
-                <li>Active opposition: multiple anti-Steyer PACs funded by PG&amp;E ($2M), the California Chamber of Commerce ($5M), and others, with reported total spending of approximately $13.9M</li>
-              </ul>
-            </div>
-            <div class="fs-cell becerra">
-              <span class="fs-cell-label">Xavier Becerra</span>
-              <ul>
-                <li>Questions about temperament and leadership style raised across party lines</li>
-                <li>Missed 5.5% of House votes overall; about 65% in the final months of his term</li>
-                <li>Lost the 2024 U.S. Senate primary to Adam Schiff</li>
-                <li>Seen as an establishment figure, tied to a low-approval Democratic brand</li>
-                <li>ExxonMobil climate case opened by AG Harris, dropped by AG Becerra, then re-opened by AG Bonta</li>
-                <li>Declined to file charges in the 2018 Stephon Clark shooting, which sparked protests</li>
-                <li>Threatened journalists with legal action over their possession of public records on officers with criminal convictions</li>
-                <li>His former chief of staff was indicted on 23 counts of bank and wire fraud, with approximately $225K diverted from a dormant campaign account; Becerra is not personally accused, but the case raises oversight questions</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- ============== FINANCE ============== -->
-      <div class="fs-category">
-        <button class="fs-category-toggle" type="button" aria-expanded="false" aria-controls="cat-finance">
-          <span class="fs-category-marker">06</span>
-          <span class="fs-category-title-text">Campaign finance &amp; major donors</span>
-          <span class="fs-category-icon" aria-hidden="true">+</span>
-        </button>
-        <div class="fs-category-body" id="cat-finance">
-          <div class="fs-row">
-            <div class="fs-cell steyer">
-              <span class="fs-cell-label">Tom Steyer</span>
-              <ul>
-                <li><strong>Total raised:</strong> $122.7M, of which $122.5M is his own money; about $161K from outside donors</li>
-                <li>Outspending the entire field combined in advertising</li>
-                <li>Outside donors include Nat Simons, Alfred Clark, and Richard &amp; Dee Lawrence (Cool Effect)</li>
-                <li>Advocates banning corporate PAC money in state elections</li>
-              </ul>
-            </div>
-            <div class="fs-cell becerra">
-              <span class="fs-cell-label">Xavier Becerra</span>
-              <ul>
-                <li><strong>Total raised:</strong> $2.89M &mdash; the smallest war chest among the leading Democratic contenders</li>
-                <li>Seeded with more than $2.6M transferred from prior campaign accounts</li>
-                <li>Notable donors include Chevron (per state filings), as well as labor and healthcare PACs</li>
-                <li>The Chevron contribution has drawn scrutiny given his environmental record as Attorney General</li>
-                <li>Indirect benefit: PG&amp;E donated $2M and the California Chamber of Commerce $5M to anti-Steyer PACs, weakening a rival</li>
-                <li>Border Health PAC, a Texas-based, healthcare-tied committee that typically leans Republican, has maxed out contributions to Becerra</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- ============== FOREIGN POLICY ============== -->
-      <div class="fs-category">
-        <button class="fs-category-toggle" type="button" aria-expanded="false" aria-controls="cat-foreign">
-          <span class="fs-category-marker">07</span>
-          <span class="fs-category-title-text">Foreign policy: Israel and Gaza</span>
-          <span class="fs-category-icon" aria-hidden="true">+</span>
-        </button>
-        <div class="fs-category-body" id="cat-foreign">
-          <div class="fs-row">
-            <div class="fs-cell steyer">
-              <span class="fs-cell-label">Tom Steyer</span>
-              <p>U.S. aid to Israel should be conditional on halting settlements; called Iran escalation "unnecessary war"; favors multilateral diplomacy over military action.</p>
-            </div>
-            <div class="fs-cell becerra">
-              <span class="fs-cell-label">Xavier Becerra</span>
-              <p>Supports a two-state solution; called for an immediate ceasefire and humanitarian surge to Gaza; referred to "Israel and Palestine" at the WHO Assembly, which his office later clarified as a misstatement.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- ============== BOTTOM CTA ============== -->
-      <div class="fs-bottom-cta">
-        <h3>Compare the candidates issue by issue</h3>
-        <p>Our voter tool lets you order fourteen issues by what matters most to you, then shows where Becerra and Steyer have stood on each.</p>
-        <a href="calgovchoice.html" class="btn btn-primary btn-lg">Open the Voter Tool &rarr;</a>
-      </div>
-
     </div>
   </section>
 </main>
@@ -626,37 +586,23 @@ document.addEventListener('click',function(e){
 
 <script>
 (function() {
-  // Toggle a single category open/closed
-  function toggleCategory(btn) {
-    var body = document.getElementById(btn.getAttribute('aria-controls'));
-    if (!body) return;
-    var isOpen = btn.getAttribute('aria-expanded') === 'true';
-    btn.setAttribute('aria-expanded', String(!isOpen));
-    if (isOpen) { body.classList.remove('open'); }
-    else { body.classList.add('open'); }
-  }
-
-  // Wire up each toggle button
-  var toggles = document.querySelectorAll('.fs-category-toggle');
-  for (var i = 0; i < toggles.length; i++) {
-    toggles[i].addEventListener('click', function(e) { toggleCategory(this); });
-  }
-
-  // Expand-all / collapse-all
-  document.getElementById('fs-expand-all').addEventListener('click', function() {
-    for (var i = 0; i < toggles.length; i++) {
-      toggles[i].setAttribute('aria-expanded', 'true');
-      var body = document.getElementById(toggles[i].getAttribute('aria-controls'));
-      if (body) body.classList.add('open');
+  var sections = document.querySelectorAll('.fs-cat');
+  var railLinks = document.querySelectorAll('.fs-rail a');
+  if (!sections.length || !railLinks.length) return;
+  function setActive() {
+    var scrollY = window.scrollY + 160;
+    var current = sections[0].id;
+    for (var i = 0; i < sections.length; i++) {
+      if (sections[i].offsetTop <= scrollY) current = sections[i].id;
     }
-  });
-  document.getElementById('fs-collapse-all').addEventListener('click', function() {
-    for (var i = 0; i < toggles.length; i++) {
-      toggles[i].setAttribute('aria-expanded', 'false');
-      var body = document.getElementById(toggles[i].getAttribute('aria-controls'));
-      if (body) body.classList.remove('open');
+    for (var j = 0; j < railLinks.length; j++) {
+      var href = railLinks[j].getAttribute('href');
+      if (href === '#' + current) railLinks[j].classList.add('active');
+      else railLinks[j].classList.remove('active');
     }
-  });
+  }
+  window.addEventListener('scroll', setActive, { passive: true });
+  setActive();
 })();
 </script>
 
