@@ -113,7 +113,7 @@ async function loadEvents() {
     const doc = new DOMParser().parseFromString(
       await (await fetch('events.html')).text(), 'text/html'
     );
-    const cards = Array.from(doc.querySelectorAll('.event-card'));
+    const cards = Array.from(doc.querySelectorAll('.event-card:not([data-past])'));
     if (!cards.length) throw new Error('none');
     grid.innerHTML = cards.map(card => {
       const id = card.id || '';
