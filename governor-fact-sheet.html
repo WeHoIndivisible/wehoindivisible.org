@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>WeHo Indivisible · 2026 California Governor Fact Sheet</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Domine:wght@400;500;600;700&family=Oswald:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    /* CA.gov-inspired civic palette */
+    --ca-navy: #003466;
+    --ca-navy-deep: #002147;
+    --ca-navy-soft: #1A5490;
+    --ca-gold: #FDB81E;
+    --ca-gold-deep: #D99A1C;
+    --ca-red: #B3282D;
+    --ca-red-deep: #8E1E22;
+    --ca-green: #2C7A3A;
+
+    --white: #FFFFFF;
+    --off-white: #F8FAFC;
+    --surface: #F1F5F9;
+    --surface-cool: #E2E8F0;
+    --rule: #CBD5E1;
+    --rule-soft: #E2E8F0;
+
+    --ink: #0F172A;
+    --ink-soft: #334155;
+    --ink-muted: #64748B;
+
+    --becerra: #003466;
+    --steyer: #B8751A;
+
+    --max-width: 720px;
+    --matrix-width: 1180px;
+
+    --pride: linear-gradient(to right,
+      #E40303 0%, #E40303 16.666%,
+      #FF8C00 16.666%, #FF8C00 33.333%,
+      #FFED00 33.333%, #FFED00 50%,
+      #008026 50%, #008026 66.666%,
+      #004DFF 66.666%, #004DFF 83.333%,
+      #750787 83.333%, #750787 100%);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--ink);
+    background: var(--white);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+  }
+
+  a {
+    color: var(--ca-navy);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(0, 52, 102, 0.3);
+    transition: border-color 0.15s, color 0.15s;
+  }
+  a:hover { border-bottom-color: var(--ca-navy); color: var(--ca-navy-deep); }
+
+  /* Top rails */
+  .pride-rail { height: 4px; background: var(--pride); }
+  .ca-navy-bar {
+    background: var(--ca-navy);
+    color: var(--white);
+    padding: 14px 20px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  @media (min-width: 620px) {
+    .ca-navy-bar { font-size: 17px; padding: 16px 20px; }
+  }
+  .ca-navy-bar .ca-star {
+    color: var(--ca-gold);
+    margin: 0 10px;
+    font-size: 0.9em;
+  }
+
+  /* Site header */
+  .site-header {
+    padding: 20px 20px;
+    border-bottom: 1px solid var(--rule-soft);
+    background: var(--white);
+  }
+  .site-header-inner {
+    max-width: var(--matrix-width);
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .brand {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink);
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .brand a { border: none; }
+  .brand-name { color: var(--ink); }
+  .brand-sub { color: var(--ca-navy); font-weight: 400; }
+  .brand-sep { color: var(--ink-muted); font-weight: 400; }
+  .brand-name-link:hover .brand-name { color: var(--ca-navy); }
+  .brand-sub-link:hover .brand-sub { color: var(--ca-red); }
+  .brand-star { color: var(--ca-gold); font-size: 16px; line-height: 1; }
+
+  .nav-back {
+    font-family: 'Oswald', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    border: none;
+    cursor: pointer;
+    padding: 6px 12px;
+    border-radius: 2px;
+    background: none;
+    transition: background 0.15s, color 0.15s;
+  }
+  .nav-back:hover { background: var(--surface); color: var(--ca-navy); }
+  .nav-back::before { content: "← "; }
+
+  /* Hero */
+  .hero {
+    padding: 48px 20px 40px;
+    border-bottom: 1px solid var(--rule-soft);
+  }
+  .hero-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
+  .hero-eyebrow {
+    font-family: 'Oswald', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ca-navy);
+    margin-bottom: 22px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .hero-eyebrow::before {
+    content: "★";
+    font-size: 14px;
+    color: var(--ca-gold);
+    letter-spacing: 0;
+  }
+  .hero h1 {
+    font-family: 'Domine', serif;
+    font-weight: 600;
+    font-size: clamp(30px, 6.2vw, 46px);
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+    color: var(--ink);
+    margin-bottom: 22px;
+  }
+  .hero-subtitle {
+    font-size: 18px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    margin-bottom: 28px;
+  }
+  .hero-meta {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--ink-muted);
+    border-top: 1px solid var(--rule-soft);
+    padding-top: 18px;
+    margin-top: 18px;
+  }
+  .hero-meta strong { color: var(--ink-soft); font-weight: 600; }
+
+  /* Matrix container */
+  .matrix-wrap {
+    padding: 40px 20px 60px;
+    background: var(--white);
+  }
+  .matrix {
+    max-width: var(--matrix-width);
+    margin: 0 auto;
+  }
+
+  /* Candidate header strip */
+  .candidate-strip {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 32px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: var(--white);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .candidate-cell {
+    padding: 22px 24px;
+    background: var(--white);
+    border-right: 1px solid var(--rule);
+  }
+  .candidate-cell:last-child { border-right: none; }
+  .candidate-cell.becerra { border-top: 4px solid var(--becerra); }
+  .candidate-cell.steyer { border-top: 4px solid var(--steyer); }
+
+  .candidate-name {
+    font-family: 'Domine', serif;
+    font-weight: 700;
+    font-size: 22px;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+  .candidate-role {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: var(--ink-muted);
+    line-height: 1.4;
+  }
+
+  /* Matrix sections */
+  .matrix-section {
+    margin-bottom: 28px;
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    overflow: hidden;
+    page-break-inside: avoid;
+  }
+  .section-header {
+    background: var(--ca-navy);
+    color: var(--white);
+    padding: 14px 24px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+  .section-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+  .section-cell {
+    padding: 22px 24px;
+    background: var(--white);
+    border-right: 1px solid var(--rule-soft);
+  }
+  .section-cell:last-child { border-right: none; }
+  .section-cell + .section-cell { /* second column */ }
+
+  .section-cell ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .section-cell li {
+    position: relative;
+    padding-left: 18px;
+    margin-bottom: 12px;
+    font-size: 15.5px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+  }
+  .section-cell li:last-child { margin-bottom: 0; }
+  .section-cell li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 6px;
+    height: 6px;
+    background: var(--ca-navy);
+    border-radius: 50%;
+  }
+  .section-cell.steyer li::before { background: var(--steyer); }
+  .section-cell.becerra li::before { background: var(--becerra); }
+
+  .section-cell li strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+  .section-cell .group-label {
+    display: block;
+    font-family: 'Oswald', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin: 16px 0 10px;
+    font-weight: 500;
+  }
+  .section-cell .group-label:first-child { margin-top: 0; }
+
+  /* Mobile candidate label inside cells (hidden on desktop) */
+  .mobile-candidate-label {
+    display: none;
+  }
+
+  /* Footer */
+  .matrix-footer {
+    max-width: var(--matrix-width);
+    margin: 40px auto 0;
+    padding: 28px 0 0;
+    border-top: 2px solid var(--rule);
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--ink-muted);
+  }
+  .matrix-footer p { margin-bottom: 10px; }
+  .matrix-footer .footer-attrib {
+    font-family: 'Oswald', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+
+  /* Bottom rails */
+  .footer-rails {
+    margin-top: 48px;
+  }
+
+  /* ============ MOBILE ============ */
+  @media (max-width: 760px) {
+    .candidate-strip {
+      grid-template-columns: 1fr;
+      position: static;
+    }
+    .candidate-cell {
+      border-right: none;
+      border-bottom: 1px solid var(--rule);
+    }
+    .candidate-cell:last-child { border-bottom: none; }
+
+    .section-grid {
+      grid-template-columns: 1fr;
+    }
+    .section-cell {
+      border-right: none;
+      border-bottom: 1px solid var(--rule-soft);
+    }
+    .section-cell:last-child { border-bottom: none; }
+
+    .mobile-candidate-label {
+      display: block;
+      font-family: 'Oswald', sans-serif;
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 14px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--rule-soft);
+    }
+    .mobile-candidate-label.becerra { color: var(--becerra); }
+    .mobile-candidate-label.steyer { color: var(--steyer); }
+
+    .hero { padding: 36px 20px 32px; }
+    .matrix-wrap { padding: 28px 16px 40px; }
+    .section-header { padding: 12px 18px; font-size: 13px; }
+    .section-cell { padding: 20px 18px; }
+  }
+
+  /* Print */
+  @media print {
+    .pride-rail, .ca-navy-bar, .nav-back, .footer-rails { display: none; }
+    .candidate-strip { position: static; }
+    body { font-size: 11pt; }
+    .matrix-section { page-break-inside: avoid; break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<div class="pride-rail"></div>
+<div class="ca-navy-bar">
+  West Hollywood Indivisible <span class="ca-star">★</span> 2026 California Governor Fact Sheet
+</div>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <div class="brand">
+      <span class="brand-star">★</span>
+      <a href="https://wehoindivisible.org" class="brand-name-link"><span class="brand-name">WeHo Indivisible</span></a>
+      <span class="brand-sep">·</span>
+      <span class="brand-sub">Governor Fact Sheet</span>
+    </div>
+    <a href="https://wehoindivisible.org" class="nav-back" style="border:none;">Back to wehoindivisible.org</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">2026 California Democratic Primary</div>
+    <h1>California Governor: Two Leading Democratic Candidates</h1>
+    <p class="hero-subtitle">A side-by-side fact sheet on Xavier Becerra and Tom Steyer, drawn from a research workgroup of California Indivisible chapters and adapted for West Hollywood Indivisible.</p>
+    <div class="hero-meta">
+      <p><strong>Adapted from research</strong> prepared by a workgroup of California Indivisible chapters: Indivisible South Lake Tahoe, Indivisible El Dorado, Indivisible CA Green Team, and Indivisible Santa Barbara. The original three-candidate analysis is available at <a href="https://www.indivisibleeldorado.org/governor-matrix" target="_blank" rel="noopener">indivisibleeldorado.org/governor-matrix</a>.</p>
+      <p><strong>Sources:</strong> candidate profiles, California Secretary of State filings, public records.</p>
+      <p><strong>Last updated:</strong> May 7, 2026. For informational purposes. No editorial endorsement expressed or implied.</p>
+    </div>
+  </div>
+</section>
+
+<main class="matrix-wrap">
+  <div class="matrix">
+
+    <!-- Candidate strip -->
+    <div class="candidate-strip">
+      <div class="candidate-cell becerra">
+        <div class="candidate-name">Xavier Becerra</div>
+        <div class="candidate-role">Former U.S. HHS Secretary · California Attorney General · 12-term member of Congress</div>
+      </div>
+      <div class="candidate-cell steyer">
+        <div class="candidate-name">Tom Steyer</div>
+        <div class="candidate-role">Investor · Climate philanthropist · Activist</div>
+      </div>
+    </div>
+
+    <!-- BACKGROUND -->
+    <section class="matrix-section">
+      <div class="section-header">Background</div>
+      <div class="section-grid">
+        <div class="section-cell becerra">
+          <div class="mobile-candidate-label becerra">Becerra</div>
+          <ul>
+            <li>Stanford B.A. in 1980, the first in his family to graduate from college; Stanford Law J.D. in 1984.</li>
+            <li>California Assembly from 1990 to 1992; U.S. House for twelve terms from 1993 to 2017, including a stint as Chair of the House Democratic Caucus.</li>
+            <li>California Attorney General from 2017 to 2021, during which he filed 122 lawsuits against the first Trump administration.</li>
+            <li>U.S. Secretary of Health and Human Services from 2021 to 2025, overseeing the federal COVID-19 response and continued implementation of the Affordable Care Act.</li>
+          </ul>
+        </div>
+        <div class="section-cell steyer">
+          <div class="mobile-candidate-label steyer">Steyer</div>
+          <ul>
+            <li>Yale B.A. summa cum laude in 1979; Stanford MBA in 1983.</li>
+            <li>Founded Farallon Capital, which grew from $8 million to roughly $20 billion under his leadership; left finance in 2012.</li>
+            <li>Founded NextGen America and Galvanize Climate Solutions; long history of climate philanthropy and political organizing.</li>
+            <li>Ran for the Democratic presidential nomination in 2020.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- KEY PRIORITIES -->
+    <section class="matrix-section">
+      <div class="section-header">Key Priorities</div>
+      <div class="section-grid">
+        <div class="section-cell becerra">
+          <div class="mobile-candidate-label becerra">Becerra</div>
+          <ul>
+            <li><strong>Climate.</strong> Established the Bureau of Environmental Justice as Attorney General and defended California's clean car standards, though climate is less central to his 2026 platform than to Steyer's.</li>
+            <li><strong>Housing.</strong> State intervention where the market has failed, including a crackdown on price gouging and expanded rent protections.</li>
+            <li><strong>Healthcare.</strong> Strengthen Medi-Cal and lower prescription drug costs in the near term, with Medicare for All as a longer horizon.</li>
+            <li><strong>Economy.</strong> Take on corporations, protect workers, and preserve what he calls the California Dream.</li>
+            <li><strong>Rights.</strong> Defense of immigrant communities and civil liberties, drawing on his record at the Justice Department and at HHS.</li>
+          </ul>
+        </div>
+        <div class="section-cell steyer">
+          <div class="mobile-candidate-label steyer">Steyer</div>
+          <ul>
+            <li><strong>Climate.</strong> 100 percent clean energy, breaking up the PG&amp;E monopoly, a windfall profits tax on oil producers, and green jobs as a centerpiece of the platform.</li>
+            <li><strong>Housing.</strong> Build one million affordable homes and close corporate property tax loopholes that benefit large landlords.</li>
+            <li><strong>Healthcare.</strong> Transition to a single-payer system.</li>
+            <li><strong>Economy.</strong> Reform the corporate tax structure so that wealthy individuals and corporations pay a larger share.</li>
+            <li><strong>Education.</strong> Free preschool and community college, plus subsidized childcare.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- KEY ENDORSEMENTS -->
+    <section class="matrix-section">
+      <div class="section-header">Key Endorsements</div>
+      <div class="section-grid">
+        <div class="section-cell becerra">
+          <div class="mobile-candidate-label becerra">Becerra</div>
+
+          <span class="group-label">Elected officials</span>
+          <ul>
+            <li>Assembly Speaker Robert Rivas, who was instrumental in stopping single-payer healthcare legislation, a position in tension with Becerra's stated long-term support for Medicare for All.</li>
+            <li><strong>U.S. Congress:</strong> Salud Carbajal; Raul Ruiz, M.D.; Gil Cisneros; Mark Takano.</li>
+            <li><strong>Former U.S. Congress:</strong> Tony Cardenas.</li>
+            <li><strong>State Senate:</strong> Sabrina Cervantes; Melissa Hurtado; Jerry McNerney; Eloise Gómez Reyes.</li>
+            <li><strong>Assembly:</strong> several members.</li>
+          </ul>
+
+          <span class="group-label">Labor</span>
+          <ul>
+            <li>Laborers' International Union of North America (LIUNA); California Correctional Peace Officers Association (CCPOA); California Statewide Law Enforcement Association (CSLEA); California State Council of Laborers; International Longshore and Warehouse Union, Southern California District Council.</li>
+          </ul>
+
+          <span class="group-label">Healthcare</span>
+          <ul>
+            <li>CPCA Advocates; California Primary Care Association; California Partnership for Health; Planned Parenthood Affiliates of California; California Medical Association.</li>
+          </ul>
+
+          <span class="group-label">Civil rights and equity</span>
+          <ul>
+            <li>Equality California; Asian American Action Fund.</li>
+          </ul>
+
+          <span class="group-label">Education</span>
+          <ul>
+            <li>California Faculty Association.</li>
+          </ul>
+
+          <span class="group-label">Party and youth</span>
+          <ul>
+            <li>California College Democrats; Fresno and San Diego Young Democrats; California Latino Legislative Caucus.</li>
+          </ul>
+        </div>
+
+        <div class="section-cell steyer">
+          <div class="mobile-candidate-label steyer">Steyer</div>
+
+          <span class="group-label">Elected officials and civic leaders</span>
+          <ul>
+            <li>Betty Yee, who endorsed Steyer when she suspended her own gubernatorial campaign; Toni Atkins, former California Senate President pro tempore; Rep. Jared Huffman; Rep. Ro Khanna; former White House Chief of Staff John Podesta; Ali Zaidi, former White House climate advisor.</li>
+            <li>State Senators Henry Stern, Caroline Menjivar, and Lola Smallwood-Cuevas; Assemblymembers Sharon Quirk-Silva, Alex Lee, and Ash Kalra, among others.</li>
+            <li>Sen. Sheldon Whitehouse of Rhode Island.</li>
+          </ul>
+
+          <span class="group-label">Labor</span>
+          <ul>
+            <li>California Teachers Association (April 15); California Nurses Association; California Federation of Teachers (CFT); United Domestic Workers of America (250,000 members); California School Employees Association; California Federation of Labor Unions, in a co-endorsement with Porter.</li>
+          </ul>
+
+          <span class="group-label">Progressive</span>
+          <ul>
+            <li>Our Revolution, the organization founded out of the Bernie Sanders campaign, which endorsed on April 20; Courage California; Smart Justice California.</li>
+          </ul>
+
+          <span class="group-label">Environment</span>
+          <ul>
+            <li>California Environmental Voters, in a co-endorsement with Porter; Climate Action California; Center for Biological Diversity Action Fund; Third Act; author Bill McKibben; Jane Fonda Climate PAC.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ADVANTAGES -->
+    <section class="matrix-section">
+      <div class="section-header">Advantages</div>
+      <div class="section-grid">
+        <div class="section-cell becerra">
+          <div class="mobile-candidate-label becerra">Becerra</div>
+          <ul>
+            <li>The only candidate in the field with experience across all three branches he would need to coordinate with as governor: state legislature, state executive, and federal executive.</li>
+            <li>122 lawsuits against the first Trump administration, the most extensive Trump-era state litigation record of any candidate, and a coalition history with the Democratic state attorneys general who would be his peers in any second-term resistance.</li>
+            <li>Strong appeal to Latino voters, organized labor, and institutional Democrats, with a base that has been built over decades rather than assembled for this race.</li>
+          </ul>
+        </div>
+        <div class="section-cell steyer">
+          <div class="mobile-candidate-label steyer">Steyer</div>
+          <ul>
+            <li>Effectively unlimited self-funding, which insulates him from donor entanglements and lets the campaign operate without compromise on advertising scale or staffing.</li>
+            <li>Roughly fifteen years of climate credibility and demonstrated youth-voter mobilization through NextGen America and its predecessors.</li>
+            <li>Outsider standing combined with a national Democratic network built through philanthropy, the 2020 presidential campaign, and Need to Impeach.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- VULNERABILITIES -->
+    <section class="matrix-section">
+      <div class="section-header">Vulnerabilities</div>
+      <div class="section-grid">
+        <div class="section-cell becerra">
+          <div class="mobile-candidate-label becerra">Becerra</div>
+          <ul>
+            <li>Read by some voters and organizers as an establishment figure tied to a Democratic brand polling at low approval, particularly with voters who want a break from continuity.</li>
+            <li>The ExxonMobil climate-deception case, opened by Attorney General Kamala Harris, was dropped under Becerra and later reopened by Attorney General Rob Bonta. Climate-movement organizers have pointed to this as a credibility question.</li>
+            <li>As Attorney General, declined to file charges in the 2018 Stephon Clark shooting in Sacramento, a decision that drew sustained protest.</li>
+            <li>Reported to have threatened journalists with legal action over their possession of public records relating to officers with criminal convictions.</li>
+            <li>A former chief of staff was indicted on 23 counts of bank and wire fraud after roughly $225,000 was diverted from a dormant campaign account. Becerra is not accused, but the case raises questions about office oversight.</li>
+          </ul>
+        </div>
+        <div class="section-cell steyer">
+          <div class="mobile-candidate-label steyer">Steyer</div>
+          <ul>
+            <li>The "buying the race" critique. Self-funding on the scale he is doing dwarfs every other candidate's resources and is the central line of attack from rivals.</li>
+            <li>No prior elected office, which means a governor's first term would also be his first term in any government role.</li>
+            <li>Farallon-era investments in private prisons (CCA, now CoreCivic), fossil fuels including Australian coal, and predatory lending, complicating his current platform on each. He divested roughly twenty years ago in some cases, with full personal divestment from fossil fuels staged through 2014, though he and his wife continue to receive income from the firm.</li>
+            <li>Heavy corporate opposition spending. PG&amp;E and the California Chamber of Commerce have together put roughly fifteen million dollars into anti-Steyer PACs such as "NO ON STEYER." That spending depresses his support and indirectly benefits every other candidate in the race.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CAMPAIGN FINANCE -->
+    <section class="matrix-section">
+      <div class="section-header">Campaign Finance &amp; Major Donors</div>
+      <div class="section-grid">
+        <div class="section-cell becerra">
+          <div class="mobile-candidate-label becerra">Becerra</div>
+          <ul>
+            <li><strong>Total raised: $2.89 million</strong>, the smallest war chest among the leading Democratic contenders.</li>
+            <li>Seeded with more than $2.6 million transferred from prior campaign accounts.</li>
+            <li>Notable donors per state filings include Chevron, alongside labor and healthcare PACs.</li>
+            <li>The Chevron contribution has drawn scrutiny given his environmental litigation record as Attorney General.</li>
+            <li>Border Health PAC, a Texas-based, healthcare-tied organization that typically supports Republican candidates, made maximum contributions to Becerra.</li>
+            <li><strong>Indirect benefit:</strong> the corporate spending against Steyer, $10 million from PG&amp;E and $5 million from the Chamber of Commerce to anti-Steyer PACs, weakens a primary rival and accrues to every other candidate, including Becerra.</li>
+          </ul>
+        </div>
+        <div class="section-cell steyer">
+          <div class="mobile-candidate-label steyer">Steyer</div>
+          <ul>
+            <li><strong>Total raised: $122.7 million</strong>, of which $122.5 million is his own money and roughly $161,000 is from outside donors.</li>
+            <li>Outspending the entire field combined on advertising.</li>
+            <li>Notable outside donors: Nat Simons; Alfred Clark; Richard and Dee Lawrence of Cool Effect, a clean-energy nonprofit.</li>
+            <li>Has called for banning corporate PAC money in California state elections.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="matrix-footer">
+      <p class="footer-attrib">Primary Candidate Workgroup of Indivisible Leaders in California · Candidate Research Series · 2026 California Democratic Primary</p>
+      <p>Original research prepared by Indivisible South Lake Tahoe, Indivisible El Dorado, Indivisible California Green Team, and Indivisible Santa Barbara. Adapted by West Hollywood Indivisible for the two leading Democratic candidates. Other candidates are running in the June 2 primary; the full list is on the California Secretary of State website.</p>
+      <p>For informational purposes only. No editorial endorsement expressed or implied.</p>
+    </footer>
+
+  </div>
+</main>
+
+<div class="footer-rails">
+  <div class="ca-navy-bar">
+    Ballots arrived around May 4 <span class="ca-star">★</span> Register to vote by May 18 <span class="ca-star">★</span> Primary: June 2, 2026
+  </div>
+  <div class="pride-rail"></div>
+</div>
+
+</body>
+</html>
