@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en" style="color-scheme: light;">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="description" content="A brief on the 2026 California Superintendent of Public Instruction race. Ten candidates. Top two reach November. Don't let one of them be Sonja Shaw.">
+  <meta name="color-scheme" content="light only">
+  <title>The Superintendent Race — WeHo Indivisible</title>
+  <link rel="canonical" href="https://wehoindivisible.org/superintendent-of-public-instruction.html">
+  <meta name="theme-color" content="#07131C">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=7">
+
+  <!-- Site nav (self-contained) -->
+  <style id="nav-mobile-css">
+    #whi-nav-bar { position:fixed; top:0; left:0; right:0; z-index:1000; }
+    #whi-rainbow { height:6px; background:linear-gradient(to right,#E40303 0%,#E40303 16.666%,#FF8C00 16.666%,#FF8C00 33.333%,#FFED00 33.333%,#FFED00 50%,#008026 50%,#008026 66.666%,#004DFF 66.666%,#004DFF 83.333%,#750787 83.333%,#750787 100%); }
+    #whi-nav { height:80px; background:#07131C; display:flex; align-items:center; overflow:hidden; }
+    #whi-nav-inner { width:100%; max-width:1100px; margin:0 auto; padding:0 20px; display:flex; align-items:center; justify-content:space-between; position:relative; }
+    #whi-logo { display:flex; align-items:center; gap:12px; text-decoration:none; flex-shrink:0; min-width:0; }
+    #whi-logo-img { height:36px; width:auto; }
+    #whi-logo-div { width:1px; height:28px; background:rgba(255,255,255,0.2); flex-shrink:0; }
+    #whi-logo-title { font-family:"Montserrat",sans-serif; font-weight:800; font-size:1rem; color:#fff; text-transform:uppercase; letter-spacing:0.02em; display:block; }
+    #whi-logo-sub { font-family:"Montserrat",sans-serif; font-weight:500; font-size:0.65rem; color:#8AABBF; text-transform:uppercase; letter-spacing:0.12em; display:block; }
+    #whi-logo-mobile { display:none; font-family:"Montserrat",sans-serif; font-weight:800; font-size:1rem; color:#fff; text-transform:uppercase; letter-spacing:0.02em; }
+    #whi-desktop-links { display:flex; align-items:center; gap:2px; list-style:none; margin:0; padding:0; }
+    #whi-desktop-links a { font-family:"Montserrat",sans-serif; font-weight:600; font-size:0.82rem; letter-spacing:0.06em; text-transform:uppercase; color:rgba(255,255,255,0.75); padding:8px 12px; border-radius:4px; text-decoration:none; white-space:nowrap; }
+    #whi-desktop-links a:hover { color:#fff; background:rgba(255,255,255,0.08); }
+    #whi-desktop-links .whi-cta { background:#CA4948; color:#fff !important; padding:8px 16px; }
+    #whi-desktop-links .whi-cta:hover { background:#A83736; }
+    #whi-hamburger { display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:8px; flex-shrink:0; }
+    #whi-hamburger span { display:block; width:24px; height:2px; background:#fff; transition:all 0.2s; }
+    #whi-mobile-menu { display:none; background:#07131C; border-top:1px solid rgba(255,255,255,0.1); }
+    #whi-mobile-menu a { display:block; padding:14px 24px; font-family:"Montserrat",sans-serif; font-weight:600; font-size:0.9rem; color:rgba(255,255,255,0.85); text-decoration:none; text-transform:uppercase; letter-spacing:0.06em; border-bottom:1px solid rgba(255,255,255,0.06); }
+    #whi-mobile-menu a:last-child { background:#CA4948; color:#fff; border-bottom:none; }
+    @media (max-width:900px) {
+      #whi-desktop-links { display:none !important; }
+      #whi-logo-img { display:none !important; }
+      #whi-logo-div { display:none !important; }
+      #whi-logo-sub { display:none !important; }
+      #whi-logo-title { display:none !important; }
+      #whi-logo-mobile { display:block !important; }
+      #whi-hamburger { display:flex !important; position:absolute; right:16px; top:50%; transform:translateY(-50%); }
+    }
+  </style>
+
+  <!-- Brief styling (defensive: explicit colors with !important to win against any site CSS) -->
+  <style>
+    /* Defensive base: force light theme on this page */
+    html, body {
+      background: #ffffff !important;
+      color: #1a1a1a !important;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+      font-size: 16px;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      padding-top: 86px !important;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+
+    /* Brief container -- everything inside scoped */
+    .brief {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 28px 18px 60px;
+      background: #ffffff !important;
+      color: #1a1a1a !important;
+    }
+    .brief, .brief * {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+    }
+    .brief p, .brief h1, .brief h2, .brief h3, .brief li, .brief ol, .brief ul {
+      margin: 0;
+      padding: 0;
+      color: #1a1a1a;
+      background: transparent;
+    }
+    .brief a { color: #b3282d; text-decoration: underline; }
+    .brief a:hover { color: #8e1e22; }
+    @media (min-width: 720px) {
+      .brief { padding: 44px 24px 80px; font-size: 17px; }
+    }
+
+    /* Skip link */
+    .skip-link {
+      position: absolute;
+      top: -40px; left: 0;
+      background: #1a1a1a;
+      color: #fff !important;
+      padding: 8px 16px;
+      text-decoration: none !important;
+      z-index: 10000;
+    }
+    .skip-link:focus { top: 0; }
+
+    /* Header */
+    .brief-head {
+      border-bottom: 2px solid #1a1a1a;
+      padding-bottom: 18px;
+      margin-bottom: 24px;
+    }
+    .brief-eyebrow {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #b3282d !important;
+      margin-bottom: 10px;
+    }
+    .brief h1 {
+      font-weight: 700;
+      font-size: 26px;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      margin-bottom: 12px;
+      color: #1a1a1a;
+    }
+    @media (min-width: 720px) {
+      .brief h1 { font-size: 32px; }
+    }
+    .brief-deck {
+      font-size: 16px;
+      line-height: 1.4;
+      color: #444;
+    }
+    .brief-meta-link {
+      font-size: 14px;
+      line-height: 1.5;
+      color: #555 !important;
+      margin-top: 12px;
+    }
+    .brief-meta-link a {
+      color: #b3282d !important;
+      text-decoration: underline;
+      font-weight: 500;
+    }
+    .brief-meta-link a:hover { color: #8e1e22 !important; }
+
+    /* Sections */
+    .brief section { margin-bottom: 28px; }
+    .brief h2 {
+      font-weight: 700;
+      font-size: 19px;
+      line-height: 1.2;
+      margin-bottom: 12px;
+      color: #1a1a1a;
+    }
+
+    /* Stakes */
+    .brief-stakes p {
+      font-size: 16px;
+      line-height: 1.55;
+      color: #1a1a1a;
+    }
+
+    /* Threat block */
+    .brief-threat {
+      background: #fff5f5 !important;
+      border-left: 4px solid #b3282d !important;
+      padding: 18px 18px 16px !important;
+    }
+    .brief-threat h2 {
+      color: #b3282d !important;
+      font-size: 19px;
+    }
+    .brief-threat p {
+      font-size: 15px;
+      line-height: 1.55;
+      color: #1a1a1a;
+      margin-bottom: 12px;
+    }
+    .brief-threat p:last-child { margin-bottom: 0; }
+    .threat-id strong { font-weight: 700; }
+    .threat-quote {
+      border-left: 2px solid #b3282d;
+      padding-left: 12px;
+      font-style: italic;
+      font-size: 15px;
+      line-height: 1.45;
+    }
+    .threat-quote-cite {
+      display: block;
+      margin-top: 4px;
+      font-style: normal;
+      font-size: 11.5px;
+      color: #666 !important;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    /* Roster */
+    .roster {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      border-top: 1px solid #e0e0e0;
+    }
+    .roster > li {
+      padding: 12px 0;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    .roster > li.is-shaw {
+      background: #fff5f5 !important;
+      margin: 0 -18px;
+      padding-left: 18px;
+      padding-right: 18px;
+    }
+    .cand-line1 {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 8px;
+      margin-bottom: 4px;
+    }
+    .cand-name {
+      font-weight: 700;
+      font-size: 16px;
+      color: #1a1a1a;
+    }
+    .is-shaw .cand-name { color: #b3282d !important; }
+    .cand-party {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 2px 6px;
+      background: #003466 !important;
+      color: #ffffff !important;
+      border-radius: 2px;
+      white-space: nowrap;
+    }
+    .cand-party.party-rep { background: #b3282d !important; }
+    .cand-party.party-pf { background: #5A2A82 !important; }
+    .cand-poll {
+      font-weight: 600;
+      font-size: 14px;
+      font-variant-numeric: tabular-nums;
+      margin-left: auto;
+      color: #1a1a1a;
+    }
+    .cand-poll.unsurveyed {
+      color: #888 !important;
+      font-weight: 400;
+      font-style: italic;
+      font-size: 13px;
+    }
+    .cand-detail {
+      font-size: 14px;
+      color: #555 !important;
+      line-height: 1.45;
+    }
+
+    /* Caveats */
+    .caveats {
+      margin-top: 16px;
+      font-size: 13px;
+      color: #666 !important;
+      line-height: 1.55;
+    }
+    .caveats strong { color: #1a1a1a; font-weight: 600; }
+
+    /* Money chart */
+    .money-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      border-top: 1px solid #e0e0e0;
+    }
+    .money-list > li {
+      display: grid;
+      grid-template-columns: 90px 1fr 90px;
+      gap: 10px;
+      align-items: center;
+      padding: 8px 0;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    .money-list > li.is-shaw .money-name,
+    .money-list > li.is-shaw .money-amt { color: #b3282d !important; }
+    .money-name {
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #1a1a1a;
+    }
+    .money-bar { height: 8px; background: #f0f0f0 !important; }
+    .money-bar-fill {
+      height: 100%;
+      background: #1a1a1a !important;
+      display: block;
+    }
+    .money-list > li.is-shaw .money-bar-fill { background: #b3282d !important; }
+    .money-amt {
+      font-size: 13px;
+      font-weight: 600;
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+      color: #1a1a1a;
+    }
+    @media (max-width: 480px) {
+      .money-list > li {
+        grid-template-columns: 92px 1fr 80px;
+        gap: 8px;
+      }
+      .money-name { font-size: 10.5px; letter-spacing: 0.04em; }
+      .money-amt { font-size: 12px; }
+    }
+
+    /* Action / CTA */
+    .brief-action {
+      margin-top: 32px;
+      padding: 22px 18px !important;
+      background: #1a1a1a !important;
+      text-align: center;
+    }
+    .brief-action p { color: #ffffff !important; }
+    .action-imp {
+      font-weight: 700;
+      font-size: 19px;
+      line-height: 1.25;
+      margin-bottom: 8px;
+    }
+    .action-imp strong { color: #fdb81e !important; font-weight: 700; }
+    .action-sub {
+      font-size: 14.5px;
+      line-height: 1.45;
+      color: #cccccc !important;
+      margin-bottom: 16px;
+    }
+    .action-btn {
+      display: inline-block;
+      padding: 10px 18px;
+      background: #fdb81e !important;
+      color: #1a1a1a !important;
+      font-weight: 600;
+      font-size: 13.5px;
+      text-decoration: none !important;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      border-radius: 0;
+    }
+    .action-btn:hover { background: #e0a418 !important; color: #1a1a1a !important; }
+
+    /* Footer */
+    .brief-foot {
+      margin-top: 24px;
+      text-align: center;
+      font-size: 12px;
+      color: #888 !important;
+      line-height: 1.6;
+    }
+    .brief-foot a { color: #888 !important; text-decoration: underline; }
+    .brief-foot a:hover { color: #1a1a1a !important; }
+
+    /* Override any dark-mode media query that might be in the site CSS */
+    @media (prefers-color-scheme: dark) {
+      html, body { background: #ffffff !important; color: #1a1a1a !important; }
+      .brief { background: #ffffff !important; color: #1a1a1a !important; }
+      .brief-threat { background: #fff5f5 !important; }
+      .roster > li.is-shaw { background: #fff5f5 !important; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Site nav -->
+<div id="whi-nav-bar">
+  <div id="whi-rainbow"></div>
+  <nav id="whi-nav" aria-label="Main navigation">
+    <div id="whi-nav-inner">
+      <a href="index.html" id="whi-logo" aria-label="West Hollywood Indivisible home">
+        <img id="whi-logo-img" src="logo-indivisible.svg" alt="Indivisible" onerror="this.style.display='none'">
+        <div id="whi-logo-div"></div>
+        <div>
+          <span id="whi-logo-mobile">WeHo Indivisible</span>
+          <span id="whi-logo-title">West Hollywood</span>
+          <span id="whi-logo-sub">California</span>
+        </div>
+      </a>
+      <ul id="whi-desktop-links" role="list">
+        <li><a href="actions.html">Actions</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="get-involved.html">Get Involved</a></li>
+        <li><a href="representatives.html">Your Reps</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="whi-cta">Sign Up</a></li>
+      </ul>
+      <button id="whi-hamburger" onclick="whiMenuToggle()" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div id="whi-mobile-menu">
+    <a href="actions.html">Actions</a>
+    <a href="events.html">Events</a>
+    <a href="get-involved.html">Get Involved</a>
+    <a href="representatives.html">Your Reps</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Sign Up</a>
+  </div>
+</div>
+<script>
+function whiMenuToggle(){
+  var m=document.getElementById('whi-mobile-menu');
+  var b=document.getElementById('whi-hamburger');
+  var s=b.querySelectorAll('span');
+  var open=m.style.display==='block';
+  m.style.display=open?'none':'block';
+  b.setAttribute('aria-expanded',String(!open));
+  s[0].style.transform=open?'':'translateY(7px) rotate(45deg)';
+  s[1].style.opacity=open?'':'0';
+  s[2].style.transform=open?'':'translateY(-7px) rotate(-45deg)';
+}
+document.addEventListener('click',function(e){
+  var b=document.getElementById('whi-hamburger');
+  var m=document.getElementById('whi-mobile-menu');
+  if(b&&m&&!b.contains(e.target)&&!m.contains(e.target)){
+    m.style.display='none';
+    b.setAttribute('aria-expanded','false');
+    var s=b.querySelectorAll('span');
+    s[0].style.transform='';s[1].style.opacity='';s[2].style.transform='';
+  }
+});
+</script>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<main class="brief" id="main-content">
+
+  <header class="brief-head">
+    <p class="brief-eyebrow">2026 California Primary</p>
+    <h1>Superintendent of Public Instruction</h1>
+    <p class="brief-deck">Ten candidates. Top two on June 2 advance to November. Don't let one of them be Sonja Shaw.</p>
+    <p class="brief-meta-link">For full candidate bios, endorsements, and detailed positions on key issues, see the <a href="superintendent-of-public-instruction-full.html">full candidate guide →</a></p>
+  </header>
+
+  <section class="brief-stakes">
+    <p>The California Superintendent of Public Instruction oversees public education for nearly six million students. Seven Democrats are splitting the vote. One Republican, Sonja Shaw, is consolidating it. With more than half of voters undecided, Shaw doesn't need to win the primary; she only needs to finish second.</p>
+  </section>
+
+  <section class="brief-threat">
+    <h2>The threat: Sonja Shaw</h2>
+    <p class="threat-id"><strong>School board president, Chino Valley Unified.</strong> Endorsed by the California Republican Party, Moms for Liberty, and the California Rifle and Pistol Association.</p>
+    <p>Shaw's campaign centers on mandatory parent notification when a child expresses gender-identity issues at school, and the exclusion of transgender students from girls' athletic teams. She has built a public profile as a MAGA culture warrior.</p>
+    <p class="threat-quote">"Girls are losing roster spots, medals and scholarships."<span class="threat-quote-cite">Sonja Shaw, on transgender athletes</span></p>
+  </section>
+
+  <section class="brief-field">
+    <h2>The field</h2>
+    <ol class="roster">
+      <li class="is-shaw">
+        <div class="cand-line1">
+          <span class="cand-name">Sonja Shaw</span>
+          <span class="cand-party party-rep">Republican</span>
+          <span class="cand-poll">~7–9%</span>
+        </div>
+        <p class="cand-detail">Chino Valley school board president; California Republican Party.</p>
+      </li>
+      <li>
+        <div class="cand-line1">
+          <span class="cand-name">Richard Barrera</span>
+          <span class="cand-party">Democrat</span>
+          <span class="cand-poll">~6–8%</span>
+        </div>
+        <p class="cand-detail">San Diego Unified board; California Teachers Association.</p>
+      </li>
+      <li>
+        <div class="cand-line1">
+          <span class="cand-name">Al Muratsuchi</span>
+          <span class="cand-party">Democrat</span>
+          <span class="cand-poll">~5–7%</span>
+        </div>
+        <p class="cand-detail">Assemblymember, education committee chair; CFT, CSEA.</p>
+      </li>
+      <li>
+        <div class="cand-line1">
+          <span class="cand-name">Nichelle M. Henderson</span>
+          <span class="cand-party">Democrat</span>
+          <span class="cand-poll">~4–6%</span>
+        </div>
+        <p class="cand-detail">LACCD trustee; CFT, California Legislative Black Caucus.</p>
+      </li>
+      <li>
+        <div class="cand-line1">
+          <span class="cand-name">Josh Newman</span>
+          <span class="cand-party">Democrat</span>
+          <span class="cand-poll">~3–5%</span>
+        </div>
+        <p class="cand-detail">State senator; State Building &amp; Construction Trades Council.</p>
+      </li>
+      <li>
+        <div class="cand-line1">
+          <span class="cand-name">Gus Mattamal</span>
+          <span class="cand-party party-rep">Republican</span>
+          <span class="cand-poll">~2–4%</span>
+        </div>
+        <p class="cand-detail">Tutoring company executive (San Mateo County).</p>
+      </li>
+      <li>
+        <div class="cand-line1">
+          <span class="cand-name">Anthony Rendon</span>
+          <span class="cand-party">Democrat</span>
+          <span class="cand-poll unsurveyed">not surveyed</span>
+        </div>
+        <p class="cand-detail">Former Assembly Speaker; AFSCME, SEIU California.</p>
+      </li>
+      <li>
+        <div class="cand-line1">
+          <span class="cand-name">Frank Lara</span>
+          <span class="cand-party party-pf">Peace &amp; Freedom</span>
+          <span class="cand-poll unsurveyed">not surveyed</span>
+        </div>
+        <p class="cand-detail">SFUSD teacher; United Educators of San Francisco.</p>
+      </li>
+      <li>
+        <div class="cand-line1">
+          <span class="cand-name">Wendy Castañeda-Leal</span>
+          <span class="cand-party">Democrat</span>
+          <span class="cand-poll unsurveyed">not surveyed</span>
+        </div>
+        <p class="cand-detail">Rural district superintendent (Kern County).</p>
+      </li>
+      <li>
+        <div class="cand-line1">
+          <span class="cand-name">Ainye Long</span>
+          <span class="cand-party">Democrat</span>
+          <span class="cand-poll unsurveyed">not surveyed</span>
+        </div>
+        <p class="cand-detail">SFUSD middle school math department chair.</p>
+      </li>
+    </ol>
+    <p class="caveats"><strong>A note on polling:</strong> No public horse-race poll exists for this race; figures are analyst readings of institutional backing. More than half of voters are undecided. All candidates appear as "Nonpartisan" on the ballot.</p>
+  </section>
+
+  <section class="brief-money">
+    <h2>The money</h2>
+    <p class="caveats" style="margin-top:0; margin-bottom:12px;">Total raised through May 4, 2026.</p>
+    <ul class="money-list">
+      <li>
+        <span class="money-name">Rendon</span>
+        <span class="money-bar"><span class="money-bar-fill" style="width:100%"></span></span>
+        <span class="money-amt">$1,354,044</span>
+      </li>
+      <li>
+        <span class="money-name">Muratsuchi</span>
+        <span class="money-bar"><span class="money-bar-fill" style="width:54.4%"></span></span>
+        <span class="money-amt">$736,207</span>
+      </li>
+      <li class="is-shaw">
+        <span class="money-name">Shaw</span>
+        <span class="money-bar"><span class="money-bar-fill" style="width:26.1%"></span></span>
+        <span class="money-amt">$353,287</span>
+      </li>
+      <li>
+        <span class="money-name">Newman</span>
+        <span class="money-bar"><span class="money-bar-fill" style="width:22.5%"></span></span>
+        <span class="money-amt">$304,210</span>
+      </li>
+      <li>
+        <span class="money-name">Barrera</span>
+        <span class="money-bar"><span class="money-bar-fill" style="width:15.6%"></span></span>
+        <span class="money-amt">$210,938</span>
+      </li>
+      <li>
+        <span class="money-name">Mattamal</span>
+        <span class="money-bar"><span class="money-bar-fill" style="width:8.2%"></span></span>
+        <span class="money-amt">$110,805</span>
+      </li>
+      <li>
+        <span class="money-name">Henderson</span>
+        <span class="money-bar"><span class="money-bar-fill" style="width:5.9%"></span></span>
+        <span class="money-amt">$80,138</span>
+      </li>
+      <li>
+        <span class="money-name">Lara</span>
+        <span class="money-bar"><span class="money-bar-fill" style="width:2.8%"></span></span>
+        <span class="money-amt">$37,842</span>
+      </li>
+    </ul>
+    <p class="caveats">Castañeda-Leal and Long have not reported significant fundraising.</p>
+  </section>
+
+  <section class="brief-action">
+    <p class="action-imp">Vote on or before <strong>Tuesday, June 2.</strong></p>
+    <p class="action-sub">Hold your ballot until you've read this list. Tell someone else who's still deciding.</p>
+    <a href="actions.html" class="action-btn">More actions →</a>
+  </section>
+
+  <p class="brief-foot">
+    West Hollywood Indivisible · 2026 Primary Brief<br>
+    Updated May 8, 2026
+  </p>
+
+</main>
+
+<div id="site-footer-container"></div>
+
+<!--
+  Restore tail scripts (Cloudflare email-decode, footer-loader JS, analytics) from your production
+  copy before deploying.
+-->
+
+</body>
+</html>
