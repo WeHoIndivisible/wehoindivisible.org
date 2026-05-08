@@ -1,0 +1,1221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>WeHo Indivisible · 2026 California Superintendent of Public Instruction</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Domine:wght@400;500;600;700&family=Oswald:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ca-navy: #003466;
+    --ca-navy-deep: #002147;
+    --ca-navy-soft: #1A5490;
+    --ca-gold: #FDB81E;
+    --ca-gold-deep: #D99A1C;
+    --ca-red: #B3282D;
+    --ca-red-deep: #8E1E22;
+    --ca-green: #2C7A3A;
+    --ca-purple: #5A2A82;
+
+    --white: #FFFFFF;
+    --off-white: #F8FAFC;
+    --surface: #F1F5F9;
+    --surface-cool: #E2E8F0;
+    --surface-warm: #FFF7E0;
+    --rule: #CBD5E1;
+    --rule-soft: #E2E8F0;
+
+    --ink: #0F172A;
+    --ink-soft: #334155;
+    --ink-muted: #64748B;
+
+    /* Party tag colors */
+    --party-dem: #003466;
+    --party-rep: #B3282D;
+    --party-pf: #5A2A82;
+
+    --max-width: 720px;
+    --wide-width: 1180px;
+
+    --pride: linear-gradient(to right,
+      #E40303 0%, #E40303 16.666%,
+      #FF8C00 16.666%, #FF8C00 33.333%,
+      #FFED00 33.333%, #FFED00 50%,
+      #008026 50%, #008026 66.666%,
+      #004DFF 66.666%, #004DFF 83.333%,
+      #750787 83.333%, #750787 100%);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--ink);
+    background: var(--white);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+  }
+
+  a {
+    color: var(--ca-navy);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(0, 52, 102, 0.3);
+    transition: border-color 0.15s, color 0.15s;
+  }
+  a:hover { border-bottom-color: var(--ca-navy); color: var(--ca-navy-deep); }
+
+  /* Top rails */
+  .pride-rail { height: 4px; background: var(--pride); }
+  .ca-navy-bar {
+    background: var(--ca-navy);
+    color: var(--white);
+    padding: 14px 20px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  @media (min-width: 620px) {
+    .ca-navy-bar { font-size: 17px; padding: 16px 20px; }
+  }
+  .ca-navy-bar .ca-star { color: var(--ca-gold); margin: 0 10px; font-size: 0.9em; }
+
+  /* Site header */
+  .site-header {
+    padding: 20px 20px;
+    border-bottom: 1px solid var(--rule-soft);
+    background: var(--white);
+  }
+  .site-header-inner {
+    max-width: var(--wide-width);
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .brand {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink);
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .brand a { border: none; }
+  .brand-name { color: var(--ink); }
+  .brand-sub { color: var(--ca-navy); font-weight: 400; }
+  .brand-sep { color: var(--ink-muted); font-weight: 400; }
+  .brand-name-link:hover .brand-name { color: var(--ca-navy); }
+  .brand-star { color: var(--ca-gold); font-size: 16px; line-height: 1; }
+
+  .nav-back {
+    font-family: 'Oswald', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    border: none;
+    cursor: pointer;
+    padding: 6px 12px;
+    border-radius: 2px;
+    background: none;
+    transition: background 0.15s, color 0.15s;
+  }
+  .nav-back:hover { background: var(--surface); color: var(--ca-navy); }
+  .nav-back::before { content: "← "; }
+
+  /* Hero */
+  .hero {
+    padding: 48px 20px 40px;
+    border-bottom: 1px solid var(--rule-soft);
+  }
+  .hero-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
+  .hero-eyebrow {
+    font-family: 'Oswald', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ca-navy);
+    margin-bottom: 22px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .hero-eyebrow::before {
+    content: "★";
+    font-size: 14px;
+    color: var(--ca-gold);
+    letter-spacing: 0;
+  }
+  .hero h1 {
+    font-family: 'Domine', serif;
+    font-weight: 600;
+    font-size: clamp(30px, 6.2vw, 46px);
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+    color: var(--ink);
+    margin-bottom: 22px;
+  }
+  .hero-subtitle {
+    font-size: 18px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    margin-bottom: 28px;
+  }
+  .hero-meta {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--ink-muted);
+    border-top: 1px solid var(--rule-soft);
+    padding-top: 18px;
+  }
+  .hero-meta strong { color: var(--ink-soft); font-weight: 600; }
+
+  /* Section frame */
+  .section {
+    padding: 48px 20px;
+    border-bottom: 1px solid var(--rule-soft);
+  }
+  .section-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
+  .section-inner.wide { max-width: var(--wide-width); }
+
+  .section-header {
+    font-family: 'Oswald', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ca-navy);
+    margin-bottom: 8px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--ca-navy);
+  }
+  .section-h2 {
+    font-family: 'Domine', serif;
+    font-weight: 600;
+    font-size: clamp(24px, 4vw, 30px);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin-bottom: 22px;
+    margin-top: 14px;
+  }
+  .section-lede {
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    margin-bottom: 24px;
+  }
+  .section-lede:last-child { margin-bottom: 0; }
+
+  /* Office responsibilities */
+  .resp-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .resp-list li {
+    padding: 16px 0;
+    border-top: 1px solid var(--rule-soft);
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+  }
+  .resp-list li:first-child { border-top: none; padding-top: 0; }
+  .resp-list li:last-child { padding-bottom: 0; }
+  .resp-list strong {
+    display: block;
+    font-family: 'Oswald', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ca-navy);
+    margin-bottom: 6px;
+  }
+
+  /* Notice / caveats block */
+  .notice {
+    background: var(--surface-warm);
+    border-left: 3px solid var(--ca-gold-deep);
+    padding: 22px 24px;
+    margin: 0;
+  }
+  .notice-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ca-navy-deep);
+    margin-bottom: 14px;
+  }
+  .notice ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .notice li {
+    font-size: 15.5px;
+    line-height: 1.5;
+    color: var(--ink-soft);
+    margin-bottom: 10px;
+    padding-left: 22px;
+    position: relative;
+  }
+  .notice li:last-child { margin-bottom: 0; }
+  .notice li::before {
+    content: "★";
+    color: var(--ca-gold-deep);
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 13px;
+  }
+  .notice li strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  /* Candidate grid */
+  .candidate-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  @media (min-width: 720px) {
+    .candidate-grid { grid-template-columns: 1fr 1fr; gap: 22px; }
+  }
+  @media (min-width: 1040px) {
+    .candidate-grid { grid-template-columns: 1fr 1fr 1fr; gap: 22px; }
+  }
+
+  .candidate {
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 22px;
+    background: var(--white);
+    display: flex;
+    flex-direction: column;
+    border-top-width: 3px;
+  }
+  .candidate.dem { border-top-color: var(--party-dem); }
+  .candidate.rep { border-top-color: var(--party-rep); }
+  .candidate.pf  { border-top-color: var(--party-pf); }
+
+  .cand-name {
+    font-family: 'Domine', serif;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 1.15;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+  .cand-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 14px;
+  }
+  .tag {
+    font-family: 'Oswald', sans-serif;
+    font-size: 10.5px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 2px;
+    background: var(--surface);
+    color: var(--ink-soft);
+  }
+  .tag.party-dem { background: var(--party-dem); color: var(--white); }
+  .tag.party-rep { background: var(--party-rep); color: var(--white); }
+  .tag.party-pf  { background: var(--party-pf); color: var(--white); }
+  .tag.poll {
+    background: var(--surface-cool);
+    color: var(--ink-soft);
+    font-variant-numeric: tabular-nums;
+  }
+  .tag.poll-strong { background: var(--ink); color: var(--white); }
+
+  .cand-section {
+    border-top: 1px solid var(--rule-soft);
+    padding-top: 12px;
+    margin-top: 12px;
+  }
+  .cand-section:first-of-type { border-top: none; padding-top: 0; margin-top: 0; }
+  .cand-label {
+    font-family: 'Oswald', sans-serif;
+    font-size: 10.5px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-bottom: 6px;
+  }
+  .cand-bio {
+    font-size: 14.5px;
+    line-height: 1.5;
+    color: var(--ink-soft);
+  }
+  .cand-endorse-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--ink-soft);
+  }
+  .cand-endorse-list li { margin-bottom: 3px; }
+  .cand-endorse-list li:last-child { margin-bottom: 0; }
+  .cand-note {
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--ink-soft);
+    font-style: italic;
+  }
+
+  /* Issues */
+  .issue {
+    margin-bottom: 36px;
+  }
+  .issue:last-child { margin-bottom: 0; }
+  .issue-title {
+    font-family: 'Domine', serif;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 1.2;
+    color: var(--ink);
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .position {
+    padding: 14px 0;
+    border-top: 1px solid var(--rule-soft);
+  }
+  .position:first-of-type { border-top: none; padding-top: 4px; }
+  .position-candidates {
+    font-family: 'Oswald', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ca-navy);
+    margin-bottom: 6px;
+  }
+  .position-candidates.none-yet { color: var(--ink-muted); }
+  .position-text {
+    font-size: 15.5px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+  }
+
+  /* Forthcoming */
+  .forthcoming {
+    border: 1px dashed var(--rule);
+    padding: 22px 24px;
+    text-align: center;
+    border-radius: 4px;
+    color: var(--ink-muted);
+    font-size: 15px;
+    font-style: italic;
+  }
+
+  /* Funding charts */
+  .fund-block { margin-bottom: 44px; }
+  .fund-block:last-child { margin-bottom: 0; }
+
+  .fund-block-title {
+    font-family: 'Domine', serif;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 1.2;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+  .fund-block-lede {
+    font-size: 15.5px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    margin-bottom: 20px;
+  }
+
+  .fund-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-bottom: 14px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+  .fund-legend-item { display: flex; align-items: center; gap: 7px; }
+  .fund-legend-swatch { width: 14px; height: 14px; flex-shrink: 0; }
+  .fund-legend-swatch.raised { background: var(--ca-gold-deep); }
+  .fund-legend-swatch.spent  { background: var(--ca-navy-deep); }
+  .fund-legend-swatch.direct { background: var(--ca-navy-deep); }
+
+  .fund-row {
+    padding: 14px 0;
+    border-top: 1px solid var(--rule-soft);
+  }
+  .fund-row:first-of-type { border-top: none; padding-top: 4px; }
+
+  .fund-row-name {
+    font-family: 'Domine', serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--ink);
+    margin-bottom: 9px;
+  }
+
+  .fund-bar-row {
+    display: grid;
+    grid-template-columns: 60px 1fr 96px;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+  .fund-bar-row:last-child { margin-bottom: 0; }
+
+  .fund-bar-label {
+    font-family: 'Oswald', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+  }
+
+  .fund-bar-track {
+    height: 14px;
+    background: var(--surface);
+    position: relative;
+    overflow: hidden;
+  }
+  .fund-bar-fill { height: 100%; }
+  .fund-bar-fill.raised { background: var(--ca-gold-deep); }
+  .fund-bar-fill.spent  { background: var(--ca-navy-deep); }
+  .fund-bar-fill.direct { background: var(--ca-navy-deep); }
+
+  .fund-bar-amount {
+    font-size: 13px;
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  /* Direct contributions: candidate name in place of label, wider name column */
+  .fund-row.direct-row {
+    padding: 12px 0;
+  }
+  .fund-row.direct-row:first-of-type { padding-top: 4px; }
+  .fund-row.direct-row .fund-bar-row {
+    grid-template-columns: 170px 1fr 80px;
+    margin-bottom: 0;
+  }
+  .fund-row.direct-row .fund-name-inline {
+    font-family: 'Domine', serif;
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--ink);
+  }
+
+  .fund-note {
+    margin-top: 22px;
+    padding: 16px 18px;
+    background: var(--surface);
+    border-left: 3px solid var(--ink-muted);
+    font-size: 14.5px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+  }
+  .fund-note p { margin-bottom: 9px; }
+  .fund-note p:last-child { margin-bottom: 0; }
+  .fund-note strong { color: var(--ink); }
+
+  @media (max-width: 560px) {
+    .fund-bar-row {
+      grid-template-columns: 50px 1fr 78px;
+      gap: 8px;
+    }
+    .fund-row.direct-row .fund-bar-row {
+      grid-template-columns: 110px 1fr 70px;
+    }
+    .fund-row.direct-row .fund-name-inline { font-size: 13.5px; }
+    .fund-bar-amount { font-size: 12px; }
+  }
+
+  /* Footer */
+  .page-footer {
+    padding: 36px 20px 0;
+  }
+  .page-footer-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: var(--ink-muted);
+  }
+  .page-footer-inner p { margin-bottom: 10px; }
+  .page-footer-inner .footer-attrib {
+    font-family: 'Oswald', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+
+  /* Mobile tightening */
+  @media (max-width: 620px) {
+    .hero { padding: 36px 20px 30px; }
+    .section { padding: 36px 20px; }
+    .candidate { padding: 18px; }
+    .notice { padding: 18px 20px; }
+  }
+
+  @media print {
+    .ca-navy-bar, .nav-back { display: none; }
+    .candidate, .issue, .notice { page-break-inside: avoid; break-inside: avoid; }
+    body { font-size: 11pt; }
+  }
+</style>
+</head>
+<body>
+
+<div class="pride-rail"></div>
+<div class="ca-navy-bar">
+  West Hollywood Indivisible <span class="ca-star">★</span> 2026 California Primary
+</div>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <div class="brand">
+      <span class="brand-star">★</span>
+      <a href="https://wehoindivisible.org" class="brand-name-link"><span class="brand-name">WeHo Indivisible</span></a>
+      <span class="brand-sep">·</span>
+      <span class="brand-sub">Superintendent of Public Instruction</span>
+    </div>
+    <a href="https://wehoindivisible.org" class="nav-back" style="border:none;">Back to wehoindivisible.org</a>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">2026 California Primary</div>
+    <h1>Superintendent of Public Instruction</h1>
+    <p class="hero-subtitle">Ten candidates are running for the office that oversees public education for nearly six million California students. Here is what voters need to know before June 2.</p>
+    <div class="hero-meta">
+      <p><strong>Last updated:</strong> May 8, 2026. Data current as of May 4. Polling figures are analyst estimates, not survey results.</p>
+    </div>
+  </div>
+</section>
+
+<!-- About the office -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-header">About the office</div>
+    <h2 class="section-h2">What the Superintendent does</h2>
+    <p class="section-lede">The Superintendent of Public Instruction is the chief spokesperson for California's public schools and the executive lead of the California Department of Education, responsible for the schooling of nearly six million students across more than one thousand school districts.</p>
+
+    <ul class="resp-list">
+      <li><strong>Policy execution</strong>Implements policies set by the State Board of Education and enforces state education laws and regulations.</li>
+      <li><strong>Department management</strong>Directs the daily operations of the California Department of Education, including managing a record $150 billion budget and overseeing state education employees.</li>
+      <li><strong>District support</strong>Provides guidance, technical assistance, and fiscal oversight to local and county school boards.</li>
+      <li><strong>Standards and accountability</strong>Manages teacher licensing, organizes adult education, and monitors school performance and improvement initiatives.</li>
+      <li><strong>Advocacy</strong>Serves as a statewide advocate for students and families, influencing initiatives like early childhood education, teacher recruitment, and mental health support.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Caveats -->
+<section class="section" style="background: var(--off-white);">
+  <div class="section-inner">
+    <div class="section-header">Before you read further</div>
+    <h2 class="section-h2">Four things to know about this race</h2>
+    <div class="notice">
+      <div class="notice-title">Voter notes</div>
+      <ul>
+        <li><strong>All candidates appear as "Nonpartisan" on the ballot.</strong> This is officially a nonpartisan office. Party affiliations shown below reflect each candidate's recent partisan history; they will not appear next to a candidate's name on the ballot.</li>
+        <li><strong>More than half of voters are undecided.</strong> The race is fluid.</li>
+        <li><strong>Polling estimates are not survey results.</strong> No public horse-race poll has been conducted. The figures shown are analysts' readings of institutional backing, used as a proxy in the absence of polling.</li>
+        <li><strong>Top-two structure applies.</strong> If no candidate wins more than 50% on June 2, the two highest finishers will face off in November.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Candidates -->
+<section class="section">
+  <div class="section-inner wide">
+    <div class="section-header">The Candidates</div>
+    <h2 class="section-h2">Ten candidates, four-way contest for the top two</h2>
+    <p class="section-lede">Listed alphabetically by last name. Polling estimates reflect analyst readings of institutional backing as of May 4, 2026.</p>
+
+    <div class="candidate-grid">
+
+      <!-- Barrera -->
+      <div class="candidate dem">
+        <div class="cand-name">Richard Barrera</div>
+        <div class="cand-tags">
+          <span class="tag party-dem">Democrat</span>
+          <span class="tag poll poll-strong">~6–8%</span>
+        </div>
+        <div class="cand-section">
+          <div class="cand-label">Background</div>
+          <p class="cand-bio">59. Longtime school board member in San Diego Unified, the state's second-largest school system. Senior advisor to Superintendent Tony Thurmond, and before that a local labor union executive.</p>
+        </div>
+        <div class="cand-section">
+          <div class="cand-label">Top endorsements</div>
+          <ul class="cand-endorse-list">
+            <li>California Teachers Association</li>
+            <li>United Domestic Workers</li>
+          </ul>
+        </div>
+        <div class="cand-section">
+          <div class="cand-label">Analyst note</div>
+          <p class="cand-note">Currently viewed as a frontrunner due to the California Teachers Association endorsement, whose ground game and funding have historically correlated with the highest polling numbers for this office.</p>
+        </div>
+      </div>
+
+      <!-- Castaneda -->
+      <div class="candidate dem">
+        <div class="cand-name">Wendy Castañeda-Leal</div>
+        <div class="cand-tags">
+          <span class="tag party-dem">Democrat</span>
+          <span class="tag poll">Not surveyed</span>
+        </div>
+        <div class="cand-section">
+          <div class="cand-label">Background</div>
+          <p class="cand-bio">42. Has pursued a career in more rural areas, currently serving as superintendent for the Semitropic Elementary School District, a one-school TK–8 district of about 140 students off Highway 46 in Kern County. Previously director of whole-child education for Roseland School District and a secondary alternative school principal.</p>
+        </div>
+      </div>
+
+      <!-- Henderson -->
+      <div class="candidate dem">
+        <div class="cand-name">Nichelle M. Henderson</div>
+        <div class="cand-tags">
+          <span class="tag party-dem">Democrat</span>
+          <span class="tag poll">~4–6%</span>
+        </div>
+        <div class="cand-section">
+          <div class="cand-label">Background</div>
+          <p class="cand-bio">57. Elected trustee of the Los Angeles Community College District. Began her education career as a teaching assistant, later teaching sixth-grade math and science in Compton Unified. Currently a faculty advisor and clinical field supervisor in a Cal State teacher preparation program.</p>
+        </div>
+        <div class="cand-section">
+          <div class="cand-label">Top endorsements</div>
+          <ul class="cand-endorse-list">
+            <li>California Democratic Legislative Women's Caucus</li>
+            <li>California Legislative Black Caucus</li>
+            <li>California Young Democrats</li>
+            <li>California Federation of Teachers</li>
+          </ul>
+        </div>
+        <div class="cand-section">
+          <div class="cand-label">Analyst note</div>
+          <p class="cand-note">A strong local contender for West Hollywood voters. The Black Caucus and California Federation of Teachers endorsements give her a high floor in Los Angeles and the Bay Area.</p>
+        </div>
+      </div>
+
+      <!-- Lara -->
+      <div class="candidate pf">
+        <div class="cand-name">Frank Lara</div>
+        <div class="cand-tags">
+          <span class="tag party-pf">Peace and Freedom</span>
+          <span class="tag poll">Not surveyed</span>
+        </div>
+        <div class="cand-section">
+          <div class="cand-label">Background</div>
+          <p class="cand-bio">41. Public school teacher with 15 years of experience. Executive vice president of United Educators of San Francisco, the teachers union for San Francisco Unified, which has endorsed him. Lists himself as a member of the Peace and Freedom Party.</p>
+        </div>
+        <div class="cand-section">
+          <div class="cand-label">Top endorsements</div>
+          <ul class="cand-endorse-list">
+            <li>Peace and Freedom Party</li>
+            <li>Green Party</li>
+            <li>United Educators of San Francisco</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Long -->
+      <div class="candidate dem">
+        <div class="cand-name">Ainye Long</div>
+        <div class="cand-tags">
+          <span class="tag party-dem">Democrat</span>
+          <span class="tag poll">Not surveyed</span>
+        </div>
+        <div class="cand-section">
+          <div class="cand-label">Background</div>
+          <p class="cand-bio">41. San Francisco Unified middle school math department chair. Ran four years ago with no significant resources and came within less than a percentage point of making the runoff; she benefited then from no Democrat running against Thurmond and a divided Republican vote. Long retains her ballot designation: "public school teacher." She is also a past senior administrator at a charter-school group.</p>
+        </div>
+      </div>
+
+      <!-- Mattamal -->
+      <div class="candidate rep">
+        <div class="cand-name">Gus Mattamal</div>
+        <div class="cand-tags">
+          <span class="tag party-rep">Republican</span>
+          <span class="tag poll">~2–4%</span>
+        </div>
+        <div class="cand-section">
+          <div class="cand-label">Background</div>
+          <p class="cand-bio">53. Runs a tutoring company with a multistate portfolio. Has served on elected and appointed boards in San Mateo County, including the Midcoast Community Council, which represents unincorporated areas.</p>
+        </div>
+      </div>
+
+      <!-- Muratsuchi -->
+      <div class="candidate dem">
+        <div class="cand-name">Al Muratsuchi</div>
+        <div class="cand-tags">
+          <span class="tag party-dem">Democrat</span>
+          <span class="tag poll poll-strong">~5–7%</span>
+        </div>
+        <div class="cand-section">
+          <div class="cand-label">Background</div>
+          <p class="cand-bio">61. Represents the 66th Assembly District, encompassing parts of the South Bay, and has chaired the state Assembly education committee. Taught briefly at the college level and served as an elected board member of the Torrance Unified School District.</p>
+        </div>
+        <div class="cand-section">
+          <div class="cand-label">Top endorsements</div>
+          <ul class="cand-endorse-list">
+            <li>Association of California School Administrators</li>
+            <li>California Federation of Teachers</li>
+            <li>California School Employees Association</li>
+          </ul>
+        </div>
+        <div class="cand-section">
+          <div class="cand-label">Analyst note</div>
+          <p class="cand-note">Holding significant momentum as a co-author of Proposition 2, the $10 billion school bond. Endorsements from the California Federation of Teachers and the California School Employees Association split the labor vote with Barrera.</p>
+        </div>
+      </div>
+
+      <!-- Newman -->
+      <div class="candidate dem">
+        <div class="cand-name">Josh Newman</div>
+        <div class="cand-tags">
+          <span class="tag party-dem">Democrat</span>
+          <span class="tag poll">~3–5%</span>
+        </div>
+        <div class="cand-section">
+          <div class="cand-label">Background</div>
+          <p class="cand-bio">61. State senator who has chaired the Senate education committee, and a technology company executive. Served in the Army; taught briefly at the college and middle school levels.</p>
+        </div>
+        <div class="cand-section">
+          <div class="cand-label">Top endorsements</div>
+          <ul class="cand-endorse-list">
+            <li>State Building and Construction Trades Council of California</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Rendon -->
+      <div class="candidate dem">
+        <div class="cand-name">Anthony Rendon</div>
+        <div class="cand-tags">
+          <span class="tag party-dem">Democrat</span>
+          <span class="tag poll">Not surveyed</span>
+        </div>
+        <div class="cand-section">
+          <div class="cand-label">Background</div>
+          <p class="cand-bio">58. State Assembly Speaker from 2016 to 2023. Previously directed Plaza de la Raza Child Development Services and served as chief operating officer for the Mexican American Opportunity Foundation.</p>
+        </div>
+        <div class="cand-section">
+          <div class="cand-label">Top endorsements</div>
+          <ul class="cand-endorse-list">
+            <li>AFSCME</li>
+            <li>SEIU California</li>
+            <li>California Latino Caucus</li>
+          </ul>
+        </div>
+        <div class="cand-section">
+          <div class="cand-label">Analyst note</div>
+          <p class="cand-note">Likely has the highest name recognition in Los Angeles, including West Hollywood, due to his long tenure as Assembly Speaker. Backed by SEIU California and the California Latino Caucus.</p>
+        </div>
+      </div>
+
+      <!-- Shaw -->
+      <div class="candidate rep">
+        <div class="cand-name">Sonja Shaw</div>
+        <div class="cand-tags">
+          <span class="tag party-rep">Republican</span>
+          <span class="tag poll poll-strong">~7–9%</span>
+        </div>
+        <div class="cand-section">
+          <div class="cand-label">Background</div>
+          <p class="cand-bio">43. School board president of Chino Valley Unified. Has built a public profile as a MAGA culture warrior, advocating assertively for keeping transgender athletes out of girls' sports (her daughters are athletes) and supporting mandatory parent notification when a child expresses gender-identity issues at school.</p>
+        </div>
+        <div class="cand-section">
+          <div class="cand-label">Top endorsements</div>
+          <ul class="cand-endorse-list">
+            <li>California Republican Party</li>
+            <li>Moms for Liberty</li>
+            <li>California Rifle and Pistol Association</li>
+          </ul>
+        </div>
+        <div class="cand-section">
+          <div class="cand-label">Analyst note</div>
+          <p class="cand-note">As the primary candidate backed by the California Republican Party and aligned groups, expected to consolidate the conservative vote. In a crowded Democratic field, this often guarantees a spot in the top two for the November runoff.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Where they stand -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-header">Where they stand</div>
+    <h2 class="section-h2">Top issues review</h2>
+    <p class="section-lede">Candidate positions on four issues that have surfaced in this race. Positions are grouped where multiple candidates have stated similar views.</p>
+
+    <!-- Parent Notification -->
+    <div class="issue">
+      <h3 class="issue-title">Parent notification of a child's gender identity</h3>
+
+      <div class="position">
+        <div class="position-candidates none-yet">No candidate currently holds this position</div>
+        <p class="position-text">School staff should have a legal obligation to tell parents about their child's gender identity at school.</p>
+      </div>
+
+      <div class="position">
+        <div class="position-candidates">Mattamal, Shaw</div>
+        <p class="position-text">There should be a legal obligation, but district officials must cite documented instances of abuse or mistreatment, by courts or law enforcement, to withhold this information in extremely rare circumstances.</p>
+      </div>
+
+      <div class="position">
+        <div class="position-candidates none-yet">No candidate currently holds this position</div>
+        <p class="position-text">District officials should keep parents informed even against the child's will, but should also be able to assess whether providing such information is in the child's best interests, using that assessment as a factor in their decision.</p>
+      </div>
+
+      <div class="position">
+        <div class="position-candidates">Barrera, Lara, Muratsuchi, Newman, Rendon</div>
+        <p class="position-text">The aspiration should be to fully inform parents, but the child's wish should carry the greatest weight, especially as the child grows older.</p>
+      </div>
+
+      <div class="position">
+        <div class="position-candidates">Castañeda-Leal</div>
+        <p class="position-text">The student's wish on whether to inform parents should always take precedence.</p>
+      </div>
+    </div>
+
+    <!-- Trans athletes -->
+    <div class="issue">
+      <h3 class="issue-title">Transgender athletes in girls' sports</h3>
+
+      <div class="position">
+        <div class="position-candidates">Lara</div>
+        <p class="position-text">Strongly supports allowing transgender athletes to participate on the teams of their self-identified gender.</p>
+      </div>
+
+      <div class="position">
+        <div class="position-candidates">Castañeda-Leal, Barrera</div>
+        <p class="position-text">Support California law, which is essentially the position stated by Lara.</p>
+      </div>
+
+      <div class="position">
+        <div class="position-candidates">Long</div>
+        <p class="position-text">Said the issue was settled by state law but did not elaborate on whether she supported the law.</p>
+      </div>
+
+      <div class="position">
+        <div class="position-candidates">Muratsuchi</div>
+        <p class="position-text">Implied support for California law by calling the issue a manufactured controversy.</p>
+      </div>
+
+      <div class="position">
+        <div class="position-candidates">Newman</div>
+        <p class="position-text">Many Californians, including many who strongly support LGBTQ+ rights, have sincere questions about how to balance inclusion with competitive fairness in girls' and women's sports. Argues recent polling shows majority support for placing some limits on participation, and that it would be a mistake for state leaders to dismiss those concerns.</p>
+      </div>
+
+      <div class="position">
+        <div class="position-candidates">Rendon</div>
+        <p class="position-text">Supports the California Interscholastic Federation's compromise efforts to devise a policy that allows transgender students to participate in athletic programs while addressing the concerns of many families.</p>
+      </div>
+
+      <div class="position">
+        <div class="position-candidates">Henderson</div>
+        <p class="position-text">Called for alignment of federal, state, and local policies, and said that, given the small number of trans athletes, the ultimate decision should be made on a case-by-case basis.</p>
+      </div>
+
+      <div class="position">
+        <div class="position-candidates">Mattamal</div>
+        <p class="position-text">Every student in California should be entitled to participate in athletics, but it may not be on their first-choice team. The fairest and most practical way to address this issue is for all athletes to participate in the athletic division corresponding to their biology.</p>
+      </div>
+
+      <div class="position">
+        <div class="position-candidates">Shaw</div>
+        <p class="position-text">Central to her campaign. Argues girls are losing roster spots, medals, and scholarships, and that some do not feel comfortable using their own locker rooms, choosing to change in their cars before games rather than be forced to undress in front of boys.</p>
+      </div>
+    </div>
+
+    <!-- AI -->
+    <div class="issue">
+      <h3 class="issue-title">Artificial intelligence in schools</h3>
+
+      <div class="position">
+        <div class="position-candidates">Muratsuchi, Newman</div>
+        <p class="position-text">Propose strict state-level guardrails and funding for teacher training to manage AI risks.</p>
+      </div>
+
+      <div class="position">
+        <div class="position-candidates">Rendon</div>
+        <p class="position-text">Believes California should follow New York's model, putting teachers at the front and center of AI curriculum decisions.</p>
+      </div>
+    </div>
+
+    <!-- School Choice -->
+    <div class="issue">
+      <h3 class="issue-title">School choice and charter schools</h3>
+
+      <div class="position">
+        <div class="position-candidates">Barrera</div>
+        <p class="position-text">Strongest opponent of charter school expansion, aligned with the California Teachers Association.</p>
+      </div>
+
+      <div class="position">
+        <div class="position-candidates">Mattamal, Shaw</div>
+        <p class="position-text">Generally more supportive of school choice and alternative education models.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Funding -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-header">Funding</div>
+    <h2 class="section-h2">Campaign finance</h2>
+    <p class="section-lede">Fundraising and spending totals as of approximately May 4, 2026. Wendy Castañeda-Leal and Ainye Long are not shown; neither has reported significant fundraising.</p>
+
+    <!-- Block 1: Fundraising and spending -->
+    <div class="fund-block">
+      <h3 class="fund-block-title">Fundraising and spending</h3>
+      <p class="fund-block-lede">Total raised against total spent for each candidate, listed in order of amount raised. Bars are scaled to the largest fundraiser, Anthony Rendon.</p>
+      <div class="fund-legend">
+        <span class="fund-legend-item"><span class="fund-legend-swatch raised"></span>Amount raised</span>
+        <span class="fund-legend-item"><span class="fund-legend-swatch spent"></span>Amount spent</span>
+      </div>
+
+      <div class="fund-chart">
+        <div class="fund-row">
+          <div class="fund-row-name">Anthony Rendon</div>
+          <div class="fund-bar-row">
+            <span class="fund-bar-label">Raised</span>
+            <div class="fund-bar-track"><div class="fund-bar-fill raised" style="width: 100.0%"></div></div>
+            <span class="fund-bar-amount">$1,354,044</span>
+          </div>
+          <div class="fund-bar-row">
+            <span class="fund-bar-label">Spent</span>
+            <div class="fund-bar-track"><div class="fund-bar-fill spent" style="width: 23.2%"></div></div>
+            <span class="fund-bar-amount">$314,375</span>
+          </div>
+        </div>
+
+        <div class="fund-row">
+          <div class="fund-row-name">Al Muratsuchi</div>
+          <div class="fund-bar-row">
+            <span class="fund-bar-label">Raised</span>
+            <div class="fund-bar-track"><div class="fund-bar-fill raised" style="width: 54.4%"></div></div>
+            <span class="fund-bar-amount">$736,207</span>
+          </div>
+          <div class="fund-bar-row">
+            <span class="fund-bar-label">Spent</span>
+            <div class="fund-bar-track"><div class="fund-bar-fill spent" style="width: 25.0%"></div></div>
+            <span class="fund-bar-amount">$338,648</span>
+          </div>
+        </div>
+
+        <div class="fund-row">
+          <div class="fund-row-name">Sonja Shaw</div>
+          <div class="fund-bar-row">
+            <span class="fund-bar-label">Raised</span>
+            <div class="fund-bar-track"><div class="fund-bar-fill raised" style="width: 26.1%"></div></div>
+            <span class="fund-bar-amount">$353,287</span>
+          </div>
+          <div class="fund-bar-row">
+            <span class="fund-bar-label">Spent</span>
+            <div class="fund-bar-track"><div class="fund-bar-fill spent" style="width: 12.5%"></div></div>
+            <span class="fund-bar-amount">$169,678</span>
+          </div>
+        </div>
+
+        <div class="fund-row">
+          <div class="fund-row-name">Josh Newman</div>
+          <div class="fund-bar-row">
+            <span class="fund-bar-label">Raised</span>
+            <div class="fund-bar-track"><div class="fund-bar-fill raised" style="width: 22.5%"></div></div>
+            <span class="fund-bar-amount">$304,210</span>
+          </div>
+          <div class="fund-bar-row">
+            <span class="fund-bar-label">Spent</span>
+            <div class="fund-bar-track"><div class="fund-bar-fill spent" style="width: 17.6%"></div></div>
+            <span class="fund-bar-amount">$238,854</span>
+          </div>
+        </div>
+
+        <div class="fund-row">
+          <div class="fund-row-name">Richard Barrera</div>
+          <div class="fund-bar-row">
+            <span class="fund-bar-label">Raised</span>
+            <div class="fund-bar-track"><div class="fund-bar-fill raised" style="width: 15.6%"></div></div>
+            <span class="fund-bar-amount">$210,938</span>
+          </div>
+          <div class="fund-bar-row">
+            <span class="fund-bar-label">Spent</span>
+            <div class="fund-bar-track"><div class="fund-bar-fill spent" style="width: 12.3%"></div></div>
+            <span class="fund-bar-amount">$166,542</span>
+          </div>
+        </div>
+
+        <div class="fund-row">
+          <div class="fund-row-name">Gus Mattamal</div>
+          <div class="fund-bar-row">
+            <span class="fund-bar-label">Raised</span>
+            <div class="fund-bar-track"><div class="fund-bar-fill raised" style="width: 8.2%"></div></div>
+            <span class="fund-bar-amount">$110,805</span>
+          </div>
+          <div class="fund-bar-row">
+            <span class="fund-bar-label">Spent</span>
+            <div class="fund-bar-track"><div class="fund-bar-fill spent" style="width: 7.7%"></div></div>
+            <span class="fund-bar-amount">$104,136</span>
+          </div>
+        </div>
+
+        <div class="fund-row">
+          <div class="fund-row-name">Nichelle M. Henderson</div>
+          <div class="fund-bar-row">
+            <span class="fund-bar-label">Raised</span>
+            <div class="fund-bar-track"><div class="fund-bar-fill raised" style="width: 5.9%"></div></div>
+            <span class="fund-bar-amount">$80,138</span>
+          </div>
+          <div class="fund-bar-row">
+            <span class="fund-bar-label">Spent</span>
+            <div class="fund-bar-track"><div class="fund-bar-fill spent" style="width: 6.0%"></div></div>
+            <span class="fund-bar-amount">$81,481</span>
+          </div>
+        </div>
+
+        <div class="fund-row">
+          <div class="fund-row-name">Frank Lara</div>
+          <div class="fund-bar-row">
+            <span class="fund-bar-label">Raised</span>
+            <div class="fund-bar-track"><div class="fund-bar-fill raised" style="width: 2.8%"></div></div>
+            <span class="fund-bar-amount">$37,842</span>
+          </div>
+          <div class="fund-bar-row">
+            <span class="fund-bar-label">Spent</span>
+            <div class="fund-bar-track"><div class="fund-bar-fill spent" style="width: 1.7%"></div></div>
+            <span class="fund-bar-amount">$22,885</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Block 2: Direct contributions -->
+    <div class="fund-block">
+      <h3 class="fund-block-title">Direct contributions to candidates</h3>
+      <p class="fund-block-lede">Candidates must disclose donors who give $200 or more over the course of the campaign. Small donors who give less than $100 are excluded from the contributor totals shown here. Bars are scaled to the largest recipient, Al Muratsuchi.</p>
+
+      <div class="fund-chart">
+        <div class="fund-row direct-row">
+          <div class="fund-bar-row">
+            <span class="fund-name-inline">Al Muratsuchi</span>
+            <div class="fund-bar-track"><div class="fund-bar-fill direct" style="width: 100.0%"></div></div>
+            <span class="fund-bar-amount">$343K</span>
+          </div>
+        </div>
+        <div class="fund-row direct-row">
+          <div class="fund-bar-row">
+            <span class="fund-name-inline">Josh Newman</span>
+            <div class="fund-bar-track"><div class="fund-bar-fill direct" style="width: 86.3%"></div></div>
+            <span class="fund-bar-amount">$296K</span>
+          </div>
+        </div>
+        <div class="fund-row direct-row">
+          <div class="fund-bar-row">
+            <span class="fund-name-inline">Richard Barrera</span>
+            <div class="fund-bar-track"><div class="fund-bar-fill direct" style="width: 65.0%"></div></div>
+            <span class="fund-bar-amount">$223K</span>
+          </div>
+        </div>
+        <div class="fund-row direct-row">
+          <div class="fund-bar-row">
+            <span class="fund-name-inline">Nichelle M. Henderson</span>
+            <div class="fund-bar-track"><div class="fund-bar-fill direct" style="width: 23.4%"></div></div>
+            <span class="fund-bar-amount">$80.1K</span>
+          </div>
+        </div>
+        <div class="fund-row direct-row">
+          <div class="fund-bar-row">
+            <span class="fund-name-inline">Frank Lara</span>
+            <div class="fund-bar-track"><div class="fund-bar-fill direct" style="width: 11.0%"></div></div>
+            <span class="fund-bar-amount">$37.7K</span>
+          </div>
+        </div>
+        <div class="fund-row direct-row">
+          <div class="fund-bar-row">
+            <span class="fund-name-inline">Gus Mattamal</span>
+            <div class="fund-bar-track"><div class="fund-bar-fill direct" style="width: 2.9%"></div></div>
+            <span class="fund-bar-amount">$10K</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="fund-note">
+        <p><strong>Anthony Rendon and Sonja Shaw appear in the fundraising chart but not here.</strong> Their funding may come predominantly from sources not represented in itemized direct contributions, such as transfers from prior campaign accounts or party committee support. The source data for this chart did not include them.</p>
+        <p><strong>Henderson's spending slightly exceeds her amount raised</strong> ($81,481 spent against $80,138 raised), which can occur with debt or in-kind contributions.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="page-footer">
+  <div class="page-footer-inner">
+    <p class="footer-attrib">West Hollywood Indivisible · 2026 Primary Candidate Research</p>
+    <p>Compiled by West Hollywood Indivisible. For informational purposes only. No editorial endorsement expressed or implied. Endorsements, polling estimates, and candidate positions are accurate as of the dates shown and may change as the race develops.</p>
+    <p><strong>Last updated:</strong> May 8, 2026.</p>
+  </div>
+</footer>
+
+<div style="margin-top: 48px;">
+  <div class="ca-navy-bar">
+    Ballots arrived around May 4 <span class="ca-star">★</span> Register to vote by May 18 <span class="ca-star">★</span> Primary: June 2, 2026
+  </div>
+  <div class="pride-rail"></div>
+</div>
+
+</body>
+</html>
