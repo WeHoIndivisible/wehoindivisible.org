@@ -438,6 +438,69 @@ main#main-content {
   gap: 16px;
   padding: 10px 0 0;
 }
+
+/* WeHo ballot callout */
+.weho-ballot {
+  margin: 28px 0 8px;
+  padding: 24px 28px;
+  border: 2px solid #750787;
+  background: #fff;
+}
+.weho-ballot h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: #750787;
+  margin: 0 0 6px 0;
+}
+.weho-ballot .weho-sub {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.78rem;
+  color: #777;
+  margin: 0 0 16px 0;
+  line-height: 1.5;
+}
+.weho-ballot-grid {
+  display: grid;
+  gap: 0;
+  border-top: 1px solid #e5e5e5;
+}
+.weho-ballot-row {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 10px;
+  align-items: baseline;
+  padding: 6px 0;
+  border-bottom: 1px solid #f0f0f0;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.78rem;
+}
+.weho-ballot-row:last-child { border-bottom: none; }
+.weho-label {
+  font-weight: 700;
+  color: #999;
+  font-size: 0.72rem;
+}
+.weho-pick {
+  color: #1a1a1a;
+}
+.weho-pick .pick-dot {
+  font-size: 0.85rem;
+}
+.weho-note {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.72rem;
+  color: #999;
+  margin: 12px 0 0 0;
+  line-height: 1.5;
+}
+@media (max-width: 700px) {
+  .weho-ballot-row {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+  .weho-ballot { padding: 18px 20px; }
+}
 .vg-controls button {
   font-family: 'Lato', sans-serif;
   font-weight: 700;
@@ -539,7 +602,42 @@ document.addEventListener('click',function(e){
       <button onclick="collapseAll()">Collapse all</button>
     </div>
 
-    
+    <div class="weho-ballot">
+      <h3>Your WeHo Ballot</h3>
+      <p class="weho-sub">West Hollywood residents vote on all nine statewide races, all judicial races, and these local contests on June 2.</p>
+      <div class="weho-ballot-grid">
+        <div class="weho-ballot-row">
+          <span class="weho-label">U.S. House 30</span>
+          <span class="weho-pick"><span class="pick-dot">&#9679;</span> <strong>Cameron Tennyson</strong> (2) &nbsp; Laura Friedman (9)</span>
+        </div>
+        <div class="weho-ballot-row">
+          <span class="weho-label">State Senate 24</span>
+          <span class="weho-pick"><span class="pick-dot">&#9679;</span> <strong>John Erickson</strong> (8) &nbsp; Sion Roy (3)</span>
+        </div>
+        <div class="weho-ballot-row">
+          <span class="weho-label">State Assembly 51</span>
+          <span class="weho-pick"><span class="pick-dot">&#9679;</span> <strong>Rick Chavez Zbur</strong> (6) &nbsp; Colin Hernandez (2)</span>
+        </div>
+        <div class="weho-ballot-row">
+          <span class="weho-label">Board of Supervisors 3</span>
+          <span class="weho-pick"><span class="pick-dot">&#9679;</span> <strong>Lindsey Horvath</strong> (10)</span>
+        </div>
+        <div class="weho-ballot-row">
+          <span class="weho-label">Sheriff</span>
+          <span class="weho-pick"><span class="pick-dot">&#9679;</span> <strong>Eric Strong</strong> (3) &nbsp; Robert Luna (4)</span>
+        </div>
+        <div class="weho-ballot-row">
+          <span class="weho-label">Assessor</span>
+          <span class="weho-pick"><span class="pick-dot">&#9679;</span> <strong>Jeff Prang</strong> (7)</span>
+        </div>
+        <div class="weho-ballot-row">
+          <span class="weho-label">Measure ER</span>
+          <span class="weho-pick"><span class="pick-dot">&#9679;</span> <strong>Yes</strong> (4)</span>
+        </div>
+      </div>
+      <p class="weho-note">WeHo city council is on the November ballot, not June 2. LA City races are not on your ballot. The full guide below covers all 98 races across LA County.</p>
+    </div>
+
     <section class="guide-section" id="section-statewide">
 <div class="section-head" style="border-bottom-color:#E40303;">
 <h2 style="color:#E40303;">Statewide Offices</h2>
