@@ -19,7 +19,7 @@ const FOOTER_HTML = `
     <div class="container">
       <div class="footer-inner">
         <div class="footer-brand">
-          <img class="footer-brand-logo" src="logo-wehofairfax.png" alt="West Hollywood–Fairfax Indivisible" onerror="this.style.display='none'" style="width:100%;max-width:200px;height:auto;display:block;margin-bottom:14px;">
+          <img class="footer-brand-logo" src="logo-wehofairfax.png" alt="West Hollywood–Fairfax Indivisible" onerror="this.style.display='none'" style="width:100%;max-width:240px;height:auto;display:block;margin-bottom:16px;">
           <p class="footer-tagline">West Hollywood–Fairfax Indivisible is a member-led group. We have a small coordinating team to help with meetings, communications, and logistics. Its role is to support the work of the group, not to set political direction on its own, and major decisions will be made through an open process that gives all members a meaningful voice.</p>
           <a href="mailto:hello@wehofairfaxindivisible.org" class="footer-email">hello@wehofairfaxindivisible.org</a>
         </div>
