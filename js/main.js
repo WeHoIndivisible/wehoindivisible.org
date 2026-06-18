@@ -1,5 +1,5 @@
 /* =========================================
-   WEST HOLLYWOOD INDIVISIBLE — main.js
+   WEST HOLLYWOOD–FAIRFAX INDIVISIBLE — main.js
    ========================================= */
 
 /* ---- Cookiebot consent ---- */
@@ -19,16 +19,9 @@ const FOOTER_HTML = `
     <div class="container">
       <div class="footer-inner">
         <div class="footer-brand">
-          <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;">
-            <div>
-              <span class="footer-brand-name">West Hollywood</span>
-              <span class="footer-brand-sub">California</span>
-            </div>
-            <div style="width:1px;height:32px;background:rgba(255,255,255,0.2);flex-shrink:0;"></div>
-            <img class="footer-brand-logo" src="logo-indivisible.svg" alt="Indivisible" onerror="this.style.display='none'" style="height:28px;width:auto;display:block;">
-          </div>
-          <p class="footer-tagline">West Hollywood Indivisible is a member-led group. We have a small coordinating team to help with meetings, communications, and logistics. Its role is to support the work of the group, not to set political direction on its own, and major decisions will be made through an open process that gives all members a meaningful voice.</p>
-          <a href="mailto:hello@wehoindivisible.org" class="footer-email">hello@wehoindivisible.org</a>
+          <img class="footer-brand-logo" src="logo-wehofairfax.png" alt="West Hollywood–Fairfax Indivisible" onerror="this.style.display='none'" style="width:100%;max-width:240px;height:auto;display:block;margin-bottom:16px;">
+          <p class="footer-tagline">West Hollywood–Fairfax Indivisible is a member-led group. We have a small coordinating team to help with meetings, communications, and logistics. Its role is to support the work of the group, not to set political direction on its own, and major decisions will be made through an open process that gives all members a meaningful voice.</p>
+          <a href="mailto:hello@wehofairfaxindivisible.org" class="footer-email">hello@wehofairfaxindivisible.org</a>
         </div>
         <div>
           <p class="footer-col-title">Navigate</p>
@@ -53,7 +46,7 @@ const FOOTER_HTML = `
         </div>
       </div>
       <div class="footer-bottom">
-        <p class="footer-legal">&copy; 2026 West Hollywood Indivisible. All rights reserved.</p>
+        <p class="footer-legal">&copy; 2026 West Hollywood–Fairfax Indivisible. All rights reserved.</p>
         <p class="footer-affil">A local chapter of <a href="https://indivisible.org" target="_blank" rel="noopener">Indivisible</a>. Not affiliated with any political party or candidate.</p>
       </div>
     </div>
