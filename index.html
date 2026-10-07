@@ -66,6 +66,28 @@
     .hero-form-card .signup-msg.form-error { background:rgba(255,107,107,0.15); color:#ff9b9b; border:1px solid rgba(255,107,107,0.3); }
     .hero-form-card .form-success { color:#a3e4a3; font-size:0.9rem; font-family:"Montserrat",sans-serif; margin:0; padding:12px 0; }
     .hero-form-card .honeypot { position:absolute; left:-9999px; opacity:0; pointer-events:none; height:0; width:0; overflow:hidden; }
+
+    /* No Kings: Vote Early feature (Oct 17). Remove with the section after the event. */
+    .nk-section { background:#fff; padding:52px 0; }
+    .nk-card { display:flex; border:1px solid #DDE3E8; border-radius:8px; overflow:hidden; box-shadow:0 2px 12px rgba(7,19,28,0.06); }
+    .nk-date { flex:0 0 150px; background:#CA4948; color:#fff; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:24px 12px; font-family:'Lato',sans-serif; }
+    .nk-date-dow { font-weight:700; font-size:0.78rem; letter-spacing:0.14em; text-transform:uppercase; opacity:0.9; }
+    .nk-date-day { font-family:'Playfair Display',Georgia,serif; font-weight:800; font-size:3rem; line-height:1; margin:6px 0 4px; }
+    .nk-date-month { font-weight:700; font-size:0.95rem; letter-spacing:0.14em; text-transform:uppercase; }
+    .nk-date-time { font-weight:700; font-size:0.8rem; margin-top:12px; padding-top:10px; border-top:1px solid rgba(255,255,255,0.35); }
+    .nk-body { flex:1; padding:30px 34px; }
+    .nk-eyebrow { font-family:'Lato',sans-serif; font-weight:700; font-size:0.72rem; letter-spacing:0.14em; text-transform:uppercase; color:#CA4948; margin:0 0 10px 0; }
+    .nk-title { font-family:'Playfair Display',Georgia,serif; font-weight:800; font-size:clamp(1.4rem,3.4vw,1.85rem); line-height:1.2; color:#07131C; margin:0 0 14px 0; }
+    .nk-text { font-family:'Lato',sans-serif; font-size:1rem; line-height:1.65; color:#33414D; margin:0 0 14px 0; }
+    .nk-actions { display:flex; flex-wrap:wrap; gap:12px; margin:20px 0 16px 0; }
+    .nk-fine { font-family:'Lato',sans-serif; font-size:0.78rem; line-height:1.55; color:#5E6B76; margin:0; }
+    @media (max-width:640px) {
+      .nk-card { flex-direction:column; }
+      .nk-date { flex:0 0 auto; flex-direction:row; flex-wrap:wrap; gap:6px 10px; padding:14px 16px; }
+      .nk-date-day { font-size:1.6rem; margin:0; }
+      .nk-date-time { margin:0; padding:0 0 0 10px; border-top:none; border-left:1px solid rgba(255,255,255,0.35); }
+      .nk-body { padding:24px 20px; }
+    }
   </style>
 </head>
 <body>
@@ -185,6 +207,37 @@ document.addEventListener('click',function(e){
   </section>
 
   <hr class="rainbow-divider">
+
+  <!-- NO KINGS: VOTE EARLY, OCT 17 feature. Remove this section (and the .nk- styles in the head) after the event.
+       The full event card lives on events.html and also appears automatically in "Upcoming Events" below. -->
+  <section class="nk-section" id="no-kings-vote-early-feature">
+    <div class="container" style="max-width:840px;">
+      <div class="nk-card">
+        <div class="nk-date" aria-hidden="true">
+          <span class="nk-date-dow">Saturday</span>
+          <span class="nk-date-day">17</span>
+          <span class="nk-date-month">Oct</span>
+          <span class="nk-date-time">11 AM&ndash;1 PM</span>
+        </div>
+        <div class="nk-body">
+          <p class="nk-eyebrow">No Kings: Vote Early &middot; West Hollywood Park</p>
+          <h2 class="nk-title">Bring your ballot and march with us to the drop box.</h2>
+          <p class="nk-text">
+            On Saturday, October 17, from 11:00 AM to 1:00 PM, people across the country are gathering for No Kings: Vote Early, a national day of nonpartisan voter participation. Ours begins at West Hollywood Park with poster-making and a Q&amp;A on how to vote and return your ballot. At 1:00 PM we will march together to the official ballot drop box at West Hollywood City Hall and drop off our ballots.
+          </p>
+          <p class="nk-text">
+            Fill out your ballot ahead of time and sign the return envelope. If you are not ready to vote yet, come anyway and we will help you make a plan.
+          </p>
+          <div class="nk-actions">
+            <!-- TODO: replace with the event's own Mobilize URL once it is posted (same link as on events.html) -->
+            <a href="https://www.mobilize.us/wehofairfaxindivisible/" target="_blank" rel="noopener" class="btn btn-primary">RSVP on Mobilize &#8599;</a>
+            <a href="events.html#no-kings-vote-early" class="btn btn-outline">Event Details</a>
+          </div>
+          <p class="nk-fine">No Kings: Vote Early events are nonpartisan and are designed to increase participation from all eligible voters.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- NOVEMBER 3 GENERAL ELECTION — CA-48 feature -->
   <section style="background:#07131C; color:#fff; padding:56px 0;">

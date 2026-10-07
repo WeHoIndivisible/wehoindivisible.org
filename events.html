@@ -117,19 +117,46 @@ document.addEventListener('click',function(e){
   <section class="section">
     <div class="container">
 
-      <!-- NOVEMBER 3 HIGHLIGHT -->
-      <div style="background:#07131C; color:#fff; border-radius:10px; padding:36px 36px; margin-bottom:56px;">
-        <p style="font-weight:700; font-size:0.72rem; letter-spacing:0.14em; text-transform:uppercase; color:#CA4948; margin:0 0 12px 0;">On the Horizon &middot; General Election, November 3, 2026</p>
-        <h2 style="font-family:var(--font-display); font-weight:800; font-size:clamp(1.4rem,3.2vw,1.85rem); line-height:1.2; margin:0 0 14px 0; color:#fff;">The work that decides the House starts now</h2>
-        <p style="font-size:0.98rem; line-height:1.65; color:rgba(255,255,255,0.78); margin:0 0 18px 0; max-width:640px;">
-          After Proposition 50 redrew the map, the 48th Congressional District now stretches from the San Diego suburbs into Palm Springs and Indian Wells, and its registration leans Democratic by about ten points. The June 2 primary set the matchup: <strong style="color:#fff; font-weight:700;">Marni von Wilpert</strong> (D) against <strong style="color:rgba(255,255,255,0.85); font-weight:700;">Jim Desmond</strong> (R). It is one of a handful of seats that could decide control of Congress, and we are hoping to put West Hollywood and Fairfax volunteers to work on it through the fall.
-        </p>
-        <a href="get-involved.html" style="display:inline-block; background:#CA4948; color:#fff; font-weight:700; font-size:0.85rem; letter-spacing:0.06em; text-transform:uppercase; padding:12px 22px; border-radius:3px; text-decoration:none;">Get Involved for November &rarr;</a>
-      </div>
-
-      <p class="section-label" style="margin-bottom:32px;">July 2026</p>
+      <p class="section-label" style="margin-bottom:32px;">October 2026</p>
 
       <div class="events-grid" style="margin-bottom:64px;">
+
+        <!-- NO KINGS: VOTE EARLY, OCT 17.
+             js/main.js copies every .event-card on this page into the homepage "Upcoming Events" grid,
+             so this card appears there automatically. After the event, remove this card or add data-past to the <article>. -->
+        <article class="event-card" id="no-kings-vote-early" style="grid-column:1 / -1; scroll-margin-top:110px;">
+          <div class="event-card-date" style="background:#CA4948;">
+            <div>
+              <div class="event-date-month">Oct</div>
+              <div class="event-date-day">17</div>
+            </div>
+            <div class="event-date-time">11 AM&ndash;1 PM</div>
+          </div>
+          <div class="event-card-body">
+            <h2 class="event-card-title">No Kings: Vote Early</h2>
+            <div class="event-card-meta">
+              <span>📍 West Hollywood Park &middot; 647 N. San Vicente Blvd.</span>
+              <span>Saturday, October 17, 11:00 AM&ndash;1:00 PM</span>
+            </div>
+            <p class="event-card-desc" style="max-width:760px;">
+              Bring your completed ballot. We will meet at West Hollywood Park for poster-making and a Q&amp;A on how to vote, track, and return your ballot. At 1:00 PM we will march together to the official ballot drop box at West Hollywood City Hall and drop off our ballots. Bring friends and family.
+            </p>
+            <p class="event-card-desc" style="max-width:760px;">
+              This is our part of No Kings: Vote Early, a national day of action. Unlike earlier No Kings days, it is not purely a protest but a day of nonpartisan voter participation, built on the premise that we decide who represents us and that the best way to protect the right to vote is to exercise it.
+            </p>
+            <p class="event-card-desc" style="max-width:760px;">
+              Sign and seal your return envelope before you come. If you are not ready to vote yet, come anyway and we will help you make a plan. Please keep posters about voting rather than candidates or ballot measures, both because the event is nonpartisan and because state law bars campaign signs within 100 feet of a ballot drop box.
+            </p>
+            <div style="display:flex;gap:10px;flex-wrap:wrap;">
+              <!-- TODO: replace with the event's own Mobilize URL once it is posted -->
+              <a href="https://www.mobilize.us/wehofairfaxindivisible/" target="_blank" rel="noopener" class="btn btn-primary" style="font-size:0.85rem;padding:10px 20px;">RSVP on Mobilize &#8599;</a>
+              <a href="mailto:hello@wehofairfaxindivisible.org" class="btn btn-outline" style="font-size:0.85rem;padding:10px 20px;">Email Us</a>
+            </div>
+            <p style="max-width:760px; font-size:0.78rem; line-height:1.55; color:var(--text-mid); margin:18px 0 0 0;">
+              No Kings: Vote Early events are nonpartisan and are designed to increase participation from all eligible voters. A core principle behind all No Kings events is a commitment to nonviolent action. Weapons of any kind, including those legally permitted, should not be brought to events.
+            </p>
+          </div>
+        </article>
 
         <article class="event-card" id="weekly-meeting">
           <div class="event-card-date" style="background:var(--invis-dark-blue);">
@@ -155,30 +182,16 @@ document.addEventListener('click',function(e){
           </div>
         </article>
 
-        <article class="event-card" id="monthly-meeting-july22">
-          <div class="event-card-date" style="background:var(--invis-light-blue);">
-            <div>
-              <div class="event-date-month">Jul</div>
-              <div class="event-date-day">22</div>
-            </div>
-            <div class="event-date-time">Evening</div>
-          </div>
-          <div class="event-card-body">
-            <h2 class="event-card-title">Monthly In-Person Meeting</h2>
-            <div class="event-card-meta">
-              <span>📍 Melrose Umbrella Co. &middot; 7465 Melrose Ave</span>
-              <span>Wednesday, July 22</span>
-            </div>
-            <p class="event-card-desc">
-              This month we are meeting in person at Melrose Umbrella Co. in place of our regular Wednesday meeting. Come meet your neighbors, hear what we are working on, and help shape what comes next. Newcomers are welcome; sign up on Mobilize for details.
-            </p>
-            <div style="display:flex;gap:10px;flex-wrap:wrap;">
-              <a href="https://www.mobilize.us/wehofairfaxindivisible/event/985792/" target="_blank" rel="noopener" class="btn btn-primary" style="font-size:0.85rem;padding:10px 20px;">Sign Up on Mobilize &#8599;</a>
-              <a href="mailto:hello@wehofairfaxindivisible.org" class="btn btn-outline" style="font-size:0.85rem;padding:10px 20px;">Email Us</a>
-            </div>
-          </div>
-        </article>
+      </div>
 
+      <!-- NOVEMBER 3 HIGHLIGHT -->
+      <div style="background:#07131C; color:#fff; border-radius:10px; padding:36px 36px; margin-bottom:56px;">
+        <p style="font-weight:700; font-size:0.72rem; letter-spacing:0.14em; text-transform:uppercase; color:#CA4948; margin:0 0 12px 0;">On the Horizon &middot; General Election, November 3, 2026</p>
+        <h2 style="font-family:var(--font-display); font-weight:800; font-size:clamp(1.4rem,3.2vw,1.85rem); line-height:1.2; margin:0 0 14px 0; color:#fff;">The work that decides the House starts now</h2>
+        <p style="font-size:0.98rem; line-height:1.65; color:rgba(255,255,255,0.78); margin:0 0 18px 0; max-width:640px;">
+          After Proposition 50 redrew the map, the 48th Congressional District now stretches from the San Diego suburbs into Palm Springs and Indian Wells, and its registration leans Democratic by about ten points. The June 2 primary set the matchup: <strong style="color:#fff; font-weight:700;">Marni von Wilpert</strong> (D) against <strong style="color:rgba(255,255,255,0.85); font-weight:700;">Jim Desmond</strong> (R). It is one of a handful of seats that could decide control of Congress, and we are hoping to put West Hollywood and Fairfax volunteers to work on it through the fall.
+        </p>
+        <a href="get-involved.html" style="display:inline-block; background:#CA4948; color:#fff; font-weight:700; font-size:0.85rem; letter-spacing:0.06em; text-transform:uppercase; padding:12px 22px; border-radius:3px; text-decoration:none;">Get Involved for November &rarr;</a>
       </div>
 
       <div style="padding:32px 36px;background:var(--off-white);border-radius:8px;border:1px solid var(--gray-light);">
