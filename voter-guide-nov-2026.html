@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="November 3, 2026 endorsement guide for the California general election. Statewide offices, propositions, Congress, state legislature, LA County, West Hollywood, LA City, and judges.">
   <title>November 3 Voter Guide — WeHo–Fairfax Indivisible</title>
-  <link rel="canonical" href="https://wehofairfaxindivisible.org/voter-guide.html">
+  <link rel="canonical" href="https://wehofairfaxindivisible.org/voter-guide-nov-2026.html">
   <meta name="theme-color" content="#07131C">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="apple-touch-icon" href="favicon.ico">
@@ -560,6 +560,50 @@ main#main-content {
 .weho-pick .none { color: #aaa; font-style: italic; }
 .weho-pick .cnt { color: #750787; font-weight: 700; }
 .weho-pick .alt .cnt { color: #666; font-weight: 400; }
+#vg-topic[hidden], #vg-ballot[hidden], .vg-toc[hidden], .ballot-note[hidden] { display: none !important; }
+.ballot-only { display: none; }
+body.view-ballot .ballot-only { display: inline; }
+.vg-view {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 18px 0 2px;
+  font-family: 'Lato', sans-serif;
+}
+.vg-view-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #999;
+  margin-right: 6px;
+}
+.vg-view button {
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #750787;
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+.vg-view button + button { margin-left: -5px; }
+.vg-view button.active {
+  background: #750787;
+  border-color: #750787;
+  color: #fff;
+}
+.vg-view button:not(.active):hover { color: #CA4948; border-color: #CA4948; }
+.ballot-note {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.72rem;
+  color: #888;
+  line-height: 1.5;
+  margin: 10px 0 0;
+}
   </style>
 </head>
 <body>
@@ -634,9 +678,19 @@ document.addEventListener('click',function(e){
       <p class="vg-updated">Compiled October 7, 2026 from guides published as of that date. Several organizations are still releasing or completing their recommendations.</p>
     </div>
 
-    <nav class="vg-toc" aria-label="Guide sections">
+    <div class="vg-view" role="group" aria-label="Order of races">
+      <span class="vg-view-label">Order:</span>
+      <button type="button" data-view-btn="topic" class="active" aria-pressed="true" onclick="setView('topic')">By topic</button>
+      <button type="button" data-view-btn="ballot" aria-pressed="false" onclick="setView('ballot')">Ballot order</button>
+    </div>
+
+    <nav class="vg-toc" id="toc-topic" aria-label="Guide sections">
       <a href="#section-statewide" style="color:#E40303;">Statewide Offices<span>9</span></a><a href="#section-props" style="color:#B8860B;">Statewide Propositions<span>14</span></a><a href="#section-congress" style="color:#FF8C00;">U.S. House of Representatives<span>18</span></a><a href="#section-state-senate" style="color:#008026;">California State Senate<span>8</span></a><a href="#section-state-assembly" style="color:#004DFF;">California State Assembly<span>24</span></a><a href="#section-la-county" style="color:#784F17;">LA County &amp; Community Colleges<span>6</span></a><a href="#section-weho" style="color:#750787;">City of West Hollywood<span>1</span></a><a href="#section-la-city" style="color:#CA4948;">City of Los Angeles<span>12</span></a><a href="#section-judges" style="color:#E040A0;">Courts<span>7</span></a>
     </nav>
+    <nav class="vg-toc" id="toc-ballot" aria-label="Ballot sections" hidden>
+      <a href="#ballot-state" style="color:#E40303;">State<span>8</span></a><a href="#ballot-us-rep" style="color:#FF8C00;">United States Representative<span>18</span></a><a href="#ballot-state-senator" style="color:#008026;">State Senator<span>8</span></a><a href="#ballot-assembly" style="color:#004DFF;">Member of the State Assembly<span>24</span></a><a href="#ballot-judicial" style="color:#E040A0;">Judicial<span>7</span></a><a href="#ballot-school" style="color:#784F17;">School<span>4</span></a><a href="#ballot-county" style="color:#750787;">County<span>1</span></a><a href="#ballot-city" style="color:#CA4948;">City<span>5</span></a><a href="#ballot-state-measures" style="color:#B8860B;">State Measures<span>14</span></a><a href="#ballot-county-measures" style="color:#750787;">County Measures<span>2</span></a><a href="#ballot-city-measures" style="color:#CA4948;">City Measures<span>8</span></a>
+    </nav>
+    <p class="ballot-note" id="ballot-note" hidden>Ballot order follows California Elections Code section 13109. Your own ballot lists only the contests for your address, so check your sample ballot for the exact layout.</p>
 
     <div class="vg-key">Progressive picks, based on endorsements from LA Forward, DSA-LA, Courage California, La Defensa, and LA Progressive, are marked with a green dot <span class="pick-dot">&#9679;</span></div>
 
@@ -663,18 +717,6 @@ document.addEventListener('click',function(e){
   <span class="weho-pick"><span><span class="pick-dot" title="Progressive pick">&#9679;</span> <strong>Rick Chavez Zbur</strong> <span class="cnt">(12)</span></span> <span class="alt">Colin Hernandez <span class="cnt">(2)</span></span></span>
 </div>
 <div class="weho-ballot-row">
-  <span class="weho-label">Sheriff</span>
-  <span class="weho-pick"><span><span class="pick-dot" title="Progressive pick">&#9679;</span> <strong>Robert Luna</strong> <span class="cnt">(8)</span></span></span>
-</div>
-<div class="weho-ballot-row">
-  <span class="weho-label">County Measure A</span>
-  <span class="weho-pick"><span><span class="pick-dot" title="Progressive pick">&#9679;</span> <strong>No</strong> <span class="cnt">(4)</span></span> <span class="alt">Yes <span class="cnt">(3)</span></span></span>
-</div>
-<div class="weho-ballot-row">
-  <span class="weho-label">County Measure E</span>
-  <span class="weho-pick"><span><span class="pick-dot" title="Progressive pick">&#9679;</span> <strong>Yes</strong> <span class="cnt">(9)</span></span></span>
-</div>
-<div class="weho-ballot-row">
   <span class="weho-label">College Board Seat 2</span>
   <span class="weho-pick"><span><span class="pick-dot" title="Progressive pick">&#9679;</span> <strong>Steve Veres</strong> <span class="cnt">(4)</span></span></span>
 </div>
@@ -685,6 +727,18 @@ document.addEventListener('click',function(e){
 <div class="weho-ballot-row">
   <span class="weho-label">College Board Seat 6</span>
   <span class="weho-pick"><span><span class="pick-dot" title="Progressive pick">&#9679;</span> <strong>Gabriel Buelna</strong> <span class="cnt">(3)</span></span> <span class="alt">Randall Winston <span class="cnt">(2)</span></span></span>
+</div>
+<div class="weho-ballot-row">
+  <span class="weho-label">Sheriff</span>
+  <span class="weho-pick"><span><span class="pick-dot" title="Progressive pick">&#9679;</span> <strong>Robert Luna</strong> <span class="cnt">(8)</span></span></span>
+</div>
+<div class="weho-ballot-row">
+  <span class="weho-label">County Measure A</span>
+  <span class="weho-pick"><span><span class="pick-dot" title="Progressive pick">&#9679;</span> <strong>No</strong> <span class="cnt">(4)</span></span> <span class="alt">Yes <span class="cnt">(3)</span></span></span>
+</div>
+<div class="weho-ballot-row">
+  <span class="weho-label">County Measure E</span>
+  <span class="weho-pick"><span><span class="pick-dot" title="Progressive pick">&#9679;</span> <strong>Yes</strong> <span class="cnt">(9)</span></span></span>
 </div>
       </div>
       <h4>West Hollywood only</h4>
@@ -740,13 +794,14 @@ document.addEventListener('click',function(e){
       <p class="weho-note">Supervisor, LAUSD board, and LA City Council District 5 seats for this area were decided in June. The full guide below covers 99 races and measures across LA County.</p>
     </div>
 
+    <div id="vg-topic">
     <section class="guide-section" id="section-statewide">
 <div class="section-head" style="border-bottom-color:#E40303;">
 <h2 style="color:#E40303;">Statewide Offices</h2>
 <span class="race-count">9 races</span>
 </div>
-<div class="races-container">
-<div class="race-row" data-expandable>
+<div class="races-container" data-order="r-governor|r-lt-governor|r-secretary-of-state|r-controller|r-treasurer|r-attorney-general|r-insurance-commissioner|r-superintendent-of-public-instruction|r-board-of-equalization-3">
+<div class="race-row" data-expandable data-race="r-governor">
 <div class="race-summary">
 <div class="race-name">Governor</div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:73%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Xavier Becerra</span><span class="cand-count">16</span></span></div>
@@ -763,7 +818,7 @@ document.addEventListener('click',function(e){
 </div>
 <div class="no-endorse">No endorsement: DSA-LA, SF League of Pissed Off Voters</div>
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-lt-governor">
 <div class="race-summary">
 <div class="race-name">Lt. Governor</div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:68%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Fiona Ma</span><span class="cand-count">15</span></span></div>
@@ -780,7 +835,7 @@ document.addEventListener('click',function(e){
 </div>
 <div class="no-endorse">No endorsement: DSA-LA, SF League of Pissed Off Voters</div>
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-secretary-of-state">
 <div class="race-summary">
 <div class="race-name">Secretary of State</div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:82%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Shirley Weber</span><span class="cand-count">18</span></span></div>
@@ -797,7 +852,7 @@ document.addEventListener('click',function(e){
 </div>
 <div class="no-endorse">No endorsement: DSA-LA</div>
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-controller">
 <div class="race-summary">
 <div class="race-name">Controller</div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:77%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Malia Cohen</span><span class="cand-count">17</span></span></div>
@@ -814,7 +869,7 @@ document.addEventListener('click',function(e){
 </div>
 <div class="no-endorse">No endorsement: DSA-LA, SF League of Pissed Off Voters</div>
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-treasurer">
 <div class="race-summary">
 <div class="race-name">Treasurer</div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:68%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Eleni Kounalakis</span><span class="cand-count">15</span></span></div>
@@ -831,7 +886,7 @@ document.addEventListener('click',function(e){
 </div>
 <div class="no-endorse">No endorsement: LA Forward, DSA-LA, SF League of Pissed Off Voters</div>
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-attorney-general">
 <div class="race-summary">
 <div class="race-name">Attorney General</div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:77%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Rob Bonta</span><span class="cand-count">17</span></span></div>
@@ -848,7 +903,7 @@ document.addEventListener('click',function(e){
 </div>
 <div class="no-endorse">No endorsement: LA Forward, DSA-LA, SF League of Pissed Off Voters</div>
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-insurance-commissioner">
 <div class="race-summary">
 <div class="race-name">Insurance Commissioner</div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:36%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Jane Kim</span><span class="cand-count">8</span></span><span class="cand-chip"><span class="cand-bar" style="width:50%"></span><span class="cand-name">Ben Allen</span><span class="cand-count">11</span></span></div>
@@ -873,7 +928,7 @@ document.addEventListener('click',function(e){
 </div>
 <div class="no-endorse">No endorsement: Courage CA</div>
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-superintendent-of-public-instruction">
 <div class="race-summary">
 <div class="race-name">Superintendent of Public Instruction</div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:68%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Richard Barrera</span><span class="cand-count">15</span></span></div>
@@ -890,7 +945,7 @@ document.addEventListener('click',function(e){
 </div>
 <div class="no-endorse">No endorsement: LA Forward, DSA-LA</div>
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-board-of-equalization-3">
 <div class="race-summary">
 <div class="race-name">Board of Equalization (3rd District)</div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:27%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Sam Sukaton</span><span class="cand-count">6</span></span><span class="cand-chip"><span class="cand-bar" style="width:27%"></span><span class="cand-name">Mike Gipson</span><span class="cand-count">6</span></span></div>
@@ -923,8 +978,8 @@ document.addEventListener('click',function(e){
 <h2 style="color:#B8860B;">Statewide Propositions</h2>
 <span class="race-count">14 measures</span>
 </div>
-<div class="races-container">
-<div class="race-row" data-expandable>
+<div class="races-container" data-order="r-prop-1|r-prop-2|r-prop-3|r-prop-4|r-prop-5|r-prop-37|r-prop-38|r-prop-39|r-prop-40|r-prop-41|r-prop-42|r-prop-43|r-prop-44|r-prop-45">
+<div class="race-row" data-expandable data-race="r-prop-1">
 <div class="race-summary">
 <div class="race-name">Prop 1<span class="race-sub">Affordable housing bond</span></div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:84%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Yes</span><span class="cand-count">21</span></span></div>
@@ -941,7 +996,7 @@ document.addEventListener('click',function(e){
 </div>
 
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-prop-2">
 <div class="race-summary">
 <div class="race-name">Prop 2<span class="race-sub">Larger rainy day fund</span></div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:68%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Yes</span><span class="cand-count">17</span></span></div>
@@ -958,7 +1013,7 @@ document.addEventListener('click',function(e){
 </div>
 <div class="no-endorse">No endorsement: SF League of Pissed Off Voters</div>
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-prop-3">
 <div class="race-summary">
 <div class="race-name">Prop 3<span class="race-sub">Makes high-income tax rates permanent for schools and health care</span></div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:80%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Yes</span><span class="cand-count">20</span></span></div>
@@ -975,7 +1030,7 @@ document.addEventListener('click',function(e){
 </div>
 
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-prop-4">
 <div class="race-summary">
 <div class="race-name">Prop 4<span class="race-sub">Allows public financing of election campaigns</span></div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:80%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Yes</span><span class="cand-count">20</span></span></div>
@@ -992,7 +1047,7 @@ document.addEventListener('click',function(e){
 </div>
 
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-prop-5">
 <div class="race-summary">
 <div class="race-name">Prop 5<span class="race-sub">Changes the recall process for statewide officers</span></div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:64%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Yes</span><span class="cand-count">16</span></span><span class="cand-chip"><span class="cand-bar" style="width:4%"></span><span class="cand-name">No</span><span class="cand-count">1</span></span></div>
@@ -1017,7 +1072,7 @@ document.addEventListener('click',function(e){
 </div>
 <div class="no-endorse">No endorsement: La Defensa</div>
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-prop-37">
 <div class="race-summary">
 <div class="race-name">Prop 37<span class="race-sub">Bond-funded loans for middle-income buyers of new homes</span></div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:48%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Yes</span><span class="cand-count">12</span></span><span class="cand-chip"><span class="cand-bar" style="width:8%"></span><span class="cand-name">No</span><span class="cand-count">2</span></span></div>
@@ -1042,7 +1097,7 @@ document.addEventListener('click',function(e){
 </div>
 <div class="no-endorse">No endorsement: Courage CA, SF League of Pissed Off Voters, Bay Rising</div>
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-prop-38">
 <div class="race-summary">
 <div class="race-name">Prop 38<span class="race-sub">Immunology research bond</span></div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:28%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>No</span><span class="cand-count">7</span></span><span class="cand-chip"><span class="cand-bar" style="width:28%"></span><span class="cand-name">Yes</span><span class="cand-count">7</span></span></div>
@@ -1067,7 +1122,7 @@ document.addEventListener('click',function(e){
 </div>
 <div class="no-endorse">No endorsement: CA Labor Fed, Initiate Justice</div>
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-prop-39">
 <div class="race-summary">
 <div class="race-name">Prop 39<span class="race-sub">Voter ID requirement</span></div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:92%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>No</span><span class="cand-count">23</span></span></div>
@@ -1084,7 +1139,7 @@ document.addEventListener('click',function(e){
 </div>
 
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-prop-40">
 <div class="race-summary">
 <div class="race-name">Prop 40<span class="race-sub">One-time tax on billionaires</span></div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:64%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Yes</span><span class="cand-count">16</span></span><span class="cand-chip"><span class="cand-bar" style="width:12%"></span><span class="cand-name">No</span><span class="cand-count">3</span></span></div>
@@ -1109,7 +1164,7 @@ document.addEventListener('click',function(e){
 </div>
 <div class="no-endorse">No endorsement: League of Women Voters, SPUR</div>
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-prop-41">
 <div class="race-summary">
 <div class="race-name">Prop 41<span class="race-sub">Limits new state taxes outside the spending limit</span></div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:68%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>No</span><span class="cand-count">17</span></span></div>
@@ -1126,7 +1181,7 @@ document.addEventListener('click',function(e){
 </div>
 
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-prop-42">
 <div class="race-summary">
 <div class="race-name">Prop 42<span class="race-sub">Bans new state personal property and retroactive taxes</span></div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:72%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>No</span><span class="cand-count">18</span></span></div>
@@ -1143,7 +1198,7 @@ document.addEventListener('click',function(e){
 </div>
 
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-prop-43">
 <div class="race-summary">
 <div class="race-name">Prop 43<span class="race-sub">Two-thirds vote for citizen-initiated local special taxes</span></div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:96%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>No</span><span class="cand-count">24</span></span></div>
@@ -1160,7 +1215,7 @@ document.addEventListener('click',function(e){
 </div>
 
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-prop-44">
 <div class="race-summary">
 <div class="race-name">Prop 44<span class="race-sub">Spending rules for community health clinics</span></div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:64%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>No</span><span class="cand-count">16</span></span><span class="cand-chip"><span class="cand-bar" style="width:4%"></span><span class="cand-name">Yes</span><span class="cand-count">1</span></span></div>
@@ -1185,7 +1240,7 @@ document.addEventListener('click',function(e){
 </div>
 
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-prop-45">
 <div class="race-summary">
 <div class="race-name">Prop 45<span class="race-sub">Changes environmental review (CEQA)</span></div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:80%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>No</span><span class="cand-count">20</span></span></div>
@@ -1210,8 +1265,8 @@ document.addEventListener('click',function(e){
 <h2 style="color:#FF8C00;">U.S. House of Representatives</h2>
 <span class="race-count">18 races</span>
 </div>
-<div class="races-container">
-<div class="race-row" data-expandable>
+<div class="races-container" data-order="r-u-s-house-23|r-u-s-house-26|r-u-s-house-27|r-u-s-house-28|r-u-s-house-29|r-u-s-house-30|r-u-s-house-31|r-u-s-house-32|r-u-s-house-34|r-u-s-house-35|r-u-s-house-36|r-u-s-house-37|r-u-s-house-38|r-u-s-house-41|r-u-s-house-42|r-u-s-house-43|r-u-s-house-44|r-u-s-house-45">
+<div class="race-row" data-expandable data-race="r-u-s-house-23">
 <div class="race-summary">
 <div class="race-name">U.S. House 23</div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:38%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Tessa Lynn Hodge</span><span class="cand-count">6</span></span></div>
@@ -1228,7 +1283,7 @@ document.addEventListener('click',function(e){
 </div>
 <div class="no-endorse">No endorsement: CA Labor Fed</div>
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-u-s-house-26">
 <div class="race-summary">
 <div class="race-name">U.S. House 26</div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:50%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Jacqui Irwin</span><span class="cand-count">8</span></span></div>
@@ -1245,7 +1300,7 @@ document.addEventListener('click',function(e){
 </div>
 
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-u-s-house-27">
 <div class="race-summary">
 <div class="race-name">U.S. House 27</div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:56%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>George Whitesides</span><span class="cand-count">9</span></span></div>
@@ -1262,7 +1317,7 @@ document.addEventListener('click',function(e){
 </div>
 
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-u-s-house-28">
 <div class="race-summary">
 <div class="race-name">U.S. House 28</div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:75%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Judy Chu</span><span class="cand-count">12</span></span></div>
@@ -1279,7 +1334,7 @@ document.addEventListener('click',function(e){
 </div>
 
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-u-s-house-29">
 <div class="race-summary">
 <div class="race-name">U.S. House 29</div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:19%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Angélica Dueñas</span><span class="cand-count">3</span></span><span class="cand-chip"><span class="cand-bar" style="width:56%"></span><span class="cand-name">Luz Rivas</span><span class="cand-count">9</span></span></div>
@@ -1304,7 +1359,7 @@ document.addEventListener('click',function(e){
 </div>
 
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-u-s-house-30">
 <div class="race-summary">
 <div class="race-name">U.S. House 30</div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:94%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Laura Friedman</span><span class="cand-count">15</span></span></div>
@@ -1321,7 +1376,7 @@ document.addEventListener('click',function(e){
 </div>
 
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-u-s-house-31">
 <div class="race-summary">
 <div class="race-name">U.S. House 31</div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:69%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Gil Cisneros</span><span class="cand-count">11</span></span></div>
@@ -1338,7 +1393,7 @@ document.addEventListener('click',function(e){
 </div>
 
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-u-s-house-32">
 <div class="race-summary">
 <div class="race-name">U.S. House 32</div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:62%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Brad Sherman</span><span class="cand-count">10</span></span></div>
@@ -1355,7 +1410,7 @@ document.addEventListener('click',function(e){
 </div>
 
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-u-s-house-34">
 <div class="race-summary">
 <div class="race-name">U.S. House 34</div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:31%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Angela Gonzales-Torres</span><span class="cand-count">5</span></span><span class="cand-chip"><span class="cand-bar" style="width:50%"></span><span class="cand-name">Jimmy Gomez</span><span class="cand-count">8</span></span></div>
@@ -1380,7 +1435,7 @@ document.addEventListener('click',function(e){
 </div>
 
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-u-s-house-35">
 <div class="race-summary">
 <div class="race-name">U.S. House 35</div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:56%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Norma Torres</span><span class="cand-count">9</span></span></div>
@@ -1397,7 +1452,7 @@ document.addEventListener('click',function(e){
 </div>
 
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-u-s-house-36">
 <div class="race-summary">
 <div class="race-name">U.S. House 36</div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:75%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Ted Lieu</span><span class="cand-count">12</span></span></div>
@@ -1414,7 +1469,7 @@ document.addEventListener('click',function(e){
 </div>
 
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-u-s-house-37">
 <div class="race-summary">
 <div class="race-name">U.S. House 37</div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:81%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Sydney Kamlager-Dove</span><span class="cand-count">13</span></span></div>
@@ -1431,7 +1486,7 @@ document.addEventListener('click',function(e){
 </div>
 
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-u-s-house-38">
 <div class="race-summary">
 <div class="race-name">U.S. House 38</div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:75%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Hilda Solis</span><span class="cand-count">12</span></span></div>
@@ -1448,7 +1503,7 @@ document.addEventListener('click',function(e){
 </div>
 
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-u-s-house-41">
 <div class="race-summary">
 <div class="race-name">U.S. House 41</div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:69%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Linda Sánchez</span><span class="cand-count">11</span></span></div>
@@ -1465,7 +1520,7 @@ document.addEventListener('click',function(e){
 </div>
 
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-u-s-house-42">
 <div class="race-summary">
 <div class="race-name">U.S. House 42</div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:81%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Robert Garcia</span><span class="cand-count">13</span></span></div>
@@ -1482,7 +1537,7 @@ document.addEventListener('click',function(e){
 </div>
 
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-u-s-house-43">
 <div class="race-summary">
 <div class="race-name">U.S. House 43</div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:75%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Maxine Waters</span><span class="cand-count">12</span></span></div>
@@ -1499,7 +1554,7 @@ document.addEventListener('click',function(e){
 </div>
 
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-u-s-house-44">
 <div class="race-summary">
 <div class="race-name">U.S. House 44</div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:75%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Nanette Barragán</span><span class="cand-count">12</span></span></div>
@@ -1516,7 +1571,7 @@ document.addEventListener('click',function(e){
 </div>
 
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-u-s-house-45">
 <div class="race-summary">
 <div class="race-name">U.S. House 45</div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:69%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Derek Tran</span><span class="cand-count">11</span></span></div>
@@ -1541,8 +1596,8 @@ document.addEventListener('click',function(e){
 <h2 style="color:#008026;">California State Senate</h2>
 <span class="race-count">8 races</span>
 </div>
-<div class="races-container">
-<div class="race-row" data-expandable>
+<div class="races-container" data-order="r-state-senate-20|r-state-senate-22|r-state-senate-24|r-state-senate-26|r-state-senate-28|r-state-senate-30|r-state-senate-34|r-state-senate-36">
+<div class="race-row" data-expandable data-race="r-state-senate-20">
 <div class="race-summary">
 <div class="race-name">State Senate 20</div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:72%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Caroline Menjivar</span><span class="cand-count">13</span></span></div>
@@ -1559,7 +1614,7 @@ document.addEventListener('click',function(e){
 </div>
 
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-state-senate-22">
 <div class="race-summary">
 <div class="race-name">State Senate 22</div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:33%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Susan Rubio</span><span class="cand-count">6</span></span></div>
@@ -1576,7 +1631,7 @@ document.addEventListener('click',function(e){
 </div>
 <div class="no-endorse">No endorsement: LA Forward, Courage CA, CA Labor Fed</div>
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-state-senate-24">
 <div class="race-summary">
 <div class="race-name">State Senate 24</div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:78%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>John Erickson</span><span class="cand-count">14</span></span><span class="cand-chip"><span class="cand-bar" style="width:6%"></span><span class="cand-name">Brian Goldsmith</span><span class="cand-count">1</span></span></div>
@@ -1601,7 +1656,7 @@ document.addEventListener('click',function(e){
 </div>
 <div class="no-endorse">No endorsement: CA Dem Party, WeHo-Beverly Hills Dems</div>
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-state-senate-26">
 <div class="race-summary">
 <div class="race-name">State Senate 26</div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:28%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Sarah Rascón</span><span class="cand-count">5</span></span><span class="cand-chip"><span class="cand-bar" style="width:44%"></span><span class="cand-name">Sara Hernandez</span><span class="cand-count">8</span></span></div>
@@ -1626,7 +1681,7 @@ document.addEventListener('click',function(e){
 </div>
 <div class="no-endorse">No endorsement: CA Dem Party</div>
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-state-senate-28">
 <div class="race-summary">
 <div class="race-name">State Senate 28</div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:78%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Lola Smallwood-Cuevas</span><span class="cand-count">14</span></span></div>
@@ -1643,7 +1698,7 @@ document.addEventListener('click',function(e){
 </div>
 
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-state-senate-30">
 <div class="race-summary">
 <div class="race-name">State Senate 30</div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:33%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Bob Archuleta</span><span class="cand-count">6</span></span></div>
@@ -1660,7 +1715,7 @@ document.addEventListener('click',function(e){
 </div>
 <div class="no-endorse">No endorsement: LA Forward, Courage CA</div>
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-state-senate-34">
 <div class="race-summary">
 <div class="race-name">State Senate 34</div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:28%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Avelino Valencia</span><span class="cand-count">5</span></span></div>
@@ -1677,7 +1732,7 @@ document.addEventListener('click',function(e){
 </div>
 <div class="no-endorse">No endorsement: Courage CA</div>
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-state-senate-36">
 <div class="race-summary">
 <div class="race-name">State Senate 36</div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:28%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Chris Duncan</span><span class="cand-count">5</span></span></div>
@@ -1702,8 +1757,8 @@ document.addEventListener('click',function(e){
 <h2 style="color:#004DFF;">California State Assembly</h2>
 <span class="race-count">24 races</span>
 </div>
-<div class="races-container">
-<div class="race-row" data-expandable>
+<div class="races-container" data-order="r-state-assembly-34|r-state-assembly-39|r-state-assembly-40|r-state-assembly-41|r-state-assembly-42|r-state-assembly-43|r-state-assembly-44|r-state-assembly-46|r-state-assembly-48|r-state-assembly-49|r-state-assembly-51|r-state-assembly-52|r-state-assembly-53|r-state-assembly-54|r-state-assembly-55|r-state-assembly-56|r-state-assembly-57|r-state-assembly-61|r-state-assembly-62|r-state-assembly-64|r-state-assembly-65|r-state-assembly-66|r-state-assembly-67|r-state-assembly-69">
+<div class="race-row" data-expandable data-race="r-state-assembly-34">
 <div class="race-summary">
 <div class="race-name">State Assembly 34</div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:37%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Randall Putz</span><span class="cand-count">7</span></span></div>
@@ -1720,7 +1775,7 @@ document.addEventListener('click',function(e){
 </div>
 <div class="no-endorse">No endorsement: CA Labor Fed</div>
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-state-assembly-39">
 <div class="race-summary">
 <div class="race-name">State Assembly 39</div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:47%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Juan Carrillo</span><span class="cand-count">9</span></span></div>
@@ -1737,7 +1792,7 @@ document.addEventListener('click',function(e){
 </div>
 <div class="no-endorse">No endorsement: LA Forward</div>
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-state-assembly-40">
 <div class="race-summary">
 <div class="race-name">State Assembly 40</div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:79%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Pilar Schiavo</span><span class="cand-count">15</span></span></div>
@@ -1754,7 +1809,7 @@ document.addEventListener('click',function(e){
 </div>
 
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-state-assembly-41">
 <div class="race-summary">
 <div class="race-name">State Assembly 41</div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:58%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>John Harabedian</span><span class="cand-count">11</span></span></div>
@@ -1771,7 +1826,7 @@ document.addEventListener('click',function(e){
 </div>
 <div class="no-endorse">No endorsement: YIMBY LA</div>
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-state-assembly-42">
 <div class="race-summary">
 <div class="race-name">State Assembly 42</div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:68%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Deborah Klein Lopez</span><span class="cand-count">13</span></span></div>
@@ -1788,7 +1843,7 @@ document.addEventListener('click',function(e){
 </div>
 
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-state-assembly-43">
 <div class="race-summary">
 <div class="race-name">State Assembly 43</div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:63%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Celeste Rodriguez</span><span class="cand-count">12</span></span></div>
@@ -1805,7 +1860,7 @@ document.addEventListener('click',function(e){
 </div>
 
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-state-assembly-44">
 <div class="race-summary">
 <div class="race-name">State Assembly 44</div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:68%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Nick Schultz</span><span class="cand-count">13</span></span></div>
@@ -1822,7 +1877,7 @@ document.addEventListener('click',function(e){
 </div>
 
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-state-assembly-46">
 <div class="race-summary">
 <div class="race-name">State Assembly 46</div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:58%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Jesse Gabriel</span><span class="cand-count">11</span></span></div>
@@ -1839,7 +1894,7 @@ document.addEventListener('click',function(e){
 </div>
 <div class="no-endorse">No endorsement: LA Forward</div>
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-state-assembly-48">
 <div class="race-summary">
 <div class="race-name">State Assembly 48</div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:26%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Blanca Rubio</span><span class="cand-count">5</span></span></div>
@@ -1856,7 +1911,7 @@ document.addEventListener('click',function(e){
 </div>
 <div class="no-endorse">No endorsement: LA Forward, Courage CA, CA Labor Fed</div>
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-state-assembly-49">
 <div class="race-summary">
 <div class="race-name">State Assembly 49</div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:58%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Mike Fong</span><span class="cand-count">11</span></span></div>
@@ -1873,7 +1928,7 @@ document.addEventListener('click',function(e){
 </div>
 
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-state-assembly-51">
 <div class="race-summary">
 <div class="race-name">State Assembly 51</div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:63%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Rick Chavez Zbur</span><span class="cand-count">12</span></span><span class="cand-chip"><span class="cand-bar" style="width:11%"></span><span class="cand-name">Colin Hernandez</span><span class="cand-count">2</span></span></div>
@@ -1898,7 +1953,7 @@ document.addEventListener('click',function(e){
 </div>
 <div class="no-endorse">No endorsement: LA Forward</div>
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-state-assembly-52">
 <div class="race-summary">
 <div class="race-name">State Assembly 52</div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:68%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Jessica Caloza</span><span class="cand-count">13</span></span></div>
@@ -1915,7 +1970,7 @@ document.addEventListener('click',function(e){
 </div>
 <div class="no-endorse">No endorsement: LA Forward</div>
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-state-assembly-53">
 <div class="race-summary">
 <div class="race-name">State Assembly 53</div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:37%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Michelle Rodriguez</span><span class="cand-count">7</span></span></div>
@@ -1932,7 +1987,7 @@ document.addEventListener('click',function(e){
 </div>
 <div class="no-endorse">No endorsement: LA Forward, Courage CA</div>
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-state-assembly-54">
 <div class="race-summary">
 <div class="race-name">State Assembly 54</div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:68%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Mark Gonzalez</span><span class="cand-count">13</span></span></div>
@@ -1949,7 +2004,7 @@ document.addEventListener('click',function(e){
 </div>
 
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-state-assembly-55">
 <div class="race-summary">
 <div class="race-name">State Assembly 55</div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:74%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Isaac Bryan</span><span class="cand-count">14</span></span></div>
@@ -1966,7 +2021,7 @@ document.addEventListener('click',function(e){
 </div>
 
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-state-assembly-56">
 <div class="race-summary">
 <div class="race-name">State Assembly 56</div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:42%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Lisa Calderon</span><span class="cand-count">8</span></span></div>
@@ -1983,7 +2038,7 @@ document.addEventListener('click',function(e){
 </div>
 <div class="no-endorse">No endorsement: LA Forward</div>
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-state-assembly-57">
 <div class="race-summary">
 <div class="race-name">State Assembly 57</div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:63%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Sade Elhawary</span><span class="cand-count">12</span></span></div>
@@ -2000,7 +2055,7 @@ document.addEventListener('click',function(e){
 </div>
 
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-state-assembly-61">
 <div class="race-summary">
 <div class="race-name">State Assembly 61</div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:68%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Tina McKinnor</span><span class="cand-count">13</span></span></div>
@@ -2017,7 +2072,7 @@ document.addEventListener('click',function(e){
 </div>
 
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-state-assembly-62">
 <div class="race-summary">
 <div class="race-name">State Assembly 62</div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:53%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>José Luis Solache</span><span class="cand-count">10</span></span></div>
@@ -2034,7 +2089,7 @@ document.addEventListener('click',function(e){
 </div>
 
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-state-assembly-64">
 <div class="race-summary">
 <div class="race-name">State Assembly 64</div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:32%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Blanca Pacheco</span><span class="cand-count">6</span></span></div>
@@ -2051,7 +2106,7 @@ document.addEventListener('click',function(e){
 </div>
 <div class="no-endorse">No endorsement: LA Forward, Courage CA, CA Labor Fed</div>
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-state-assembly-65">
 <div class="race-summary">
 <div class="race-name">State Assembly 65</div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:47%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Ayanna Davis</span><span class="cand-count">9</span></span></div>
@@ -2068,7 +2123,7 @@ document.addEventListener('click',function(e){
 </div>
 
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-state-assembly-66">
 <div class="race-summary">
 <div class="race-name">State Assembly 66</div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:16%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Sara Deen</span><span class="cand-count">3</span></span><span class="cand-chip"><span class="cand-bar" style="width:37%"></span><span class="cand-name">Paul Seo</span><span class="cand-count">7</span></span></div>
@@ -2093,7 +2148,7 @@ document.addEventListener('click',function(e){
 </div>
 
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-state-assembly-67">
 <div class="race-summary">
 <div class="race-name">State Assembly 67</div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:47%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Mark Pulido</span><span class="cand-count">9</span></span></div>
@@ -2110,7 +2165,7 @@ document.addEventListener('click',function(e){
 </div>
 
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-state-assembly-69">
 <div class="race-summary">
 <div class="race-name">State Assembly 69</div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:47%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Josh Lowenthal</span><span class="cand-count">9</span></span></div>
@@ -2135,8 +2190,8 @@ document.addEventListener('click',function(e){
 <h2 style="color:#784F17;">LA County &amp; Community Colleges</h2>
 <span class="race-count">6 races</span>
 </div>
-<div class="races-container">
-<div class="race-row" data-expandable>
+<div class="races-container" data-order="r-la-county-sheriff|r-la-county-measure-a|r-la-county-measure-e|r-laccd-seat-2|r-laccd-seat-4|r-laccd-seat-6">
+<div class="race-row" data-expandable data-race="r-la-county-sheriff">
 <div class="race-summary">
 <div class="race-name">Sheriff</div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:57%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Robert Luna</span><span class="cand-count">8</span></span></div>
@@ -2153,7 +2208,7 @@ document.addEventListener('click',function(e){
 </div>
 <div class="no-endorse">No endorsement: DSA-LA</div>
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-la-county-measure-a">
 <div class="race-summary">
 <div class="race-name">County Measure A<span class="race-sub">Strike limits and binding arbitration for public safety workers</span></div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:29%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>No</span><span class="cand-count">4</span></span><span class="cand-chip"><span class="cand-bar" style="width:21%"></span><span class="cand-name">Yes</span><span class="cand-count">3</span></span></div>
@@ -2178,7 +2233,7 @@ document.addEventListener('click',function(e){
 </div>
 
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-la-county-measure-e">
 <div class="race-summary">
 <div class="race-name">County Measure E<span class="race-sub">County ethics commission and community investment</span></div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:64%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Yes</span><span class="cand-count">9</span></span></div>
@@ -2195,7 +2250,7 @@ document.addEventListener('click',function(e){
 </div>
 
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-laccd-seat-2">
 <div class="race-summary">
 <div class="race-name">Community College Board, Seat 2</div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:29%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Steve Veres</span><span class="cand-count">4</span></span></div>
@@ -2212,7 +2267,7 @@ document.addEventListener('click',function(e){
 </div>
 
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-laccd-seat-4">
 <div class="race-summary">
 <div class="race-name">Community College Board, Seat 4</div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:29%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Darryn Harris</span><span class="cand-count">4</span></span><span class="cand-chip"><span class="cand-bar" style="width:7%"></span><span class="cand-name">Nancy Pearlman</span><span class="cand-count">1</span></span></div>
@@ -2237,7 +2292,7 @@ document.addEventListener('click',function(e){
 </div>
 
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-laccd-seat-6">
 <div class="race-summary">
 <div class="race-name">Community College Board, Seat 6</div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:21%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Gabriel Buelna</span><span class="cand-count">3</span></span><span class="cand-chip"><span class="cand-bar" style="width:14%"></span><span class="cand-name">Randall Winston</span><span class="cand-count">2</span></span></div>
@@ -2270,10 +2325,10 @@ document.addEventListener('click',function(e){
 <h2 style="color:#750787;">City of West Hollywood</h2>
 <span class="race-count">1 race</span>
 </div>
-<div class="races-container">
-<div class="race-row" data-expandable>
+<div class="races-container" data-order="r-west-hollywood-city-council">
+<div class="race-row" data-expandable data-race="r-west-hollywood-city-council">
 <div class="race-summary">
-<div class="race-name">City Council (3 seats)</div>
+<div class="race-name"><span class="ballot-only">West Hollywood: </span>City Council (3 seats)</div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:92%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Chelsea Byers</span><span class="cand-count">11</span></span><span class="cand-chip pick"><span class="cand-bar" style="width:75%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Helen Krieger</span><span class="cand-count">9</span></span><span class="cand-chip pick"><span class="cand-bar" style="width:42%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Stephen Post</span><span class="cand-count">5</span></span><span class="cand-more">+2 more</span></div>
 <svg class="expand-arrow" viewBox="0 0 12 8" fill="none"><path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
 </div>
@@ -2328,10 +2383,10 @@ document.addEventListener('click',function(e){
 <h2 style="color:#CA4948;">City of Los Angeles</h2>
 <span class="race-count">12 races</span>
 </div>
-<div class="races-container">
-<div class="race-row" data-expandable>
+<div class="races-container" data-order="r-la-mayor|r-la-city-attorney|r-la-city-council-3|r-la-city-council-9|r-la-city-measure-te|r-la-city-measure-la|r-la-city-measure-pl|r-la-city-measure-ee|r-la-city-measure-prk|r-la-city-measure-prt|r-la-city-measure-fd|r-la-city-measure-sc">
+<div class="race-row" data-expandable data-race="r-la-mayor">
 <div class="race-summary">
-<div class="race-name">Mayor</div>
+<div class="race-name"><span class="ballot-only">Los Angeles: </span>Mayor</div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:56%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Nithya Raman</span><span class="cand-count">9</span></span><span class="cand-chip"><span class="cand-bar" style="width:25%"></span><span class="cand-name">Karen Bass</span><span class="cand-count">4</span></span></div>
 <svg class="expand-arrow" viewBox="0 0 12 8" fill="none"><path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
 </div>
@@ -2354,9 +2409,9 @@ document.addEventListener('click',function(e){
 </div>
 <div class="no-endorse">No endorsement: Courage CA, ADA SoCal</div>
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-la-city-attorney">
 <div class="race-summary">
-<div class="race-name">City Attorney</div>
+<div class="race-name"><span class="ballot-only">Los Angeles: </span>City Attorney</div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:88%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Marissa Roy</span><span class="cand-count">14</span></span></div>
 <svg class="expand-arrow" viewBox="0 0 12 8" fill="none"><path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
 </div>
@@ -2371,9 +2426,9 @@ document.addEventListener('click',function(e){
 </div>
 
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-la-city-council-3">
 <div class="race-summary">
-<div class="race-name">City Council 3</div>
+<div class="race-name"><span class="ballot-only">Los Angeles: </span>City Council 3</div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:69%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Barri Worth Girvan</span><span class="cand-count">11</span></span></div>
 <svg class="expand-arrow" viewBox="0 0 12 8" fill="none"><path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
 </div>
@@ -2388,9 +2443,9 @@ document.addEventListener('click',function(e){
 </div>
 
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-la-city-council-9">
 <div class="race-summary">
-<div class="race-name">City Council 9</div>
+<div class="race-name"><span class="ballot-only">Los Angeles: </span>City Council 9</div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:50%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Estuardo Mazariegos</span><span class="cand-count">8</span></span><span class="cand-chip"><span class="cand-bar" style="width:19%"></span><span class="cand-name">Jose Ugarte</span><span class="cand-count">3</span></span></div>
 <svg class="expand-arrow" viewBox="0 0 12 8" fill="none"><path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
 </div>
@@ -2413,9 +2468,9 @@ document.addEventListener('click',function(e){
 </div>
 
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-la-city-measure-te">
 <div class="race-summary">
-<div class="race-name">Proposition TE<span class="race-sub">Transfer tax exemption for fire-damaged homes</span></div>
+<div class="race-name"><span class="ballot-only">Los Angeles: </span>Proposition TE<span class="race-sub">Transfer tax exemption for fire-damaged homes</span></div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:19%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>No</span><span class="cand-count">3</span></span><span class="cand-chip"><span class="cand-bar" style="width:6%"></span><span class="cand-name">Yes</span><span class="cand-count">1</span></span></div>
 <svg class="expand-arrow" viewBox="0 0 12 8" fill="none"><path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
 </div>
@@ -2438,9 +2493,9 @@ document.addEventListener('click',function(e){
 </div>
 
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-la-city-measure-la">
 <div class="race-summary">
-<div class="race-name">Charter Amendment LA<span class="race-sub">Infrastructure, budget, and contracting</span></div>
+<div class="race-name"><span class="ballot-only">Los Angeles: </span>Charter Amendment LA<span class="race-sub">Infrastructure, budget, and contracting</span></div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:31%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Yes</span><span class="cand-count">5</span></span><span class="cand-chip"><span class="cand-bar" style="width:6%"></span><span class="cand-name">No</span><span class="cand-count">1</span></span></div>
 <svg class="expand-arrow" viewBox="0 0 12 8" fill="none"><path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
 </div>
@@ -2463,9 +2518,9 @@ document.addEventListener('click',function(e){
 </div>
 
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-la-city-measure-pl">
 <div class="race-summary">
-<div class="race-name">Charter Amendment PL<span class="race-sub">Planning appeals and Planning Department</span></div>
+<div class="race-name"><span class="ballot-only">Los Angeles: </span>Charter Amendment PL<span class="race-sub">Planning appeals and Planning Department</span></div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:19%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Yes</span><span class="cand-count">3</span></span><span class="cand-chip"><span class="cand-bar" style="width:6%"></span><span class="cand-name">No</span><span class="cand-count">1</span></span></div>
 <svg class="expand-arrow" viewBox="0 0 12 8" fill="none"><path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
 </div>
@@ -2488,9 +2543,9 @@ document.addEventListener('click',function(e){
 </div>
 <div class="no-endorse">No endorsement: LA County Dems</div>
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-la-city-measure-ee">
 <div class="race-summary">
-<div class="race-name">Charter Amendment EE<span class="race-sub">Ethics, elections, and governance</span></div>
+<div class="race-name"><span class="ballot-only">Los Angeles: </span>Charter Amendment EE<span class="race-sub">Ethics, elections, and governance</span></div>
 <div class="race-cands"><span class="cand-chip"><span class="cand-bar" style="width:25%"></span><span class="cand-name">No</span><span class="cand-count">4</span></span><span class="cand-chip"><span class="cand-bar" style="width:6%"></span><span class="cand-name">Yes</span><span class="cand-count">1</span></span></div>
 <svg class="expand-arrow" viewBox="0 0 12 8" fill="none"><path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
 </div>
@@ -2513,9 +2568,9 @@ document.addEventListener('click',function(e){
 </div>
 <div class="no-endorse">No endorsement: DSA-LA</div>
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-la-city-measure-prk">
 <div class="race-summary">
-<div class="race-name">Charter Amendment PRK<span class="race-sub">Doubles minimum parks budget</span></div>
+<div class="race-name"><span class="ballot-only">Los Angeles: </span>Charter Amendment PRK<span class="race-sub">Doubles minimum parks budget</span></div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:50%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Yes</span><span class="cand-count">8</span></span></div>
 <svg class="expand-arrow" viewBox="0 0 12 8" fill="none"><path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
 </div>
@@ -2530,9 +2585,9 @@ document.addEventListener('click',function(e){
 </div>
 
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-la-city-measure-prt">
 <div class="race-summary">
-<div class="race-name">Charter Amendment PRT<span class="race-sub">Airports, harbor, and DWP</span></div>
+<div class="race-name"><span class="ballot-only">Los Angeles: </span>Charter Amendment PRT<span class="race-sub">Airports, harbor, and DWP</span></div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:19%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Yes</span><span class="cand-count">3</span></span><span class="cand-chip"><span class="cand-bar" style="width:6%"></span><span class="cand-name">No</span><span class="cand-count">1</span></span></div>
 <svg class="expand-arrow" viewBox="0 0 12 8" fill="none"><path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
 </div>
@@ -2555,9 +2610,9 @@ document.addEventListener('click',function(e){
 </div>
 <div class="no-endorse">No endorsement: La Defensa</div>
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-la-city-measure-fd">
 <div class="race-summary">
-<div class="race-name">Measure FD<span class="race-sub">Half-cent sales tax for the Fire Department</span></div>
+<div class="race-name"><span class="ballot-only">Los Angeles: </span>Measure FD<span class="race-sub">Half-cent sales tax for the Fire Department</span></div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:25%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Yes</span><span class="cand-count">4</span></span></div>
 <svg class="expand-arrow" viewBox="0 0 12 8" fill="none"><path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
 </div>
@@ -2572,9 +2627,9 @@ document.addEventListener('click',function(e){
 </div>
 <div class="no-endorse">No endorsement: DSA-LA</div>
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-la-city-measure-sc">
 <div class="race-summary">
-<div class="race-name">Charter Amendment SC<span class="race-sub">LAUSD board campaign finance rules</span></div>
+<div class="race-name"><span class="ballot-only">Los Angeles: </span>Charter Amendment SC<span class="race-sub">LAUSD board campaign finance rules</span></div>
 <div class="race-cands"><span class="cand-chip"><span class="cand-bar" style="width:19%"></span><span class="cand-name">Yes</span><span class="cand-count">3</span></span><span class="cand-chip"><span class="cand-bar" style="width:6%"></span><span class="cand-name">No</span><span class="cand-count">1</span></span></div>
 <svg class="expand-arrow" viewBox="0 0 12 8" fill="none"><path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
 </div>
@@ -2605,8 +2660,8 @@ document.addEventListener('click',function(e){
 <h2 style="color:#E040A0;">Courts</h2>
 <span class="race-count">7 races</span>
 </div>
-<div class="races-container">
-<div class="race-row" data-expandable>
+<div class="races-container" data-order="r-superior-court-office-no-64|r-superior-court-office-no-65|r-superior-court-office-no-87|r-superior-court-office-no-131|r-supreme-court-kelli-evans|r-supreme-court-joshua-groban|r-court-of-appeal-2nd-district">
+<div class="race-row" data-expandable data-race="r-superior-court-office-no-64">
 <div class="race-summary">
 <div class="race-name">Judge Office No. 64</div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:40%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Rhonda Haymon</span><span class="cand-count">4</span></span><span class="cand-chip"><span class="cand-bar" style="width:40%"></span><span class="cand-name">Maria Ghobadi</span><span class="cand-count">4</span></span></div>
@@ -2631,7 +2686,7 @@ document.addEventListener('click',function(e){
 </div>
 <div class="no-endorse">No endorsement: Malibu Dems</div><div class="bar-ratings">LA County Bar: <span class="bar-rating rating-wq">Maria Ghobadi: Well qualified</span> <span class="bar-rating rating-q">Rhonda Haymon: Qualified</span></div>
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-superior-court-office-no-65">
 <div class="race-summary">
 <div class="race-name">Judge Office No. 65</div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:50%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Justin Clayton</span><span class="cand-count">5</span></span><span class="cand-chip"><span class="cand-bar" style="width:50%"></span><span class="cand-name">Anna Reitano</span><span class="cand-count">5</span></span></div>
@@ -2656,7 +2711,7 @@ document.addEventListener('click',function(e){
 </div>
 <div class="no-endorse">No endorsement: DSA-LA</div><div class="bar-ratings">LA County Bar: <span class="bar-rating rating-q">Justin Clayton: Qualified</span> <span class="bar-rating rating-q">Anna S. Reitano: Qualified</span></div>
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-superior-court-office-no-87">
 <div class="race-summary">
 <div class="race-name">Judge Office No. 87</div>
 <div class="race-cands"><span class="cand-chip"><span class="cand-bar" style="width:60%"></span><span class="cand-name">David DeJute</span><span class="cand-count">6</span></span><span class="cand-chip"><span class="cand-bar" style="width:10%"></span><span class="cand-name">Anthony Bayne</span><span class="cand-count">1</span></span></div>
@@ -2681,7 +2736,7 @@ document.addEventListener('click',function(e){
 </div>
 <div class="no-endorse">No endorsement: LA Forward, DSA-LA</div><div class="bar-ratings">LA County Bar: <span class="bar-rating rating-wq">Anthony Bayne: Well qualified</span> <span class="bar-rating rating-q">David DeJute: Qualified</span></div>
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-superior-court-office-no-131">
 <div class="race-summary">
 <div class="race-name">Judge Office No. 131</div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:60%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>David Ross</span><span class="cand-count">6</span></span><span class="cand-chip"><span class="cand-bar" style="width:20%"></span><span class="cand-name">Donna Tryfman</span><span class="cand-count">2</span></span></div>
@@ -2706,7 +2761,7 @@ document.addEventListener('click',function(e){
 </div>
 <div class="no-endorse">No endorsement: Malibu Dems</div><div class="bar-ratings">LA County Bar: <span class="bar-rating rating-q">David Ross: Qualified</span> <span class="bar-rating rating-q">Donna Tryfman: Qualified</span></div>
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-supreme-court-kelli-evans">
 <div class="race-summary">
 <div class="race-name">Supreme Court: retain Kelli Evans</div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:30%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Yes</span><span class="cand-count">3</span></span></div>
@@ -2723,7 +2778,7 @@ document.addEventListener('click',function(e){
 </div>
 
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-supreme-court-joshua-groban">
 <div class="race-summary">
 <div class="race-name">Supreme Court: retain Joshua Groban</div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:30%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Yes</span><span class="cand-count">3</span></span></div>
@@ -2740,7 +2795,7 @@ document.addEventListener('click',function(e){
 </div>
 
 </div>
-</div><div class="race-row" data-expandable>
+</div><div class="race-row" data-expandable data-race="r-court-of-appeal-2nd-district">
 <div class="race-summary">
 <div class="race-name">Court of Appeal, 2nd District: retain all 18 justices</div>
 <div class="race-cands"><span class="cand-chip pick"><span class="cand-bar" style="width:10%"></span><span class="cand-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Yes</span><span class="cand-count">1</span></span></div>
@@ -2761,6 +2816,87 @@ document.addEventListener('click',function(e){
 </div>
 </section>
 
+    </div>
+    <div id="vg-ballot" hidden>
+    <section class="guide-section" id="ballot-state">
+<div class="section-head" style="border-bottom-color:#E40303;">
+<h2 style="color:#E40303;">State</h2>
+<span class="race-count">8 races</span>
+</div>
+<div class="races-container" data-order="r-governor|r-lt-governor|r-secretary-of-state|r-controller|r-treasurer|r-attorney-general|r-insurance-commissioner|r-board-of-equalization-3"></div>
+</section>
+    <section class="guide-section" id="ballot-us-rep">
+<div class="section-head" style="border-bottom-color:#FF8C00;">
+<h2 style="color:#FF8C00;">United States Representative</h2>
+<span class="race-count">18 races</span>
+</div>
+<div class="races-container" data-order="r-u-s-house-23|r-u-s-house-26|r-u-s-house-27|r-u-s-house-28|r-u-s-house-29|r-u-s-house-30|r-u-s-house-31|r-u-s-house-32|r-u-s-house-34|r-u-s-house-35|r-u-s-house-36|r-u-s-house-37|r-u-s-house-38|r-u-s-house-41|r-u-s-house-42|r-u-s-house-43|r-u-s-house-44|r-u-s-house-45"></div>
+</section>
+    <section class="guide-section" id="ballot-state-senator">
+<div class="section-head" style="border-bottom-color:#008026;">
+<h2 style="color:#008026;">State Senator</h2>
+<span class="race-count">8 races</span>
+</div>
+<div class="races-container" data-order="r-state-senate-20|r-state-senate-22|r-state-senate-24|r-state-senate-26|r-state-senate-28|r-state-senate-30|r-state-senate-34|r-state-senate-36"></div>
+</section>
+    <section class="guide-section" id="ballot-assembly">
+<div class="section-head" style="border-bottom-color:#004DFF;">
+<h2 style="color:#004DFF;">Member of the State Assembly</h2>
+<span class="race-count">24 races</span>
+</div>
+<div class="races-container" data-order="r-state-assembly-34|r-state-assembly-39|r-state-assembly-40|r-state-assembly-41|r-state-assembly-42|r-state-assembly-43|r-state-assembly-44|r-state-assembly-46|r-state-assembly-48|r-state-assembly-49|r-state-assembly-51|r-state-assembly-52|r-state-assembly-53|r-state-assembly-54|r-state-assembly-55|r-state-assembly-56|r-state-assembly-57|r-state-assembly-61|r-state-assembly-62|r-state-assembly-64|r-state-assembly-65|r-state-assembly-66|r-state-assembly-67|r-state-assembly-69"></div>
+</section>
+    <section class="guide-section" id="ballot-judicial">
+<div class="section-head" style="border-bottom-color:#E040A0;">
+<h2 style="color:#E040A0;">Judicial</h2>
+<span class="race-count">7 races</span>
+</div>
+<div class="races-container" data-order="r-supreme-court-kelli-evans|r-supreme-court-joshua-groban|r-court-of-appeal-2nd-district|r-superior-court-office-no-64|r-superior-court-office-no-65|r-superior-court-office-no-87|r-superior-court-office-no-131"></div>
+</section>
+    <section class="guide-section" id="ballot-school">
+<div class="section-head" style="border-bottom-color:#784F17;">
+<h2 style="color:#784F17;">School</h2>
+<span class="race-count">4 races</span>
+</div>
+<div class="races-container" data-order="r-superintendent-of-public-instruction|r-laccd-seat-2|r-laccd-seat-4|r-laccd-seat-6"></div>
+</section>
+    <section class="guide-section" id="ballot-county">
+<div class="section-head" style="border-bottom-color:#750787;">
+<h2 style="color:#750787;">County</h2>
+<span class="race-count">1 race</span>
+</div>
+<div class="races-container" data-order="r-la-county-sheriff"></div>
+</section>
+    <section class="guide-section" id="ballot-city">
+<div class="section-head" style="border-bottom-color:#CA4948;">
+<h2 style="color:#CA4948;">City</h2>
+<span class="race-count">5 races</span>
+</div>
+<div class="races-container" data-order="r-west-hollywood-city-council|r-la-mayor|r-la-city-attorney|r-la-city-council-3|r-la-city-council-9"></div>
+</section>
+    <section class="guide-section" id="ballot-state-measures">
+<div class="section-head" style="border-bottom-color:#B8860B;">
+<h2 style="color:#B8860B;">State Measures</h2>
+<span class="race-count">14 measures</span>
+</div>
+<div class="races-container" data-order="r-prop-1|r-prop-2|r-prop-3|r-prop-4|r-prop-5|r-prop-37|r-prop-38|r-prop-39|r-prop-40|r-prop-41|r-prop-42|r-prop-43|r-prop-44|r-prop-45"></div>
+</section>
+    <section class="guide-section" id="ballot-county-measures">
+<div class="section-head" style="border-bottom-color:#750787;">
+<h2 style="color:#750787;">County Measures</h2>
+<span class="race-count">2 measures</span>
+</div>
+<div class="races-container" data-order="r-la-county-measure-a|r-la-county-measure-e"></div>
+</section>
+    <section class="guide-section" id="ballot-city-measures">
+<div class="section-head" style="border-bottom-color:#CA4948;">
+<h2 style="color:#CA4948;">City Measures</h2>
+<span class="race-count">8 measures</span>
+</div>
+<div class="races-container" data-order="r-la-city-measure-te|r-la-city-measure-la|r-la-city-measure-pl|r-la-city-measure-ee|r-la-city-measure-prk|r-la-city-measure-prt|r-la-city-measure-fd|r-la-city-measure-sc"></div>
+</section>
+
+    </div>
     <div class="vg-sources">
       <h3>Sources</h3>
       <div class="vg-sources-list">
@@ -2786,6 +2922,38 @@ function expandAll() {
 function collapseAll() {
   document.querySelectorAll('[data-expandable]').forEach(function(r) { r.classList.remove('expanded'); });
 }
+</script>
+<script>
+function placeRows(rootId) {
+  document.querySelectorAll('#' + rootId + ' .races-container[data-order]').forEach(function(c) {
+    c.getAttribute('data-order').split('|').forEach(function(k) {
+      var row = document.querySelector('.race-row[data-race="' + k + '"]');
+      if (row) c.appendChild(row);
+    });
+  });
+}
+function setView(v) {
+  var ballot = v === 'ballot';
+  placeRows(ballot ? 'vg-ballot' : 'vg-topic');
+  document.getElementById('vg-ballot').hidden = !ballot;
+  document.getElementById('vg-topic').hidden = ballot;
+  document.getElementById('toc-ballot').hidden = !ballot;
+  document.getElementById('toc-topic').hidden = ballot;
+  document.getElementById('ballot-note').hidden = !ballot;
+  document.body.classList.toggle('view-ballot', ballot);
+  document.querySelectorAll('[data-view-btn]').forEach(function(b) {
+    var on = b.getAttribute('data-view-btn') === v;
+    b.classList.toggle('active', on);
+    b.setAttribute('aria-pressed', String(on));
+  });
+  try { localStorage.setItem('vgOrder', v); } catch (e) {}
+}
+(function() {
+  var v = null;
+  try { var p = new URLSearchParams(location.search).get('order'); if (p === 'ballot' || p === 'topic') v = p; } catch (e) {}
+  if (!v) { try { v = localStorage.getItem('vgOrder'); } catch (e) {} }
+  if (v === 'ballot') setView('ballot');
+})();
 </script>
 </body>
 </html>
