@@ -88,6 +88,30 @@
       .nk-date-time { margin:0; padding:0 0 0 10px; border-top:none; border-left:1px solid rgba(255,255,255,0.35); }
       .nk-body { padding:24px 20px; }
     }
+
+    /* November 3 voter guide feature. Remove with the section after the election. */
+    .vgf-section { background:#fff; padding:52px 0; border-top:1px solid #E6EAEE; }
+    .vgf-card { display:flex; border:1px solid #DDE3E8; border-radius:8px; overflow:hidden; box-shadow:0 2px 12px rgba(7,19,28,0.06); }
+    .vgf-stat { flex:0 0 150px; background:#750787; color:#fff; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:24px 12px; font-family:'Lato',sans-serif; }
+    .vgf-num { font-family:'Playfair Display',Georgia,serif; font-weight:800; font-size:3rem; line-height:1; }
+    .vgf-unit { font-weight:700; font-size:0.74rem; letter-spacing:0.12em; text-transform:uppercase; margin-top:6px; line-height:1.4; }
+    .vgf-sep { width:60%; border-top:1px solid rgba(255,255,255,0.35); margin:14px 0 12px; }
+    .vgf-num-sm { font-family:'Playfair Display',Georgia,serif; font-weight:800; font-size:1.7rem; line-height:1; }
+    .vgf-body { flex:1; padding:30px 34px; }
+    .vgf-eyebrow { font-family:'Lato',sans-serif; font-weight:700; font-size:0.72rem; letter-spacing:0.14em; text-transform:uppercase; color:#750787; margin:0 0 10px 0; }
+    .vgf-title { font-family:'Playfair Display',Georgia,serif; font-weight:800; font-size:clamp(1.4rem,3.4vw,1.85rem); line-height:1.2; color:#07131C; margin:0 0 14px 0; }
+    .vgf-text { font-family:'Lato',sans-serif; font-size:1rem; line-height:1.65; color:#33414D; margin:0 0 14px 0; }
+    .vgf-actions { display:flex; flex-wrap:wrap; gap:12px; margin:20px 0 16px 0; }
+    .vgf-fine { font-family:'Lato',sans-serif; font-size:0.78rem; line-height:1.55; color:#5E6B76; margin:0; }
+    @media (max-width:640px) {
+      .vgf-card { flex-direction:column; }
+      .vgf-stat { flex:0 0 auto; flex-direction:row; flex-wrap:wrap; justify-content:center; gap:6px 10px; padding:14px 16px; }
+      .vgf-num { font-size:1.6rem; }
+      .vgf-unit { margin:0; }
+      .vgf-sep { width:auto; height:22px; border-top:none; border-left:1px solid rgba(255,255,255,0.35); margin:0 4px; }
+      .vgf-num-sm { font-size:1.6rem; }
+      .vgf-body { padding:24px 20px; }
+    }
   </style>
 </head>
 <body>
@@ -233,6 +257,36 @@ document.addEventListener('click',function(e){
             <a href="events.html#no-kings-vote-early" class="btn btn-outline">Event Details</a>
           </div>
           <p class="nk-fine">No Kings: Vote Early events are nonpartisan and are designed to increase participation from all eligible voters.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NOVEMBER 3 VOTER GUIDE feature. Remove this section (and the .vgf- styles in the head) after the election. -->
+  <section class="vgf-section" id="voter-guide-feature">
+    <div class="container" style="max-width:840px;">
+      <div class="vgf-card">
+        <div class="vgf-stat" aria-hidden="true">
+          <span class="vgf-num">99</span>
+          <span class="vgf-unit">Races &amp;<br>measures</span>
+          <span class="vgf-sep"></span>
+          <span class="vgf-num-sm">30</span>
+          <span class="vgf-unit">Organizations</span>
+        </div>
+        <div class="vgf-body">
+          <p class="vgf-eyebrow">Voter Guide &middot; November 3, 2026</p>
+          <h2 class="vgf-title">See who endorsed whom before you fill out your ballot.</h2>
+          <p class="vgf-text">
+            Thirty progressive, Democratic, labor, and issue organizations have published recommendations for the November 3 ballot. Our guide gathers them in one place, race by race and measure by measure, so you can see where they agree and where they split.
+          </p>
+          <p class="vgf-text">
+            Start with the West Hollywood&ndash;Fairfax ballot at the top of the guide, or switch to ballot order and follow along as you fill out your own.
+          </p>
+          <div class="vgf-actions">
+            <a href="voter-guide-nov-2026.html" class="btn btn-primary">Open the Voter Guide</a>
+            <a href="voter-guide-nov-2026.html?order=ballot" class="btn btn-outline">View in Ballot Order</a>
+          </div>
+          <p class="vgf-fine">The guide reports each organization's published recommendations. We update it as more guides are released.</p>
         </div>
       </div>
     </div>
