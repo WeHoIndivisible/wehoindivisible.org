@@ -560,6 +560,27 @@ main#main-content {
 .weho-pick .none { color: #aaa; font-style: italic; }
 .weho-pick .cnt { color: #750787; font-weight: 700; }
 .weho-pick .alt .cnt { color: #666; font-weight: 400; }
+.weho-ballot-row { display: block !important; padding: 0 !important; }
+.weho-summary {
+  display: grid;
+  grid-template-columns: 160px 1fr 20px;
+  gap: 10px;
+  align-items: baseline;
+  padding: 6px 0;
+  cursor: pointer;
+}
+.weho-summary:hover { background: #fafafa; margin: 0; padding: 6px 0; }
+.weho-summary .expand-arrow { align-self: center; }
+.weho-ballot-row.expanded .expand-arrow { transform: rotate(180deg); color: #750787; }
+.weho-ballot-row.expanded .race-detail { display: block; }
+.weho-detail { padding: 2px 0 12px 0; }
+.weho-hint { font-family: 'Lato', sans-serif; font-size: 0.72rem; color: #999; margin: -8px 0 12px 0; }
+@media (max-width: 700px) {
+  .weho-summary { grid-template-columns: 1fr 20px; gap: 2px 6px; }
+  .weho-summary .weho-label { grid-column: 1; }
+  .weho-summary .weho-pick { grid-column: 1; }
+  .weho-summary .expand-arrow { grid-row: 1; grid-column: 2; align-self: start; margin-top: 4px; }
+}
 #vg-topic[hidden], #vg-ballot[hidden], .vg-toc[hidden], .ballot-note[hidden] { display: none !important; }
 .ballot-only { display: none; }
 body.view-ballot .ballot-only { display: inline; }
@@ -704,93 +725,510 @@ document.addEventListener('click',function(e){
     <div class="weho-ballot">
       <h3>Your WeHo&ndash;Fairfax Ballot</h3>
       <p class="weho-sub">West Hollywood and Fairfax District voters both vote on all statewide offices, all 14 propositions, the judicial contests, and these local contests on November 3.</p>
+      <p class="weho-hint">Tap any contest to see which organizations endorsed each candidate or position.</p>
       <h4>West Hollywood and Fairfax</h4>
       <div class="weho-ballot-grid">
-<div class="weho-ballot-row">
+<div class="weho-ballot-row" data-expandable>
+<div class="race-summary weho-summary">
   <span class="weho-label">College Board Seat 2</span>
   <span class="weho-pick"><span class="alt">Steve Veres <span class="cnt">(4)</span></span> <span class="alt">Adriana Cabrera <span class="cnt">(1)</span></span></span>
+  <svg class="expand-arrow" viewBox="0 0 12 8" fill="none"><path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
 </div>
-<div class="weho-ballot-row">
+<div class="race-detail weho-detail">
+<div class="cand-detail">
+<div class="cand-detail-bar" style="width:29%"></div>
+<div class="cand-detail-inner">
+<span class="cand-detail-name">Steve Veres</span>
+<span class="cand-detail-count">4</span>
+<div class="cand-detail-orgs">LA Progressive, LA County Dems, ADA SoCal, Stonewall Dems</div>
+</div>
+</div>
+<div class="cand-detail">
+<div class="cand-detail-bar" style="width:7%"></div>
+<div class="cand-detail-inner">
+<span class="cand-detail-name">Adriana Cabrera</span>
+<span class="cand-detail-count">1</span>
+<div class="cand-detail-orgs">DSA-LA</div>
+</div>
+</div>
+
+</div>
+</div>
+<div class="weho-ballot-row" data-expandable>
+<div class="race-summary weho-summary">
   <span class="weho-label">College Board Seat 4</span>
   <span class="weho-pick"><span><span class="pick-dot" title="Progressive pick">&#9679;</span> <strong>Darryn Harris</strong> <span class="cnt">(5)</span></span> <span class="alt">Nancy Pearlman <span class="cnt">(1)</span></span></span>
+  <svg class="expand-arrow" viewBox="0 0 12 8" fill="none"><path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
 </div>
-<div class="weho-ballot-row">
+<div class="race-detail weho-detail">
+<div class="cand-detail prog-picked">
+<div class="cand-detail-bar" style="width:36%"></div>
+<div class="cand-detail-inner">
+<span class="cand-detail-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Darryn Harris</span>
+<span class="cand-detail-count">5</span>
+<div class="cand-detail-orgs">DSA-LA, LA Progressive, LA County Dems, Stonewall Dems, Miracle Mile Dems</div>
+</div>
+</div>
+<div class="cand-detail">
+<div class="cand-detail-bar" style="width:7%"></div>
+<div class="cand-detail-inner">
+<span class="cand-detail-name">Nancy Pearlman</span>
+<span class="cand-detail-count">1</span>
+<div class="cand-detail-orgs">ADA SoCal</div>
+</div>
+</div>
+
+</div>
+</div>
+<div class="weho-ballot-row" data-expandable>
+<div class="race-summary weho-summary">
   <span class="weho-label">College Board Seat 6</span>
   <span class="weho-pick"><span class="alt">Gabriel Buelna <span class="cnt">(3)</span></span> <span class="alt">Randall Winston <span class="cnt">(3)</span></span></span>
+  <svg class="expand-arrow" viewBox="0 0 12 8" fill="none"><path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
 </div>
-<div class="weho-ballot-row">
+<div class="race-detail weho-detail">
+<div class="cand-detail">
+<div class="cand-detail-bar" style="width:21%"></div>
+<div class="cand-detail-inner">
+<span class="cand-detail-name">Gabriel Buelna</span>
+<span class="cand-detail-count">3</span>
+<div class="cand-detail-orgs">LA Progressive, ADA SoCal, Stonewall Dems</div>
+</div>
+</div>
+<div class="cand-detail">
+<div class="cand-detail-bar" style="width:21%"></div>
+<div class="cand-detail-inner">
+<span class="cand-detail-name">Randall Winston</span>
+<span class="cand-detail-count">3</span>
+<div class="cand-detail-orgs">DSA-LA, LA County Dems, Cal Enviro Voters</div>
+</div>
+</div>
+
+</div>
+</div>
+<div class="weho-ballot-row" data-expandable>
+<div class="race-summary weho-summary">
   <span class="weho-label">State Senate 24</span>
   <span class="weho-pick"><span><span class="pick-dot" title="Progressive pick">&#9679;</span> <strong>John Erickson</strong> <span class="cnt">(14)</span></span> <span class="alt">Brian Goldsmith <span class="cnt">(1)</span></span></span>
+  <svg class="expand-arrow" viewBox="0 0 12 8" fill="none"><path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
 </div>
-<div class="weho-ballot-row">
+<div class="race-detail weho-detail">
+<div class="cand-detail prog-picked">
+<div class="cand-detail-bar" style="width:78%"></div>
+<div class="cand-detail-inner">
+<span class="cand-detail-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>John Erickson</span>
+<span class="cand-detail-count">14</span>
+<div class="cand-detail-orgs">LA Forward, Courage CA, La Defensa, ADA SoCal, Stonewall Dems, Miracle Mile Dems, CA Labor Fed, Sierra Club, Planned Parenthood, Equality CA, Initiate Justice, Streets For All, YIMBY LA, YIMBY Action</div>
+</div>
+</div>
+<div class="cand-detail">
+<div class="cand-detail-bar" style="width:6%"></div>
+<div class="cand-detail-inner">
+<span class="cand-detail-name">Brian Goldsmith</span>
+<span class="cand-detail-count">1</span>
+<div class="cand-detail-orgs">Cal Enviro Voters</div>
+</div>
+</div>
+<div class="no-endorse">No endorsement: CA Dem Party, WeHo-Beverly Hills Dems</div>
+</div>
+</div>
+<div class="weho-ballot-row" data-expandable>
+<div class="race-summary weho-summary">
   <span class="weho-label">State Assembly 51</span>
   <span class="weho-pick"><span><span class="pick-dot" title="Progressive pick">&#9679;</span> <strong>Rick Chavez Zbur</strong> <span class="cnt">(12)</span></span> <span class="alt">Colin Hernandez <span class="cnt">(2)</span></span></span>
+  <svg class="expand-arrow" viewBox="0 0 12 8" fill="none"><path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
 </div>
-<div class="weho-ballot-row">
+<div class="race-detail weho-detail">
+<div class="cand-detail prog-picked">
+<div class="cand-detail-bar" style="width:63%"></div>
+<div class="cand-detail-inner">
+<span class="cand-detail-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Rick Chavez Zbur</span>
+<span class="cand-detail-count">12</span>
+<div class="cand-detail-orgs">Courage CA, La Defensa <span class='note'>(dual endorsement)</span>, LA Progressive, CA Dem Party, LA County Dems, WeHo-Beverly Hills Dems, Stonewall Dems, CA Labor Fed, Cal Enviro Voters, Sierra Club, Planned Parenthood, Equality CA</div>
+</div>
+</div>
+<div class="cand-detail">
+<div class="cand-detail-bar" style="width:11%"></div>
+<div class="cand-detail-inner">
+<span class="cand-detail-name">Colin Hernandez</span>
+<span class="cand-detail-count">2</span>
+<div class="cand-detail-orgs">La Defensa <span class='note'>(dual endorsement)</span>, Initiate Justice <span class='note'>(harm reduction)</span></div>
+</div>
+</div>
+<div class="no-endorse">No endorsement: LA Forward</div>
+</div>
+</div>
+<div class="weho-ballot-row" data-expandable>
+<div class="race-summary weho-summary">
   <span class="weho-label">U.S. House 30</span>
   <span class="weho-pick"><span><span class="pick-dot" title="Progressive pick">&#9679;</span> <strong>Laura Friedman</strong> <span class="cnt">(15)</span></span></span>
+  <svg class="expand-arrow" viewBox="0 0 12 8" fill="none"><path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
 </div>
-<div class="weho-ballot-row">
+<div class="race-detail weho-detail">
+<div class="cand-detail prog-picked">
+<div class="cand-detail-bar" style="width:94%"></div>
+<div class="cand-detail-inner">
+<span class="cand-detail-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Laura Friedman</span>
+<span class="cand-detail-count">15</span>
+<div class="cand-detail-orgs">Courage CA, La Defensa <span class='note'>(harm reduction)</span>, LA Progressive, CA Dem Party, LA County Dems, ADA SoCal, WeHo-Beverly Hills Dems, Stonewall Dems, Miracle Mile Dems, CA Labor Fed, Cal Enviro Voters, Sierra Club, Planned Parenthood, Equality CA, YIMBY Action</div>
+</div>
+</div>
+
+</div>
+</div>
+<div class="weho-ballot-row" data-expandable>
+<div class="race-summary weho-summary">
   <span class="weho-label">Sheriff</span>
   <span class="weho-pick"><span><span class="pick-dot" title="Progressive pick">&#9679;</span> <strong>Robert Luna</strong> <span class="cnt">(8)</span></span></span>
+  <svg class="expand-arrow" viewBox="0 0 12 8" fill="none"><path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
 </div>
-<div class="weho-ballot-row">
+<div class="race-detail weho-detail">
+<div class="cand-detail prog-picked">
+<div class="cand-detail-bar" style="width:57%"></div>
+<div class="cand-detail-inner">
+<span class="cand-detail-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Robert Luna</span>
+<span class="cand-detail-count">8</span>
+<div class="cand-detail-orgs">LA Forward, Courage CA, La Defensa <span class='note'>(harm reduction)</span>, LA County Dems, ADA SoCal, WeHo-Beverly Hills Dems, Stonewall Dems, Malibu Dems</div>
+</div>
+</div>
+<div class="no-endorse">No endorsement: DSA-LA</div>
+</div>
+</div>
+<div class="weho-ballot-row" data-expandable>
+<div class="race-summary weho-summary">
   <span class="weho-label">County Measure A</span>
   <span class="weho-pick"><span><span class="pick-dot" title="Progressive pick">&#9679;</span> <strong>No</strong> <span class="cnt">(4)</span></span> <span class="alt">Yes <span class="cnt">(3)</span></span></span>
+  <svg class="expand-arrow" viewBox="0 0 12 8" fill="none"><path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
 </div>
-<div class="weho-ballot-row">
+<div class="race-detail weho-detail">
+<div class="cand-detail prog-picked">
+<div class="cand-detail-bar" style="width:29%"></div>
+<div class="cand-detail-inner">
+<span class="cand-detail-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>No</span>
+<span class="cand-detail-count">4</span>
+<div class="cand-detail-orgs">LA Forward, DSA-LA, La Defensa, LA Progressive</div>
+</div>
+</div>
+<div class="cand-detail">
+<div class="cand-detail-bar" style="width:21%"></div>
+<div class="cand-detail-inner">
+<span class="cand-detail-name">Yes</span>
+<span class="cand-detail-count">3</span>
+<div class="cand-detail-orgs">LA County Dems, ADA SoCal, WeHo-Beverly Hills Dems</div>
+</div>
+</div>
+
+</div>
+</div>
+<div class="weho-ballot-row" data-expandable>
+<div class="race-summary weho-summary">
   <span class="weho-label">County Measure E</span>
   <span class="weho-pick"><span><span class="pick-dot" title="Progressive pick">&#9679;</span> <strong>Yes</strong> <span class="cnt">(9)</span></span></span>
+  <svg class="expand-arrow" viewBox="0 0 12 8" fill="none"><path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+</div>
+<div class="race-detail weho-detail">
+<div class="cand-detail prog-picked">
+<div class="cand-detail-bar" style="width:64%"></div>
+<div class="cand-detail-inner">
+<span class="cand-detail-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Yes</span>
+<span class="cand-detail-count">9</span>
+<div class="cand-detail-orgs">LA Forward, DSA-LA, La Defensa, LA Progressive, LA County Dems, ADA SoCal, WeHo-Beverly Hills Dems, LA County Greens, ACLU</div>
+</div>
+</div>
+
+</div>
 </div>
       </div>
       <h4>West Hollywood only</h4>
       <div class="weho-ballot-grid">
-<div class="weho-ballot-row">
+<div class="weho-ballot-row" data-expandable>
+<div class="race-summary weho-summary">
   <span class="weho-label">City Council (3 seats)</span>
   <span class="weho-pick"><span><span class="pick-dot" title="Progressive pick">&#9679;</span> <strong>Chelsea Byers</strong> <span class="cnt">(11)</span></span> <span><span class="pick-dot" title="Progressive pick">&#9679;</span> <strong>Helen Krieger</strong> <span class="cnt">(9)</span></span> <span><span class="pick-dot" title="Progressive pick">&#9679;</span> <strong>Stephen Post</strong> <span class="cnt">(5)</span></span> <span class="alt">Jonathan Cottrell <span class="cnt">(2)</span></span> <span class="alt">Kyle Brazeal <span class="cnt">(2)</span></span></span>
+  <svg class="expand-arrow" viewBox="0 0 12 8" fill="none"><path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+</div>
+<div class="race-detail weho-detail">
+<div class="cand-detail prog-picked">
+<div class="cand-detail-bar" style="width:92%"></div>
+<div class="cand-detail-inner">
+<span class="cand-detail-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Chelsea Byers</span>
+<span class="cand-detail-count">11</span>
+<div class="cand-detail-orgs">DSA-LA, Courage CA, LA County Dems, ADA SoCal, Stonewall Dems, Miracle Mile Dems, Sierra Club, Equality CA, Streets For All, YIMBY LA, YIMBY Action</div>
+</div>
+</div>
+<div class="cand-detail prog-picked">
+<div class="cand-detail-bar" style="width:75%"></div>
+<div class="cand-detail-inner">
+<span class="cand-detail-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Helen Krieger</span>
+<span class="cand-detail-count">9</span>
+<div class="cand-detail-orgs">DSA-LA, Courage CA, LA County Dems, Stonewall Dems, Miracle Mile Dems, Equality CA, Streets For All, YIMBY LA, YIMBY Action</div>
+</div>
+</div>
+<div class="cand-detail prog-picked">
+<div class="cand-detail-bar" style="width:42%"></div>
+<div class="cand-detail-inner">
+<span class="cand-detail-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Stephen Post</span>
+<span class="cand-detail-count">5</span>
+<div class="cand-detail-orgs">DSA-LA, Courage CA, Stonewall Dems, Miracle Mile Dems, Streets For All</div>
+</div>
+</div>
+<div class="cand-detail">
+<div class="cand-detail-bar" style="width:17%"></div>
+<div class="cand-detail-inner">
+<span class="cand-detail-name">Jonathan Cottrell</span>
+<span class="cand-detail-count">2</span>
+<div class="cand-detail-orgs">LA County Dems, Equality CA</div>
+</div>
+</div>
+<div class="cand-detail">
+<div class="cand-detail-bar" style="width:17%"></div>
+<div class="cand-detail-inner">
+<span class="cand-detail-name">Kyle Brazeal</span>
+<span class="cand-detail-count">2</span>
+<div class="cand-detail-orgs">WeHo-Beverly Hills Dems, Equality CA</div>
+</div>
+</div>
+
+</div>
 </div>
       </div>
       <h4>Fairfax and the rest of the City of Los Angeles</h4>
       <div class="weho-ballot-grid">
-<div class="weho-ballot-row">
+<div class="weho-ballot-row" data-expandable>
+<div class="race-summary weho-summary">
   <span class="weho-label">Mayor</span>
   <span class="weho-pick"><span><span class="pick-dot" title="Progressive pick">&#9679;</span> <strong>Nithya Raman</strong> <span class="cnt">(9)</span></span> <span class="alt">Karen Bass <span class="cnt">(4)</span></span></span>
+  <svg class="expand-arrow" viewBox="0 0 12 8" fill="none"><path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
 </div>
-<div class="weho-ballot-row">
+<div class="race-detail weho-detail">
+<div class="cand-detail prog-picked">
+<div class="cand-detail-bar" style="width:56%"></div>
+<div class="cand-detail-inner">
+<span class="cand-detail-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Nithya Raman</span>
+<span class="cand-detail-count">9</span>
+<div class="cand-detail-orgs">LA Forward, DSA-LA, La Defensa, Miracle Mile Dems, LA County Greens, Initiate Justice, Streets For All, YIMBY LA, YIMBY Action</div>
+</div>
+</div>
+<div class="cand-detail">
+<div class="cand-detail-bar" style="width:25%"></div>
+<div class="cand-detail-inner">
+<span class="cand-detail-name">Karen Bass</span>
+<span class="cand-detail-count">4</span>
+<div class="cand-detail-orgs">LA Progressive, LA County Dems, Stonewall Dems, Planned Parenthood</div>
+</div>
+</div>
+<div class="no-endorse">No endorsement: Courage CA</div>
+</div>
+</div>
+<div class="weho-ballot-row" data-expandable>
+<div class="race-summary weho-summary">
   <span class="weho-label">City Attorney</span>
   <span class="weho-pick"><span><span class="pick-dot" title="Progressive pick">&#9679;</span> <strong>Marissa Roy</strong> <span class="cnt">(15)</span></span></span>
+  <svg class="expand-arrow" viewBox="0 0 12 8" fill="none"><path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
 </div>
-<div class="weho-ballot-row">
+<div class="race-detail weho-detail">
+<div class="cand-detail prog-picked">
+<div class="cand-detail-bar" style="width:94%"></div>
+<div class="cand-detail-inner">
+<span class="cand-detail-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Marissa Roy</span>
+<span class="cand-detail-count">15</span>
+<div class="cand-detail-orgs">LA Forward, DSA-LA, Courage CA, La Defensa, LA Progressive, LA County Dems, ADA SoCal, Stonewall Dems, Miracle Mile Dems, Sierra Club, Planned Parenthood, Initiate Justice, Streets For All, YIMBY LA, YIMBY Action</div>
+</div>
+</div>
+
+</div>
+</div>
+<div class="weho-ballot-row" data-expandable>
+<div class="race-summary weho-summary">
   <span class="weho-label">Proposition TE</span>
   <span class="weho-pick"><span><span class="pick-dot" title="Progressive pick">&#9679;</span> <strong>No</strong> <span class="cnt">(4)</span></span> <span class="alt">Yes <span class="cnt">(1)</span></span></span>
+  <svg class="expand-arrow" viewBox="0 0 12 8" fill="none"><path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
 </div>
-<div class="weho-ballot-row">
+<div class="race-detail weho-detail">
+<div class="cand-detail prog-picked">
+<div class="cand-detail-bar" style="width:25%"></div>
+<div class="cand-detail-inner">
+<span class="cand-detail-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>No</span>
+<span class="cand-detail-count">4</span>
+<div class="cand-detail-orgs">LA Forward, DSA-LA, La Defensa, LA Progressive</div>
+</div>
+</div>
+<div class="cand-detail">
+<div class="cand-detail-bar" style="width:6%"></div>
+<div class="cand-detail-inner">
+<span class="cand-detail-name">Yes</span>
+<span class="cand-detail-count">1</span>
+<div class="cand-detail-orgs">LA County Dems</div>
+</div>
+</div>
+
+</div>
+</div>
+<div class="weho-ballot-row" data-expandable>
+<div class="race-summary weho-summary">
   <span class="weho-label">Charter Amend. LA</span>
   <span class="weho-pick"><span><span class="pick-dot" title="Progressive pick">&#9679;</span> <strong>Yes</strong> <span class="cnt">(6)</span></span> <span class="alt">No <span class="cnt">(1)</span></span></span>
+  <svg class="expand-arrow" viewBox="0 0 12 8" fill="none"><path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
 </div>
-<div class="weho-ballot-row">
+<div class="race-detail weho-detail">
+<div class="cand-detail prog-picked">
+<div class="cand-detail-bar" style="width:38%"></div>
+<div class="cand-detail-inner">
+<span class="cand-detail-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Yes</span>
+<span class="cand-detail-count">6</span>
+<div class="cand-detail-orgs">LA Forward, DSA-LA, La Defensa, LA Progressive, LA County Greens, Streets For All</div>
+</div>
+</div>
+<div class="cand-detail">
+<div class="cand-detail-bar" style="width:6%"></div>
+<div class="cand-detail-inner">
+<span class="cand-detail-name">No</span>
+<span class="cand-detail-count">1</span>
+<div class="cand-detail-orgs">LA County Dems</div>
+</div>
+</div>
+
+</div>
+</div>
+<div class="weho-ballot-row" data-expandable>
+<div class="race-summary weho-summary">
   <span class="weho-label">Charter Amend. PL</span>
   <span class="weho-pick"><span><span class="pick-dot" title="Progressive pick">&#9679;</span> <strong>Yes</strong> <span class="cnt">(3)</span></span> <span class="alt">No <span class="cnt">(1)</span></span></span>
+  <svg class="expand-arrow" viewBox="0 0 12 8" fill="none"><path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
 </div>
-<div class="weho-ballot-row">
+<div class="race-detail weho-detail">
+<div class="cand-detail prog-picked">
+<div class="cand-detail-bar" style="width:19%"></div>
+<div class="cand-detail-inner">
+<span class="cand-detail-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Yes</span>
+<span class="cand-detail-count">3</span>
+<div class="cand-detail-orgs">DSA-LA, LA Progressive, ADA SoCal</div>
+</div>
+</div>
+<div class="cand-detail">
+<div class="cand-detail-bar" style="width:6%"></div>
+<div class="cand-detail-inner">
+<span class="cand-detail-name">No</span>
+<span class="cand-detail-count">1</span>
+<div class="cand-detail-orgs">La Defensa</div>
+</div>
+</div>
+<div class="no-endorse">No endorsement: LA Forward, LA County Dems</div>
+</div>
+</div>
+<div class="weho-ballot-row" data-expandable>
+<div class="race-summary weho-summary">
   <span class="weho-label">Charter Amend. EE</span>
   <span class="weho-pick"><span><span class="pick-dot" title="Progressive pick">&#9679;</span> <strong>No</strong> <span class="cnt">(5)</span></span> <span class="alt">Yes <span class="cnt">(1)</span></span></span>
+  <svg class="expand-arrow" viewBox="0 0 12 8" fill="none"><path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
 </div>
-<div class="weho-ballot-row">
+<div class="race-detail weho-detail">
+<div class="cand-detail prog-picked">
+<div class="cand-detail-bar" style="width:31%"></div>
+<div class="cand-detail-inner">
+<span class="cand-detail-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>No</span>
+<span class="cand-detail-count">5</span>
+<div class="cand-detail-orgs">LA Forward, LA Progressive, LA County Dems, ADA SoCal, LA County Greens</div>
+</div>
+</div>
+<div class="cand-detail">
+<div class="cand-detail-bar" style="width:6%"></div>
+<div class="cand-detail-inner">
+<span class="cand-detail-name">Yes</span>
+<span class="cand-detail-count">1</span>
+<div class="cand-detail-orgs">La Defensa</div>
+</div>
+</div>
+<div class="no-endorse">No endorsement: DSA-LA</div>
+</div>
+</div>
+<div class="weho-ballot-row" data-expandable>
+<div class="race-summary weho-summary">
   <span class="weho-label">Charter Amend. PRK</span>
   <span class="weho-pick"><span><span class="pick-dot" title="Progressive pick">&#9679;</span> <strong>Yes</strong> <span class="cnt">(9)</span></span></span>
+  <svg class="expand-arrow" viewBox="0 0 12 8" fill="none"><path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
 </div>
-<div class="weho-ballot-row">
+<div class="race-detail weho-detail">
+<div class="cand-detail prog-picked">
+<div class="cand-detail-bar" style="width:56%"></div>
+<div class="cand-detail-inner">
+<span class="cand-detail-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Yes</span>
+<span class="cand-detail-count">9</span>
+<div class="cand-detail-orgs">LA Forward, DSA-LA, La Defensa, LA Progressive, LA County Dems, ADA SoCal, LA County Greens, Sierra Club, Streets For All</div>
+</div>
+</div>
+
+</div>
+</div>
+<div class="weho-ballot-row" data-expandable>
+<div class="race-summary weho-summary">
   <span class="weho-label">Charter Amend. PRT</span>
   <span class="weho-pick"><span><span class="pick-dot" title="Progressive pick">&#9679;</span> <strong>Yes</strong> <span class="cnt">(4)</span></span> <span class="alt">No <span class="cnt">(1)</span></span></span>
+  <svg class="expand-arrow" viewBox="0 0 12 8" fill="none"><path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
 </div>
-<div class="weho-ballot-row">
+<div class="race-detail weho-detail">
+<div class="cand-detail prog-picked">
+<div class="cand-detail-bar" style="width:25%"></div>
+<div class="cand-detail-inner">
+<span class="cand-detail-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Yes</span>
+<span class="cand-detail-count">4</span>
+<div class="cand-detail-orgs">LA Forward, DSA-LA, LA Progressive, LA County Dems</div>
+</div>
+</div>
+<div class="cand-detail">
+<div class="cand-detail-bar" style="width:6%"></div>
+<div class="cand-detail-inner">
+<span class="cand-detail-name">No</span>
+<span class="cand-detail-count">1</span>
+<div class="cand-detail-orgs">ADA SoCal</div>
+</div>
+</div>
+<div class="no-endorse">No endorsement: La Defensa</div>
+</div>
+</div>
+<div class="weho-ballot-row" data-expandable>
+<div class="race-summary weho-summary">
   <span class="weho-label">Measure FD</span>
   <span class="weho-pick"><span><span class="pick-dot" title="Progressive pick">&#9679;</span> <strong>Yes</strong> <span class="cnt">(5)</span></span></span>
+  <svg class="expand-arrow" viewBox="0 0 12 8" fill="none"><path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
 </div>
-<div class="weho-ballot-row">
+<div class="race-detail weho-detail">
+<div class="cand-detail prog-picked">
+<div class="cand-detail-bar" style="width:31%"></div>
+<div class="cand-detail-inner">
+<span class="cand-detail-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Yes</span>
+<span class="cand-detail-count">5</span>
+<div class="cand-detail-orgs">LA Forward, La Defensa, LA Progressive, LA County Dems, ADA SoCal</div>
+</div>
+</div>
+<div class="no-endorse">No endorsement: DSA-LA</div>
+</div>
+</div>
+<div class="weho-ballot-row" data-expandable>
+<div class="race-summary weho-summary">
   <span class="weho-label">Charter Amend. SC</span>
   <span class="weho-pick"><span><span class="pick-dot" title="Progressive pick">&#9679;</span> <strong>Yes</strong> <span class="cnt">(4)</span></span> <span class="alt">No <span class="cnt">(1)</span></span></span>
+  <svg class="expand-arrow" viewBox="0 0 12 8" fill="none"><path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+</div>
+<div class="race-detail weho-detail">
+<div class="cand-detail prog-picked">
+<div class="cand-detail-bar" style="width:25%"></div>
+<div class="cand-detail-inner">
+<span class="cand-detail-name"><span class="pick-dot" title="Progressive pick">&#9679;</span>Yes</span>
+<span class="cand-detail-count">4</span>
+<div class="cand-detail-orgs">LA Forward, La Defensa, ADA SoCal, LA County Greens</div>
+</div>
+</div>
+<div class="cand-detail">
+<div class="cand-detail-bar" style="width:6%"></div>
+<div class="cand-detail-inner">
+<span class="cand-detail-name">No</span>
+<span class="cand-detail-count">1</span>
+<div class="cand-detail-orgs">LA Progressive</div>
+</div>
+</div>
+<div class="no-endorse">No endorsement: DSA-LA, LA County Dems</div>
+</div>
 </div>
       </div>
       <p class="weho-note">Supervisor, LAUSD board, and LA City Council District 5 seats for this area were decided in June. The full guide below covers 99 races and measures across LA County.</p>
