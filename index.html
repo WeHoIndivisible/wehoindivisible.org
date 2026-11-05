@@ -67,33 +67,39 @@
     .hero-form-card .form-success { color:#a3e4a3; font-size:0.9rem; font-family:"Montserrat",sans-serif; margin:0; padding:12px 0; }
     .hero-form-card .honeypot { position:absolute; left:-9999px; opacity:0; pointer-events:none; height:0; width:0; overflow:hidden; }
 
-    /* November 3 voter guide feature. Remove with the section after the election. */
-    .vgf-section { background:#fff; padding:52px 0; border-top:1px solid #E6EAEE; }
-    .vgf-card { display:flex; border:1px solid #DDE3E8; border-radius:8px; overflow:hidden; box-shadow:0 2px 12px rgba(7,19,28,0.06); }
-    .vgf-stat { flex:0 0 150px; background:#750787; color:#fff; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:24px 12px; font-family:'Lato',sans-serif; }
-    .vgf-num { font-family:'Playfair Display',Georgia,serif; font-weight:800; font-size:3rem; line-height:1; }
-    .vgf-unit { font-weight:700; font-size:0.74rem; letter-spacing:0.12em; text-transform:uppercase; margin-top:6px; line-height:1.4; }
-    .vgf-sep { width:60%; border-top:1px solid rgba(255,255,255,0.35); margin:14px 0 12px; }
-    .vgf-num-sm { font-family:'Playfair Display',Georgia,serif; font-weight:800; font-size:1.7rem; line-height:1; }
-    .vgf-body { flex:1; padding:30px 34px; }
-    .vgf-eyebrow { font-family:'Lato',sans-serif; font-weight:700; font-size:0.72rem; letter-spacing:0.14em; text-transform:uppercase; color:#750787; margin:0 0 10px 0; }
-    .vgf-title { font-family:'Playfair Display',Georgia,serif; font-weight:800; font-size:clamp(1.4rem,3.4vw,1.85rem); line-height:1.2; color:#07131C; margin:0 0 14px 0; }
-    .vgf-text { font-family:'Lato',sans-serif; font-size:1rem; line-height:1.65; color:#33414D; margin:0 0 14px 0; }
-    .vgf-actions { display:flex; flex-wrap:wrap; gap:12px; margin:20px 0 16px 0; }
-    .vgf-fine { font-family:'Lato',sans-serif; font-size:0.78rem; line-height:1.55; color:#5E6B76; margin:0; }
-    .vgf-related { margin:18px 0 0 0; padding-top:16px; border-top:1px solid #E6EAEE; font-family:'Lato',sans-serif; }
-    .vgf-related-label { display:block; font-weight:700; font-size:0.72rem; letter-spacing:0.14em; text-transform:uppercase; color:#CA4948; margin-bottom:5px; }
-    .vgf-related a { font-weight:700; font-size:0.98rem; line-height:1.5; color:#07131C; text-decoration:none; border-bottom:2px solid #750787; }
-    .vgf-related a:hover { color:#750787; }
-    @media (max-width:640px) {
-      .vgf-card { flex-direction:column; }
-      .vgf-stat { flex:0 0 auto; flex-direction:row; flex-wrap:wrap; justify-content:center; gap:6px 10px; padding:14px 16px; }
-      .vgf-num { font-size:1.6rem; }
-      .vgf-unit { margin:0; }
-      .vgf-sep { width:auto; height:22px; border-top:none; border-left:1px solid rgba(255,255,255,0.35); margin:0 4px; }
-      .vgf-num-sm { font-size:1.6rem; }
-      .vgf-body { padding:24px 20px; }
-    }
+    /* November 3, 2026 results section (#election-results). Update statuses as races are called;
+       remove or replace once results are certified and the new officials take office. */
+    .res-section { background:#07131C; color:#fff; padding:56px 0; }
+    .res-eyebrow { font-family:'Lato',sans-serif; font-weight:700; font-size:0.72rem; letter-spacing:0.14em; text-transform:uppercase; color:#CA4948; margin:0 0 14px 0; }
+    .res-title { font-family:'Playfair Display',Georgia,serif; font-weight:800; font-size:clamp(1.5rem,4vw,2.1rem); line-height:1.18; margin:0 0 16px 0; color:#fff; }
+    .res-text { font-family:'Lato',sans-serif; font-size:1rem; line-height:1.65; color:rgba(255,255,255,0.78); margin:0 0 16px 0; }
+    .res-box { border:1px solid rgba(255,255,255,0.14); border-radius:8px; overflow:hidden; margin:30px 0 26px 0; }
+    .res-box-head { background:rgba(255,255,255,0.04); padding:15px 22px; border-bottom:1px solid rgba(255,255,255,0.1); }
+    .res-box-title { display:block; font-family:'Lato',sans-serif; font-weight:700; font-size:0.78rem; letter-spacing:0.07em; text-transform:uppercase; color:rgba(255,255,255,0.88); }
+    .res-box-note { display:block; font-family:'Lato',sans-serif; font-size:0.76rem; color:rgba(255,255,255,0.5); margin-top:4px; }
+    .res-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:1px; background:rgba(255,255,255,0.1); }
+    .res-col { padding:20px 22px; background:#07131C; }
+    .res-area { font-family:'Lato',sans-serif; font-weight:700; font-size:0.7rem; letter-spacing:0.1em; text-transform:uppercase; color:#6C9FC2; margin:0 0 14px 0; }
+    .res-item { margin:0 0 16px 0; }
+    .res-item:last-child { margin-bottom:0; }
+    .res-office { font-family:'Lato',sans-serif; font-size:0.72rem; letter-spacing:0.04em; text-transform:uppercase; color:rgba(255,255,255,0.45); margin:0 0 3px 0; }
+    .res-name { font-family:'Playfair Display',Georgia,serif; font-weight:700; font-size:1.05rem; line-height:1.3; color:#fff; margin:0 0 3px 0; }
+    .res-status { font-family:'Lato',sans-serif; font-size:0.82rem; line-height:1.5; color:rgba(255,255,255,0.6); margin:0; }
+    .res-actions { display:flex; flex-wrap:wrap; gap:12px; align-items:center; }
+    .res-btn { display:inline-block; background:#CA4948; color:#fff; font-family:'Lato',sans-serif; font-weight:700; font-size:0.85rem; letter-spacing:0.06em; text-transform:uppercase; padding:13px 24px; border-radius:3px; text-decoration:none; }
+    .res-btn:hover { background:#A83736; }
+    .res-btn-outline { display:inline-block; border:1px solid rgba(255,255,255,0.3); color:#fff; font-family:'Lato',sans-serif; font-weight:700; font-size:0.85rem; letter-spacing:0.06em; text-transform:uppercase; padding:12px 22px; border-radius:3px; text-decoration:none; }
+    .res-btn-outline:hover { background:rgba(255,255,255,0.08); }
+
+    /* Members of Congress / Senate leadership callout (#congress-feature). Links to federal-reps.html.
+       Time-sensitive: revise after the Senate Democratic leadership vote (expected early December 2026). */
+    .fed-section { background:#fff; padding:52px 0; }
+    .fed-card { border:1px solid #DDE3E8; border-left:4px solid #CA4948; border-radius:8px; padding:30px 34px; box-shadow:0 2px 12px rgba(7,19,28,0.06); }
+    .fed-eyebrow { font-family:'Lato',sans-serif; font-weight:700; font-size:0.72rem; letter-spacing:0.14em; text-transform:uppercase; color:#CA4948; margin:0 0 10px 0; }
+    .fed-title { font-family:'Playfair Display',Georgia,serif; font-weight:800; font-size:clamp(1.4rem,3.4vw,1.85rem); line-height:1.2; color:#07131C; margin:0 0 14px 0; }
+    .fed-text { font-family:'Lato',sans-serif; font-size:1rem; line-height:1.65; color:#33414D; margin:0 0 14px 0; }
+    .fed-actions { display:flex; flex-wrap:wrap; gap:12px; margin:20px 0 0 0; }
+    @media (max-width:640px) { .fed-card { padding:24px 20px; } }
   </style>
 </head>
 <body>
@@ -214,75 +220,112 @@ document.addEventListener('click',function(e){
 
   <hr class="rainbow-divider">
 
-  <!-- NOVEMBER 3 VOTER GUIDE feature. Remove this section (and the .vgf- styles in the head) after the election. -->
-  <section class="vgf-section" id="voter-guide-feature">
+  <!-- NOVEMBER 3, 2026 RESULTS. Statuses current as of November 4, 2026.
+       To update: change the .res-status lines as races are called (CA-48 "projected" -> "won" once AP calls it;
+       LA Mayor and the third WeHo council seat when called). Styles are the .res- rules in the head. -->
+  <section class="res-section" id="election-results">
     <div class="container" style="max-width:840px;">
-      <div class="vgf-card">
-        <div class="vgf-stat" aria-hidden="true">
-          <span class="vgf-num">99</span>
-          <span class="vgf-unit">Races &amp;<br>measures</span>
-          <span class="vgf-sep"></span>
-          <span class="vgf-num-sm">30</span>
-          <span class="vgf-unit">Organizations</span>
+      <p class="res-eyebrow">General Election Results &middot; November 3, 2026</p>
+      <h2 class="res-title">Both chambers of Congress change hands in January</h2>
+      <p class="res-text">
+        On November 3, voters gave Democrats majorities in both the House and the Senate. In the Senate, Democrats flipped seven Republican-held seats. In the House, they flipped seats across the country, including California&rsquo;s 48th District, the race we took on this fall. Marni von Wilpert is projected to win it by a wide margin over Jim Desmond, in a district that leaned Republican until Proposition 50 redrew it.
+      </p>
+      <p class="res-text">
+        To everyone who wrote postcards to CA-48 voters, came to No Kings: Vote Early on October 17, or helped a neighbor make a plan to vote: thank you.
+      </p>
+      <p class="res-text">
+        Closer to home, two races are still too close to call: Los Angeles mayor and the third open seat on the West Hollywood City Council. Los Angeles County keeps counting mail ballots for weeks after Election Day. Any ballot postmarked by November 3 that arrives within seven days will be counted, so expect the numbers below to change.
+      </p>
+
+      <div class="res-box">
+        <div class="res-box-head">
+          <span class="res-box-title">Who will represent West Hollywood and Fairfax</span>
+          <span class="res-box-note">Results as of November 4, 2026. They are unofficial until the county certifies them.</span>
         </div>
-        <div class="vgf-body">
-          <p class="vgf-eyebrow">Voter Guide &middot; November 3, 2026</p>
-          <h2 class="vgf-title">See who endorsed whom before you fill out your ballot.</h2>
-          <p class="vgf-text">
-            Thirty progressive, Democratic, labor, and issue organizations have published recommendations for the November 3 ballot. Our guide gathers them in one place, race by race and measure by measure, so you can see where they agree and where they split.
-          </p>
-          <p class="vgf-text">
-            Start with the West Hollywood&ndash;Fairfax ballot at the top of the guide, or switch to ballot order and follow along as you fill out your own.
-          </p>
-          <div class="vgf-actions">
-            <a href="voter-guide-nov-2026.html" class="btn btn-primary">Open the Voter Guide</a>
-            <a href="voter-guide-nov-2026.html?order=ballot" class="btn btn-outline">View in Ballot Order</a>
+        <div class="res-grid">
+
+          <div class="res-col">
+            <p class="res-area">Both West Hollywood and Fairfax</p>
+            <div class="res-item">
+              <p class="res-office">U.S. Senate</p>
+              <p class="res-name">Alex Padilla and Adam Schiff</p>
+              <p class="res-status">Neither seat was on this ballot.</p>
+            </div>
+            <div class="res-item">
+              <p class="res-office">U.S. House, 30th District</p>
+              <p class="res-name">Laura Friedman</p>
+              <p class="res-status">Re-elected.</p>
+            </div>
+            <div class="res-item">
+              <p class="res-office">Governor</p>
+              <p class="res-name">Xavier Becerra</p>
+              <p class="res-status">Elected to succeed Gavin Newsom.</p>
+            </div>
+            <div class="res-item">
+              <p class="res-office">L.A. County Sheriff</p>
+              <p class="res-name">Robert Luna</p>
+              <p class="res-status">Re-elected.</p>
+            </div>
           </div>
-          <p class="vgf-fine">The guide reports each organization's published recommendations. We update it as more guides are released.</p>
-          <p class="vgf-related">
-            <span class="vgf-related-label">West Hollywood City Council race</span>
-            <a href="weho-council-race-2026.html">The zoning fights, the Fountain Avenue vote, campaign money, and where each candidate stands &rarr;</a>
-          </p>
+
+          <div class="res-col">
+            <p class="res-area">Fairfax (City of Los Angeles)</p>
+            <div class="res-item">
+              <p class="res-office">Mayor</p>
+              <p class="res-name">Too close to call</p>
+              <p class="res-status">Nithya Raman holds a narrow lead over Mayor Karen Bass. The winner takes office December 14.</p>
+            </div>
+            <div class="res-item">
+              <p class="res-office">City Attorney</p>
+              <p class="res-name">Marissa Roy</p>
+              <p class="res-status">Projected winner over John McKinney.</p>
+            </div>
+            <div class="res-item">
+              <p class="res-office">City Council, District 5</p>
+              <p class="res-name">Katy Yaroslavsky</p>
+              <p class="res-status">Re-elected outright in the June primary.</p>
+            </div>
+          </div>
+
+          <div class="res-col">
+            <p class="res-area">West Hollywood</p>
+            <div class="res-item">
+              <p class="res-office">City Council (three of five seats)</p>
+              <p class="res-name">Chelsea Byers and Helen Krieger lead</p>
+              <p class="res-status">The third seat is too close to call between John Duran and Kyle Brazeal.</p>
+            </div>
+          </div>
+
         </div>
+      </div>
+
+      <p class="res-text" style="margin-bottom:26px;">
+        The new majorities will be seated in January. What they do with that power will depend partly on whether constituents keep paying attention. Our weekly meeting continues every Wednesday at 6 PM, and it is where we decide what to take on next.
+      </p>
+
+      <div class="res-actions">
+        <a href="https://www.mobilize.us/wehofairfaxindivisible/event/985787/" target="_blank" rel="noopener" class="res-btn">Join a Weekly Meeting &#8599;</a>
+        <a href="actions.html" class="res-btn-outline">See Current Actions</a>
       </div>
     </div>
   </section>
 
-  <!-- NOVEMBER 3 GENERAL ELECTION — CA-48 feature -->
-  <section style="background:#07131C; color:#fff; padding:56px 0;">
+  <!-- MEMBERS OF CONGRESS / SENATE LEADERSHIP callout. Styles are the .fed- rules in the head. -->
+  <section class="fed-section" id="congress-feature">
     <div class="container" style="max-width:840px;">
-      <p style="font-family:'Lato',sans-serif; font-weight:700; font-size:0.72rem; letter-spacing:0.14em; text-transform:uppercase; color:#CA4948; margin:0 0 14px 0;">The Next Fight &middot; General Election, November 3, 2026</p>
-      <h2 style="font-family:'Playfair Display',Georgia,serif; font-weight:800; font-size:clamp(1.5rem,4vw,2.1rem); line-height:1.18; margin:0 0 16px 0; color:#fff;">The primary is behind us. Now we turn to November.</h2>
-      <p style="font-family:'Lato',sans-serif; font-size:1rem; line-height:1.65; color:rgba(255,255,255,0.78); margin:0 0 28px 0;">
-        Control of the U.S. House will come down to a small number of competitive seats, and one of them is now within reach of an organized Los Angeles. After last year's redistricting under Proposition 50, the 48th Congressional District was redrawn to reach from the San Diego suburbs up into Palm Springs and Indian Wells, the registration shifted toward Democrats by roughly ten points, and the Republican incumbent decided not to seek re-election. The June 2 primary set the November matchup.
-      </p>
-
-      <div style="border:1px solid rgba(255,255,255,0.14); border-radius:8px; overflow:hidden;">
-        <div style="background:rgba(255,255,255,0.04); padding:15px 22px; border-bottom:1px solid rgba(255,255,255,0.1);">
-          <span style="font-family:'Lato',sans-serif; font-weight:700; font-size:0.78rem; letter-spacing:0.07em; text-transform:uppercase; color:rgba(255,255,255,0.85);">California's 48th Congressional District</span>
-          <span style="font-family:'Lato',sans-serif; font-size:0.74rem; color:rgba(255,255,255,0.45); margin-left:8px;">now includes Palm Springs &amp; Indian Wells</span>
+      <div class="fed-card">
+        <p class="fed-eyebrow">Our Members of Congress &middot; Senate Leadership</p>
+        <h2 class="fed-title">Ask Senators Padilla and Schiff to back new leadership for Senate Democrats</h2>
+        <p class="fed-text">
+          Senate Democrats will choose their leader for the new majority in a secret-ballot vote expected in early December. Neither of our senators has said publicly that they will vote against Chuck Schumer, and a public statement before the vote is what we are asking for.
+        </p>
+        <p class="fed-text">
+          Our new page lists the three people who represent West Hollywood and Fairfax in Congress, the committees they sit on, and how to reach them, along with a short script for calling both senators.
+        </p>
+        <div class="fed-actions">
+          <a href="federal-reps.html" class="btn btn-primary">See Our Members of Congress</a>
+          <a href="federal-reps.html#call" class="btn btn-outline">Go to the Call Script</a>
         </div>
-        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1px; background:rgba(255,255,255,0.1);">
-          <div style="padding:20px 22px; background:#07131C;">
-            <p style="font-family:'Lato',sans-serif; font-weight:700; font-size:0.7rem; letter-spacing:0.1em; text-transform:uppercase; color:#6C9FC2; margin:0 0 6px 0;">Democrat</p>
-            <p style="font-family:'Playfair Display',Georgia,serif; font-weight:700; font-size:1.15rem; margin:0 0 5px 0; color:#fff;">Marni von Wilpert</p>
-            <p style="font-family:'Lato',sans-serif; font-size:0.82rem; line-height:1.5; color:rgba(255,255,255,0.6); margin:0;">San Diego City Councilmember and former civil prosecutor.</p>
-          </div>
-          <div style="padding:20px 22px; background:#07131C;">
-            <p style="font-family:'Lato',sans-serif; font-weight:700; font-size:0.7rem; letter-spacing:0.1em; text-transform:uppercase; color:rgba(255,255,255,0.4); margin:0 0 6px 0;">Republican</p>
-            <p style="font-family:'Playfair Display',Georgia,serif; font-weight:700; font-size:1.15rem; margin:0 0 5px 0; color:rgba(255,255,255,0.75);">Jim Desmond</p>
-            <p style="font-family:'Lato',sans-serif; font-size:0.82rem; line-height:1.5; color:rgba(255,255,255,0.45); margin:0;">San Diego County Supervisor, endorsed by the retiring incumbent.</p>
-          </div>
-        </div>
-      </div>
-
-      <p style="font-family:'Lato',sans-serif; font-size:0.95rem; line-height:1.62; color:rgba(255,255,255,0.72); margin:24px 0 26px 0;">
-        We are hoping to adopt CA-48 and put West Hollywood and Fairfax volunteers to work on voter contact through the fall. If that is something you want to be part of, tell us now, so we can build the summer around it.
-      </p>
-
-      <div style="display:flex; flex-wrap:wrap; gap:12px; align-items:center;">
-        <a href="get-involved.html" style="display:inline-block; background:#CA4948; color:#fff; font-family:'Lato',sans-serif; font-weight:700; font-size:0.85rem; letter-spacing:0.06em; text-transform:uppercase; padding:13px 24px; border-radius:3px; text-decoration:none;">Join the November Effort &rarr;</a>
-        <a href="actions.html" style="display:inline-block; border:1px solid rgba(255,255,255,0.3); color:#fff; font-family:'Lato',sans-serif; font-weight:700; font-size:0.85rem; letter-spacing:0.06em; text-transform:uppercase; padding:12px 22px; border-radius:3px; text-decoration:none;">See Current Actions</a>
       </div>
     </div>
   </section>
