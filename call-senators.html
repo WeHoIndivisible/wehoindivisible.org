@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Call Senators Padilla and Schiff | West Hollywood-Fairfax Indivisible</title>
+<meta name="description" content="Senate Democrats choose their leader on December 1. Call Senators Padilla and Schiff today.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #07131C;
+    --red: #CA4948;
+    --red-dark: #A93A39;
+    --rule: #D9DEE3;
+    --muted: #4A5863;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: #FFFFFF;
+    color: var(--navy);
+    font-family: Lato, Arial, sans-serif;
+    font-size: 18px;
+    line-height: 1.55;
+  }
+  .rainbow {
+    height: 6px;
+    background: linear-gradient(90deg, #E40303 0 16.66%, #FF8C00 16.66% 33.33%, #FFED00 33.33% 50%, #008026 50% 66.66%, #004DFF 66.66% 83.33%, #750787 83.33% 100%);
+  }
+  .wrap { max-width: 620px; margin: 0 auto; padding: 0 20px 48px; }
+  .masthead {
+    padding: 18px 0 14px;
+    border-bottom: 1px solid var(--rule);
+    font-family: "Playfair Display", Georgia, serif;
+    font-weight: 700;
+    font-size: 19px;
+  }
+  .masthead a { color: var(--navy); text-decoration: none; }
+  .masthead .weho {
+    background: linear-gradient(90deg, #8A63D9, #4FC3D7);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .masthead .fairfax { color: var(--red); }
+  .eyebrow {
+    margin: 28px 0 8px;
+    font-family: Montserrat, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--red);
+  }
+  h1 {
+    margin: 0 0 16px;
+    font-family: "Playfair Display", Georgia, serif;
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 1.18;
+  }
+  p { margin: 0 0 16px; }
+  .status {
+    margin: 0 0 24px;
+    padding: 14px 16px;
+    border-left: 4px solid var(--navy);
+    background: #FFFFFF;
+    border-top: 1px solid var(--rule);
+    border-right: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    font-size: 16px;
+  }
+  .status strong { font-weight: 700; }
+  .status .asof { display: block; margin-top: 6px; color: var(--muted); font-size: 14px; }
+  h2 {
+    margin: 28px 0 10px;
+    font-family: Montserrat, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .script {
+    margin: 0 0 8px;
+    padding: 18px;
+    border: 2px solid var(--navy);
+    border-radius: 6px;
+    font-size: 19px;
+    line-height: 1.5;
+  }
+  .note { color: var(--muted); font-size: 15px; }
+  .calls { list-style: none; margin: 0; padding: 0; }
+  .calls li { margin: 0 0 12px; }
+  .call {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    min-height: 68px;
+    padding: 12px 16px;
+    border-radius: 6px;
+    background: var(--red);
+    color: #FFFFFF;
+    text-decoration: none;
+  }
+  .call:hover, .call:focus { background: var(--red-dark); }
+  .call:focus-visible { outline: 3px solid var(--navy); outline-offset: 2px; }
+  .call .who { font-family: Montserrat, Arial, sans-serif; font-weight: 700; font-size: 17px; line-height: 1.25; }
+  .call .hint { display: block; font-family: Lato, Arial, sans-serif; font-weight: 400; font-size: 14px; opacity: 0.95; }
+  .call .num { font-family: Montserrat, Arial, sans-serif; font-weight: 700; font-size: 17px; white-space: nowrap; }
+  .call .best {
+    display: none;
+    margin-left: 6px;
+    padding: 1px 7px;
+    border-radius: 3px;
+    background: #FFFFFF;
+    color: var(--red-dark);
+    font-family: Montserrat, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    vertical-align: 2px;
+  }
+  .call.is-best .best { display: inline-block; }
+  .done-btn {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    padding: 16px;
+    border: 2px solid var(--navy);
+    border-radius: 6px;
+    background: #FFFFFF;
+    color: var(--navy);
+    font-family: Montserrat, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 17px;
+    cursor: pointer;
+  }
+  .done-btn:hover { background: var(--navy); color: #FFFFFF; }
+  .thanks {
+    display: none;
+    margin-top: 20px;
+    padding: 18px;
+    border: 2px solid var(--navy);
+    border-radius: 6px;
+  }
+  .thanks h3 { margin: 0 0 8px; font-family: "Playfair Display", Georgia, serif; font-size: 22px; }
+  .thanks p:last-child { margin-bottom: 0; }
+  footer {
+    margin-top: 36px;
+    padding-top: 16px;
+    border-top: 1px solid var(--rule);
+    color: var(--muted);
+    font-size: 14px;
+  }
+  footer a, .status a { color: var(--navy); }
+  @media (max-width: 380px) {
+    h1 { font-size: 27px; }
+    .call .num { font-size: 15px; }
+  }
+</style>
+</head>
+<body>
+<div class="rainbow" role="presentation"></div>
+<div class="wrap">
+
+  <div class="masthead">
+    <a href="/"><span class="weho">West Hollywood</span>-<span class="fairfax">Fairfax</span> Indivisible</a>
+  </div>
+
+  <p class="eyebrow">Two calls before December 1</p>
+  <h1>Ask Senators Padilla and Schiff to vote for new Senate leadership</h1>
+
+  <p>Senate Democrats will choose their leader by secret ballot on Tuesday, December 1. Senator Chris Van Hollen of Maryland is challenging Chuck Schumer, who has led the caucus since 2017, and Indivisible has called on Senate Democrats to choose new leadership.</p>
+
+  <p>Because the ballot is secret, a public statement is the only commitment constituents can verify, which is why the script below asks for one.</p>
+
+  <div class="status">
+    <strong>Where our senators stand:</strong> Senator Padilla has not committed to either candidate. Senator Schiff has taken no public position.
+    <span class="asof">As of November 13, 2026. Source: <a href="https://whipcount.dropsitenews.com/">Drop Site News whip count</a>.</span>
+  </div>
+
+  <h2>Say this</h2>
+  <div class="script">
+    Hi, I&rsquo;m a constituent from ___. Please vote no on Chuck Schumer for Majority Leader and yes on Chris Van Hollen, and please ask the Senator to state his position publicly. Please log my call. Thank you.
+  </div>
+  <p class="note">A staffer or a voicemail box will answer. Either one counts. The call takes about a minute.</p>
+
+  <h2>Tap to call</h2>
+  <ul class="calls">
+    <li>
+      <a class="call" id="schiff-la" href="tel:+13109147300">
+        <span class="who">Schiff, Los Angeles <span class="best">Best now</span>
+          <span class="hint">Staffed weekdays during business hours</span></span>
+        <span class="num">(310) 914-7300</span>
+      </a>
+    </li>
+    <li>
+      <a class="call" id="schiff-dc" href="tel:+12022243841">
+        <span class="who">Schiff, Washington <span class="best">Best now</span>
+          <span class="hint">Takes voicemail after hours</span></span>
+        <span class="num">(202) 224-3841</span>
+      </a>
+    </li>
+    <li>
+      <a class="call" id="padilla-la" href="tel:+13102314494">
+        <span class="who">Padilla, Los Angeles <span class="best">Best now</span>
+          <span class="hint">Takes voicemail after hours</span></span>
+        <span class="num">(310) 231-4494</span>
+      </a>
+    </li>
+    <li>
+      <a class="call" id="padilla-dc" href="tel:+12022243553">
+        <span class="who">Padilla, Washington
+          <span class="hint">Business hours only, no voicemail after hours</span></span>
+        <span class="num">(202) 224-3553</span>
+      </a>
+    </li>
+  </ul>
+  <p class="note">One call to each senator is enough. On a computer, dial the numbers shown.</p>
+
+  <button class="done-btn" id="done" type="button">I made my calls</button>
+
+  <div class="thanks" id="thanks" aria-live="polite">
+    <h3>Thank you.</h3>
+    <p>One more step: reply to the email that brought you here and tell us what you heard, even if the staffer said only that the message would be passed along. We will report back to the list on what the two offices are saying.</p>
+    <p>Then forward the email to one California friend.</p>
+  </div>
+
+  <footer>
+    West Hollywood-Fairfax Indivisible. Page updated November 13, 2026.
+  </footer>
+</div>
+
+<script>
+(function () {
+  // Mark the office most likely to answer or take a message right now (Pacific time).
+  try {
+    var parts = new Intl.DateTimeFormat('en-US', {
+      timeZone: 'America/Los_Angeles', weekday: 'short', hour: 'numeric', hour12: false
+    }).formatToParts(new Date());
+    var day = '', hour = 0;
+    parts.forEach(function (p) {
+      if (p.type === 'weekday') day = p.value;
+      if (p.type === 'hour') hour = parseInt(p.value, 10) % 24;
+    });
+    var weekday = day !== 'Sat' && day !== 'Sun';
+    var laOpen = weekday && hour >= 9 && hour < 17;
+    var best = laOpen ? ['schiff-la', 'padilla-la'] : ['schiff-dc', 'padilla-la'];
+    best.forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el) el.classList.add('is-best');
+    });
+  } catch (e) { /* hints are optional */ }
+
+  var btn = document.getElementById('done');
+  var thanks = document.getElementById('thanks');
+  function showThanks() {
+    thanks.style.display = 'block';
+    btn.style.display = 'none';
+  }
+  btn.addEventListener('click', function () {
+    showThanks();
+    try { localStorage.setItem('whfi-leader-call', '1'); } catch (e) {}
+    thanks.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  });
+  try { if (localStorage.getItem('whfi-leader-call') === '1') showThanks(); } catch (e) {}
+})();
+</script>
+</body>
+</html>
