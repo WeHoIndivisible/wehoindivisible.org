@@ -56,8 +56,8 @@
     .cs { max-width:620px; margin:0 auto; padding:8px 20px 48px; background:#07131C; color:rgba(255,255,255,0.88); font-family:Lato,Arial,sans-serif; font-size:18px; line-height:1.55; }
     .cs p { margin:0 0 16px; color:rgba(255,255,255,0.82); }
     .cs a { color:#8FC1E3; }
-    .cs .cs-eyebrow { margin:28px 0 8px; font-family:Montserrat,Arial,sans-serif; font-weight:700; font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:#E9706F; }
-    .cs h1 { margin:0 0 16px; font-family:"Playfair Display",Georgia,serif; font-weight:800; font-size:32px; line-height:1.18; color:#fff; }
+    .cs .cs-eyebrow { margin:28px 0 10px; line-height:1.4; font-family:Montserrat,Arial,sans-serif; font-weight:700; font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:#E9706F; }
+    .cs h1 { margin:0 0 16px; font-family:Montserrat,Arial,sans-serif; font-weight:700; font-size:28px; line-height:1.25; color:#fff; }
     .cs h2 { margin:28px 0 10px; font-family:Montserrat,Arial,sans-serif; font-weight:700; font-size:14px; letter-spacing:0.1em; text-transform:uppercase; color:#fff; }
     .cs .cs-status { margin:0 0 24px; padding:14px 16px; border:1px solid rgba(255,255,255,0.14); border-left:4px solid #CA4948; background:rgba(255,255,255,0.04); font-size:16px; color:rgba(255,255,255,0.88); }
     .cs .cs-status strong { color:#fff; }
@@ -85,9 +85,9 @@
     .cs .cs-done { display:block; width:100%; margin-top:20px; padding:16px; border:2px solid #fff; border-radius:6px; background:transparent; color:#fff; font-family:Montserrat,Arial,sans-serif; font-weight:700; font-size:17px; cursor:pointer; }
     .cs .cs-done:hover { background:#fff; color:#07131C; }
     .cs .cs-thanks { display:none; margin-top:20px; padding:18px; border:1px solid rgba(255,255,255,0.3); border-radius:6px; background:rgba(255,255,255,0.06); }
-    .cs .cs-thanks h3 { margin:0 0 8px; font-family:"Playfair Display",Georgia,serif; font-size:22px; color:#fff; }
+    .cs .cs-thanks h3 { margin:0 0 8px; font-family:Montserrat,Arial,sans-serif; font-weight:700; font-size:20px; color:#fff; }
     .cs .cs-thanks p:last-child { margin-bottom:0; }
-    @media (max-width:380px) { .cs h1 { font-size:27px; } .cs .cs-num { font-size:15px; } }
+    @media (max-width:380px) { .cs h1 { font-size:24px; } .cs .cs-num { font-size:15px; } }
   </style>
 </head>
 <body>
@@ -157,19 +157,19 @@ document.addEventListener('click',function(e){
 <main id="main-content">
 <div class="cs">
 
-  <p class="cs-eyebrow">Two calls before December 1</p>
+  <p class="cs-eyebrow">Let&rsquo;s keep the midterm wave going! Call our senators by December 1</p>
   <h1>Ask Senators Padilla and Schiff to vote for new Senate leadership</h1>
 
-  <p>Senate Democrats will choose their leader by secret ballot on Tuesday, December 1. Senator Chris Van Hollen of Maryland is challenging Chuck Schumer, who has led the caucus since 2017, and Indivisible has called on Senate Democrats to choose new leadership.</p>
+  <p>Senate Democrats will choose their leader by secret ballot on Tuesday, December 1. Senator Chris Van Hollen of Maryland is challenging Chuck Schumer, and Indivisible has called on Senate Democrats to choose new leadership.</p>
 
-  <p>Because the ballot is secret, a public statement is the only commitment constituents can verify, which is why the script below asks for one.</p>
+  <p>The ballot is secret, so a public statement is the only commitment we can use to verify.</p>
 
   <div class="cs-status">
     <strong>Where our senators stand:</strong> Senator Padilla has not committed to either candidate. Senator Schiff has taken no public position.
     <span class="cs-asof">As of November 13, 2026. Source: <a href="https://whipcount.dropsitenews.com/">Drop Site News whip count</a>.</span>
   </div>
 
-  <h2>Say this</h2>
+  <h2>Call script if helpful</h2>
   <div class="cs-script">
     Hi, I&rsquo;m a constituent from <span class="cs-place" id="cs-place">Los Angeles</span>. Please vote no on Chuck Schumer for Majority Leader and yes on Chris Van Hollen, and please ask the Senator to state his position publicly. Please log my call. Thank you.
   </div>
@@ -179,7 +179,7 @@ document.addEventListener('click',function(e){
     <button type="button" class="cs-chip" data-place="West Hollywood" aria-pressed="false">West Hollywood</button>
     <input type="text" class="cs-other" id="cs-other" maxlength="40" placeholder="Other city or ZIP" aria-label="Other city or ZIP code" autocomplete="off">
   </div>
-  <p class="cs-note">A staffer or a voicemail box will answer. Either one counts. The call takes about a minute.</p>
+  <p class="cs-note">A staffer or a voicemail will answer; leaving a voicemail counts, so go ahead and leave one.</p>
 
   <h2>Tap to call</h2>
   <ul class="cs-calls">
@@ -212,14 +212,11 @@ document.addEventListener('click',function(e){
       </a>
     </li>
   </ul>
-  <p class="cs-note">One call to each senator is enough. On a computer, dial the numbers shown.</p>
-
   <button class="cs-done" id="done" type="button">I made my calls</button>
 
   <div class="cs-thanks" id="thanks" aria-live="polite">
-    <h3>Thank you.</h3>
-    <p>One more step: tell us what you heard, either by replying to our email or by writing to <a href="mailto:hello@wehofairfaxindivisible.org?subject=Senate%20leadership%20call">hello@wehofairfaxindivisible.org</a>, even if the staffer said only that the message would be passed along. We will report back to the list on what the two offices are saying.</p>
-    <p>Then send this page to one California friend.</p>
+    <h3>Thank you!</h3>
+    <p>Please send this page to one California friend.</p>
   </div>
 
   <p class="cs-note" style="margin-top:32px;">Page updated November 13, 2026.</p>
