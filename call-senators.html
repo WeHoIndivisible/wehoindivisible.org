@@ -1,241 +1,233 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Call Senators Padilla and Schiff | West Hollywood-Fairfax Indivisible</title>
-<meta name="description" content="Senate Democrats choose their leader on December 1. Call Senators Padilla and Schiff today.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --navy: #07131C;
-    --red: #CA4948;
-    --red-dark: #A93A39;
-    --rule: #D9DEE3;
-    --muted: #4A5863;
-  }
-  * { box-sizing: border-box; }
-  html { -webkit-text-size-adjust: 100%; }
-  body {
-    margin: 0;
-    background: #FFFFFF;
-    color: var(--navy);
-    font-family: Lato, Arial, sans-serif;
-    font-size: 18px;
-    line-height: 1.55;
-  }
-  .rainbow {
-    height: 6px;
-    background: linear-gradient(90deg, #E40303 0 16.66%, #FF8C00 16.66% 33.33%, #FFED00 33.33% 50%, #008026 50% 66.66%, #004DFF 66.66% 83.33%, #750787 83.33% 100%);
-  }
-  .wrap { max-width: 620px; margin: 0 auto; padding: 0 20px 48px; }
-  .masthead {
-    padding: 18px 0 14px;
-    border-bottom: 1px solid var(--rule);
-    font-family: "Playfair Display", Georgia, serif;
-    font-weight: 700;
-    font-size: 19px;
-  }
-  .masthead a { color: var(--navy); text-decoration: none; }
-  .masthead .weho {
-    background: linear-gradient(90deg, #8A63D9, #4FC3D7);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-  }
-  .masthead .fairfax { color: var(--red); }
-  .eyebrow {
-    margin: 28px 0 8px;
-    font-family: Montserrat, Arial, sans-serif;
-    font-weight: 700;
-    font-size: 13px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--red);
-  }
-  h1 {
-    margin: 0 0 16px;
-    font-family: "Playfair Display", Georgia, serif;
-    font-weight: 800;
-    font-size: 32px;
-    line-height: 1.18;
-  }
-  p { margin: 0 0 16px; }
-  .status {
-    margin: 0 0 24px;
-    padding: 14px 16px;
-    border-left: 4px solid var(--navy);
-    background: #FFFFFF;
-    border-top: 1px solid var(--rule);
-    border-right: 1px solid var(--rule);
-    border-bottom: 1px solid var(--rule);
-    font-size: 16px;
-  }
-  .status strong { font-weight: 700; }
-  .status .asof { display: block; margin-top: 6px; color: var(--muted); font-size: 14px; }
-  h2 {
-    margin: 28px 0 10px;
-    font-family: Montserrat, Arial, sans-serif;
-    font-weight: 700;
-    font-size: 14px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-  }
-  .script {
-    margin: 0 0 8px;
-    padding: 18px;
-    border: 2px solid var(--navy);
-    border-radius: 6px;
-    font-size: 19px;
-    line-height: 1.5;
-  }
-  .note { color: var(--muted); font-size: 15px; }
-  .calls { list-style: none; margin: 0; padding: 0; }
-  .calls li { margin: 0 0 12px; }
-  .call {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    min-height: 68px;
-    padding: 12px 16px;
-    border-radius: 6px;
-    background: var(--red);
-    color: #FFFFFF;
-    text-decoration: none;
-  }
-  .call:hover, .call:focus { background: var(--red-dark); }
-  .call:focus-visible { outline: 3px solid var(--navy); outline-offset: 2px; }
-  .call .who { font-family: Montserrat, Arial, sans-serif; font-weight: 700; font-size: 17px; line-height: 1.25; }
-  .call .hint { display: block; font-family: Lato, Arial, sans-serif; font-weight: 400; font-size: 14px; opacity: 0.95; }
-  .call .num { font-family: Montserrat, Arial, sans-serif; font-weight: 700; font-size: 17px; white-space: nowrap; }
-  .call .best {
-    display: none;
-    margin-left: 6px;
-    padding: 1px 7px;
-    border-radius: 3px;
-    background: #FFFFFF;
-    color: var(--red-dark);
-    font-family: Montserrat, Arial, sans-serif;
-    font-weight: 700;
-    font-size: 11px;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    vertical-align: 2px;
-  }
-  .call.is-best .best { display: inline-block; }
-  .done-btn {
-    display: block;
-    width: 100%;
-    margin-top: 20px;
-    padding: 16px;
-    border: 2px solid var(--navy);
-    border-radius: 6px;
-    background: #FFFFFF;
-    color: var(--navy);
-    font-family: Montserrat, Arial, sans-serif;
-    font-weight: 700;
-    font-size: 17px;
-    cursor: pointer;
-  }
-  .done-btn:hover { background: var(--navy); color: #FFFFFF; }
-  .thanks {
-    display: none;
-    margin-top: 20px;
-    padding: 18px;
-    border: 2px solid var(--navy);
-    border-radius: 6px;
-  }
-  .thanks h3 { margin: 0 0 8px; font-family: "Playfair Display", Georgia, serif; font-size: 22px; }
-  .thanks p:last-child { margin-bottom: 0; }
-  footer {
-    margin-top: 36px;
-    padding-top: 16px;
-    border-top: 1px solid var(--rule);
-    color: var(--muted);
-    font-size: 14px;
-  }
-  footer a, .status a { color: var(--navy); }
-  @media (max-width: 380px) {
-    h1 { font-size: 27px; }
-    .call .num { font-size: 15px; }
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Senate Democrats choose their leader on December 1. Call Senators Padilla and Schiff today.">
+  <title>Call Senators Padilla and Schiff — West Hollywood–Fairfax Indivisible</title>
+  <link rel="canonical" href="https://wehofairfaxindivisible.org/call-senators.html">
+  <meta property="og:title" content="Two calls before December 1">
+  <meta property="og:description" content="Ask Senators Padilla and Schiff to vote for new Senate leadership. Script and one-tap call buttons.">
+  <meta property="og:url" content="https://wehofairfaxindivisible.org/call-senators.html">
+  <meta name="theme-color" content="#07131C">
+  <meta name="color-scheme" content="dark">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="favicon.ico">
+  <link rel="stylesheet" href="css/style.css?v=9">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Lato:wght@400;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+  <style id="nav-mobile-css">
+    #whi-nav-bar { position:fixed; top:0; left:0; right:0; z-index:1000; }
+    #whi-rainbow { height:6px; background:linear-gradient(to right,#E40303 0%,#E40303 16.666%,#FF8C00 16.666%,#FF8C00 33.333%,#FFED00 33.333%,#FFED00 50%,#008026 50%,#008026 66.666%,#004DFF 66.666%,#004DFF 83.333%,#750787 83.333%,#750787 100%); }
+    #whi-nav { height:80px; background:#07131C; display:flex; align-items:center; overflow:hidden; }
+    #whi-nav-inner { width:100%; max-width:1100px; margin:0 auto; padding:0 20px; display:flex; align-items:center; justify-content:space-between; position:relative; }
+    #whi-logo { display:flex; align-items:center; gap:10px; text-decoration:none; flex-shrink:0; min-width:0; margin-right:24px; }
+    #whi-logo-img { height:36px; width:auto; }
+    #whi-logo-div { width:1px; height:28px; background:rgba(255,255,255,0.2); flex-shrink:0; }
+    #whi-logo-title { font-family:"Montserrat",sans-serif; font-weight:800; font-size:0.82rem; color:#fff; text-transform:uppercase; letter-spacing:0.02em; display:block; }
+    #whi-logo-sub { font-family:"Montserrat",sans-serif; font-weight:500; font-size:0.65rem; color:#8AABBF; text-transform:uppercase; letter-spacing:0.12em; display:block; }
+    #whi-logo-mobile { display:none; font-family:"Montserrat",sans-serif; font-weight:800; font-size:1rem; color:#fff; text-transform:uppercase; letter-spacing:0.02em; }
+    #whi-desktop-links { display:flex; align-items:center; gap:2px; list-style:none; margin:0; padding:0; }
+    #whi-desktop-links a { font-family:"Montserrat",sans-serif; font-weight:600; font-size:0.82rem; letter-spacing:0.06em; text-transform:uppercase; color:rgba(255,255,255,0.75); padding:8px 12px; border-radius:4px; text-decoration:none; white-space:nowrap; }
+    #whi-desktop-links a:hover { color:#fff; background:rgba(255,255,255,0.08); }
+    #whi-desktop-links .whi-cta { background:#CA4948; color:#fff !important; padding:8px 16px; }
+    #whi-desktop-links .whi-cta:hover { background:#A83736; }
+    #whi-hamburger { display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:8px; flex-shrink:0; }
+    #whi-hamburger span { display:block; width:24px; height:2px; background:#fff; transition:all 0.2s; }
+    #whi-mobile-menu { display:none; background:#07131C; border-top:1px solid rgba(255,255,255,0.1); }
+    #whi-mobile-menu a { display:block; padding:14px 24px; font-family:"Montserrat",sans-serif; font-weight:600; font-size:0.9rem; color:rgba(255,255,255,0.85); text-decoration:none; text-transform:uppercase; letter-spacing:0.06em; border-bottom:1px solid rgba(255,255,255,0.06); }
+    #whi-mobile-menu a:last-child { background:#CA4948; color:#fff; border-bottom:none; }
+    @media (max-width:900px) {
+      #whi-desktop-links { display:none !important; }
+      #whi-logo-img { display:none !important; }
+      #whi-logo-div { display:none !important; }
+      #whi-logo-sub { display:none !important; }
+      #whi-logo-title { display:none !important; }
+      #whi-logo-mobile { display:block !important; }
+      #whi-hamburger { display:flex !important; position:absolute; right:16px; top:50%; transform:translateY(-50%); }
+    }
+  </style>
+  <style>
+    body { padding-top:86px !important; background:#07131C; }
+    main#main-content { background:#07131C; }
+    /* Call page styles. Everything is scoped under .cs so it does not collide with css/style.css.
+       Remove or revise this page after the December 1, 2026 vote. */
+    .cs { max-width:620px; margin:0 auto; padding:8px 20px 48px; background:#07131C; color:rgba(255,255,255,0.88); font-family:Lato,Arial,sans-serif; font-size:18px; line-height:1.55; }
+    .cs p { margin:0 0 16px; color:rgba(255,255,255,0.82); }
+    .cs a { color:#8FC1E3; }
+    .cs .cs-eyebrow { margin:28px 0 8px; font-family:Montserrat,Arial,sans-serif; font-weight:700; font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:#E9706F; }
+    .cs h1 { margin:0 0 16px; font-family:"Playfair Display",Georgia,serif; font-weight:800; font-size:32px; line-height:1.18; color:#fff; }
+    .cs h2 { margin:28px 0 10px; font-family:Montserrat,Arial,sans-serif; font-weight:700; font-size:14px; letter-spacing:0.1em; text-transform:uppercase; color:#fff; }
+    .cs .cs-status { margin:0 0 24px; padding:14px 16px; border:1px solid rgba(255,255,255,0.14); border-left:4px solid #CA4948; background:rgba(255,255,255,0.04); font-size:16px; color:rgba(255,255,255,0.88); }
+    .cs .cs-status strong { color:#fff; }
+    .cs .cs-asof { display:block; margin-top:6px; color:rgba(255,255,255,0.6); font-size:14px; }
+    .cs .cs-script { margin:0 0 12px; padding:18px; border:1px solid rgba(255,255,255,0.3); border-radius:6px; background:rgba(255,255,255,0.06); color:#fff; font-size:19px; line-height:1.5; }
+    .cs .cs-place { border-bottom:2px solid #E9706F; font-weight:700; }
+    .cs .cs-from { display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:0 0 12px; }
+    .cs .cs-from-label { font-size:15px; color:rgba(255,255,255,0.7); margin-right:2px; }
+    .cs .cs-chip { padding:8px 12px; border:1px solid rgba(255,255,255,0.35); border-radius:999px; background:transparent; color:#fff; font-family:Lato,Arial,sans-serif; font-size:15px; cursor:pointer; }
+    .cs .cs-chip[aria-pressed="true"] { background:#fff; color:#07131C; border-color:#fff; font-weight:700; }
+    .cs .cs-other { flex:1 1 150px; min-width:0; padding:8px 12px; border:1px solid rgba(255,255,255,0.35); border-radius:999px; background:rgba(255,255,255,0.07); color:#fff; font-family:Lato,Arial,sans-serif; font-size:16px; }
+    .cs .cs-other::placeholder { color:rgba(255,255,255,0.5); }
+    .cs .cs-chip:focus-visible, .cs .cs-other:focus-visible, .cs .cs-done:focus-visible { outline:2px solid #8FC1E3; outline-offset:2px; }
+    .cs .cs-note { color:rgba(255,255,255,0.6); font-size:15px; }
+    .cs .cs-calls { list-style:none; margin:0; padding:0; }
+    .cs .cs-calls li { margin:0 0 12px; }
+    .cs .cs-call { display:flex; align-items:center; justify-content:space-between; gap:12px; min-height:68px; padding:12px 16px; border-radius:6px; background:#CA4948; color:#fff; text-decoration:none; }
+    .cs .cs-call:hover, .cs .cs-call:focus { background:#A83736; color:#fff; }
+    .cs .cs-call:focus-visible { outline:3px solid #fff; outline-offset:2px; }
+    .cs .cs-who { font-family:Montserrat,Arial,sans-serif; font-weight:700; font-size:17px; line-height:1.25; }
+    .cs .cs-hint { display:block; font-family:Lato,Arial,sans-serif; font-weight:400; font-size:14px; }
+    .cs .cs-num { font-family:Montserrat,Arial,sans-serif; font-weight:700; font-size:17px; white-space:nowrap; }
+    .cs .cs-best { display:none; margin-left:6px; padding:1px 7px; border-radius:3px; background:#fff; color:#A83736; font-family:Montserrat,Arial,sans-serif; font-weight:700; font-size:11px; letter-spacing:0.06em; text-transform:uppercase; vertical-align:2px; }
+    .cs .cs-call.is-best .cs-best { display:inline-block; }
+    .cs .cs-done { display:block; width:100%; margin-top:20px; padding:16px; border:2px solid #fff; border-radius:6px; background:transparent; color:#fff; font-family:Montserrat,Arial,sans-serif; font-weight:700; font-size:17px; cursor:pointer; }
+    .cs .cs-done:hover { background:#fff; color:#07131C; }
+    .cs .cs-thanks { display:none; margin-top:20px; padding:18px; border:1px solid rgba(255,255,255,0.3); border-radius:6px; background:rgba(255,255,255,0.06); }
+    .cs .cs-thanks h3 { margin:0 0 8px; font-family:"Playfair Display",Georgia,serif; font-size:22px; color:#fff; }
+    .cs .cs-thanks p:last-child { margin-bottom:0; }
+    @media (max-width:380px) { .cs h1 { font-size:27px; } .cs .cs-num { font-size:15px; } }
+  </style>
 </head>
 <body>
-<div class="rainbow" role="presentation"></div>
-<div class="wrap">
 
-  <div class="masthead">
-    <a href="/"><span class="weho">West Hollywood</span>-<span class="fairfax">Fairfax</span> Indivisible</a>
+<div id="whi-nav-bar">
+  <div id="whi-rainbow"></div>
+  <nav id="whi-nav" aria-label="Main navigation">
+    <div id="whi-nav-inner">
+      <a href="index.html" id="whi-logo" aria-label="West Hollywood–Fairfax Indivisible home">
+        <div>
+          <span id="whi-logo-mobile">WeHo–Fairfax Indivisible</span>
+          <span id="whi-logo-title">West Hollywood<span style="color:#E94B47;">–Fairfax</span></span>
+          <span id="whi-logo-sub">California</span>
+        </div>
+        <div id="whi-logo-div"></div>
+        <img id="whi-logo-img" src="logo-indivisible.svg" alt="Indivisible" onerror="this.style.display='none'">
+      </a>
+      <ul id="whi-desktop-links" role="list">
+        <li><a href="actions.html">Actions</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="get-involved.html">Get Involved</a></li>
+        <li><a href="representatives.html">Your Reps</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="whi-cta">Sign Up</a></li>
+      </ul>
+      <button id="whi-hamburger" onclick="whiMenuToggle()" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div id="whi-mobile-menu">
+    <a href="actions.html">Actions</a>
+    <a href="events.html">Events</a>
+    <a href="get-involved.html">Get Involved</a>
+    <a href="representatives.html">Your Reps</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Sign Up</a>
   </div>
+</div>
 
-  <p class="eyebrow">Two calls before December 1</p>
+<script>
+function whiMenuToggle(){
+  var m=document.getElementById('whi-mobile-menu');
+  var b=document.getElementById('whi-hamburger');
+  var s=b.querySelectorAll('span');
+  var open=m.style.display==='block';
+  m.style.display=open?'none':'block';
+  b.setAttribute('aria-expanded',String(!open));
+  s[0].style.transform=open?'':'translateY(7px) rotate(45deg)';
+  s[1].style.opacity=open?'':'0';
+  s[2].style.transform=open?'':'translateY(-7px) rotate(-45deg)';
+}
+document.addEventListener('click',function(e){
+  var b=document.getElementById('whi-hamburger');
+  var m=document.getElementById('whi-mobile-menu');
+  if(b&&m&&!b.contains(e.target)&&!m.contains(e.target)){
+    m.style.display='none';
+    b.setAttribute('aria-expanded','false');
+    var s=b.querySelectorAll('span');
+    s[0].style.transform='';s[1].style.opacity='';s[2].style.transform='';
+  }
+});
+</script>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<main id="main-content">
+<div class="cs">
+
+  <p class="cs-eyebrow">Two calls before December 1</p>
   <h1>Ask Senators Padilla and Schiff to vote for new Senate leadership</h1>
 
   <p>Senate Democrats will choose their leader by secret ballot on Tuesday, December 1. Senator Chris Van Hollen of Maryland is challenging Chuck Schumer, who has led the caucus since 2017, and Indivisible has called on Senate Democrats to choose new leadership.</p>
 
   <p>Because the ballot is secret, a public statement is the only commitment constituents can verify, which is why the script below asks for one.</p>
 
-  <div class="status">
+  <div class="cs-status">
     <strong>Where our senators stand:</strong> Senator Padilla has not committed to either candidate. Senator Schiff has taken no public position.
-    <span class="asof">As of November 13, 2026. Source: <a href="https://whipcount.dropsitenews.com/">Drop Site News whip count</a>.</span>
+    <span class="cs-asof">As of November 13, 2026. Source: <a href="https://whipcount.dropsitenews.com/">Drop Site News whip count</a>.</span>
   </div>
 
   <h2>Say this</h2>
-  <div class="script">
-    Hi, I&rsquo;m a constituent from ___. Please vote no on Chuck Schumer for Majority Leader and yes on Chris Van Hollen, and please ask the Senator to state his position publicly. Please log my call. Thank you.
+  <div class="cs-script">
+    Hi, I&rsquo;m a constituent from <span class="cs-place" id="cs-place">Los Angeles</span>. Please vote no on Chuck Schumer for Majority Leader and yes on Chris Van Hollen, and please ask the Senator to state his position publicly. Please log my call. Thank you.
   </div>
-  <p class="note">A staffer or a voicemail box will answer. Either one counts. The call takes about a minute.</p>
+  <div class="cs-from" role="group" aria-label="Where you are calling from">
+    <span class="cs-from-label">Calling from:</span>
+    <button type="button" class="cs-chip" data-place="Los Angeles" aria-pressed="true">Los Angeles</button>
+    <button type="button" class="cs-chip" data-place="West Hollywood" aria-pressed="false">West Hollywood</button>
+    <input type="text" class="cs-other" id="cs-other" maxlength="40" placeholder="Other city or ZIP" aria-label="Other city or ZIP code" autocomplete="off">
+  </div>
+  <p class="cs-note">A staffer or a voicemail box will answer. Either one counts. The call takes about a minute.</p>
 
   <h2>Tap to call</h2>
-  <ul class="calls">
+  <ul class="cs-calls">
     <li>
-      <a class="call" id="schiff-la" href="tel:+13109147300">
-        <span class="who">Schiff, Los Angeles <span class="best">Best now</span>
-          <span class="hint">Staffed weekdays during business hours</span></span>
-        <span class="num">(310) 914-7300</span>
+      <a class="cs-call" id="schiff-la" href="tel:+13109147300">
+        <span class="cs-who">Schiff, Los Angeles <span class="cs-best">Best now</span>
+          <span class="cs-hint">Staffed weekdays during business hours</span></span>
+        <span class="cs-num">(310) 914-7300</span>
       </a>
     </li>
     <li>
-      <a class="call" id="schiff-dc" href="tel:+12022243841">
-        <span class="who">Schiff, Washington <span class="best">Best now</span>
-          <span class="hint">Takes voicemail after hours</span></span>
-        <span class="num">(202) 224-3841</span>
+      <a class="cs-call" id="schiff-dc" href="tel:+12022243841">
+        <span class="cs-who">Schiff, Washington <span class="cs-best">Best now</span>
+          <span class="cs-hint">Takes voicemail after hours</span></span>
+        <span class="cs-num">(202) 224-3841</span>
       </a>
     </li>
     <li>
-      <a class="call" id="padilla-la" href="tel:+13102314494">
-        <span class="who">Padilla, Los Angeles <span class="best">Best now</span>
-          <span class="hint">Takes voicemail after hours</span></span>
-        <span class="num">(310) 231-4494</span>
+      <a class="cs-call" id="padilla-la" href="tel:+13102314494">
+        <span class="cs-who">Padilla, Los Angeles <span class="cs-best">Best now</span>
+          <span class="cs-hint">Takes voicemail after hours</span></span>
+        <span class="cs-num">(310) 231-4494</span>
       </a>
     </li>
     <li>
-      <a class="call" id="padilla-dc" href="tel:+12022243553">
-        <span class="who">Padilla, Washington
-          <span class="hint">Business hours only, no voicemail after hours</span></span>
-        <span class="num">(202) 224-3553</span>
+      <a class="cs-call" id="padilla-dc" href="tel:+12022243553">
+        <span class="cs-who">Padilla, Washington
+          <span class="cs-hint">Business hours only, no voicemail after hours</span></span>
+        <span class="cs-num">(202) 224-3553</span>
       </a>
     </li>
   </ul>
-  <p class="note">One call to each senator is enough. On a computer, dial the numbers shown.</p>
+  <p class="cs-note">One call to each senator is enough. On a computer, dial the numbers shown.</p>
 
-  <button class="done-btn" id="done" type="button">I made my calls</button>
+  <button class="cs-done" id="done" type="button">I made my calls</button>
 
-  <div class="thanks" id="thanks" aria-live="polite">
+  <div class="cs-thanks" id="thanks" aria-live="polite">
     <h3>Thank you.</h3>
-    <p>One more step: reply to the email that brought you here and tell us what you heard, even if the staffer said only that the message would be passed along. We will report back to the list on what the two offices are saying.</p>
-    <p>Then forward the email to one California friend.</p>
+    <p>One more step: tell us what you heard, either by replying to our email or by writing to <a href="mailto:hello@wehofairfaxindivisible.org?subject=Senate%20leadership%20call">hello@wehofairfaxindivisible.org</a>, even if the staffer said only that the message would be passed along. We will report back to the list on what the two offices are saying.</p>
+    <p>Then send this page to one California friend.</p>
   </div>
 
-  <footer>
-    West Hollywood-Fairfax Indivisible. Page updated November 13, 2026.
-  </footer>
+  <p class="cs-note" style="margin-top:32px;">Page updated November 13, 2026.</p>
 </div>
+</main>
 
+<div id="site-footer-container"></div>
+<script src="js/main.js?v=9"></script>
 <script>
 (function () {
   // Mark the office most likely to answer or take a message right now (Pacific time).
@@ -256,6 +248,33 @@
       if (el) el.classList.add('is-best');
     });
   } catch (e) { /* hints are optional */ }
+
+  // "Calling from" picker: fills the place name in the script.
+  var placeEl = document.getElementById('cs-place');
+  var other = document.getElementById('cs-other');
+  var chips = Array.prototype.slice.call(document.querySelectorAll('.cs-chip'));
+  function setPlace(name, save) {
+    name = (name || '').replace(/\s+/g, ' ').trim() || 'Los Angeles';
+    placeEl.textContent = name;
+    var matched = false;
+    chips.forEach(function (c) {
+      var on = c.getAttribute('data-place') === name;
+      c.setAttribute('aria-pressed', on ? 'true' : 'false');
+      if (on) matched = true;
+    });
+    if (matched) other.value = ''; else if (other.value.trim() !== name) other.value = name;
+    if (save) { try { localStorage.setItem('whfi-call-place', name); } catch (e) {} }
+  }
+  chips.forEach(function (c) {
+    c.addEventListener('click', function () { setPlace(c.getAttribute('data-place'), true); });
+  });
+  other.addEventListener('input', function () {
+    var v = other.value.replace(/\s+/g, ' ').trim();
+    placeEl.textContent = v || 'Los Angeles';
+    chips.forEach(function (c) { c.setAttribute('aria-pressed', (!v && c.getAttribute('data-place') === 'Los Angeles') ? 'true' : 'false'); });
+    try { localStorage.setItem('whfi-call-place', v || 'Los Angeles'); } catch (e) {}
+  });
+  try { var saved = localStorage.getItem('whfi-call-place'); if (saved) setPlace(saved, false); } catch (e) {}
 
   var btn = document.getElementById('done');
   var thanks = document.getElementById('thanks');
