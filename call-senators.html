@@ -161,24 +161,17 @@ document.addEventListener('click',function(e){
 <main id="main-content">
 <div class="cs">
 
-  <p class="cs-eyebrow">Let&rsquo;s keep the midterm wave going! Call our senators by December 1</p>
-  <h1>Ask Senators Padilla and Schiff to vote for new Senate leadership</h1>
+  <h1 style="margin-top:28px;">Ask Senators Padilla and Schiff to vote for new Senate leadership</h1>
 
-  <p>Senate Democrats are scheduled to choose their leader by secret ballot on Tuesday, December 1, and the vote may be moved earlier, so please call this week. Senator Chris Van Hollen of Maryland is challenging Chuck Schumer, and Indivisible has called on Senate Democrats to choose new leadership.</p>
+  <p>Senate Democrats are scheduled to choose their leader by secret ballot on Tuesday, <strong>December 1</strong>, and the vote may be moved earlier, so please call this week. Senator Chris Van Hollen of Maryland is challenging Chuck Schumer, and Indivisible has called on Senate Democrats to choose new leadership.</p>
   <p>The ballot is secret, so a public statement is the only commitment we can use to verify.</p>
   <p><a class="cs-more" href="leadership-record.html">Why new leadership? Compare the two records</a></p>
 
   <h2 class="cs-step"><span class="cs-stepnum">1</span> Call script if helpful</h2>
   <div class="cs-script">
-    Hi, I&rsquo;m a constituent from <span class="cs-place" id="cs-place">Los Angeles</span>. Please vote no on Chuck Schumer for Majority Leader and yes on Chris Van Hollen, and please ask the Senator to state his position publicly. Please log my call. Thank you.
+    Hi, I&rsquo;m a constituent from Los Angeles. Please vote no on Chuck Schumer for Majority Leader and yes on Chris Van Hollen, and please ask the Senator to state his position publicly. Please log my call. Thank you.
   </div>
-  <div class="cs-from" role="group" aria-label="Where you are calling from">
-    <span class="cs-from-label">Calling from:</span>
-    <button type="button" class="cs-chip" data-place="Los Angeles" aria-pressed="true">Los Angeles</button>
-    <button type="button" class="cs-chip" data-place="West Hollywood" aria-pressed="false">West Hollywood</button>
-    <input type="text" class="cs-other" id="cs-other" maxlength="40" placeholder="Other city or ZIP" aria-label="Other city or ZIP code" autocomplete="off">
-  </div>
-  <p class="cs-note">A staffer or a voicemail will answer; leaving a voicemail counts, so go ahead and leave one.</p>
+  <p class="cs-note">If you get voicemail, go ahead and leave a message, as these are counted.</p>
 
   <h2 class="cs-step"><span class="cs-stepnum">2</span> Tap to call</h2>
   <p class="cs-note">Call one office for each senator.</p>
@@ -219,12 +212,7 @@ document.addEventListener('click',function(e){
       </li>
   </ul>
 
-  <button class="cs-done" id="done" type="button">I made my calls</button>
-
-  <div class="cs-thanks" id="thanks" aria-live="polite">
-    <h3>Thank you!</h3>
-    <p>Please send this page to one California friend.</p>
-  </div>
+  <p style="margin-top:24px;"><strong>Thank you!</strong> Please send this page to one California friend.</p>
 
   <h2>Where our senators stand</h2>
   <div class="cs-box">
@@ -262,43 +250,6 @@ document.addEventListener('click',function(e){
       list.insertBefore(el.parentNode, list.firstChild);
     });
   } catch (e) { /* hints are optional */ }
-
-  // "Calling from" picker: fills the place name in the script.
-  var placeEl = document.getElementById('cs-place');
-  var other = document.getElementById('cs-other');
-  var chips = Array.prototype.slice.call(document.querySelectorAll('.cs-chip'));
-  function setPlace(name, save) {
-    name = (name || '').replace(/\s+/g, ' ').trim() || 'Los Angeles';
-    placeEl.textContent = name;
-    var matched = false;
-    chips.forEach(function (c) {
-      var on = c.getAttribute('data-place') === name;
-      c.setAttribute('aria-pressed', on ? 'true' : 'false');
-      if (on) matched = true;
-    });
-    if (matched) other.value = ''; else if (other.value.trim() !== name) other.value = name;
-    if (save) { try { localStorage.setItem('whfi-call-place', name); } catch (e) {} }
-  }
-  chips.forEach(function (c) {
-    c.addEventListener('click', function () { setPlace(c.getAttribute('data-place'), true); });
-  });
-  other.addEventListener('input', function () {
-    var v = other.value.replace(/\s+/g, ' ').trim();
-    placeEl.textContent = v || 'Los Angeles';
-    chips.forEach(function (c) { c.setAttribute('aria-pressed', (!v && c.getAttribute('data-place') === 'Los Angeles') ? 'true' : 'false'); });
-    try { localStorage.setItem('whfi-call-place', v || 'Los Angeles'); } catch (e) {}
-  });
-  try { var saved = localStorage.getItem('whfi-call-place'); if (saved) setPlace(saved, false); } catch (e) {}
-
-  var btn = document.getElementById('done');
-  var thanks = document.getElementById('thanks');
-  function showThanks() { thanks.style.display = 'block'; btn.style.display = 'none'; }
-  btn.addEventListener('click', function () {
-    showThanks();
-    try { localStorage.setItem('whfi-leader-call', '1'); } catch (e) {}
-    thanks.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-  });
-  try { if (localStorage.getItem('whfi-leader-call') === '1') showThanks(); } catch (e) {}
 })();
 </script>
 </body>
